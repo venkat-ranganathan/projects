@@ -1,5 +1,7 @@
 #Lab_1
 
+// ADD SPECIFIC DETAILS ABOUT COMPONENTS USED
+
 This lab demonstartes programming the Artix7 in Verilog to take an 8-bit input, 
 load the value into a register, then plug in the value from the register as 'P' to solve the specific equation 
 P^2 - 2P and output the solution as binary LEDs (the equation is changeable, but in this lab only supports (1) variable)
