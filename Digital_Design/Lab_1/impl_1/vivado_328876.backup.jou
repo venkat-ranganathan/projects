@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 11 15:22:07 2022
+# Process ID: 328876
+# Current directory: /home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_1/Lab1_Skeleton/Lab1_Skeleton.runs/impl_1
+# Command line: vivado -log GPP_Circuit.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source GPP_Circuit.tcl -notrace
+# Log file: /home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_1/Lab1_Skeleton/Lab1_Skeleton.runs/impl_1/GPP_Circuit.vdi
+# Journal file: /home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_1/Lab1_Skeleton/Lab1_Skeleton.runs/impl_1/vivado.jou
+# Running On: space-orca, OS: Linux, CPU Frequency: 1500.000 MHz, CPU Physical cores: 4, Host memory: 16539 MB
+#-----------------------------------------------------------
+source GPP_Circuit.tcl -notrace
