@@ -4,5 +4,5 @@ This lab demonstartes programming the Artix7 to take a 3-bit input,
 load the value into the register, then plug in the value from the register as 'P' to solve the specific equation 
 P^2 - 2P and output the solution as binary LEDs
 
+![IMG_2718](https://user-images.githubusercontent.com/96662693/153724284-a8ac723a-959b-4042-b282-0b0d595fb596.jpg)
 
-![cool_godzilla](https://user-images.githubusercontent.com/96662693/153724038-6573daec-914e-437a-877d-ee9ca8cb7084.jpg)
