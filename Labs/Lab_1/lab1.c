@@ -2,7 +2,7 @@
 /******************** NO IMPLEMENTATION HERE, ONLY TESTS *********************/
 // two includes here to test for include guards in the header file 
 #include "lab1dev.h"
-#include "lab1dev.c"
+#include "lab1dev.h"
 
 int main(void)
 {
