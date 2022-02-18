@@ -1,0 +1,294 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Feb 16 17:55:23 2022
+# Process ID: 169474
+# Current directory: /home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.runs/synth_1
+# Command line: vivado -log GPP_Circuit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source GPP_Circuit.tcl
+# Log file: /home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.runs/synth_1/GPP_Circuit.vds
+# Journal file: /home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.runs/synth_1/vivado.jou
+# Running On: space-orca, OS: Linux, CPU Frequency: 1500.000 MHz, CPU Physical cores: 4, Host memory: 16539 MB
+#-----------------------------------------------------------
+source GPP_Circuit.tcl -notrace
+Command: synth_design -top GPP_Circuit -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 169603
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2616.266 ; gain = 0.000 ; free physical = 563 ; free virtual = 8496
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'GPP_Circuit' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PushButton_Debouncer' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/PushButton_Debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PushButton_Debouncer' (1#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/PushButton_Debouncer.v:23]
+WARNING: [Synth 8-7071] port 'PB_state' of module 'PushButton_Debouncer' is unconnected for instance 'PushButton_Debouncer_MPP_Circuit' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:35]
+WARNING: [Synth 8-7071] port 'PB_down' of module 'PushButton_Debouncer' is unconnected for instance 'PushButton_Debouncer_MPP_Circuit' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:35]
+WARNING: [Synth 8-7023] instance 'PushButton_Debouncer_MPP_Circuit' of module 'PushButton_Debouncer' has 5 connections declared, but only 3 given [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:35]
+INFO: [Synth 8-6157] synthesizing module 'MPP' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/MPP.v:4]
+INFO: [Synth 8-6157] synthesizing module 'Input_Select' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/Input_Select.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Input_Select' (2#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/Input_Select.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Data_ALU' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/Data_ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mux8' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Mux8.v:2]
+INFO: [Synth 8-226] default block is never used [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Mux8.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'mux8' (3#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Mux8.v:2]
+INFO: [Synth 8-6157] synthesizing module 'BitXor2' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/BitXor2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BitXor2' (4#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/BitXor2.v:3]
+INFO: [Synth 8-6157] synthesizing module 'BitAnd2' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/BitAnd2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BitAnd2' (5#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/BitAnd2.v:3]
+INFO: [Synth 8-6157] synthesizing module 'BitOr2' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/BitOr2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'BitOr2' (6#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/BitOr2.v:3]
+INFO: [Synth 8-6157] synthesizing module 'adder' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/adder.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (7#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/adder.v:3]
+INFO: [Synth 8-6157] synthesizing module 'subtractor' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/subtractor.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'subtractor' (8#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/subtractor.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ShiftRightLogical' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/ShiftRightLogical.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ShiftRightLogical' (9#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/ShiftRightLogical.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Multiplier' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Multiplier.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'Multiplier' (10#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Multiplier.v:3]
+WARNING: [Synth 8-689] width (8) of port connection 'product' does not match port width (16) of module 'Multiplier' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/Data_ALU.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'Data_ALU' (11#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/Data_ALU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'MPP_RegFile' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/MPP_RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'decoder' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/decoder.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'decoder' (12#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/decoder.v:3]
+INFO: [Synth 8-6157] synthesizing module 'RegParallelLoad' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/RegParallelLoad.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'RegParallelLoad' (13#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/RegParallelLoad.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mux4' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Mux4.v:1]
+INFO: [Synth 8-226] default block is never used [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Mux4.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'mux4' (14#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/Mux4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MPP_RegFile' (15#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/MPP_RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/control_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'UpCounter' [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/UpCounter.v:6]
+WARNING: [Synth 8-6896] procedural assign is inside initial block, initial block items will be ignored [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/UpCounter.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'UpCounter' (16#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/ComponentLibrary/UpCounter.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (17#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/control_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MPP' (18#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/MPP.v:4]
+INFO: [Synth 8-6157] synthesizing module 'sseg_mux' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/sseg_mux.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sseg_mux' (19#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/sseg_mux.v:23]
+WARNING: [Synth 8-7071] port 'dp_out' of module 'sseg_mux' is unconnected for instance 'sseg_mux_mpp' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:50]
+WARNING: [Synth 8-7023] instance 'sseg_mux_mpp' of module 'sseg_mux' has 12 connections declared, but only 11 given [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:50]
+INFO: [Synth 8-6157] synthesizing module 'sseg_numbers' [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/sseg_numbers.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sseg_numbers' (20#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/sseg_numbers.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'GPP_Circuit' (21#1) [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/sources_1/new/GPP_Circuit.v:23]
+WARNING: [Synth 8-7129] Port in[0] in module ShiftRightLogical is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[7] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[6] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[5] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[4] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[3] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[2] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[1] in module MPP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[0] in module MPP is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2616.266 ; gain = 0.000 ; free physical = 338 ; free virtual = 7822
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2616.266 ; gain = 0.000 ; free physical = 334 ; free virtual = 7818
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2616.266 ; gain = 0.000 ; free physical = 334 ; free virtual = 7818
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.266 ; gain = 0.000 ; free physical = 328 ; free virtual = 7811
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/constrs_1/new/Lab2_Constraints.xdc]
+Finished Parsing XDC File [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/constrs_1/new/Lab2_Constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.srcs/constrs_1/new/Lab2_Constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/GPP_Circuit_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/GPP_Circuit_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2680.223 ; gain = 0.000 ; free physical = 1175 ; free virtual = 8659
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2680.223 ; gain = 0.000 ; free physical = 1175 ; free virtual = 8659
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1248 ; free virtual = 8732
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1248 ; free virtual = 8732
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1248 ; free virtual = 8732
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1239 ; free virtual = 8724
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    9 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
++---Registers : 
+	                8 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 2     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port sw[15] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[14] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[13] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[12] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[11] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[10] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[9] in module GPP_Circuit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[8] in module GPP_Circuit is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1222 ; free virtual = 8710
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1104 ; free virtual = 8593
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1098 ; free virtual = 8586
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    19|
+|3     |LUT1   |     4|
+|4     |LUT2   |    12|
+|5     |LUT3   |     3|
+|6     |LUT4   |    19|
+|7     |LUT5   |    27|
+|8     |LUT6   |    63|
+|9     |FDRE   |    58|
+|10    |IBUF   |    10|
+|11    |OBUF   |    11|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1097 ; free virtual = 8585
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2680.223 ; gain = 0.000 ; free physical = 1151 ; free virtual = 8640
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2680.223 ; gain = 63.957 ; free physical = 1151 ; free virtual = 8640
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:06 ; elapsed = 00:00:00 . Memory (MB): peak = 2680.223 ; gain = 0.000 ; free physical = 1239 ; free virtual = 8727
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2680.223 ; gain = 0.000 ; free physical = 1179 ; free virtual = 8668
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 66630880
+INFO: [Common 17-83] Releasing license: Synthesis
+59 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 2680.223 ; gain = 64.031 ; free physical = 1382 ; free virtual = 8870
+INFO: [Common 17-1381] The checkpoint '/home/venkat/Downloads/temp school files/Soph Design/Labs/Lab_2/Lab2_Skeleton/Lab2_Skeleton.runs/synth_1/GPP_Circuit.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file GPP_Circuit_utilization_synth.rpt -pb GPP_Circuit_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 16 17:55:54 2022...
