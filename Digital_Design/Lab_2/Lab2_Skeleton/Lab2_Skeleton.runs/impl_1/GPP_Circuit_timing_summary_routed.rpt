@@ -1,0 +1,1509 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Wed Feb 16 17:57:04 2022
+| Host         : space-orca running 64-bit Ubuntu 20.04.3 LTS
+| Command      : report_timing_summary -max_paths 10 -file GPP_Circuit_timing_summary_routed.rpt -pb GPP_Circuit_timing_summary_routed.pb -rpx GPP_Circuit_timing_summary_routed.rpx -warn_on_violation
+| Design       : GPP_Circuit
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                    Violations  
+---------  ----------------  -----------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell    2           
+TIMING-18  Warning           Missing input or output delay  24          
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (2)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (2)
+5. checking no_input_delay (9)
+6. checking no_output_delay (11)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (2)
+------------------------
+ There are 2 register/latch pins with no clock driven by root clock pin: sseg_mux_mpp/cycle_count_reg[17]/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (2)
+------------------------------------------------
+ There are 2 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (9)
+------------------------------
+ There are 9 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (11)
+--------------------------------
+ There are 11 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      1.790        0.000                      0                   87        0.131        0.000                      0                   87        4.500        0.000                       0                    57  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin         1.790        0.000                      0                   87        0.131        0.000                      0                   87        4.500        0.000                       0                    57  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.790ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.131ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.790ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_0/q_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        8.093ns  (logic 2.694ns (33.288%)  route 5.399ns (66.712%))
+  Logic Levels:           9  (CARRY4=2 LUT4=1 LUT5=3 LUT6=3)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.791ns = ( 14.791 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.279     6.845    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X52Y9          LUT5 (Prop_lut5_I1_O)        0.295     7.140 r  MPP_Circuit/control_unit/UpCounter/sum0_carry_i_2/O
+                         net (fo=14, routed)          0.849     7.989    MPP_Circuit/control_unit/UpCounter/q_reg[2]
+    SLICE_X51Y11         LUT6 (Prop_lut6_I2_O)        0.124     8.113 r  MPP_Circuit/control_unit/UpCounter/product__0_carry__0_i_2/O
+                         net (fo=2, routed)           0.599     8.712    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_2[1]
+    SLICE_X50Y10         LUT6 (Prop_lut6_I0_O)        0.124     8.836 r  MPP_Circuit/control_unit/UpCounter/product__0_carry__0_i_6/O
+                         net (fo=1, routed)           0.000     8.836    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_1[1]
+    SLICE_X50Y10         CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.578     9.414 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[2]
+                         net (fo=3, routed)           0.562     9.975    MPP_Circuit/control_unit/UpCounter/O[0]
+    SLICE_X51Y8          LUT4 (Prop_lut4_I0_O)        0.301    10.276 r  MPP_Circuit/control_unit/UpCounter/product__35_carry__0_i_2/O
+                         net (fo=1, routed)           0.542    10.818    MPP_Circuit/control_unit/UpCounter/product__35_carry__0_i_2_n_0
+    SLICE_X51Y10         LUT5 (Prop_lut5_I4_O)        0.124    10.942 r  MPP_Circuit/control_unit/UpCounter/product__35_carry__0_i_1/O
+                         net (fo=1, routed)           0.000    10.942    MPP_Circuit/Data_ALU_MPP/Multiplier/q[7]_i_3_0[0]
+    SLICE_X51Y10         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.247    11.189 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry__0/O[0]
+                         net (fo=1, routed)           0.307    11.496    MPP_Circuit/Data_ALU_MPP/Multiplier/product[7]
+    SLICE_X50Y11         LUT6 (Prop_lut6_I0_O)        0.299    11.795 r  MPP_Circuit/Data_ALU_MPP/Multiplier/q[7]_i_3/O
+                         net (fo=1, routed)           0.452    12.247    MPP_Circuit/control_unit/UpCounter/q_reg[7]_1
+    SLICE_X50Y11         LUT5 (Prop_lut5_I0_O)        0.124    12.371 r  MPP_Circuit/control_unit/UpCounter/q[7]_i_2/O
+                         net (fo=2, routed)           0.810    13.181    MPP_Circuit/MPP_Reg/Register_0/out[7]
+    SLICE_X50Y9          FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.450    14.791    MPP_Circuit/MPP_Reg/Register_0/clk_IBUF_BUFG
+    SLICE_X50Y9          FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[7]/C
+                         clock pessimism              0.274    15.065    
+                         clock uncertainty           -0.035    15.030    
+    SLICE_X50Y9          FDRE (Setup_fdre_C_D)       -0.059    14.971    MPP_Circuit/MPP_Reg/Register_0/q_reg[7]
+  -------------------------------------------------------------------
+                         required time                         14.971    
+                         arrival time                         -13.181    
+  -------------------------------------------------------------------
+                         slack                                  1.790    
+
+Slack (MET) :             2.019ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_0/q_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.688ns  (logic 2.903ns (37.761%)  route 4.785ns (62.239%))
+  Logic Levels:           8  (CARRY4=3 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.791ns = ( 14.791 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          1.018     7.958    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y9          LUT6 (Prop_lut6_I0_O)        0.124     8.082 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_1/O
+                         net (fo=1, routed)           0.526     8.609    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[2]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.396     9.005 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.005    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_0
+    SLICE_X50Y10         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     9.224 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[0]
+                         net (fo=2, routed)           0.576     9.800    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0_n_7
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.295    10.095 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4/O
+                         net (fo=1, routed)           0.000    10.095    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.640    10.735 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[3]
+                         net (fo=1, routed)           0.499    11.234    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[6]
+    SLICE_X52Y10         LUT6 (Prop_lut6_I1_O)        0.306    11.540 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[6]_i_2/O
+                         net (fo=1, routed)           0.596    12.136    MPP_Circuit/control_unit/UpCounter/q_reg[6]_0
+    SLICE_X52Y8          LUT5 (Prop_lut5_I0_O)        0.150    12.286 r  MPP_Circuit/control_unit/UpCounter/q[6]_i_1/O
+                         net (fo=2, routed)           0.490    12.776    MPP_Circuit/MPP_Reg/Register_0/out[6]
+    SLICE_X52Y10         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.450    14.791    MPP_Circuit/MPP_Reg/Register_0/clk_IBUF_BUFG
+    SLICE_X52Y10         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[6]/C
+                         clock pessimism              0.274    15.065    
+                         clock uncertainty           -0.035    15.030    
+    SLICE_X52Y10         FDRE (Setup_fdre_C_D)       -0.235    14.795    MPP_Circuit/MPP_Reg/Register_0/q_reg[6]
+  -------------------------------------------------------------------
+                         required time                         14.795    
+                         arrival time                         -12.776    
+  -------------------------------------------------------------------
+                         slack                                  2.019    
+
+Slack (MET) :             2.146ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_1/q_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.547ns  (logic 2.903ns (38.466%)  route 4.644ns (61.534%))
+  Logic Levels:           8  (CARRY4=3 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.791ns = ( 14.791 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          1.018     7.958    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y9          LUT6 (Prop_lut6_I0_O)        0.124     8.082 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_1/O
+                         net (fo=1, routed)           0.526     8.609    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[2]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.396     9.005 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.005    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_0
+    SLICE_X50Y10         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     9.224 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[0]
+                         net (fo=2, routed)           0.576     9.800    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0_n_7
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.295    10.095 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4/O
+                         net (fo=1, routed)           0.000    10.095    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.640    10.735 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[3]
+                         net (fo=1, routed)           0.499    11.234    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[6]
+    SLICE_X52Y10         LUT6 (Prop_lut6_I1_O)        0.306    11.540 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[6]_i_2/O
+                         net (fo=1, routed)           0.596    12.136    MPP_Circuit/control_unit/UpCounter/q_reg[6]_0
+    SLICE_X52Y8          LUT5 (Prop_lut5_I0_O)        0.150    12.286 r  MPP_Circuit/control_unit/UpCounter/q[6]_i_1/O
+                         net (fo=2, routed)           0.349    12.635    MPP_Circuit/MPP_Reg/Register_1/out[6]
+    SLICE_X52Y9          FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.450    14.791    MPP_Circuit/MPP_Reg/Register_1/clk_IBUF_BUFG
+    SLICE_X52Y9          FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[6]/C
+                         clock pessimism              0.274    15.065    
+                         clock uncertainty           -0.035    15.030    
+    SLICE_X52Y9          FDRE (Setup_fdre_C_D)       -0.249    14.781    MPP_Circuit/MPP_Reg/Register_1/q_reg[6]
+  -------------------------------------------------------------------
+                         required time                         14.781    
+                         arrival time                         -12.635    
+  -------------------------------------------------------------------
+                         slack                                  2.146    
+
+Slack (MET) :             2.171ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_1/q_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.699ns  (logic 2.694ns (34.992%)  route 5.005ns (65.008%))
+  Logic Levels:           9  (CARRY4=2 LUT4=1 LUT5=3 LUT6=3)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.791ns = ( 14.791 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.279     6.845    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X52Y9          LUT5 (Prop_lut5_I1_O)        0.295     7.140 r  MPP_Circuit/control_unit/UpCounter/sum0_carry_i_2/O
+                         net (fo=14, routed)          0.849     7.989    MPP_Circuit/control_unit/UpCounter/q_reg[2]
+    SLICE_X51Y11         LUT6 (Prop_lut6_I2_O)        0.124     8.113 r  MPP_Circuit/control_unit/UpCounter/product__0_carry__0_i_2/O
+                         net (fo=2, routed)           0.599     8.712    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_2[1]
+    SLICE_X50Y10         LUT6 (Prop_lut6_I0_O)        0.124     8.836 r  MPP_Circuit/control_unit/UpCounter/product__0_carry__0_i_6/O
+                         net (fo=1, routed)           0.000     8.836    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_1[1]
+    SLICE_X50Y10         CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.578     9.414 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[2]
+                         net (fo=3, routed)           0.562     9.975    MPP_Circuit/control_unit/UpCounter/O[0]
+    SLICE_X51Y8          LUT4 (Prop_lut4_I0_O)        0.301    10.276 r  MPP_Circuit/control_unit/UpCounter/product__35_carry__0_i_2/O
+                         net (fo=1, routed)           0.542    10.818    MPP_Circuit/control_unit/UpCounter/product__35_carry__0_i_2_n_0
+    SLICE_X51Y10         LUT5 (Prop_lut5_I4_O)        0.124    10.942 r  MPP_Circuit/control_unit/UpCounter/product__35_carry__0_i_1/O
+                         net (fo=1, routed)           0.000    10.942    MPP_Circuit/Data_ALU_MPP/Multiplier/q[7]_i_3_0[0]
+    SLICE_X51Y10         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.247    11.189 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry__0/O[0]
+                         net (fo=1, routed)           0.307    11.496    MPP_Circuit/Data_ALU_MPP/Multiplier/product[7]
+    SLICE_X50Y11         LUT6 (Prop_lut6_I0_O)        0.299    11.795 r  MPP_Circuit/Data_ALU_MPP/Multiplier/q[7]_i_3/O
+                         net (fo=1, routed)           0.452    12.247    MPP_Circuit/control_unit/UpCounter/q_reg[7]_1
+    SLICE_X50Y11         LUT5 (Prop_lut5_I0_O)        0.124    12.371 r  MPP_Circuit/control_unit/UpCounter/q[7]_i_2/O
+                         net (fo=2, routed)           0.416    12.787    MPP_Circuit/MPP_Reg/Register_1/out[7]
+    SLICE_X51Y10         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.450    14.791    MPP_Circuit/MPP_Reg/Register_1/clk_IBUF_BUFG
+    SLICE_X51Y10         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[7]/C
+                         clock pessimism              0.274    15.065    
+                         clock uncertainty           -0.035    15.030    
+    SLICE_X51Y10         FDRE (Setup_fdre_C_D)       -0.072    14.958    MPP_Circuit/MPP_Reg/Register_1/q_reg[7]
+  -------------------------------------------------------------------
+                         required time                         14.958    
+                         arrival time                         -12.787    
+  -------------------------------------------------------------------
+                         slack                                  2.171    
+
+Slack (MET) :             2.197ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_0/q_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.662ns  (logic 2.813ns (36.715%)  route 4.849ns (63.285%))
+  Logic Levels:           8  (CARRY4=3 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 14.789 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          1.018     7.958    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y9          LUT6 (Prop_lut6_I0_O)        0.124     8.082 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_1/O
+                         net (fo=1, routed)           0.526     8.609    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[2]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.396     9.005 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.005    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_0
+    SLICE_X50Y10         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     9.224 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[0]
+                         net (fo=2, routed)           0.576     9.800    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0_n_7
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.295    10.095 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4/O
+                         net (fo=1, routed)           0.000    10.095    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.580    10.675 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[2]
+                         net (fo=1, routed)           0.613    11.288    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[5]
+    SLICE_X50Y11         LUT6 (Prop_lut6_I1_O)        0.302    11.590 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[5]_i_2/O
+                         net (fo=1, routed)           0.466    12.056    MPP_Circuit/control_unit/UpCounter/q_reg[5]_1
+    SLICE_X50Y11         LUT5 (Prop_lut5_I0_O)        0.124    12.180 r  MPP_Circuit/control_unit/UpCounter/q[5]_i_1/O
+                         net (fo=2, routed)           0.570    12.750    MPP_Circuit/MPP_Reg/Register_0/out[5]
+    SLICE_X49Y11         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.448    14.789    MPP_Circuit/MPP_Reg/Register_0/clk_IBUF_BUFG
+    SLICE_X49Y11         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[5]/C
+                         clock pessimism              0.260    15.049    
+                         clock uncertainty           -0.035    15.014    
+    SLICE_X49Y11         FDRE (Setup_fdre_C_D)       -0.067    14.947    MPP_Circuit/MPP_Reg/Register_0/q_reg[5]
+  -------------------------------------------------------------------
+                         required time                         14.947    
+                         arrival time                         -12.750    
+  -------------------------------------------------------------------
+                         slack                                  2.197    
+
+Slack (MET) :             2.486ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_1/q_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.423ns  (logic 2.813ns (37.893%)  route 4.610ns (62.107%))
+  Logic Levels:           8  (CARRY4=3 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.790ns = ( 14.790 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          1.018     7.958    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y9          LUT6 (Prop_lut6_I0_O)        0.124     8.082 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_1/O
+                         net (fo=1, routed)           0.526     8.609    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[2]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.396     9.005 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.005    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_0
+    SLICE_X50Y10         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     9.224 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[0]
+                         net (fo=2, routed)           0.576     9.800    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0_n_7
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.295    10.095 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4/O
+                         net (fo=1, routed)           0.000    10.095    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.580    10.675 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[2]
+                         net (fo=1, routed)           0.613    11.288    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[5]
+    SLICE_X50Y11         LUT6 (Prop_lut6_I1_O)        0.302    11.590 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[5]_i_2/O
+                         net (fo=1, routed)           0.466    12.056    MPP_Circuit/control_unit/UpCounter/q_reg[5]_1
+    SLICE_X50Y11         LUT5 (Prop_lut5_I0_O)        0.124    12.180 r  MPP_Circuit/control_unit/UpCounter/q[5]_i_1/O
+                         net (fo=2, routed)           0.332    12.512    MPP_Circuit/MPP_Reg/Register_1/out[5]
+    SLICE_X50Y11         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.449    14.790    MPP_Circuit/MPP_Reg/Register_1/clk_IBUF_BUFG
+    SLICE_X50Y11         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[5]/C
+                         clock pessimism              0.274    15.064    
+                         clock uncertainty           -0.035    15.029    
+    SLICE_X50Y11         FDRE (Setup_fdre_C_D)       -0.031    14.998    MPP_Circuit/MPP_Reg/Register_1/q_reg[5]
+  -------------------------------------------------------------------
+                         required time                         14.998    
+                         arrival time                         -12.512    
+  -------------------------------------------------------------------
+                         slack                                  2.486    
+
+Slack (MET) :             2.712ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.151ns  (logic 2.461ns (34.413%)  route 4.690ns (65.587%))
+  Logic Levels:           8  (CARRY4=3 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.788ns = ( 14.788 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          1.018     7.958    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y9          LUT6 (Prop_lut6_I0_O)        0.124     8.082 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_1/O
+                         net (fo=1, routed)           0.526     8.609    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[2]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.396     9.005 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.005    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_0
+    SLICE_X50Y10         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     9.224 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[0]
+                         net (fo=2, routed)           0.576     9.800    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0_n_7
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.295    10.095 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4/O
+                         net (fo=1, routed)           0.000    10.095    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    10.322 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[1]
+                         net (fo=1, routed)           0.464    10.786    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[4]
+    SLICE_X49Y11         LUT6 (Prop_lut6_I1_O)        0.303    11.089 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[4]_i_2/O
+                         net (fo=1, routed)           0.420    11.509    MPP_Circuit/control_unit/UpCounter/q_reg[4]_1
+    SLICE_X48Y12         LUT5 (Prop_lut5_I0_O)        0.124    11.633 r  MPP_Circuit/control_unit/UpCounter/q[4]_i_1/O
+                         net (fo=2, routed)           0.607    12.240    MPP_Circuit/MPP_Reg/Register_0/out[4]
+    SLICE_X48Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.447    14.788    MPP_Circuit/MPP_Reg/Register_0/clk_IBUF_BUFG
+    SLICE_X48Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/C
+                         clock pessimism              0.260    15.048    
+                         clock uncertainty           -0.035    15.013    
+    SLICE_X48Y12         FDRE (Setup_fdre_C_D)       -0.061    14.952    MPP_Circuit/MPP_Reg/Register_0/q_reg[4]
+  -------------------------------------------------------------------
+                         required time                         14.952    
+                         arrival time                         -12.240    
+  -------------------------------------------------------------------
+                         slack                                  2.712    
+
+Slack (MET) :             2.858ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_1/q_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        7.036ns  (logic 2.461ns (34.975%)  route 4.575ns (65.025%))
+  Logic Levels:           8  (CARRY4=3 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 14.789 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          1.018     7.958    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y9          LUT6 (Prop_lut6_I0_O)        0.124     8.082 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_1/O
+                         net (fo=1, routed)           0.526     8.609    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[2]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.396     9.005 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.005    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_0
+    SLICE_X50Y10         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     9.224 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0/O[0]
+                         net (fo=2, routed)           0.576     9.800    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry__0_n_7
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.295    10.095 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4/O
+                         net (fo=1, routed)           0.000    10.095    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_4_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[1]_O[1])
+                                                      0.227    10.322 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[1]
+                         net (fo=1, routed)           0.464    10.786    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[4]
+    SLICE_X49Y11         LUT6 (Prop_lut6_I1_O)        0.303    11.089 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[4]_i_2/O
+                         net (fo=1, routed)           0.420    11.509    MPP_Circuit/control_unit/UpCounter/q_reg[4]_1
+    SLICE_X48Y12         LUT5 (Prop_lut5_I0_O)        0.124    11.633 r  MPP_Circuit/control_unit/UpCounter/q[4]_i_1/O
+                         net (fo=2, routed)           0.492    12.125    MPP_Circuit/MPP_Reg/Register_1/out[4]
+    SLICE_X50Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.448    14.789    MPP_Circuit/MPP_Reg/Register_1/clk_IBUF_BUFG
+    SLICE_X50Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[4]/C
+                         clock pessimism              0.274    15.063    
+                         clock uncertainty           -0.035    15.028    
+    SLICE_X50Y12         FDRE (Setup_fdre_C_D)       -0.045    14.983    MPP_Circuit/MPP_Reg/Register_1/q_reg[4]
+  -------------------------------------------------------------------
+                         required time                         14.983    
+                         arrival time                         -12.125    
+  -------------------------------------------------------------------
+                         slack                                  2.858    
+
+Slack (MET) :             3.111ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        6.733ns  (logic 2.484ns (36.895%)  route 4.249ns (63.105%))
+  Logic Levels:           7  (CARRY4=2 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.788ns = ( 14.788 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          0.651     7.592    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y8          LUT6 (Prop_lut6_I5_O)        0.124     7.716 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_3/O
+                         net (fo=1, routed)           0.337     8.053    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[0]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[1]_O[3])
+                                                      0.610     8.663 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/O[3]
+                         net (fo=2, routed)           0.675     9.338    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_4
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.307     9.645 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_5/O
+                         net (fo=1, routed)           0.000     9.645    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_5_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.247     9.892 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[0]
+                         net (fo=1, routed)           0.444    10.336    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[3]
+    SLICE_X49Y8          LUT6 (Prop_lut6_I1_O)        0.299    10.635 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[3]_i_2/O
+                         net (fo=1, routed)           0.433    11.069    MPP_Circuit/control_unit/UpCounter/q_reg[3]_1
+    SLICE_X49Y8          LUT5 (Prop_lut5_I0_O)        0.124    11.193 r  MPP_Circuit/control_unit/UpCounter/q[3]_i_1/O
+                         net (fo=2, routed)           0.628    11.821    MPP_Circuit/MPP_Reg/Register_0/out[3]
+    SLICE_X48Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.447    14.788    MPP_Circuit/MPP_Reg/Register_0/clk_IBUF_BUFG
+    SLICE_X48Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/C
+                         clock pessimism              0.260    15.048    
+                         clock uncertainty           -0.035    15.013    
+    SLICE_X48Y12         FDRE (Setup_fdre_C_D)       -0.081    14.932    MPP_Circuit/MPP_Reg/Register_0/q_reg[3]
+  -------------------------------------------------------------------
+                         required time                         14.932    
+                         arrival time                         -11.821    
+  -------------------------------------------------------------------
+                         slack                                  3.111    
+
+Slack (MET) :             3.131ns  (required time - arrival time)
+  Source:                 MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            MPP_Circuit/MPP_Reg/Register_1/q_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        6.778ns  (logic 2.484ns (36.650%)  route 4.294ns (63.350%))
+  Logic Levels:           7  (CARRY4=2 LUT2=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 14.789 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.088ns
+    Clock Pessimism Removal (CPR):    0.274ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.567     5.088    MPP_Circuit/control_unit/UpCounter/clk_IBUF_BUFG
+    SLICE_X52Y12         FDRE                                         r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y12         FDRE (Prop_fdre_C_Q)         0.478     5.566 r  MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]/Q
+                         net (fo=63, routed)          1.080     6.646    MPP_Circuit/control_unit/UpCounter/cur_count_reg[2]_0
+    SLICE_X51Y11         LUT6 (Prop_lut6_I1_O)        0.295     6.941 r  MPP_Circuit/control_unit/UpCounter/q[0]_i_3/O
+                         net (fo=13, routed)          0.651     7.592    MPP_Circuit/control_unit/UpCounter/Input_select[0]
+    SLICE_X52Y8          LUT6 (Prop_lut6_I5_O)        0.124     7.716 r  MPP_Circuit/control_unit/UpCounter/product__0_carry_i_3/O
+                         net (fo=1, routed)           0.337     8.053    MPP_Circuit/Data_ALU_MPP/Multiplier/DI[0]
+    SLICE_X50Y9          CARRY4 (Prop_carry4_DI[1]_O[3])
+                                                      0.610     8.663 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry/O[3]
+                         net (fo=2, routed)           0.675     9.338    MPP_Circuit/Data_ALU_MPP/Multiplier/product__0_carry_n_4
+    SLICE_X51Y9          LUT2 (Prop_lut2_I0_O)        0.307     9.645 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_5/O
+                         net (fo=1, routed)           0.000     9.645    MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry_i_5_n_0
+    SLICE_X51Y9          CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.247     9.892 r  MPP_Circuit/Data_ALU_MPP/Multiplier/product__35_carry/O[0]
+                         net (fo=1, routed)           0.444    10.336    MPP_Circuit/Data_ALU_MPP/Subtractor/q_reg[6]_0[3]
+    SLICE_X49Y8          LUT6 (Prop_lut6_I1_O)        0.299    10.635 r  MPP_Circuit/Data_ALU_MPP/Subtractor/q[3]_i_2/O
+                         net (fo=1, routed)           0.433    11.069    MPP_Circuit/control_unit/UpCounter/q_reg[3]_1
+    SLICE_X49Y8          LUT5 (Prop_lut5_I0_O)        0.124    11.193 r  MPP_Circuit/control_unit/UpCounter/q[3]_i_1/O
+                         net (fo=2, routed)           0.673    11.866    MPP_Circuit/MPP_Reg/Register_1/out[3]
+    SLICE_X50Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    W5                                                0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    11.388 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.862    13.250    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.341 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          1.448    14.789    MPP_Circuit/MPP_Reg/Register_1/clk_IBUF_BUFG
+    SLICE_X50Y12         FDRE                                         r  MPP_Circuit/MPP_Reg/Register_1/q_reg[3]/C
+                         clock pessimism              0.274    15.063    
+                         clock uncertainty           -0.035    15.028    
+    SLICE_X50Y12         FDRE (Setup_fdre_C_D)       -0.031    14.997    MPP_Circuit/MPP_Reg/Register_1/q_reg[3]
+  -------------------------------------------------------------------
+                         required time                         14.997    
+                         arrival time                         -11.866    
+  -------------------------------------------------------------------
+                         slack                                  3.131    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.131ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_sync_0_reg/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_sync_1_reg/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.206ns  (logic 0.141ns (68.336%)  route 0.065ns (31.664%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.957ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.512ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.562     1.445    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X48Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_sync_0_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X48Y15         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  PushButton_Debouncer_MPP_Circuit/PB_sync_0_reg/Q
+                         net (fo=1, routed)           0.065     1.651    PushButton_Debouncer_MPP_Circuit/PB_sync_0
+    SLICE_X48Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_sync_1_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.830     1.957    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X48Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_sync_1_reg/C
+                         clock pessimism             -0.512     1.445    
+    SLICE_X48Y15         FDRE (Hold_fdre_C_D)         0.075     1.520    PushButton_Debouncer_MPP_Circuit/PB_sync_1_reg
+  -------------------------------------------------------------------
+                         required time                         -1.520    
+                         arrival time                           1.651    
+  -------------------------------------------------------------------
+                         slack                                  0.131    
+
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 sseg_mux_mpp/cycle_count_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            sseg_mux_mpp/cycle_count_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.962ns
+    Source Clock Delay      (SCD):    1.447ns
+    Clock Pessimism Removal (CPR):    0.515ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.564     1.447    sseg_mux_mpp/clk_IBUF_BUFG
+    SLICE_X54Y11         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X54Y11         FDRE (Prop_fdre_C_Q)         0.164     1.611 r  sseg_mux_mpp/cycle_count_reg[10]/Q
+                         net (fo=1, routed)           0.114     1.726    sseg_mux_mpp/cycle_count_reg_n_0_[10]
+    SLICE_X54Y11         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.836 r  sseg_mux_mpp/cycle_count_reg[8]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.836    sseg_mux_mpp/cycle_count_reg[8]_i_1_n_5
+    SLICE_X54Y11         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.835     1.962    sseg_mux_mpp/clk_IBUF_BUFG
+    SLICE_X54Y11         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[10]/C
+                         clock pessimism             -0.515     1.447    
+    SLICE_X54Y11         FDRE (Hold_fdre_C_D)         0.134     1.581    sseg_mux_mpp/cycle_count_reg[10]
+  -------------------------------------------------------------------
+                         required time                         -1.581    
+                         arrival time                           1.836    
+  -------------------------------------------------------------------
+                         slack                                  0.254    
+
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 sseg_mux_mpp/cycle_count_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            sseg_mux_mpp/cycle_count_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.962ns
+    Source Clock Delay      (SCD):    1.447ns
+    Clock Pessimism Removal (CPR):    0.515ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.564     1.447    sseg_mux_mpp/clk_IBUF_BUFG
+    SLICE_X54Y10         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X54Y10         FDRE (Prop_fdre_C_Q)         0.164     1.611 r  sseg_mux_mpp/cycle_count_reg[6]/Q
+                         net (fo=1, routed)           0.114     1.726    sseg_mux_mpp/cycle_count_reg_n_0_[6]
+    SLICE_X54Y10         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.836 r  sseg_mux_mpp/cycle_count_reg[4]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.836    sseg_mux_mpp/cycle_count_reg[4]_i_1_n_5
+    SLICE_X54Y10         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.835     1.962    sseg_mux_mpp/clk_IBUF_BUFG
+    SLICE_X54Y10         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[6]/C
+                         clock pessimism             -0.515     1.447    
+    SLICE_X54Y10         FDRE (Hold_fdre_C_D)         0.134     1.581    sseg_mux_mpp/cycle_count_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.581    
+                         arrival time                           1.836    
+  -------------------------------------------------------------------
+                         slack                                  0.254    
+
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 sseg_mux_mpp/cycle_count_reg[14]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            sseg_mux_mpp/cycle_count_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.960ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.514ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.563     1.446    sseg_mux_mpp/clk_IBUF_BUFG
+    SLICE_X54Y12         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[14]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X54Y12         FDRE (Prop_fdre_C_Q)         0.164     1.610 r  sseg_mux_mpp/cycle_count_reg[14]/Q
+                         net (fo=1, routed)           0.114     1.725    sseg_mux_mpp/cycle_count_reg_n_0_[14]
+    SLICE_X54Y12         CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.835 r  sseg_mux_mpp/cycle_count_reg[12]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.835    sseg_mux_mpp/cycle_count_reg[12]_i_1_n_5
+    SLICE_X54Y12         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.833     1.960    sseg_mux_mpp/clk_IBUF_BUFG
+    SLICE_X54Y12         FDRE                                         r  sseg_mux_mpp/cycle_count_reg[14]/C
+                         clock pessimism             -0.514     1.446    
+    SLICE_X54Y12         FDRE (Hold_fdre_C_D)         0.134     1.580    sseg_mux_mpp/cycle_count_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -1.580    
+                         arrival time                           1.835    
+  -------------------------------------------------------------------
+                         slack                                  0.254    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.368ns  (logic 0.249ns (67.612%)  route 0.119ns (32.388%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.958ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.562     1.445    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y14         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y14         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]/Q
+                         net (fo=2, routed)           0.119     1.705    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]
+    SLICE_X49Y14         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.813 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[8]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.813    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[8]_i_1_n_4
+    SLICE_X49Y14         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.831     1.958    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y14         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]/C
+                         clock pessimism             -0.513     1.445    
+    SLICE_X49Y14         FDRE (Hold_fdre_C_D)         0.105     1.550    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.550    
+                         arrival time                           1.813    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.368ns  (logic 0.249ns (67.612%)  route 0.119ns (32.388%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.957ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.512ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.562     1.445    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y15         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]/Q
+                         net (fo=2, routed)           0.119     1.705    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]
+    SLICE_X49Y15         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.813 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.813    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]_i_1_n_4
+    SLICE_X49Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.830     1.957    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]/C
+                         clock pessimism             -0.512     1.445    
+    SLICE_X49Y15         FDRE (Hold_fdre_C_D)         0.105     1.550    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[15]
+  -------------------------------------------------------------------
+                         required time                         -1.550    
+                         arrival time                           1.813    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.368ns  (logic 0.249ns (67.612%)  route 0.119ns (32.388%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.958ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.562     1.445    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y13         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y13         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]/Q
+                         net (fo=3, routed)           0.119     1.705    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]
+    SLICE_X49Y13         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.813 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.813    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]_i_1_n_4
+    SLICE_X49Y13         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.831     1.958    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y13         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]/C
+                         clock pessimism             -0.513     1.445    
+    SLICE_X49Y13         FDRE (Hold_fdre_C_D)         0.105     1.550    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.550    
+                         arrival time                           1.813    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.264ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.563     1.446    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y12         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y12         FDRE (Prop_fdre_C_Q)         0.141     1.587 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]/Q
+                         net (fo=3, routed)           0.120     1.707    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]
+    SLICE_X49Y12         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.815 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[0]_i_2/O[3]
+                         net (fo=1, routed)           0.000     1.815    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[0]_i_2_n_4
+    SLICE_X49Y12         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.832     1.959    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y12         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]/C
+                         clock pessimism             -0.513     1.446    
+    SLICE_X49Y12         FDRE (Hold_fdre_C_D)         0.105     1.551    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.551    
+                         arrival time                           1.815    
+  -------------------------------------------------------------------
+                         slack                                  0.264    
+
+Slack (MET) :             0.267ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.372ns  (logic 0.256ns (68.766%)  route 0.116ns (31.234%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.957ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.512ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.562     1.445    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y15         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]/Q
+                         net (fo=2, routed)           0.116     1.702    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]
+    SLICE_X49Y15         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     1.817 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.817    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]_i_1_n_7
+    SLICE_X49Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.830     1.957    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y15         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]/C
+                         clock pessimism             -0.512     1.445    
+    SLICE_X49Y15         FDRE (Hold_fdre_C_D)         0.105     1.550    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -1.550    
+                         arrival time                           1.817    
+  -------------------------------------------------------------------
+                         slack                                  0.267    
+
+Slack (MET) :             0.267ns  (arrival time - required time)
+  Source:                 PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.372ns  (logic 0.256ns (68.766%)  route 0.116ns (31.234%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.958ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.562     1.445    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y13         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y13         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]/Q
+                         net (fo=3, routed)           0.116     1.702    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]
+    SLICE_X49Y13         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     1.817 r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.817    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]_i_1_n_7
+    SLICE_X49Y13         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    clk_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
+                         net (fo=56, routed)          0.831     1.958    PushButton_Debouncer_MPP_Circuit/clk_IBUF_BUFG
+    SLICE_X49Y13         FDRE                                         r  PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]/C
+                         clock pessimism             -0.513     1.445    
+    SLICE_X49Y13         FDRE (Hold_fdre_C_D)         0.105     1.550    PushButton_Debouncer_MPP_Circuit/PB_cnt_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.550    
+                         arrival time                           1.817    
+  -------------------------------------------------------------------
+                         slack                                  0.267    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y0  clk_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[2]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X49Y11   MPP_Circuit/MPP_Reg/Register_0/q_reg[5]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X52Y10   MPP_Circuit/MPP_Reg/Register_0/q_reg[6]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X50Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[7]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X51Y8    MPP_Circuit/MPP_Reg/Register_1/q_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[0]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[1]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[1]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[2]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[2]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[0]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[1]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[1]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[2]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X51Y9    MPP_Circuit/MPP_Reg/Register_0/q_reg[2]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[3]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X48Y12   MPP_Circuit/MPP_Reg/Register_0/q_reg[4]/C
+
+
+
