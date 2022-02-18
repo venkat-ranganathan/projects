@@ -10,6 +10,8 @@ struct foo
 
 int main()
 {
+    struct foo f;
+
     printf("Size of char: %ld\n", sizeof(char));
     printf("Size of short: %ld\n", sizeof(short));
     printf("Size of int: %ld\n", sizeof(int));
@@ -17,5 +19,10 @@ int main()
     printf("Size of double: %ld\n", sizeof(double));
     printf("Size of int pointer: %ld\n", sizeof(int *));
 
-    printf("Size of struct f: %ld\n", sizeof(struct foo));
+    printf("Size of struct foo: %ld\n", sizeof(struct foo));
+
+    printf("Address of f.y: %p\n", &f.y);
+    printf("Address of f.s: %p\n", &f.s);
+    printf("Address of f.x: %p\n", &f.x);
+    printf("Address of f.ptr: %p\n", &f.ptr);
 }
