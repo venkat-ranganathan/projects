@@ -1,1 +1,5 @@
 CS212: Programming II for Engineers
+|C|S|2|1|2|:| |P|r|o|g|r|a|m|m|i|n|g| |I|I| |f|o|r| |E|n|g|i|n|e|e|r|s
+|c|s|2|1|2|:| |p|R|O|G|R|A|M|M|I|N|G| |i|i| |F|O|R| |e|N|G|I|N|E|E|R|S
+|s|r|e|e|n|i|g|n|E| |r|o|f| |I|I| |g|n|i|m|m|a|r|g|o|r|P| |:|2|1|2|S|C
+|S|1|:|P|o|r|m|i|g|I| |o| |n|i|e|r
