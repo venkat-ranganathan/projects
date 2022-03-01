@@ -131,24 +131,86 @@ void writeFileSwitchCase(char outputfile[], const char buffer[])
 // write to new file (from buffer) but reverse the order of characters
 void writeFileReverse(char outputfile[], const char buffer[]) 
 {
+     // Created a different named stream
+    FILE *stream; 
+
+    // Opened outpufile, which is a reference to whatever "name" is set to in the main file
+    stream = fopen(outputfile, "a"); 
+
+    // Adding new line before writing the string
+    fprintf(stream, "\n"); 
+
+    // Declaring size and setting value to 0
+    int size = 0;
+
+    // While loop adds '1' to size for every character in buffer until '\0' is reached
+    while (buffer[size] != '\0')
+    {
+        size++;
+    }
+
+    // Declaring i and setting value to 0
+    int i = 0; 
+
+    // This separates each character in the array so you can add new characters between each character
+    while (buffer[i] != '\0') 
+    {
+        for(i = size - 1; i >= 0; i--)
+        {
+            // This loop adds '|' after each character until '\0' is reached
+            fprintf(stream, "|%c", buffer[i]); 
+        }
+    }
+    
+    // Closing file
+    fclose(stream); 
 
 }
 
-/* // write to new file (from buffer) but only write odd characters
+// write to new file (from buffer) but only write odd characters
 void writeFileOddIndex(char outputfile[], const char buffer[]) 
 {
+     // Created a different named stream
+    FILE *stream; 
+
+    // Opened outpufile, which is a reference to whatever "name" is set to in the main file
+    stream = fopen(outputfile, "a"); 
+
+    // Adding new line before writing the string
+    fprintf(stream, "\n"); 
+
+    // Declaring i and setting value to 0
+    int i = 0; 
+
+    // While loop continues until termination character, '\0' is reached
+    while (buffer[i] != '\0') 
+    {
+        // Continues increments 'i' if i is an even number
+        if (i % 2 == 0)
+        {
+            i++;
+        }
+
+        // Prints buffer value with '|' added before it as long as i is not an even number
+        else
+        {
+            // This loop adds '|' after each character until '\0' is reached
+            fprintf(stream, "|%c", buffer[i++]); 
+        }
+    }
     
-} */
+    // Closing file
+    fclose(stream); 
+}
 
 int main(void)
 {
     char name[] = "lab2.txt";
-    //char name2[] = "outputfile.txt";
     char buffer[STR_SIZE] = "";
 
     readFile(name, buffer);
     writeFile(name, buffer);
     writeFileSwitchCase(name, buffer);
     writeFileReverse(name, buffer);
-    //writeFileOddIndex(name, buffer);
+    writeFileOddIndex(name, buffer);
 }
