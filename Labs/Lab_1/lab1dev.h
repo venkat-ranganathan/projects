@@ -6,11 +6,11 @@
 #include <limits.h>
 #define NUM_SIZE 32
 
+// Need this version to run on my linux system
 #include "lab1dev.c"
 
-//int main(void); // header incomplete, must declare functions in header lab1dev.h (implicit declaration compile warning was present)
-
-//void welcome(char name[]);
-//unsigned int leftmostOnePos(unsigned int number);
+/* // Need this version to run on the school's linux system via BASH
+void welcome(char name[]);
+unsigned int leftmostOnePos(unsigned int number); */
 
 #endif

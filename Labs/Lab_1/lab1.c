@@ -6,7 +6,7 @@
 
 int main(void)
 {
-    char name[] = "CS212";
+    char name[] = "Testing this document that prints names";
 
     welcome(name);
 

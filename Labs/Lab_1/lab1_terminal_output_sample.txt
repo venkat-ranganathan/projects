@@ -1,0 +1,10 @@
+Hello, Testing this document that prints names
+########## Test-1: leftmostOnePos(4) ##########
+> Passed Test-1!
+########## Test-2: leftmostOnePos(250) ##########
+> Passed Test-2!
+########## Test-3: leftmostOnePos(SHRT_MAX) ##########
+> Passed Test-3!
+> Passed leftmostOnePos() tests!
+
+> All Tests Passed Successfully!
