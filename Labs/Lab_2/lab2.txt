@@ -1,5 +1,5 @@
-CS212: Programming II for Engineers
-|C|S|2|1|2|:| |P|r|o|g|r|a|m|m|i|n|g| |I|I| |f|o|r| |E|n|g|i|n|e|e|r|s
-|c|s|2|1|2|:| |p|R|O|G|R|A|M|M|I|N|G| |i|i| |F|O|R| |e|N|G|I|N|E|E|R|S
-|s|r|e|e|n|i|g|n|E| |r|o|f| |I|I| |g|n|i|m|m|a|r|g|o|r|P| |:|2|1|2|S|C
-|S|1|:|P|o|r|m|i|g|I| |o| |n|i|e|r
+Testing the file zero, one, two, three, four, five, six, seven, eight, nine
+|T|e|s|t|i|n|g| |t|h|e| |f|i|l|e| |z|e|r|o|,| |o|n|e|,| |t|w|o|,| |t|h|r|e|e|,| |f|o|u|r|,| |f|i|v|e|,| |s|i|x|,| |s|e|v|e|n|,| |e|i|g|h|t|,| |n|i|n|e
+|t|E|S|T|I|N|G| |T|H|E| |F|I|L|E| |Z|E|R|O|,| |O|N|E|,| |T|W|O|,| |T|H|R|E|E|,| |F|O|U|R|,| |F|I|V|E|,| |S|I|X|,| |S|E|V|E|N|,| |E|I|G|H|T|,| |N|I|N|E
+|e|n|i|n| |,|t|h|g|i|e| |,|n|e|v|e|s| |,|x|i|s| |,|e|v|i|f| |,|r|u|o|f| |,|e|e|r|h|t| |,|o|w|t| |,|e|n|o| |,|o|r|e|z| |e|l|i|f| |e|h|t| |g|n|i|t|s|e|T
+|e|t|n| |h| |i|e|z|r|,|o|e| |w|,|t|r|e| |o|r| |i|e| |i|,|s|v|n| |i|h|,|n|n

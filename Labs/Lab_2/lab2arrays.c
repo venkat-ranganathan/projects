@@ -1,5 +1,5 @@
 #include "lab2arrays.h"
-//#include "lab2arrays.h"
+#include "lab2arrays.h"
 
 // Read characters from file and store into buffer
 void readFile(char inputfile[], char buffer[]) 
