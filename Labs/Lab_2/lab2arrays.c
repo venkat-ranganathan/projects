@@ -126,7 +126,7 @@ void writeFileSwitchCase(char outputfile[], const char buffer[])
     fclose(stream); 
 }
 
-// write to new file (from buffer) but reverse the order of characters
+// Write to new file (from buffer) but reverse the order of characters
 void writeFileReverse(char outputfile[], const char buffer[]) 
 {
      // Created a different named stream
@@ -163,10 +163,9 @@ void writeFileReverse(char outputfile[], const char buffer[])
     
     // Closing file
     fclose(stream); 
-
 }
 
-// write to new file (from buffer) but only write odd characters
+// Write to new file (from buffer) but only write odd characters
 void writeFileOddIndex(char outputfile[], const char buffer[]) 
 {
      // Created a different named stream
