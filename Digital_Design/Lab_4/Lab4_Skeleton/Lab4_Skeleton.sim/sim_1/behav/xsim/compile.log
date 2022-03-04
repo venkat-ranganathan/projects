@@ -1,0 +1,24 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Control_ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Control_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Data_ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Data_ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Flags.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Flags
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/GPP_circuit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module GPP_circuit
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Input_Select.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Input_Select
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Instruction_Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instruction_Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Instruction_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Instruction_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/MPP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MPP
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/PushButton_Debouncer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PushButton_Debouncer
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sources_1/new/Reg_File.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Reg_File
+INFO: [VRFC 10-2263] Analyzing Verilog file "G:/My Drive/GPP/GPP.srcs/sim_1/new/GPP_Simulation.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module GPP_Simulation
