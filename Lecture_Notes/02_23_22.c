@@ -42,19 +42,19 @@ int insert(Node *list, int n) // function to insert data point
     return 0;
 }
 
-int delete(Node *list) // function to delete data point, not working properly from lecture, wait for posted code
+void delete(Node *list) // function to delete data point, not working properly from lecture, wait for posted code
 {
     Node *ptr;
 
     ptr = list;
 
-    while(list != NULL) // continue loop unless the next data is NULL
+    if(list == NULL)
+        return;
+
+    while(list->next != NULL) // continue loop unless the next data is NULL
     {
-        if(list->next != NULL)
-        {
-            ptr = list; // set pointer to list
-            list = list->next; // set list as next
-        }
+        ptr = list; // set pointer to list
+        list = list->next; // set list as next
         /* else
         {
             //list->next = ptr;
@@ -84,9 +84,18 @@ int main()
 
     print(anchor);
 
-    printf("Insert 2: %d\n", insert(anchor, 2)); // should output both 1 and 2 before printing "Insert" portion, check posted code // SOLVED check below
+   /*  printf("Insert 2: %d\n", insert(anchor, 2)); // should output both 1 and 2 before printing "Insert" portion, check posted code // SOLVED check below
     print(anchor); // need this line to print second number
 
-    delete(anchor); // calls delete function to remove anchor
+    printf("Delete 2: \n");
+    delete(anchor); // calls delete function to remove anchor */
+
+    for(int i = 0; i < 10; i++)
+    {
+        printf("Insert %d status: %d\n", i, insert(anchor, i));
+    }
+    print(anchor);
+
+    Node *tmp = search(anchor, 5);
     print(anchor);
 }
