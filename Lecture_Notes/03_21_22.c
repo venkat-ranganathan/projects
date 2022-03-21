@@ -21,7 +21,7 @@ int main()
     printf("first letter of third string in array: %c\n", **(ptr+2));
 
     printf("second letter of first string in array: %c\n", strings[0][1]);
-    printf("third letter of second string in array: %c\n", strings[1][1]);
+    printf("third letter of second string in array: %c\n", strings[1][2]);
     printf("second letter of third string in array: %c\n", *(*(ptr+2) + 1));
 
 }
