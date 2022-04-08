@@ -13,11 +13,15 @@ int main()
     unsigned int left_button_pressed;
     unsigned int last_right_button_state = (PINB & (1 << 5));
     unsigned int right_button_pressed;
-    // Configure red LED
-    DDRD |= (1 << 1); // configure pin as output
+
+    // Configure MOTORS
+    DDRD |= (0 << 3) | (0 << 5) | (1 << 6); // Right and left motors FORWARD
+    DDRB != (1 << 3);
+
     // Configure left push-button
     DDRB &= ~(1 << 1); // configure pin as input
     PORTB |= (1 << 1); // enable pull-up resistor
+
     // Configure right push-button
     DDRB &= ~(1 << 5);
     PORTB |= (1 << 5);
@@ -30,14 +34,16 @@ int main()
         {
             pwm_counter = 0;
         }
-        // Do PWM on red LED
+        // Do PWM on MOTORS
         if (pwm_counter < duty_cycle)
         {
-            PORTD |= (1 << 1); // Turn on red LED
+            PORTD |= (0 << 3) | (0 << 5) | (1 << 6); // Turn on MOTORS M1 & M2
+            PORTB |= (1 << 3);
         }
         else
         {
-            PORTD &= ~(1 << 1); // Turn off red LED
+            PORTD &= ~((0 << 3) | (0 << 5) | (1 << 6)); // Turn OFF motors M1 & M2
+            PORTB &= ~(1 << 3);
         }
         // Pulser for left button
         if ((PINB & (1 << 1)) != last_left_button_state)
