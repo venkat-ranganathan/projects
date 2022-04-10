@@ -55,7 +55,6 @@ int main()
 			}
 			last_left_button_state = (PINB & (1 << 1));
 		}
-
 		else
 		{
 			left_button_pressed = 0;
@@ -70,7 +69,6 @@ int main()
 			}
 			last_right_button_state = (PINB & (1 << 5));
 		}
-
 		else
 		{
 			right_button_pressed = 0;
