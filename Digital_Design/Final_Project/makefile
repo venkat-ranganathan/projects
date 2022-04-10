@@ -6,15 +6,15 @@ default: compile
 
 all: program
 
-compile: main.c  
-	avr-gcc  $(CCOPTS) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -o main -g main.c lcd_driver.o 
+compile: lcd.c  
+	avr-gcc  $(CCOPTS) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -o lcd -g lcd.c lcd_driver.o 
 	    
 hex: compile
-	avr-strip main
-	avr-objcopy -R .eeprom -O ihex main main.hex
+	avr-strip lcd
+	avr-objcopy -R .eeprom -O ihex lcd lcd.hex
 
 program: hex
-	avrdude -p m328p -c avrisp2 -P COM5 -U flash:w:main.hex
+	avrdude -p m328p -c avrisp2 -P COM5 -U flash:w:lcd.hex
 
 clean:
-	rm main main.hex
+	rm lcd lcd.hex
