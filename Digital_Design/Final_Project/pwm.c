@@ -95,6 +95,15 @@ int main()
                 duty_cycle = PWM_TOP;
             }
         }
+
+        // All MOTORS BRAKE
+        else
+        {
+            PORTD ^= (1 << 6) | (1 << 5);
+            PORTD ^= (1 << 3);
+            PORTB ^= (1 << 3);
+        }
+
         // small delay to slow down main loop
         _delay_us(10);
     }

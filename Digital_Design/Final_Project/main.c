@@ -49,6 +49,14 @@ int main()
 			PORTD ^= (0 << 3) | (0 << 5) | (0 << 6);
 			PORTB ^= (1 << 3); // Turn RIGHT
 		}
+
+		// All MOTORS BRAKE
+		else
+		{
+			PORTD ^= (1 << 6) | (1 << 5);
+			PORTD ^= (1 << 3);
+			PORTB ^= (1 << 3);
+		}
 	}
 	return 0;
 }
