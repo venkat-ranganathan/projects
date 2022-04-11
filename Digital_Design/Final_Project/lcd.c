@@ -76,8 +76,17 @@ int main()
 
 		if (left_button_pressed == 1)
 		{
-			count--;
-			LCD_print_hex16(count);
+			if (count != 0)
+			{
+				count--;
+				LCD_print_hex16(count);
+			}
+
+			else
+			{
+				count = 0;
+				LCD_print_hex16(count);
+			}
 		}
 
 		if (right_button_pressed == 1)
