@@ -17,4 +17,4 @@
 
 // changes directions to find +/- X-coordinate
 
-// breaks/ends program
+// MOTORS brake and XY coordinates cleared

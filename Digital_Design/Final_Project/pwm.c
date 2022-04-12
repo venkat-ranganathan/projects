@@ -40,13 +40,6 @@ int main()
 
     while (1)
     {
-
-        // 1) initialize LCD driver
-        // initialize_LCD_driver();
-
-        // 2) turn on LCD after startup
-        // LCD_execute_command(TURN_ON_DISPLAY);
-
         // 3) clear lcd buffer for refresh new data
         // LCD_execute_command(CLEAR_DISPLAY);
 
