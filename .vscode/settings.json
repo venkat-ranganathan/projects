@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "port_macros.h": "c"
+        "port_macros.h": "c",
+        "stdint.h": "c"
     }
 }

@@ -28,6 +28,11 @@
 #include "lcd_driver.h"
 #include "port_macros.h"
 
+#define F_CPU 20000000
+
+#define PWM_TOP 100
+#define INCREMENT 5
+
 int main()
 {
     unsigned int last_left_button_state = (PINB & (1 << 1));
@@ -38,14 +43,17 @@ int main()
     unsigned int right_button_pressed;
     unsigned int stage = 1; // 1 is choose x, 2 is choose y, 3 is move
 
+    unsigned int pwm_counter = 1;
+    unsigned int duty_cycle = 10;
+
     initialize_LCD_driver();
     LCD_execute_command(TURN_ON_DISPLAY);
     int8_t xcoord = 0;
     int8_t ycoord = 0;
 
     // Configure MOTORS
-    DDRD |= (1 << 3) | (1 << 5) | (1 << 6); // SET RIGHT AND LEFT MOTORS AS OUTPUT
-    DDRB |= (1 << 3);                       // PD3 AND PB3 ARE OUTPUTS FOR MOTOR 2 / M2
+    DDRD |= (1 << 3) | (1 << 5) | (1 << 6); // Right and left motors FORWARD
+    DDRB |= (1 << 3);
 
     while (1)
     {
@@ -81,12 +89,12 @@ int main()
         }
         LCD_execute_command(CLEAR_DISPLAY);
         LCD_move_cursor_to_col_row(0, 0);
-        sprintf(char_x, "X:%2d", xcoord); // What does the %2 of %2d do?
-        LCD_print_String(char_x);         // Prints X Coord
+        sprintf(char_x, "X:%2d", xcoord);
+        LCD_print_String(char_x); // Prints X Coord
         LCD_move_cursor_to_col_row(0, 1);
         sprintf(char_y, "Y:%2d", ycoord);
         LCD_print_String(char_y); // Prints Y coord
-        _delay_s(6);
+        _delay_ms(50);
 
         //=========================PULSERS=====================================
         // Pulser for left button
@@ -133,6 +141,36 @@ int main()
 
         if (stage == 3)
         {
+            // DELAY after setting final coordinate to prevent motors from starting too soon
+            _delay_ms(6000);
+
+            // PWM Counter
+            pwm_counter = pwm_counter + 1;
+            if (pwm_counter >= PWM_TOP)
+            {
+                pwm_counter = 0;
+            }
+            // Do PWM on MOTORS
+            if (pwm_counter < duty_cycle)
+            {
+                PORTD |= (0 << 3) | (0 << 5) | (1 << 6); // Turn on MOTORS M1 & M2
+                PORTB |= (1 << 3);
+
+                // RUN MOTORS for specific amount of time
+                _delay_ms(3000);
+
+                // BRAKE MOTORS after timed run ends
+                PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // Turn OFF motors M1 & M2
+                PORTB &= ~(1 << 3);
+
+                duty_cycle = 0;
+            }
+            else
+            {
+                // BRAKE MOTORS 1 & 2
+                PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6));
+                PORTB &= ~(1 << 3);
+            }
             // MOTOR 1 / M1 / LEFT MOTOR
 
             // MOTOR 2 / M2 / RIGHT MOTOR
