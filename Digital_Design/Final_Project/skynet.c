@@ -44,8 +44,8 @@ int main()
     int8_t ycoord = 0;
 
     // Configure MOTORS
-    DDRD |= (1 << 3) | (1 << 5) | (1 << 6); // Right and left motors FORWARD
-    DDRB |= (1 << 3);
+    DDRD |= (1 << 3) | (1 << 5) | (1 << 6); // SET RIGHT AND LEFT MOTORS AS OUTPUT
+    DDRB |= (1 << 3);                       // PD3 AND PB3 ARE OUTPUTS FOR MOTOR 2 / M2
 
     while (1)
     {
@@ -81,8 +81,8 @@ int main()
         }
         LCD_execute_command(CLEAR_DISPLAY);
         LCD_move_cursor_to_col_row(0, 0);
-        sprintf(char_x, "X:%2d", xcoord);
-        LCD_print_String(char_x); // Prints X Coord
+        sprintf(char_x, "X:%2d", xcoord); // What does the %2 of %2d do?
+        LCD_print_String(char_x);         // Prints X Coord
         LCD_move_cursor_to_col_row(0, 1);
         sprintf(char_y, "Y:%2d", ycoord);
         LCD_print_String(char_y); // Prints Y coord
@@ -130,9 +130,13 @@ int main()
         }
 
         //=========================MOTORS======================================
-        // MOTOR 1 / M1 / LEFT MOTOR
 
-        // MOTOR 2 / M2 / RIGHT MOTOR
+        if (stage == 3)
+        {
+            // MOTOR 1 / M1 / LEFT MOTOR
+
+            // MOTOR 2 / M2 / RIGHT MOTOR
+        }
     }
     return 0;
 }
