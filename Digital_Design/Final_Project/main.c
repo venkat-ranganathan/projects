@@ -23,17 +23,17 @@ int main()
 	long ycoord = 0;
 	long absxcoord = 0;
 	long absycoord = 0;
-	long velocity[] = {0, 500000, 450000, 171500, 150000, 140000, // 0 - 5
-					   135000, 125000, 120000, 115000, 110000,	  // 6- 10
-					   107000, 105000, 103000, 102500, 101000,	  // 11 - 15
-					   100000, 97000, 95000, 94500, 94000,		  // 16 - 20
-					   93500, 93000, 92750, 92500, 92250,		  // 21 - 25
-					   92000, 91500, 91000, 90500, 90000};		  // 26 - 30
-	long rot_time_L = 12600;
-	long rot_time_R = 12600;
-	long aboutface_time = 20000;
+	long velocity[] = {0, 440000, 265000, 220000, 190000, 170000, // 0 - 5
+					   157000, 148000, 142000, 135000, 129000,	  // 6- 10
+					   125000, 120000, 117000, 113500, 110500,	  // 11 - 15
+					   107500, 103500, 100500, 99500, 99000,	  // 16 - 20
+					   98500, 98000, 97750, 97500, 97250,		  // 21 - 25
+					   94000, 93500, 93000, 93500, 92000};		  // 26 - 30
+	long rot_time_L = 13750;
+	long rot_time_R = 14075;
+	long aboutface_time = 21400;
 	unsigned int duty_cycleL = 100; // Duty cycle for left motor
-	unsigned int duty_cycleR = 102; // Duty cycle for right motor
+	unsigned int duty_cycleR = 103; // Duty cycle for right motor
 	unsigned int last_left_button_state = (PINB & (1 << 1));
 	unsigned int left_button_pressed = 0;
 	unsigned int last_middle_button_state = (PINB & (1 << 4));
