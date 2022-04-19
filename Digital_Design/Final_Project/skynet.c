@@ -13,7 +13,70 @@ void turnright();
 int main()
 {
     long time = 0;
-    long velocity_coefficient = 105500;
+    long velocity_coefficient = 0;
+    long velocity_coefficient_x = 0;
+    long velocity_coefficient_y = 0;
+    long velocity[] = {0, 500000,
+                       450000,
+                       171500,
+                       150000,
+                       140000,
+                       135000,
+                       125000,
+                       120000,
+                       115000,
+                       110000,
+                       107000,
+                       105000,
+                       103000,
+                       102500,
+                       101000,
+                       100000,
+                       97000,
+                       95000,
+                       94500,
+                       94000,
+                       93500,
+                       93000,
+                       92750,
+                       92500,
+                       92250,
+                       92000,
+                       91500,
+                       91000,
+                       90500,
+                       90000};
+
+    /* long velocity[1] = 500000;
+    long velocity[2] = 450000;
+    long velocity[3] = 171500;
+    long velocity[4] = 150000;
+    long velocity[5] = 140000;
+    long velocity[6] = 135000;
+    long velocity[7] = 125000;
+    long velocity[8] = 120000;
+    long velocity[9] = 115000;
+    long velocity[10] = 110000;
+    long velocity[11] = 107000;
+    long velocity[12] = 105000;
+    long velocity[13] = 103000;
+    long velocity[14] = 102500;
+    long velocity[15] = 101000;
+    long velocity[16] = 100000;
+    long velocity[17] = 97000;
+    long velocity[18] = 95000;
+    long velocity[19] = 94500;
+    long velocity[20] = 94000;
+    long velocity[21] = 93500;
+    long velocity[22] = 93000;
+    long velocity[23] = 92750;
+    long velocity[24] = 92500;
+    long velocity[25] = 92250;
+    long velocity[26] = 92000;
+    long velocity[27] = 91500;
+    long velocity[28] = 91000;
+    long velocity[29] = 90500;
+    long velocity[30] = 90000; */
     unsigned int pwm_counter = 0;
     unsigned int duty_cycleL = 100;      // Duty cycle for left motor
     unsigned int duty_cycleR = 102;      // Duty cycle for right motor
@@ -73,7 +136,19 @@ int main()
         {
             lcd_display(xcoord, ycoord, stage);
         }
-        //===============================MOVEMENT==================================
+        //===============================SELECTING APPROPRIATE VELOCITY RATIO=====
+        for (int i = 0; i < 31; i++)
+        {
+            if (xcoord == i)
+            {
+                velocity_coefficient_x = velocity[i];
+            }
+            if (ycoord == i)
+            {
+                velocity_coefficient_y = velocity[i];
+            }
+        }
+        //===============================MOVEMENT=================================
         //================================STAGE 3=================================
         if (stage == 3)
         {
@@ -111,7 +186,7 @@ int main()
 
                     // for below if statement
                     // changed from 100000 to the absolute value of the y coordinate times 100000
-                    if (time == (velocity_coefficient / 30) * ycoord) // 100000) // this value is second*100000 //eg 5 sec = 500000
+                    if (time == (velocity_coefficient_y / 30) * ycoord) // 100000) // this value is second*100000 //eg 5 sec = 500000
                     {
                         break;
                     }
@@ -156,8 +231,8 @@ int main()
                     {
                         break;
                     }
-                    time++;
                     _delay_us(10);
+                    time++;
                 }
                 PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                 PORTB |= (1 << 3);
@@ -190,7 +265,7 @@ int main()
                         PORTD &= ~((1 << 3)); // COAST MOTORS
                         PORTB &= ~(1 << 3);
                     }
-                    if (time == (velocity_coefficient / 30) * ycoord) // this value is second*100000 //eg 5 sec = 500000
+                    if (time == (velocity_coefficient_y / 30) * abs(ycoord)) // this value is second*100000 //eg 5 sec = 500000
                     {
                         break;
                     }
@@ -351,7 +426,7 @@ int main()
                         else
                         {
                             PORTD &= ~((1 << 5) | (1 << 6)); // COAST MOTORS
-                                              }
+                        }
                         if (pwm_counter < duty_cycleR)
                         {
                             PORTD |= (1 << 3); // RIGHT
@@ -406,7 +481,7 @@ int main()
                     PORTD &= ~((1 << 3)); // COAST MOTORS
                     PORTB &= ~(1 << 3);
                 }
-                if (time == (velocity_coefficient / 30) * xcoord) // this value is second*100000 //eg 5 sec = 500000
+                if (time == (velocity_coefficient_x / 30) * abs(xcoord)) // this value is second*100000 //eg 5 sec = 500000
                 {
                     break;
                 }
