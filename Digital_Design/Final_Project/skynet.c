@@ -16,7 +16,8 @@ int main()
     long velocity_coefficient = 0;
     long velocity_coefficient_x = 0;
     long velocity_coefficient_y = 0;
-    long velocity[] = {0, 500000,
+    long velocity[] = {0,
+                       500000,
                        450000,
                        171500,
                        150000,
@@ -186,12 +187,12 @@ int main()
 
                     // for below if statement
                     // changed from 100000 to the absolute value of the y coordinate times 100000
-                    if (time == (velocity_coefficient_y / 30) * ycoord) // 100000) // this value is second*100000 //eg 5 sec = 500000
+                    if (time == (velocity_coefficient_y / 30) * abs(ycoord)) // 100000) // this value is second*100000 //eg 5 sec = 500000
                     {
                         break;
                     }
                     time++;
-                    _delay_us(10);
+                    ////_delay_us(10);
                 }
                 PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                 PORTB |= (1 << 3);
@@ -231,7 +232,7 @@ int main()
                     {
                         break;
                     }
-                    _delay_us(10);
+                    //_delay_us(10);
                     time++;
                 }
                 PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
@@ -270,7 +271,7 @@ int main()
                         break;
                     }
                     time++;
-                    _delay_us(10);
+                    //_delay_us(10);
                 }
                 PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                 PORTB |= (1 << 3);
@@ -316,7 +317,7 @@ int main()
                             break;
                         }
                         time++;
-                        _delay_us(10);
+                        //_delay_us(10);
                     }
                     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                     PORTB |= (1 << 3);
@@ -357,7 +358,7 @@ int main()
                             break;
                         }
                         time++;
-                        _delay_us(10);
+                        //_delay_us(10);
                     }
                     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                     PORTB |= (1 << 3);
@@ -401,7 +402,7 @@ int main()
                             break;
                         }
                         time++;
-                        _delay_us(10);
+                        //_delay_us(10);
                     }
                     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                     PORTB |= (1 << 3);
@@ -442,7 +443,7 @@ int main()
                             break;
                         }
                         time++;
-                        _delay_us(10);
+                        //_delay_us(10);
                     }
                     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
                     PORTB |= (1 << 3);
@@ -486,7 +487,7 @@ int main()
                     break;
                 }
                 time++;
-                _delay_us(10);
+                //_delay_us(10);
             }
             PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
             PORTB |= (1 << 3);
@@ -533,7 +534,7 @@ int main()
             right_button_pressed = 0;
         }
         //===========================DELAY==================================
-        _delay_us(10);
+        //_delay_us(10);
     }
     return 0;
 }
@@ -592,7 +593,7 @@ void lcd_display(int8_t x, int8_t y, int stage)
             break;
         }
         time++;
-        _delay_us(10);
+        //_delay_us(10);
     }
     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
     PORTB |= (1 << 3);
@@ -635,7 +636,7 @@ void lcd_display(int8_t x, int8_t y, int stage)
             break;
         }
         time++;
-        _delay_us(10);
+        //_delay_us(10);
     }
     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
     PORTB |= (1 << 3);
@@ -680,7 +681,7 @@ void lcd_display(int8_t x, int8_t y, int stage)
             break;
         }
         time++;
-        _delay_us(10);
+        //_delay_us(10);
     }
     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
     PORTB |= (1 << 3);
@@ -721,7 +722,7 @@ void lcd_display(int8_t x, int8_t y, int stage)
             break;
         }
         time++;
-        _delay_us(10);
+        //_delay_us(10);
     }
     PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
     PORTB |= (1 << 3);
