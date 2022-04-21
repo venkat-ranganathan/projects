@@ -23,15 +23,15 @@ int main()
 	long ycoord = 0;
 	long absxcoord = 0;
 	long absycoord = 0;
-	long velocity[] = {0, 440000, 265000, 220000, 190000, 170000, // 0 - 5
-					   157000, 148000, 142000, 135000, 129000,	  // 6- 10
-					   125000, 120000, 117000, 113500, 110500,	  // 11 - 15
-					   107500, 103500, 100500, 99500, 99000,	  // 16 - 20
-					   98500, 98000, 97750, 97500, 97250,		  // 21 - 25
-					   94000, 93500, 93000, 93500, 92000};		  // 26 - 30
-	long rot_time_L = 13750;
-	long rot_time_R = 14075;
-	long aboutface_time = 21400;
+	long velocity[] = {0, 300000, 205000, 174000, 155000, 140000, // 0 - 5
+					   132500, 127000, 120000, 117000, 114000,	  // 6- 10
+					   113000, 112000, 112000, 110000, 107500,	  // 11 - 15
+					   104500, 103500, 102500, 100750, 100500,	  // 16 - 20
+					   99500, 98750, 98000, 97500, 97250,		  // 21 - 25
+					   95000, 93500, 93250, 93500, 92650};		  // 26 - 30
+	long rot_time_L = 12750;
+	long rot_time_R = 13980; // 14065
+	long aboutface_time = 21000;
 	unsigned int duty_cycleL = 100; // Duty cycle for left motor
 	unsigned int duty_cycleR = 103; // Duty cycle for right motor
 	unsigned int last_left_button_state = (PINB & (1 << 1));
@@ -254,7 +254,9 @@ void move_y(long velocity_coefficient_y, long absycoord, unsigned int duty_cycle
 		time++;
 		_delay_us(10);
 	}
-	PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+	PORTD |= (1 << 5) | (1 << 6); // BRAKE MOTORS
+	_delay_us(50);				  // Delay before braking right motor sicne it brakes before left
+	PORTD |= (1 << 3);
 	PORTB |= (1 << 3);
 }
 //=============MOVE_X================
@@ -296,7 +298,9 @@ void move_x(long velocity_coefficient_x, long absxcoord, unsigned int duty_cycle
 		time++;
 		_delay_us(10);
 	}
-	PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+	PORTD |= (1 << 5) | (1 << 6); // BRAKE MOTORS
+	_delay_us(50);				  // Delay before braking right motor sicne it brakes before left
+	PORTD |= (1 << 3);
 	PORTB |= (1 << 3);
 }
 //=============ROTATE_90_LEFT================
