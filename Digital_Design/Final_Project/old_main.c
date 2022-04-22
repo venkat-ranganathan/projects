@@ -1,6 +1,4 @@
 // Ben Telfer and Prasanna Ranganathan
-// EECE 287 - Spring 2022 - Binghamton University
-// This program recieves coordinates inputted by the user, and moves to those coordinates
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,39 +9,38 @@
 #define PWM_TOP 500
 
 void lcd_display(int8_t x, int8_t y, int stage);
-void move_y(long distance_time_y, unsigned int duty_cycleL, unsigned int duty_cycleR);
-void move_x(long distance_time_x, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void move_y(long velocity_coefficient_y, long absycoord, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void move_x(long velocity_coefficient_x, long absxcoord, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void about_face(long aboutface_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 
 int main()
 {
+	long velocity_coefficient_x = 0;
+	long velocity_coefficient_y = 0;
 	long xcoord = 0;
 	long ycoord = 0;
 	long absxcoord = 0;
 	long absycoord = 0;
-	long distance_time_x = 0;
-	long distance_time_y = 0;
-	long distance_times[] = {0, 10000, 13667, 17400, 20667, 23333, // 0 - 5"
-							 26500, 29633, 32000, 35100, 38000,	   // 6 - 10"
-							 41433, 44800, 48533, 51333, 53750,	   // 11 - 15"
-							 55733, 58650, 61500, 63808, 67000,	   // 16 - 20"
-							 69650, 72417, 75133, 78000, 81042,	   // 21 - 25"
-							 82333, 84150, 87033, 89900, 92650};   // 26 - 30"
-
+	long velocity[] = {0, 300000, 205000, 174000, 155000, 140000, // 0 - 5
+					   132500, 127000, 120000, 117000, 114000,	  // 6- 10
+					   113000, 112000, 112000, 110000, 107500,	  // 11 - 15
+					   104500, 103500, 102500, 100750, 100500,	  // 16 - 20
+					   99500, 98750, 98000, 97500, 97250,		  // 21 - 25
+					   95000, 93500, 93250, 93000, 92650};		  // 26 - 30
 	long rot_time_L = 12750;
-	long rot_time_R = 13980;
+	long rot_time_R = 13980; // 14065
 	long aboutface_time = 21000;
-	unsigned int duty_cycleL = 100;
-	unsigned int duty_cycleR = 103;
+	unsigned int duty_cycleL = 100; // Duty cycle for left motor
+	unsigned int duty_cycleR = 103; // Duty cycle for right motor
 	unsigned int last_left_button_state = (PINB & (1 << 1));
 	unsigned int left_button_pressed = 0;
 	unsigned int last_middle_button_state = (PINB & (1 << 4));
 	unsigned int middle_button_pressed = 0;
 	unsigned int last_right_button_state = (PINB & (1 << 5));
 	unsigned int right_button_pressed = 0;
-	unsigned int stage = 1;
+	unsigned int stage = 1;		 // 1 is choose x, 2 is choose y, 3 is move
 	DDRD |= (1 << 5) | (1 << 6); // Left Motor
 	DDRD |= (1 << 3);			 // Right Motor
 	DDRB |= (1 << 3);			 // Right Motor
@@ -58,7 +55,7 @@ int main()
 
 	while (1)
 	{
-		//===========================SELECTING COORDS===============================
+		//===========================SELECTING COORDS=============================
 		if (middle_button_pressed == 1)
 		{
 			stage++;
@@ -85,37 +82,40 @@ int main()
 				ycoord++;
 			}
 		}
-		lcd_display(xcoord, ycoord, stage); // Displays coordinates and stage on LCD
-		//=================SELECTING APPROPRIATE DISTANCE TIMING====================
+		if (stage != 0)
+		{
+			lcd_display(xcoord, ycoord, stage);
+		}
+		//=================SELECTING APPROPRIATE VELOCITY RATIO===================
 		absxcoord = abs(xcoord);
 		absycoord = abs(ycoord);
 		for (int i = 0; i < 31; i++)
 		{
 			if (absxcoord == i)
 			{
-				distance_time_x = distance_times[i];
+				velocity_coefficient_x = velocity[i];
 			}
 			if (absycoord == i)
 			{
-				distance_time_y = distance_times[i];
+				velocity_coefficient_y = velocity[i];
 			}
 		}
-		//===============================MOVEMENT===================================
-		//================================STAGE 3===================================
+		//===============================MOVEMENT=================================
+		//================================STAGE 3=================================
 		if (stage == 3)
 		{
 			if (ycoord >= 0)
 			{ // MOVE Y
-				move_y(distance_time_y, duty_cycleL, duty_cycleR);
+				move_y(velocity_coefficient_y, absycoord, duty_cycleL, duty_cycleR);
 			}
 			else if (ycoord < 0)
-			{ // ABOUT FACE (to the left)
+			{ // ABOUT FACE
 				about_face(aboutface_time, duty_cycleL, duty_cycleR);
 				// MOVE Y
-				move_y(distance_time_y, duty_cycleL, duty_cycleR);
+				move_y(velocity_coefficient_y, absycoord, duty_cycleL, duty_cycleR);
 			}
 		}
-		//================================STAGE 4===================================
+		//================================STAGE 4=================================
 		if (stage == 4)
 		{
 			if (ycoord >= 0)
@@ -145,13 +145,13 @@ int main()
 				}
 			}
 		}
-		//=================================STAGE 5==================================
+		//=================================STAGE 5================================
 		if (stage == 5)
 		{ // MOVE X
-			move_x(distance_time_x, duty_cycleL, duty_cycleR);
+			move_x(velocity_coefficient_x, absxcoord, duty_cycleL, duty_cycleR);
 			stage++;
 		}
-		//================================PULSERS===================================
+		//=========================PULSERS========================================
 		// LEFT BUTTON
 		if ((PINB & (1 << 1)) != last_left_button_state)
 		{
@@ -191,6 +191,7 @@ int main()
 		{
 			right_button_pressed = 0;
 		}
+		//===========================DELAY========================================
 		_delay_us(10);
 	}
 	return 0;
@@ -205,97 +206,101 @@ void lcd_display(int8_t x, int8_t y, int stage)
 	LCD_execute_command(CLEAR_DISPLAY);
 	LCD_move_cursor_to_col_row(0, 0);
 	sprintf(char_x, "X:%2d", x);
-	LCD_print_String(char_x); // Prints xcoord
+	LCD_print_String(char_x); // Prints X Coord
 	LCD_move_cursor_to_col_row(0, 1);
 	sprintf(char_y, "Y:%2d", y);
-	LCD_print_String(char_y); // Prints ycoord
+	LCD_print_String(char_y); // Prints Y coord
 	LCD_move_cursor_to_col_row(6, 1);
 	sprintf(char_s, "%2d", stage);
-	LCD_print_String(char_s); // Prints stage
+	LCD_print_String(char_s); // Prints Y coord
 	_delay_ms(50);
 }
 //=============MOVE_Y================
-void move_y(long distance_time_y, unsigned int duty_cycleL, unsigned int duty_cycleR)
+void move_y(long velocity_coefficient_y, long absycoord, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
 	long time = 0;
 	unsigned int pwm_counter = 0;
 	_delay_ms(1000);
 	while (1)
 	{
-		pwm_counter++;
+		pwm_counter++; // PWM pwm_counter
 		if (pwm_counter >= PWM_TOP)
 		{
 			pwm_counter = 0;
 		}
 		if (pwm_counter < duty_cycleL)
 		{
-			PORTD &= ~(1 << 5);
+			PORTD &= ~(1 << 5); // LEFT
 			PORTD |= (1 << 6);
-		} // LEFT FORWARD
+		} // LEFT //FORWARD
 		else
 		{
 			PORTD &= ~((1 << 5) | (1 << 6));
 		} // COAST MOTORS
 		if (pwm_counter < duty_cycleR)
 		{
-			PORTD &= ~(1 << 3);
+			PORTD &= ~(1 << 3); // RIGHT
 			PORTB |= (1 << 3);
-		} // RIGHT FORWARD
+		} // RIGHT //REVERSE => Turn right
 		else
 		{
 			PORTD &= ~((1 << 3)); // COAST MOTORS
 			PORTB &= ~(1 << 3);
 		}
-		if (time == distance_time_y)
+		if (time == (velocity_coefficient_y / 30) * absycoord)
 		{
 			break;
 		}
 		time++;
 		_delay_us(10);
 	}
-	PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+	PORTD |= (1 << 5) | (1 << 6); // BRAKE MOTORS
+	_delay_us(50);				  // Delay before braking right motor sicne it brakes before left
+	PORTD |= (1 << 3);
 	PORTB |= (1 << 3);
 }
-//==============MOVE_X================
-void move_x(long distance_time_x, unsigned int duty_cycleL, unsigned int duty_cycleR)
+//=============MOVE_X================
+void move_x(long velocity_coefficient_x, long absxcoord, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
 	long time = 0;
 	unsigned int pwm_counter = 0;
 	_delay_ms(1000);
 	while (1)
 	{
-		pwm_counter++;
+		pwm_counter++; // PWM pwm_counter
 		if (pwm_counter >= PWM_TOP)
 		{
 			pwm_counter = 0;
 		}
 		if (pwm_counter < duty_cycleL)
 		{
-			PORTD &= ~(1 << 5);
+			PORTD &= ~(1 << 5); // LEFT
 			PORTD |= (1 << 6);
-		} // LEFT FORWARD
+		} // LEFT //FORWARD
 		else
 		{
 			PORTD &= ~((1 << 5) | (1 << 6));
 		} // COAST MOTORS
 		if (pwm_counter < duty_cycleR)
 		{
-			PORTD &= ~(1 << 3);
+			PORTD &= ~(1 << 3); // RIGHT
 			PORTB |= (1 << 3);
-		} // RIGHT FORWARD
+		} // RIGHT //REVERSE => Turn right
 		else
 		{
 			PORTD &= ~((1 << 3)); // COAST MOTORS
 			PORTB &= ~(1 << 3);
 		}
-		if (time == distance_time_x)
+		if (time == (velocity_coefficient_x / 30) * absxcoord)
 		{
 			break;
 		}
 		time++;
 		_delay_us(10);
 	}
-	PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+	PORTD |= (1 << 5) | (1 << 6); // BRAKE MOTORS
+	_delay_us(50);				  // Delay before braking right motor sicne it brakes before left
+	PORTD |= (1 << 3);
 	PORTB |= (1 << 3);
 }
 //=============ROTATE_90_LEFT================
@@ -306,31 +311,31 @@ void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty
 	_delay_ms(1000);
 	while (1)
 	{
-		pwm_counter++;
+		pwm_counter++; // PWM pwm_counter
 		if (pwm_counter >= PWM_TOP)
 		{
 			pwm_counter = 0;
 		}
 		if (pwm_counter < duty_cycleL)
 		{
-			PORTD |= (1 << 5);
+			PORTD |= (1 << 5); // LEFT
 			PORTD &= ~(1 << 6);
-		} // LEFT REVERSE
+		} // LEFT //FORWARD
 		else
 		{
 			PORTD &= ~((1 << 5) | (1 << 6));
 		} // COAST MOTORS
 		if (pwm_counter < duty_cycleR)
 		{
-			PORTD &= ~(1 << 3);
+			PORTD &= ~(1 << 3); // RIGHT
 			PORTB |= (1 << 3);
-		} // RIGHT FORWARD
+		} // RIGHT //REVERSE => Turn right
 		else
 		{
 			PORTD &= ~((1 << 3)); // COAST MOTORS
 			PORTB &= ~(1 << 3);
 		}
-		if (time == rot_time_L)
+		if (time == rot_time_L) // this value is second*100000 //eg 5 sec = 500000
 		{
 			break;
 		}
@@ -348,31 +353,31 @@ void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int dut
 	_delay_ms(1000);
 	while (1)
 	{
-		pwm_counter++;
+		pwm_counter++; // PWM pwm_counter
 		if (pwm_counter >= PWM_TOP)
 		{
 			pwm_counter = 0;
 		}
 		if (pwm_counter < duty_cycleL)
 		{
-			PORTD &= ~(1 << 5);
+			PORTD &= ~(1 << 5); // LEFT
 			PORTD |= (1 << 6);
-		} // LEFT FORWARD
+		} // LEFT //FORWARD
 		else
 		{
 			PORTD &= ~((1 << 5) | (1 << 6));
 		} // COAST MOTORS
 		if (pwm_counter < duty_cycleR)
 		{
-			PORTD |= (1 << 3);
+			PORTD |= (1 << 3); // RIGHT
 			PORTB &= ~(1 << 3);
-		} // RIGHT REVERSE
+		} // RIGHT //REVERSE => Turn right
 		else
 		{
 			PORTD &= ~((1 << 3)); // COAST MOTORS
 			PORTB &= ~(1 << 3);
 		}
-		if (time == rot_time_R)
+		if (time == rot_time_R) // this value is second*100000 //eg 5 sec = 500000
 		{
 			break;
 		}
@@ -382,7 +387,7 @@ void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int dut
 	PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
 	PORTB |= (1 << 3);
 }
-//===============ABOUT_FACE===(to the left)=============
+//===============ABOUT_FACE===============
 void about_face(long aboutface_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
 	long time = 0;
@@ -390,31 +395,31 @@ void about_face(long aboutface_time, unsigned int duty_cycleL, unsigned int duty
 	_delay_ms(1000);
 	while (1)
 	{
-		pwm_counter++;
+		pwm_counter++; // PWM pwm_counter
 		if (pwm_counter >= PWM_TOP)
 		{
 			pwm_counter = 0;
 		}
 		if (pwm_counter < duty_cycleL)
 		{
-			PORTD |= (1 << 5);
+			PORTD |= (1 << 5); // LEFT
 			PORTD &= ~(1 << 6);
-		} // LEFT REVERSE
+		} // LEFT //FORWARD
 		else
 		{
 			PORTD &= ~((1 << 5) | (1 << 6));
 		} // COAST MOTORS
 		if (pwm_counter < duty_cycleR)
 		{
-			PORTD &= ~(1 << 3);
+			PORTD &= ~(1 << 3); // RIGHT
 			PORTB |= (1 << 3);
-		} // RIGHT FORWARD
+		} // RIGHT //REVERSE => Turn right
 		else
 		{
 			PORTD &= ~((1 << 3)); // COAST MOTORS
 			PORTB &= ~(1 << 3);
 		}
-		if (time == aboutface_time)
+		if (time == aboutface_time) // this value is second*100000 //eg 5 sec = 500000
 		{
 			break;
 		}
