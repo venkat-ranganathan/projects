@@ -10,6 +10,8 @@
 #include "port_macros.h"
 #define PWM_TOP 500
 
+// test comment remove and delete extra row
+
 void lcd_display(int8_t x, int8_t y, int stage);
 void move_y(long distance_time_y, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void move_x(long distance_time_x, unsigned int duty_cycleL, unsigned int duty_cycleR);
