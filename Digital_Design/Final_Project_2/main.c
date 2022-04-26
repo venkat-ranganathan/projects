@@ -48,7 +48,7 @@ int main()
 				LCD_move_cursor_to_col_row(0, 0);
 				sprintf(char_RS_status_0, "%d", RS_status_0);
 				LCD_print_String(char_RS_status_0); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			else
 			{
@@ -60,7 +60,7 @@ int main()
 				LCD_move_cursor_to_col_row(0, 0);
 				sprintf(char_RS_status_0, "%d", RS_status_0);
 				LCD_print_String(char_RS_status_0); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			if ((PINC & (1 << 1)) == 1)
 			{
@@ -72,7 +72,7 @@ int main()
 				LCD_move_cursor_to_col_row(1, 0);
 				sprintf(char_RS_status_1, "%d", RS_status_1);
 				LCD_print_String(char_RS_status_1); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			else
 			{
@@ -84,7 +84,7 @@ int main()
 				LCD_move_cursor_to_col_row(1, 0);
 				sprintf(char_RS_status_1, "%d", RS_status_1);
 				LCD_print_String(char_RS_status_1); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			if ((PINC & (1 << 2)) == 1)
 			{
@@ -96,7 +96,7 @@ int main()
 				LCD_move_cursor_to_col_row(2, 0);
 				sprintf(char_RS_status_2, "%d", RS_status_2);
 				LCD_print_String(char_RS_status_2); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			else
 			{
@@ -108,7 +108,7 @@ int main()
 				LCD_move_cursor_to_col_row(2, 0);
 				sprintf(char_RS_status_2, "%d", RS_status_2);
 				LCD_print_String(char_RS_status_2); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			if ((PINC & (1 << 3)) == 1)
 			{
@@ -120,7 +120,7 @@ int main()
 				LCD_move_cursor_to_col_row(3, 0);
 				sprintf(char_RS_status_3, "%d", RS_status_3);
 				LCD_print_String(char_RS_status_3); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			else
 			{
@@ -132,7 +132,7 @@ int main()
 				LCD_move_cursor_to_col_row(3, 0);
 				sprintf(char_RS_status_3, "%d", RS_status_3);
 				LCD_print_String(char_RS_status_3); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			if ((PINC & (1 << 4)) == 1)
 			{
@@ -144,7 +144,7 @@ int main()
 				LCD_move_cursor_to_col_row(4, 0);
 				sprintf(char_RS_status_4, "%d", RS_status_4);
 				LCD_print_String(char_RS_status_4); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 			else
 			{
@@ -156,7 +156,7 @@ int main()
 				LCD_move_cursor_to_col_row(4, 0);
 				sprintf(char_RS_status_4, "%d", RS_status_4);
 				LCD_print_String(char_RS_status_4); // Prints xcoord
-				_delay_ms(50);
+				_delay_us(10);
 			}
 		}
 	}
