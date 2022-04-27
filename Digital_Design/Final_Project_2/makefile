@@ -37,7 +37,7 @@ MOTOR: main.c
 	avr-gcc  $(CCOPTS) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -o main -g main.c lcd_driver.o
 	avr-strip main
 	avr-objcopy -R .eeprom -O ihex main main.hex
-	avrdude -c avrisp2 -P COM3 -p m328p -U flash:w:main.hex 
+	avrdude -c avrisp2 -P COM5 -p m328p -U flash:w:main.hex 
 	rm main main.hex
 
 SKYNET: skynet.c
