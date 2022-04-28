@@ -1,0 +1,7 @@
+#PROJECT_2 notes
+
+- Reflectance sensors and LCD output is working as expected, all sensors work properly on replacement 3pi
+(Need to return working 3pi to Prof. Jain after Project_2 presentation)
+
+
+
