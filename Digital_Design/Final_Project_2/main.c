@@ -10,6 +10,7 @@
 #include "port_macros.h"
 #define PWM_TOP 500
 
+// Need a move forward void function
 void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void about_face(long aboutface_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
@@ -74,7 +75,7 @@ int main()
 				RS_status[i] = 0;
 			}
 		}
-		char char_RS_status_0[8];
+		char char_RS_status_0[8]; // Maybe try char char_RS_status_[i][8]?
 		char char_RS_status_1[8];
 		char char_RS_status_2[8];
 		char char_RS_status_3[8];
