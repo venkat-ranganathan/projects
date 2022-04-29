@@ -10,7 +10,8 @@
 #include "port_macros.h"
 #define PWM_TOP 500
 
-// Need a move forward void function
+// Need LCD function?
+void move_y(long distance_time_y, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void about_face(long aboutface_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
