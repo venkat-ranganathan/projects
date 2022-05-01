@@ -20,11 +20,11 @@ int main()
 {
 	// Left and Right motor settings
 
-	long rot_time_L = 12750;
-	long rot_time_R = 13980;
+	long rot_time_L = 0;
+	long rot_time_R = 0;
 
-	unsigned int duty_cycleL = 100;
-	unsigned int duty_cycleR = 103;
+	unsigned int duty_cycleL = 0;
+	unsigned int duty_cycleR = 0;
 
 	long ycoord = 0;
 	long absycoord = 0;
@@ -143,226 +143,34 @@ void display(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4)
 void navigate(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4)
 {
 	long rot_time_L = 1000;
-	long rot_time_R = 1600;
+	long rot_time_R = 1000;
 
-	unsigned int duty_cycleL = 100;
-	unsigned int duty_cycleR = 150;
+	unsigned int duty_cycleL = 53;
+	unsigned int duty_cycleR = 51;
 
-	long distance_time = 450;
+	long distance_time = 17400;
 
 	// Conditionals to navigate forward
 
-	if ((((RS_1 & RS_3) >= 1)))
+	if ((RS_1 & RS_3) >= 1)
 	{
 		// Move straight
 
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	if ((((RS_1 & RS_2 & RS_3) >= 1)))
+	if (((RS_2 | RS_3) >= 1) & ((RS_1) <= 0))
 	{
-		// Move straight
+		// Makes small right rotations to straighten movement
 
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct right oversteer
-
-	if ((((RS_1 & RS_2) >= 1)))
-	{
-		//_delay_ms(1);
-		// Move straight
-		duty_cycleL = 0;
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct significant right oversteer
-
-	if ((((RS_2 & RS_3) >= 1)))
-	{
-		// Move straight
-		duty_cycleR = 0;
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct left oversteer
-
-	if ((((RS_3 & RS_4) >= 1)))
-	{
-		//_delay_ms(1);
-		// Move straight
-		duty_cycleR = 0;
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct significant left oversteer
-
-	if ((((RS_0 & RS_1 & RS_2) >= 1)))
-	{
-		// Move straight
-		// duty_cycleL = 0;
-		rot_time_L = 3000;
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct significant left oversteer
-
-	if ((((RS_0 & RS_1 & RS_2 & RS_3) >= 1)))
-	{
-		// Move straight
-		// duty_cycleL = 0;
-		rot_time_L = 3000;
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	if ((((RS_0 & RS_1 & RS_2 & RS_4) >= 1)))
-	{
-		// Move straight
-		// duty_cycleL = 0;
-		rot_time_L = 3000;
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct significant left oversteer
-
-	if ((((RS_1 & RS_2 & RS_3 & RS_4) >= 1)))
-	{
-		// Move straight
-		// duty_cycleR = 0;
-		rot_time_R = 4000;
 		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	if ((((RS_0 & RS_2 & RS_3 & RS_4) >= 1)))
+	if (((RS_1 | RS_2) >= 1) & ((RS_3) <= 0))
 	{
-		// Move straight
-		// duty_cycleR = 0;
-		rot_time_R = 4000;
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
+		// Makes small left rotations to straighten movement
 
-	// Conditional to correct significant left oversteer
-
-	if ((((RS_2 & RS_3 & RS_4) >= 1)))
-	{
-		// Move straight
-		// duty_cycleR = 10;
-		rot_time_R = 4000;
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((((RS_0 & RS_4) >= 1)))
-	{
-		int r = rand() % 2;
-		// Move straight
-
-		if (r = 0)
-		{
-			rot_time_R = 2000;
-			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-			move(distance_time, duty_cycleL, duty_cycleR);
-		}
-
-		if (r = 1)
-		{
-			rot_time_L = 2000;
-			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-			move(distance_time, duty_cycleL, duty_cycleR);
-		}
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((((RS_0) >= 1) & (RS_1 & RS_2 & RS_3 & RS_4) <= 0))
-	{
-		// Move straight
 		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((((RS_4) >= 1) & (RS_0 & RS_1 & RS_2 & RS_3) <= 0))
-	{
-		// Move straight
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((((RS_3) >= 1) & (RS_0 & RS_1 & RS_2 & RS_4) <= 0))
-	{
-		// Move straight
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((((RS_2) >= 1) & (RS_0 & RS_1 & RS_3 & RS_4) <= 0))
-	{
-		// Move straight
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((((RS_1) >= 1) & (RS_0 & RS_2 & RS_3 & RS_4) <= 0))
-	{
-		// Move straight
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
-
-	// Conditional to correct edge of grid
-
-	if ((RS_0 & RS_1 & RS_2 & RS_3 & RS_4) <= 0)
-	{
-		int r = rand() % 2;
-		// Move straight
-
-		if (r = 0)
-		{
-			rot_time_R = 2000;
-			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-			move(distance_time, duty_cycleL, duty_cycleR);
-		}
-
-		if (r = 1)
-		{
-			rot_time_L = 2000;
-			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-			move(distance_time, duty_cycleL, duty_cycleR);
-		}
-	}
-
-	if ((RS_0 & RS_1 & RS_2 & RS_3 & RS_4) >= 1)
-	{
-		int r = rand() % 2;
-		// Move straight
-
-		if (r = 0)
-		{
-			rot_time_R = 2000;
-			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-			move(distance_time, duty_cycleL, duty_cycleR);
-		}
-
-		if (r = 1)
-		{
-			rot_time_L = 2000;
-			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-			move(distance_time, duty_cycleL, duty_cycleR);
-		}
 	}
 }
 //=============move================

@@ -35,8 +35,8 @@ int main()
 	long rot_time_L = 12750;
 	long rot_time_R = 13980;
 	long aboutface_time = 21000;
-	unsigned int duty_cycleL = 100;
-	unsigned int duty_cycleR = 103;
+	unsigned int duty_cycleL = 53;
+	unsigned int duty_cycleR = 51;
 	unsigned int last_left_button_state = (PINB & (1 << 1));
 	unsigned int left_button_pressed = 0;
 	unsigned int last_middle_button_state = (PINB & (1 << 4));
@@ -253,8 +253,13 @@ void move_y(long distance_time_y, unsigned int duty_cycleL, unsigned int duty_cy
 		time++;
 		_delay_us(10);
 	}
-	PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+	// BRAKE RIGHT MOTORS
+	PORTD |= (1 << 3);
 	PORTB |= (1 << 3);
+
+	//_delay_ms(1);
+	// BRAKE LEFT MOTORS
+	PORTD |= (1 << 5) | (1 << 6);
 }
 //==============MOVE_X================
 void move_x(long distance_time_x, unsigned int duty_cycleL, unsigned int duty_cycleR)
