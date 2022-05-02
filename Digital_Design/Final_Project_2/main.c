@@ -135,7 +135,7 @@ void display(int RS_status[])
 
 	// Add small delay at end so LCD doesn't refresh too fast
 
-	_delay_ms(50);
+	//_delay_ms(50);
 }
 
 // Navigation function
@@ -204,39 +204,15 @@ void navigate(int RS_status[])
 
 	if ((RS_status[4] >= 1) & (RS_status[0] & RS_status[1] & RS_status[2] & RS_status[3]) <= 0)
 	{
-		duty_cycleL++;
-		duty_cycleR--;
-
-		long rot_time_R = 5000;
-
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
 	}
 
 	// Conditional to handle left corner
 
-	if ((RS_status[0] >= 1) & (RS_status[1] & RS_status[2] & RS_status[3] & RS_status[4]) <= 0)
-	{
-		duty_cycleL--;
-		duty_cycleR++;
-		duty_cycleL--;
-		duty_cycleR++;
-		duty_cycleL--;
-		duty_cycleR++;
-		duty_cycleL--;
-		duty_cycleR++;
-		duty_cycleL--;
-		duty_cycleR++;
-		duty_cycleL--;
-		duty_cycleR++;
+	/* 	if ((RS_status[0] >= 1) & (RS_status[1] & RS_status[2] & RS_status[3] & RS_status[4]) <= 0)
+		{
+		} */
 
-		long rot_time_L = 5000;
-
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-	}
+	// Conditional to handle 3-way intersection top
 
 	// Conditional to handle 3-way intersection right
 
