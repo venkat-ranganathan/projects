@@ -10,8 +10,8 @@
 #include "port_macros.h"
 #define PWM_TOP 500
 
-void display(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4);
-void navigate(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4);
+void display(int RS_status[]);
+void navigate(int RS_status[]);
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int duty_cycleR);
@@ -86,17 +86,17 @@ int main()
 
 		// Calls navigation function
 
-		navigate(RS_status[0], RS_status[1], RS_status[2], RS_status[3], RS_status[4]);
+		navigate(RS_status);
 
 		// Calls display function
 
-		display(RS_status[0], RS_status[1], RS_status[2], RS_status[3], RS_status[4]);
+		display(RS_status);
 	}
 }
 
 // Display function shows status of reflectance sensors on LCD display
 
-void display(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4)
+void display(int RS_status[])
 {
 
 	// Create RS_status character variables to output to LCD
@@ -114,64 +114,143 @@ void display(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4)
 	// Print out reflectance sensor states to LCD
 
 	LCD_move_cursor_to_col_row(0, 0);
-	sprintf(char_RS_status_0, "%d", RS_0);
+	sprintf(char_RS_status_0, "%d", RS_status[0]);
 	LCD_print_String(char_RS_status_0);
 
 	LCD_move_cursor_to_col_row(1, 0);
-	sprintf(char_RS_status_1, "%d", RS_1);
+	sprintf(char_RS_status_1, "%d", RS_status[1]);
 	LCD_print_String(char_RS_status_1);
 
 	LCD_move_cursor_to_col_row(2, 0);
-	sprintf(char_RS_status_2, "%d", RS_2);
+	sprintf(char_RS_status_2, "%d", RS_status[2]);
 	LCD_print_String(char_RS_status_2);
 
 	LCD_move_cursor_to_col_row(3, 0);
-	sprintf(char_RS_status_3, "%d", RS_3);
+	sprintf(char_RS_status_3, "%d", RS_status[3]);
 	LCD_print_String(char_RS_status_3);
 
 	LCD_move_cursor_to_col_row(4, 0);
-	sprintf(char_RS_status_4, "%d", RS_4);
+	sprintf(char_RS_status_4, "%d", RS_status[4]);
 	LCD_print_String(char_RS_status_4);
 
-	// Add small delay at end
+	// Add small delay at end so LCD doesn't refresh too fast
 
 	_delay_ms(50);
 }
 
 // Navigation function
 
-void navigate(int RS_0, int RS_1, int RS_2, int RS_3, int RS_4)
+void navigate(int RS_status[])
 {
-	long rot_time_L = 1000;
-	long rot_time_R = 1000;
+	long rot_time_L = 1300;
+	long rot_time_R = 1300;
 
-	unsigned int duty_cycleL = 53;
-	unsigned int duty_cycleR = 51;
+	unsigned int duty_cycleL = 48;
+	unsigned int duty_cycleR = 45;
 
-	long distance_time = 17400;
+	long distance_time = 3000;
 
-	// Conditionals to navigate forward
+	// Conditional to navigate forward
 
-	if ((RS_1 & RS_3) >= 1)
+	if ((RS_status[1] & RS_status[3]) >= 1)
 	{
-		// Move straight
+		// Speeds up left motor and right motor
+
+		duty_cycleL++;
+		duty_cycleR++;
+
+		// continues moving
 
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	if (((RS_2 | RS_3) >= 1) & ((RS_1) <= 0))
+	// Condtional to correct left oversteer
+
+	if (((RS_status[2] | RS_status[3]) >= 1) & ((RS_status[1]) <= 0))
 	{
+		// Speeds up left motor and slows down right motor
+
+		duty_cycleL++;
+		duty_cycleR--;
+
 		// Makes small right rotations to straighten movement
 
 		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	if (((RS_1 | RS_2) >= 1) & ((RS_3) <= 0))
+	// Condtional to correct right oversteer
+
+	if (((RS_status[1] | RS_status[2]) >= 1) & ((RS_status[3]) <= 0))
 	{
+		// Speeds up right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR++;
+
 		// Makes small left rotations to straighten movement
 
 		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
 	}
+
+	// Conditional to handle right corner
+
+	if ((RS_status[4] >= 1) & (RS_status[0] & RS_status[1] & RS_status[2] & RS_status[3]) <= 0)
+	{
+		duty_cycleL++;
+		duty_cycleR--;
+
+		long rot_time_R = 5000;
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+	}
+
+	// Conditional to handle left corner
+
+	if ((RS_status[0] >= 1) & (RS_status[1] & RS_status[2] & RS_status[3] & RS_status[4]) <= 0)
+	{
+		duty_cycleL--;
+		duty_cycleR++;
+		duty_cycleL--;
+		duty_cycleR++;
+		duty_cycleL--;
+		duty_cycleR++;
+		duty_cycleL--;
+		duty_cycleR++;
+
+		long rot_time_L = 5000;
+
+		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+	}
+
+	// Conditional to handle 3-way intersection right
+
+	/* 	if ((RS_status[0] <= 0) & ((RS_status[1] & RS_status[2] & RS_status[3] & RS_status[4]) >= 1))
+		{
+		} */
+
+	// Conditional to handle 3-way intersection left
+
+	/* 	if ((RS_status[4] <= 0) & ((RS_status[0] & RS_status[1] & RS_status[2] & RS_status[3]) >= 1))
+		{
+		}
+	 */
+	// Conditional to handle 4-way intersection
+
+	/* 	if ((RS_status[0] & RS_status[1] & RS_status[2] & RS_status[3] & RS_status[4]) >= 1)
+		{
+		} */
 }
 //=============move================
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
