@@ -226,6 +226,10 @@ void navigate(int RS_status[])
 		duty_cycleR++;
 		duty_cycleL--;
 		duty_cycleR++;
+		duty_cycleL--;
+		duty_cycleR++;
+		duty_cycleL--;
+		duty_cycleR++;
 
 		long rot_time_L = 5000;
 
