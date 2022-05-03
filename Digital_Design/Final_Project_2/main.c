@@ -74,6 +74,8 @@ int main()
 			// PIN# provides read-only data state from the corresponding PORT#
 			// Conditional checks if read-only PIN register is high, and sets RS_status to 1, else 0
 
+			// Conditional is >= 1 because it's using the port values in powers of 2
+
 			if ((PINC & (1 << i)) >= 1)
 			{
 				RS_status[i] = 1;
@@ -132,18 +134,14 @@ void display(int RS_status[])
 	LCD_move_cursor_to_col_row(4, 0);
 	sprintf(char_RS_status_4, "%d", RS_status[4]);
 	LCD_print_String(char_RS_status_4);
-
-	// Add small delay at end so LCD doesn't refresh too fast
-
-	//_delay_ms(50);
 }
 
 // Navigation function
 
 void navigate(int RS_status[])
 {
-	long rot_time_L = 1300;
-	long rot_time_R = 1300;
+	long rot_time_L = 1500;
+	long rot_time_R = 1500;
 
 	unsigned int duty_cycleL = 48;
 	unsigned int duty_cycleR = 45;
@@ -166,7 +164,7 @@ void navigate(int RS_status[])
 
 	// Condtional to correct left oversteer
 
-	if (((RS_status[2] | RS_status[3]) >= 1) & ((RS_status[1]) <= 0))
+	if (((RS_status[3]) >= 1) & ((RS_status[1]) <= 0))
 	{
 		// Speeds up left motor and slows down right motor
 
@@ -184,7 +182,7 @@ void navigate(int RS_status[])
 
 	// Condtional to correct right oversteer
 
-	if (((RS_status[1] | RS_status[2]) >= 1) & ((RS_status[3]) <= 0))
+	if (((RS_status[1]) >= 1) & ((RS_status[3]) <= 0))
 	{
 		// Speeds up right motor and slows down left motor
 
