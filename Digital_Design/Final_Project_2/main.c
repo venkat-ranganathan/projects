@@ -191,6 +191,39 @@ void navigate(int RS_status[])
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
+	// Correct left oversteer for 00111 AND 3-way intersection from the right, so randomly choose right turn or forward
+
+	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
+	{
+		if (r = 0)
+		{
+			// Speeds up left motor and slows down right motor
+
+			duty_cycleL++;
+			duty_cycleR--;
+
+			// Makes small right rotations to straighten movement
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 5000;
+			long rot_time_R = 5000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+		}
+	}
+
 	// Correct left oversteer for 00010
 
 	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] == 0))
@@ -241,6 +274,34 @@ void navigate(int RS_status[])
 		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 	}
 
+	// Stuck on left edge, shift right 10001
+
+	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] == 0) & (RS_status[4] >= 1))
+	{
+		// Sets larger rotation time to allow full 90 degree right turn
+
+		long rot_time_L = 5000;
+		long rot_time_R = 5000;
+
+		// Makes right turn
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+	}
+
+	// Stuck on left corner, rotate right 10110, 3-way intersection possible randomly choose forward or left?
+
+	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] == 0))
+	{
+		// Sets larger rotation time to allow full 90 degree right turn
+
+		long rot_time_L = 5000;
+		long rot_time_R = 5000;
+
+		// Makes right turn
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+	}
+
 	// Stuck on left corner, rotate right 10011
 
 	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
@@ -269,23 +330,11 @@ void navigate(int RS_status[])
 		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 	}
 
-	// Randomly rotate out of 00000 situation
+	// Randomly rotate out of 00000 situation, does about face consistently
 
 	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] == 0) & (RS_status[4] == 0))
 	{
 		if (r = 0)
-		{
-			// Sets larger rotation time to allow full 90 degree right turn
-
-			long rot_time_L = 5000;
-			long rot_time_R = 5000;
-
-			// Makes right turn
-
-			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
-		}
-
-		if (r = 1)
 		{
 			// Sets larger rotation time to allow full 90 degree left turn
 
@@ -296,9 +345,21 @@ void navigate(int RS_status[])
 
 			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
 		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 5000;
+			long rot_time_R = 5000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+		}
 	}
 
-	// Condtional to correct right oversteer
+	// Condtional to correct right oversteer 01100
 
 	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] == 0))
 	{
@@ -314,6 +375,57 @@ void navigate(int RS_status[])
 		// continues moving
 
 		move(distance_time, duty_cycleL, duty_cycleR);
+	}
+
+	// Condtional to correct right oversteer 01100
+
+	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] >= 1))
+	{
+		// Speeds up right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR++;
+
+		// Makes small left rotations to straighten movement
+
+		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
+	}
+
+	// Condtional to correct right oversteer 11100 AND 3-way intersection on the left
+
+	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] == 0))
+	{
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 5000;
+			long rot_time_R = 5000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+		}
 	}
 
 	// Correct right oversteer for 01000
@@ -334,7 +446,7 @@ void navigate(int RS_status[])
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	// Stuck on left edge, shift right 11000
+	// Stuck on left edge, shift right 00011
 
 	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
 	{
@@ -389,6 +501,8 @@ void navigate(int RS_status[])
 
 		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
 	}
+
+	// Conditional to handle 4-way intersection 11111
 }
 //=============move================
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
