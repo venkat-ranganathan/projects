@@ -140,13 +140,24 @@ void display(int RS_status[])
 
 void navigate(int RS_status[])
 {
+	// Left and right motor rotation times
+
 	long rot_time_L = 1500;
 	long rot_time_R = 1500;
+
+	// Left and right motor power values
 
 	unsigned int duty_cycleL = 48;
 	unsigned int duty_cycleR = 45;
 
+	// How long to run the motors during each instance navigate() function is called
+
 	long distance_time = 3000;
+
+	// Generates random binary integer to handle intersections with multiple turn options
+
+	int r = rand() % 2;
+	int y = rand() % 3;
 
 	// Conditional to navigate forward
 
@@ -157,14 +168,14 @@ void navigate(int RS_status[])
 		duty_cycleL++;
 		duty_cycleR++;
 
-		// continues moving
+		// Continues moving
 
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
 	// Condtional to correct left oversteer
 
-	if (((RS_status[3]) >= 1) & ((RS_status[1]) <= 0))
+	if (((RS_status[2] | RS_status[3]) >= 1) & ((RS_status[1]) <= 0))
 	{
 		// Speeds up left motor and slows down right motor
 
@@ -182,7 +193,7 @@ void navigate(int RS_status[])
 
 	// Condtional to correct right oversteer
 
-	if (((RS_status[1]) >= 1) & ((RS_status[3]) <= 0))
+	if (((RS_status[1] | RS_status[2]) >= 1) & ((RS_status[3]) <= 0))
 	{
 		// Speeds up right motor and slows down left motor
 
@@ -198,10 +209,48 @@ void navigate(int RS_status[])
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
+	// Conditional to handle  0 0 0 0 0
+
+	if ((RS_status[0] <= 0) & (RS_status[1] <= 0) & (RS_status[2] <= 0) & (RS_status[3] <= 0) & (RS_status[4] <= 0))
+	{
+		// Sets larger rotation time to allow full 90 degree right turn
+
+		long rot_time_L = 5000;
+		long rot_time_R = 5000;
+
+		// Conditional to determine which way to turn depending on random integer value
+
+		// Fordward conditional
+
+		if (r = 0)
+		{
+		}
+
+		// Left turn conditional
+
+		// Right turn conditional
+
+		// Makes small right rotations to straighten movement
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
+	}
+
 	// Conditional to handle right corner
 
-	if ((RS_status[4] >= 1) & (RS_status[0] & RS_status[1] & RS_status[2] & RS_status[3]) <= 0)
+	if ((RS_status[0] <= 0) & (RS_status[1] <= 0) & (RS_status[2] <= 0) & (RS_status[3] <= 0) & (RS_status[4] >= 1))
 	{
+		// Sets larger rotation time to allow full 90 degree right turn
+
+		long rot_time_L = 5000;
+		long rot_time_R = 5000;
+
+		// Makes right turn
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 	}
 
 	// Conditional to handle left corner
