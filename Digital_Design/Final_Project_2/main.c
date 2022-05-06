@@ -504,6 +504,24 @@ void navigate(int RS_status[])
 
 	// Conditional to handle 4-way intersection 11111
 }
+
+// Random number generator INCOMPLETE NEED TO CONFIRM WORKING
+
+void number(int n)
+{
+	int i;
+	time_t t;
+
+	/* Intializes random number generator */
+	srand((unsigned)time(&t));
+
+	/* Print a random number 0 or 1 */
+	for (i = 0; i < n; i++)
+	{
+		printf("%d\n", rand() % 2);
+	}
+}
+
 //=============move================
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
