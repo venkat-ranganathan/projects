@@ -8,10 +8,12 @@ int main()
 
     n = 5;
 
-    /* Intializes random number generator */
+    // Initializes random number generator
+
     srand((unsigned)time(&t));
 
-    /* Print 5 random numbers from 0 to 49 */
+    // Prints 5 random integers of either 0 or 1
+
     for (i = 0; i < n; i++)
     {
         printf("%d\n", rand() % 2);

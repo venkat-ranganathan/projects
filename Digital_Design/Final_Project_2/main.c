@@ -15,6 +15,7 @@ void navigate(int RS_status[]);
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_right(long rot_time_R, unsigned int duty_cycleL, unsigned int duty_cycleR);
+// void random_number_generator(int n);
 
 int main()
 {
@@ -154,10 +155,11 @@ void navigate(int RS_status[])
 
 	long distance_time = 3000;
 
-	// Generates random binary integer to handle intersections with multiple turn options
+	// Pseduorandom number generator
 
-	int r = rand() % 2;
-	int y = rand() % 3;
+	int n;
+
+	int r = rand() % n;
 
 	// Conditional to navigate forward
 
@@ -195,6 +197,8 @@ void navigate(int RS_status[])
 
 	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
 	{
+		n = 2;
+
 		if (r = 0)
 		{
 			// Speeds up left motor and slows down right motor
@@ -334,6 +338,14 @@ void navigate(int RS_status[])
 
 	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] == 0) & (RS_status[4] == 0))
 	{
+		// Generates "random" 0 or 1
+
+		n = 2;
+
+		int r = rand() % n;
+
+		// Determines which direction to turn based on random number
+
 		if (r = 0)
 		{
 			// Sets larger rotation time to allow full 90 degree left turn
@@ -399,7 +411,14 @@ void navigate(int RS_status[])
 
 	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] == 0))
 	{
-		if (r = 0)
+		// Generates "random" 0 or 1
+
+		n = 2;
+
+		int r = rand() % n;
+
+		// Determines which direction to turn based on random number
+
 		{
 			// Speeds up right motor and slows down left motor
 
@@ -507,20 +526,22 @@ void navigate(int RS_status[])
 
 // Random number generator INCOMPLETE NEED TO CONFIRM WORKING
 
-void number(int n)
+/* void random_number_generator(int n)
 {
 	int i;
 	time_t t;
 
-	/* Intializes random number generator */
+	// Initializes random number generator
+
 	srand((unsigned)time(&t));
 
-	/* Print a random number 0 or 1 */
+	// Prints random 0 or 1
+
 	for (i = 0; i < n; i++)
 	{
 		printf("%d\n", rand() % 2);
 	}
-}
+} */
 
 //=============move================
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
