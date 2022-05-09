@@ -3,5 +3,17 @@
 - Reflectance sensors and LCD output is working as expected, all sensors work properly on replacement 3pi
 (Need to return working 3pi to Prof. Jain after Project_2 presentation)
 
+3-way intersection:
 
+Right and left 3-way intersection is not working effectively
+    Needs to pause at every intersection and choose to go forward or turn
 
+4-way intersection:
+
+Needs to pause at 4-way intersection and randomly choose forward/right/left
+
+Currently biased towards the right corner of the board
+
+Navigation is starting to look good
+
+Needs to make more turns at 3 and 4-way intersections

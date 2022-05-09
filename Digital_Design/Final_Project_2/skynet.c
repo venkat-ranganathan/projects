@@ -1,241 +1,507 @@
-/*
- * Simple3piLineFollower - demo code for the Pololu 3pi Robot
- *
- * This code will follow a black line on a white background, using a
- * very simple algorithm.  It demonstrates auto-calibration and use of
- * the 3pi IR sensors, motor control, bar graphs using custom
- * characters, and music playback, making it a good starting point for
- * developing your own more competitive line follower.
- *
- * http://www.pololu.com/docs/0J21
- * http://www.pololu.com
- * http://forum.pololu.com
- *
- */
+// Prasanna Ranganathan and Ben Telfer
+// EECE 287 - Spring 2022 - Binghamton University
+// NO REVERSE ON MOTORS, ONLY COAST -- WITH DIFFERENT DUTY CYCLES
+// NEED TO TEST DUTY CYCLES TO GET IT GOING STRAIGHT MOST OF THE TIME
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <util/delay.h>
+#include <avr/io.h>
+#include "lcd_driver.h"
+#include "port_macros.h"
+#define PWM_TOP 255
 
-// The 3pi include file must be at the beginning of any program that
-// uses the Pololu AVR library and 3pi.  Pololu3pi.h includes all of the
-// other Orangutan Arduino libraries that can be used to control the
-// on-board hardware such as LCD, buzzer, and motor drivers.
-#include <Pololu3pi.h>
-#include <PololuQTRSensors.h>
-#include <OrangutanMotors.h>
-#include <OrangutanAnalog.h>
-#include <OrangutanLEDs.h>
-#include <OrangutanLCD.h>
-#include <OrangutanPushbuttons.h>
-#include <OrangutanBuzzer.h>
+void display(unsigned int step, unsigned int mines_on_grid, unsigned int mines_found);
+uint8_t sensor_detect();
+void straight_line(uint8_t sensor_sum, unsigned int forward_time, unsigned int rot_adj_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+uint8_t intersection_detect(unsigned int duty_cycleL, unsigned int duty_cycleR);
+void intersection_movement(uint8_t intersection_ID, unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 
-Pololu3pi robot;
-unsigned int sensors[5]; // an array to hold sensor values
+void forward(unsigned int forward_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void adjust_left(unsigned int rot_adj_time, unsigned int duty_cycleR);
+void adjust_right(unsigned int rot_adj_time, unsigned int duty_cycleL);
+void rot_90_left(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+// void celebrate();
+// void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 
-// This include file allows data to be stored in program space.  The
-// ATmega168 has 16k of program space compared to 1k of RAM, so large
-// pieces of static data should be stored in program space.
-#include <avr/pgmspace.h>
-
-// Introductory messages.  The "PROGMEM" identifier causes the data to
-// go into program space.
-const char welcome_line1[] PROGMEM = " Pololu";
-const char welcome_line2[] PROGMEM = "3\xf7 Robot";
-const char demo_name_line1[] PROGMEM = "Line";
-const char demo_name_line2[] PROGMEM = "follower";
-
-// A couple of simple tunes, stored in program space.
-const char welcome[] PROGMEM = ">g32>>c32";
-const char go[] PROGMEM = "L16 cdegreg4";
-
-// Data for generating the characters used in load_custom_characters
-// and display_readings.  By reading levels[] starting at various
-// offsets, we can generate all of the 7 extra characters needed for a
-// bargraph.  This is also stored in program space.
-const char levels[] PROGMEM = {
-    0b00000,
-    0b00000,
-    0b00000,
-    0b00000,
-    0b00000,
-    0b00000,
-    0b00000,
-    0b11111,
-    0b11111,
-    0b11111,
-    0b11111,
-    0b11111,
-    0b11111,
-    0b11111};
-
-// This function loads custom characters into the LCD.  Up to 8
-// characters can be loaded; we use them for 7 levels of a bar graph.
-void load_custom_characters()
+int main()
 {
-    OrangutanLCD::loadCustomCharacter(levels + 0, 0); // no offset, e.g. one bar
-    OrangutanLCD::loadCustomCharacter(levels + 1, 1); // two bars
-    OrangutanLCD::loadCustomCharacter(levels + 2, 2); // etc...
-    OrangutanLCD::loadCustomCharacter(levels + 3, 3);
-    OrangutanLCD::loadCustomCharacter(levels + 4, 4);
-    OrangutanLCD::loadCustomCharacter(levels + 5, 5);
-    OrangutanLCD::loadCustomCharacter(levels + 6, 6);
-    OrangutanLCD::clear(); // the LCD must be cleared for the characters to take effect
-}
+    DDRC &= ~(1 << 0) & ~(1 << 1) & ~(1 << 2) & ~(1 << 3) & ~(1 << 4); // Sets sensor as inputs
+    PORTC |= (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4);     // Pull up resistors
+    DDRD |= (1 << 5) | (1 << 6);                                       // Left Motor
+    DDRD |= (1 << 3);                                                  // Right Motor
+    DDRB |= (1 << 3);                                                  // Right Motor
+    DDRB &= ~(1 << 1);                                                 // Configure left push-button input
+    PORTB |= (1 << 1);                                                 // enable pull-up resistor
+    DDRB &= ~(1 << 4);                                                 // Configure middle push-button input
+    PORTB |= (1 << 4);                                                 // enable pull-up resistor
+    DDRB &= ~(1 << 5);                                                 // Configure right push-button input
+    PORTB |= (1 << 5);                                                 // enable pull-up resistor
+    unsigned int duty_cycleL = 40;
+    unsigned int duty_cycleR = 40;
+    unsigned int rot_adj_time = 1000;
+    unsigned int forward_time = 2000;
+    unsigned int rot_90_time = 15000;
+    uint8_t intersection_ID = 0x00;
+    uint8_t sensor_sum = 0x00;
+    unsigned int step = 0;
+    unsigned int mines_on_grid = 1;
+    unsigned int mines_found = 0;
+    //	unsigned int reverse_time = 12000;
+    unsigned int rotate_180_time = 50000;
+    unsigned int last_left_button_state = (PINB & (1 << 1));
+    unsigned int left_button_pressed = 0;
+    unsigned int last_middle_button_state = (PINB & (1 << 4));
+    unsigned int middle_button_pressed = 0;
+    unsigned int last_right_button_state = (PINB & (1 << 5));
+    unsigned int right_button_pressed = 0;
 
-// This function displays the sensor readings using a bar graph.
-void display_readings(const unsigned int *calibrated_values)
-{
-    unsigned char i;
+    initialize_LCD_driver();
+    LCD_execute_command(TURN_ON_DISPLAY);
 
-    for (i = 0; i < 5; i++)
+    while (1)
     {
-        // Initialize the array of characters that we will use for the
-        // graph.  Using the space, an extra copy of the one-bar
-        // character, and character 255 (a full black box), we get 10
-        // characters in the array.
-        const char display_characters[10] = {' ', 0, 0, 1, 2, 3, 4, 5, 6, 255};
+        if (step == 0)
+        {
+            if (left_button_pressed == 1)
+            {
+                mines_on_grid--;
+            }
+            else if (right_button_pressed == 1)
+            {
+                mines_on_grid++;
+            }
+            else if (middle_button_pressed == 1) // Press Middle Button to Move On
+            {
+                step = 1;
+            }
+        }
 
-        // The variable c will have values from 0 to 9, since
-        // calibrated values are in the range of 0 to 1000, and
-        // 1000/101 is 9 with integer math.
-        char c = display_characters[calibrated_values[i] / 101];
+        display(step, mines_on_grid, mines_found);
 
-        // Display the bar graph character.
-        OrangutanLCD::print(c);
-    }
-}
+        if (step == 1)
+        {
+            _delay_ms(1000);
+            while (1)
+            {
+                sensor_sum = sensor_detect();
+                if ((sensor_sum == 0x1F) | (sensor_sum == 0x0F) | (sensor_sum == 0x1E)) // INTERSECTION! If either the [0] or [4] sensor = black
+                {
+                    step = 2;
+                    break;
+                }
+                else if (sensor_sum == 0x00) // MINE! 00000
+                {
+                    step = 3;
+                    break;
+                }
+                else
+                {
+                    straight_line(sensor_sum, forward_time, rot_adj_time, duty_cycleL, duty_cycleR);
+                }
+            }
+        }
 
-// Initializes the 3pi, displays a welcome message, calibrates, and
-// plays the initial music.  This function is automatically called
-// by the Arduino framework at the start of program execution.
-void setup()
-{
-    unsigned int counter; // used as a simple timer
+        if (step == 2)
+        {
+            intersection_ID = intersection_detect(duty_cycleL, duty_cycleR);               // Determines intersection
+            intersection_movement(intersection_ID, rot_90_time, duty_cycleL, duty_cycleR); // Makes mevement based on intersection
+            step = 1;                                                                      // Go back to straight line
+        }
 
-    // This must be called at the beginning of 3pi code, to set up the
-    // sensors.  We use a value of 2000 for the timeout, which
-    // corresponds to 2000*0.4 us = 0.8 ms on our 20 MHz processor.
-    robot.init(2000);
+        if (step == 3)
+        {
+            _delay_ms(1000);
+            mines_found++;
+            display(step, mines_on_grid, mines_found);
+            // reverse(reverse_time, duty_cycleL, duty_cycleR);
+            _delay_ms(250);
+            rot_90_left(rotate_180_time, duty_cycleL, duty_cycleR); // turn around
+            _delay_ms(1000);
+            step = 1; // Go back to straight line
+        }
 
-    load_custom_characters(); // load the custom characters
-
-    // Play welcome music and display a message
-    OrangutanLCD::printFromProgramSpace(welcome_line1);
-    OrangutanLCD::gotoXY(0, 1);
-    OrangutanLCD::printFromProgramSpace(welcome_line2);
-    OrangutanBuzzer::playFromProgramSpace(welcome);
-    delay(1000);
-
-    OrangutanLCD::clear();
-    OrangutanLCD::printFromProgramSpace(demo_name_line1);
-    OrangutanLCD::gotoXY(0, 1);
-    OrangutanLCD::printFromProgramSpace(demo_name_line2);
-    delay(1000);
-
-    // Display battery voltage and wait for button press
-    while (!OrangutanPushbuttons::isPressed(BUTTON_B))
-    {
-        int bat = OrangutanAnalog::readBatteryMillivolts();
-
-        OrangutanLCD::clear();
-        OrangutanLCD::print(bat);
-        OrangutanLCD::print("mV");
-        OrangutanLCD::gotoXY(0, 1);
-        OrangutanLCD::print("Press B");
-
-        delay(100);
-    }
-
-    // Always wait for the button to be released so that 3pi doesn't
-    // start moving until your hand is away from it.
-    OrangutanPushbuttons::waitForRelease(BUTTON_B);
-    delay(1000);
-
-    // Auto-calibration: turn right and left while calibrating the
-    // sensors.
-    for (counter = 0; counter < 80; counter++)
-    {
-        if (counter < 20 || counter >= 60)
-            OrangutanMotors::setSpeeds(40, -40);
+        if (mines_found == mines_on_grid)
+        {
+            LCD_execute_command(CLEAR_DISPLAY);
+            LCD_move_cursor_to_col_row(0, 0);
+            LCD_print_String("No More");
+            LCD_move_cursor_to_col_row(0, 1);
+            LCD_print_String("Mines");
+            // Celebration function
+            _delay_ms(10000);
+            break;
+        }
+        //================================PULSERS===================================
+        // LEFT BUTTON
+        if ((PINB & (1 << 1)) != last_left_button_state)
+        {
+            if ((PINB & (1 << 1)) == 0)
+            {
+                left_button_pressed = 1;
+            }
+            last_left_button_state = (PINB & (1 << 1));
+        }
         else
-            OrangutanMotors::setSpeeds(-40, 40);
-
-        // This function records a set of sensor readings and keeps
-        // track of the minimum and maximum values encountered.  The
-        // IR_EMITTERS_ON argument means that the IR LEDs will be
-        // turned on during the reading, which is usually what you
-        // want.
-        robot.calibrateLineSensors(IR_EMITTERS_ON);
-
-        // Since our counter runs to 80, the total delay will be
-        // 80*20 = 1600 ms.
-        delay(20);
+        {
+            left_button_pressed = 0;
+        }
+        // MIDDLE BUTTON
+        if ((PINB & (1 << 4)) != last_middle_button_state)
+        {
+            if ((PINB & (1 << 4)) == 0)
+            {
+                middle_button_pressed = 1;
+            }
+            last_middle_button_state = (PINB & (1 << 4));
+        }
+        else
+        {
+            middle_button_pressed = 0;
+        }
+        // RIGHT BUTTON
+        if ((PINB & (1 << 5)) != last_right_button_state)
+        {
+            if ((PINB & (1 << 5)) == 0)
+            {
+                right_button_pressed = 1;
+            }
+            last_right_button_state = (PINB & (1 << 5));
+        }
+        else
+        {
+            right_button_pressed = 0;
+        }
     }
-    OrangutanMotors::setSpeeds(0, 0);
-
-    // Display calibrated values as a bar graph.
-    while (!OrangutanPushbuttons::isPressed(BUTTON_B))
-    {
-        // Read the sensor values and get the position measurement.
-        unsigned int position = robot.readLine(sensors, IR_EMITTERS_ON);
-
-        // Display the position measurement, which will go from 0
-        // (when the leftmost sensor is over the line) to 4000 (when
-        // the rightmost sensor is over the line) on the 3pi, along
-        // with a bar graph of the sensor readings.  This allows you
-        // to make sure the robot is ready to go.
-        OrangutanLCD::clear();
-        OrangutanLCD::print(position);
-        OrangutanLCD::gotoXY(0, 1);
-        display_readings(sensors);
-
-        delay(100);
-    }
-    OrangutanPushbuttons::waitForRelease(BUTTON_B);
-
-    OrangutanLCD::clear();
-
-    OrangutanLCD::print("Go!");
-
-    // Play music and wait for it to finish before we start driving.
-    OrangutanBuzzer::playFromProgramSpace(go);
-    while (OrangutanBuzzer::isPlaying())
-        ;
+    return 0;
 }
 
-// The main function.  This function is repeatedly called by
-// the Arduino framework.
-void loop()
+//=================================================================================================================================================
+//==================DISPLAY=================
+void display(unsigned int step, unsigned int mines_on_grid, unsigned int mines_found)
 {
-    // Get the position of the line.  Note that we *must* provide
-    // the "sensors" argument to read_line() here, even though we
-    // are not interested in the individual sensor readings.
-    unsigned int position = robot.readLine(sensors, IR_EMITTERS_ON);
-    if (position < 1000)
+    LCD_execute_command(CLEAR_DISPLAY);
+    if (step == 0)
     {
-        // We are far to the right of the line: turn left.
-
-        // Set the right motor to 100 and the left motor to zero,
-        // to do a sharp turn to the left.  Note that the maximum
-        // value of either motor speed is 255, so we are driving
-        // it at just about 40% of the max.
-        OrangutanMotors::setSpeeds(0, 100);
-
-        // Just for fun, indicate the direction we are turning on
-        // the LEDs.
-        OrangutanLEDs::left(HIGH);
-        OrangutanLEDs::right(LOW);
+        LCD_move_cursor_to_col_row(0, 0);
+        LCD_print_String("Mines on");
+        LCD_move_cursor_to_col_row(0, 1);
+        LCD_print_String("Grid:");
+        LCD_move_cursor_to_col_row(6, 1);
+        LCD_print_hex4(mines_on_grid);
     }
-    else if (position < 3000)
+    if (step >= 1)
     {
-        // We are somewhat close to being centered on the line:
-        // drive straight.
-        OrangutanMotors::setSpeeds(100, 100);
-        OrangutanLEDs::left(HIGH);
-        OrangutanLEDs::right(HIGH);
+        LCD_move_cursor_to_col_row(0, 0);
+        LCD_print_String("Mines");
+        LCD_move_cursor_to_col_row(0, 1);
+        LCD_print_String("Found:");
+        LCD_move_cursor_to_col_row(6, 1);
+        LCD_print_hex4(mines_found);
     }
-    else
+    _delay_ms(50);
+}
+//==================SENSOR_DETECT===================
+uint8_t sensor_detect()
+{
+    unsigned int sensor_arr[5] = {0, 0, 0, 0, 0};
+    uint8_t sensor_sum = 0x00;
+    for (int i = 0; i < 5; i++)
     {
-        // We are far to the left of the line: turn right.
-        OrangutanMotors::setSpeeds(100, 0);
-        OrangutanLEDs::left(LOW);
-        OrangutanLEDs::right(HIGH);
+        sensor_arr[i] = PINC & (1 << i); // Reads all 5 sensors
+        sensor_sum = sensor_arr[i] + sensor_sum;
+    } // sums all sensor measurements
+    return sensor_sum;
+}
+//==================STRAIGHT_LINE=================
+void straight_line(uint8_t sensor_sum, unsigned int forward_time, unsigned int rot_adj_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    if (sensor_sum == 0x0E) // FORWARD
+    {
+        forward(forward_time, duty_cycleL, duty_cycleR);
+    }                                                     // Continues forward movement
+    else if ((sensor_sum == 0x06) | (sensor_sum == 0x02)) // LEFT ADJUST
+    {
+        adjust_left(rot_adj_time, duty_cycleR); // Makes small left rotations to straighten movement
+        forward(forward_time, duty_cycleL, duty_cycleR);
+    }                                                     // Continues forward movement
+    else if ((sensor_sum == 0x0C) | (sensor_sum == 0x08)) // RIGHT ADJUST
+    {
+        adjust_right(rot_adj_time, duty_cycleL); // Makes small right rotations to straighten movement
+        forward(forward_time, duty_cycleL, duty_cycleR);
+    } // Continues forward movement
+    _delay_ms(40);
+}
+//=====================INTERSECTION_DETECT============================
+uint8_t intersection_detect(unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int intersection_ID_arr[5] = {0, 0, 0, 0, 0};
+    uint8_t intersection_ID_sum = 0x00;
+    _delay_ms(1000); // JUST FOR TESTING PURPOSES
+    forward(5000, duty_cycleL, duty_cycleR);
+    _delay_ms(200);
+    intersection_ID_arr[0] = PINC & (1 << 0);
+    intersection_ID_arr[4] = PINC & (1 << 4); // MEASURING IF INTERSECTION HAS LEFT OR RIGHT PATHS
+    _delay_ms(1000);                          // JUST FOR TESTING PURPOSES
+    forward(11000, duty_cycleL, duty_cycleR);
+    _delay_ms(200);
+    intersection_ID_arr[1] = PINC & (1 << 1);
+    intersection_ID_arr[2] = PINC & (1 << 2);
+    intersection_ID_arr[3] = PINC & (1 << 3); // MEASURING IF INTERSECTION HAS FORWARD PATH
+    for (int i = 0; i < 5; i++)
+    {
+        intersection_ID_sum = intersection_ID_arr[i] + intersection_ID_sum;
+    } // sums all intersection_ID_arr measurements
+    return intersection_ID_sum;
+}
+//====================INTERSECTION_MOVEMENT========================
+void intersection_movement(uint8_t intersection_ID, unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int rand_direction = 0;
+    if ((intersection_ID == 0x1F) | (intersection_ID == 0x17) | (intersection_ID == 0x1D) | (intersection_ID == 0x13) | (intersection_ID == 0x19)) // 4-WAY
+    {
+        rand_direction = rand() % 3;
+        if (rand_direction == 0) // LEFT
+        {
+            rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
+        }
+        else if (rand_direction == 1) // RIGHT
+        {
+            rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
+        }
+        // 2 = STRAIGHT (no turn)
+    }
+    else if ((intersection_ID == 0x0F) | (intersection_ID == 0x07) | (intersection_ID == 0x0D) | (intersection_ID == 0x03) | (intersection_ID == 0x09)) // EDGE LEFT
+    {
+        rand_direction = rand() % 2;
+        if (rand_direction == 0) // LEFT
+        {
+            rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
+        }
+        // 1 = STRAIGHT (no turn)
+    }
+    else if ((intersection_ID == 0x1E) | (intersection_ID == 0x16) | (intersection_ID == 0x1C) | (intersection_ID == 0x12) | (intersection_ID == 0x18)) // EDGE RIGHT
+    {
+        rand_direction = rand() % 2;
+        if (rand_direction == 0) // RIGHT
+        {
+            rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
+        }
+        // 1 = STRAIGHT (no turn)
+    }
+    else if (intersection_ID == 0x11) // T EDGE
+    {
+        rand_direction = rand() % 2;
+        if (rand_direction == 0) // LEFT
+        {
+            rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
+        }
+        else if (rand_direction == 1) // RIGHT
+        {
+            rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
+        }
+    }
+    else if (intersection_ID == 0x01) // CORNER LEFT
+    {
+        rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
+    }
+    else if (intersection_ID == 0x10) // CORNER RIGHT
+    {
+        rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
     }
 }
+
+//===============FORWARD==================
+void forward(unsigned int forward_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < forward_time; timer++)
+    {
+        pwm_counter++;
+        if (pwm_counter >= PWM_TOP)
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < duty_cycleL)
+        {
+            PORTD &= ~(1 << 5);
+            PORTD |= (1 << 6);
+        } // LEFT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 5) | (1 << 6));
+        } // LEFT COAST
+        if (pwm_counter < duty_cycleR)
+        {
+            PORTD &= ~(1 << 3);
+            PORTB |= (1 << 3);
+        } // RIGHT FORWARD
+        else
+        {
+            PORTD &= ~(1 << 3); // RIGHT COAST
+            PORTB &= ~(1 << 3);
+        }
+        _delay_us(10);
+    }
+    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
+    PORTB &= ~(1 << 3);
+}
+
+//=============ADJUST_LEFT================
+void adjust_left(unsigned int rot_adj_time, unsigned int duty_cycleR)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < rot_adj_time; timer++)
+    {
+        pwm_counter++;
+        if (pwm_counter >= PWM_TOP)
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < duty_cycleR)
+        {
+            PORTD &= ~(1 << 3);
+            PORTB |= (1 << 3);
+        } // RIGHT FORWARD
+        else
+        {
+            PORTD &= ~(1 << 3); // RIGHT COAST
+            PORTB &= ~(1 << 3);
+        }
+        PORTD &= ~((1 << 5) | (1 << 6)); // LEFT COAST
+        _delay_us(10);
+    }
+    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
+    PORTB &= ~(1 << 3);
+}
+
+//=============ADJUST_RIGHT================
+void adjust_right(unsigned int rot_adj_time, unsigned int duty_cycleL)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < rot_adj_time; timer++)
+    {
+        pwm_counter++;
+        if (pwm_counter >= PWM_TOP)
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < duty_cycleL)
+        {
+            PORTD &= ~(1 << 5);
+            PORTD |= (1 << 6);
+        } // LEFT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 5) | (1 << 6));
+        } // LEFT COAST
+        PORTD &= ~(1 << 3);
+        PORTB &= ~(1 << 3); // RIGHT COAST
+        _delay_us(10);
+    }
+    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
+    PORTB &= ~(1 << 3);
+}
+//=============ROTATE_LEFT===============
+void rot_90_left(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < rot_90_time; timer++) // ACTUAL MOVEMENT
+    {
+        pwm_counter++;
+        if (pwm_counter >= PWM_TOP)
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < duty_cycleL)
+        {
+            PORTD |= (1 << 5);
+            PORTD &= ~(1 << 6);
+        } // LEFT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 5) | (1 << 6));
+        } // LEFT COAST
+        if (pwm_counter < duty_cycleR)
+        {
+            PORTD &= ~(1 << 3);
+            PORTB |= (1 << 3);
+        } // RIGHT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 3)); // RIGHT COAST
+            PORTB &= ~(1 << 3);
+        }
+        _delay_us(10);
+    }
+    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
+    PORTB &= ~(1 << 3);
+}
+//===============ROTATE_RIGHT=================
+void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < rot_90_time; timer++) // ACTUAL MOVEMENT
+    {
+        pwm_counter++;
+        if (pwm_counter >= PWM_TOP)
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < duty_cycleL)
+        {
+            PORTD &= ~(1 << 5);
+            PORTD |= (1 << 6);
+        } // LEFT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 5) | (1 << 6));
+        } // LEFT COAST
+        if (pwm_counter < duty_cycleR)
+        {
+            PORTD |= (1 << 3);
+            PORTB &= ~(1 << 3);
+        } // RIGHT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 3)); // RIGHT COAST
+            PORTB &= ~(1 << 3);
+        }
+        _delay_us(10);
+    }
+    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
+    PORTB &= ~(1 << 3);
+}
+
+//======================REVERSE======================
+/*void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < reverse_time; timer++)
+    {
+    pwm_counter++;
+    if (pwm_counter >= PWM_TOP)
+    { pwm_counter = 0; }
+    if (pwm_counter < duty_cycleL)
+    { PORTD |= (1 << 5);
+      PORTD &= ~(1 << 6); } // LEFT FORWARD
+    else
+    { PORTD &= ~((1 << 5) | (1 << 6)); } // LEFT COAST
+    if (pwm_counter < duty_cycleR)
+    { PORTD |= (1 << 3);
+      PORTB &= ~(1 << 3); } // RIGHT FORWARD
+    else
+    { PORTD &= ~(1 << 3); // RIGHT COAST
+      PORTB &= ~(1 << 3); }
+        _delay_us(10);
+    }
+    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
+    PORTB &= ~(1 << 3);
+}*/
