@@ -33,7 +33,7 @@ int main()
 
 	// mine count
 
-	int mine_count;
+	int mine_count = 0;
 
 	// Setting reflectance sensors as inputs
 
@@ -91,13 +91,26 @@ int main()
 			}
 		}
 
+		// -101- MINE DETECTION
+
+		if ((RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1))
+		{
+			// Increments mine count
+
+			mine_count++;
+
+			// Calls display function
+
+			display(RS_status, mine_count);
+		}
+
 		// Calls navigation function
 
 		navigate(RS_status);
 
 		// Calls display function
 
-		display(RS_status, mine_count);
+		// display(RS_status, mine_count);
 	}
 }
 
@@ -121,30 +134,66 @@ void display(int RS_status[], int mine_count)
 
 	// Print out reflectance sensor states to LCD
 
-	LCD_move_cursor_to_col_row(0, 0);
-	sprintf(char_RS_status_0, "%d", RS_status[0]);
-	LCD_print_String(char_RS_status_0);
+	/* 	LCD_move_cursor_to_col_row(0, 0);
+		sprintf(char_RS_status_0, "%d", RS_status[0]);
+		LCD_print_String(char_RS_status_0);
 
-	LCD_move_cursor_to_col_row(1, 0);
-	sprintf(char_RS_status_1, "%d", RS_status[1]);
-	LCD_print_String(char_RS_status_1);
+		LCD_move_cursor_to_col_row(1, 0);
+		sprintf(char_RS_status_1, "%d", RS_status[1]);
+		LCD_print_String(char_RS_status_1);
 
-	LCD_move_cursor_to_col_row(2, 0);
-	sprintf(char_RS_status_2, "%d", RS_status[2]);
-	LCD_print_String(char_RS_status_2);
+		LCD_move_cursor_to_col_row(2, 0);
+		sprintf(char_RS_status_2, "%d", RS_status[2]);
+		LCD_print_String(char_RS_status_2);
 
-	LCD_move_cursor_to_col_row(3, 0);
-	sprintf(char_RS_status_3, "%d", RS_status[3]);
-	LCD_print_String(char_RS_status_3);
+		LCD_move_cursor_to_col_row(3, 0);
+		sprintf(char_RS_status_3, "%d", RS_status[3]);
+		LCD_print_String(char_RS_status_3);
 
-	LCD_move_cursor_to_col_row(4, 0);
-	sprintf(char_RS_status_4, "%d", RS_status[4]);
-	LCD_print_String(char_RS_status_4);
+		LCD_move_cursor_to_col_row(4, 0);
+		sprintf(char_RS_status_4, "%d", RS_status[4]);
+		LCD_print_String(char_RS_status_4); */
 
 	LCD_move_cursor_to_col_row(0, 1);
 	sprintf(char_mine_count, "%d", mine_count);
 	LCD_print_String(char_mine_count);
 }
+
+// Truth table
+
+/* #	RS_0	RS_1	RS_2	RS_3	RS_4	ACTION
+0	0	0	0	0	0	Randomly turn left/right x
+1	0	0	0	0	1	RIGHT x
+2	0	0	0	1	0	Correct left oversteer, shift right x
+3	0	0	0	1	1	Shift left x
+4	0	0	1	0	0	Randomly shift left/right (implement?) x
+5	0	0	1	0	1	Shift right? X
+6	0	0	1	1	0	Shift right x
+7	0	0	1	1	1	shift right x ALSO 3-way intersection right
+8	0	1	0	0	0	Shift right x
+9	0	1	0	0	1	4-way stuck on right corner SHIFT LEFT
+10	0	1	0	1	0	Mine detection plus forward
+11	0	1	0	1	1	Shift right x
+12	0	1	1	0	0	Shift right x
+13	0	1	1	0	1	Shift right x
+14	0	1	1	1	0	Shift right x
+15	0	1	1	1	1	3-way right (keeps making left turn)
+16	1	0	0	0	0	LEFT x
+17	1	0	0	0	1	Mine detection plus Continue right turn x
+18	1	0	0	1	0	Stuck on left corner - rotate right x
+19	1	0	0	1	1	Stuck on left corner - rotate right x
+20	1	0	1	0	0	Shift right x
+21	1	0	1	0	1	shift right x
+22	1	0	1	1	0	Shift right x
+23	1	0	1	1	1	4-way stuck on right corner SHIFT LEFT
+24	1	1	0	0	0	Stuck on right corner - rotate left x
+25	1	1	0	0	1	Stuck on right corner - rotate left x
+26	1	1	0	1	0	Stuck on right corner - rotate left x
+27	1	1	0	1	1	4-way stuck on right corner SHIFT LEFT
+28	1	1	1	0	0	shift left x ALSO 3-way intersection left
+29	1	1	1	0	1	4-way/Stuck on right corner - rotate left
+30	1	1	1	1	0	3-way left
+31	1	1	1	1	1	4-way RANDOM LEFT/RIGHT/FORWARD		 */
 
 // Navigation function
 
@@ -633,11 +682,11 @@ void navigate(int RS_status[])
 	{
 		// Counts mine
 
-		mine_count++;
+		// mine_count++;
 
 		// Calls display function
 
-		display(RS_status, mine_count);
+		// display(RS_status, mine_count);
 
 		// Sets larger rotation time to allow full 90 degree right turn
 
