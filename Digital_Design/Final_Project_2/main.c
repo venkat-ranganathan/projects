@@ -10,7 +10,7 @@
 #include "port_macros.h"
 #define PWM_TOP 500
 
-void display(int RS_status[]);
+void display(int RS_status[], int mine_count);
 void navigate(int RS_status[]);
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rotate_90_left(long rot_time_L, unsigned int duty_cycleL, unsigned int duty_cycleR);
@@ -30,6 +30,10 @@ int main()
 	long ycoord = 0;
 	long absycoord = 0;
 	long distance_time = 0;
+
+	// mine count
+
+	int mine_count;
 
 	// Setting reflectance sensors as inputs
 
@@ -93,13 +97,13 @@ int main()
 
 		// Calls display function
 
-		display(RS_status);
+		display(RS_status, mine_count);
 	}
 }
 
 // Display function shows status of reflectance sensors on LCD display
 
-void display(int RS_status[])
+void display(int RS_status[], int mine_count)
 {
 
 	// Create RS_status character variables to output to LCD
@@ -109,6 +113,7 @@ void display(int RS_status[])
 	char char_RS_status_2[8];
 	char char_RS_status_3[8];
 	char char_RS_status_4[8];
+	char char_mine_count[8];
 
 	// Clear display once at start
 
@@ -135,6 +140,10 @@ void display(int RS_status[])
 	LCD_move_cursor_to_col_row(4, 0);
 	sprintf(char_RS_status_4, "%d", RS_status[4]);
 	LCD_print_String(char_RS_status_4);
+
+	LCD_move_cursor_to_col_row(0, 1);
+	sprintf(char_mine_count, "%d", mine_count);
+	LCD_print_String(char_mine_count);
 }
 
 // Navigation function
@@ -148,7 +157,7 @@ void navigate(int RS_status[])
 
 	// Left and right motor power values
 
-	unsigned int duty_cycleL = 48;
+	unsigned int duty_cycleL = 38;
 	unsigned int duty_cycleR = 45;
 
 	// How long to run the motors during each instance navigate() function is called
@@ -161,19 +170,9 @@ void navigate(int RS_status[])
 
 	int r = rand() % n;
 
-	// General forward conditional
+	// Mine count
 
-	if ((RS_status[1] >= 1) & (RS_status[3] >= 1))
-	{
-		// Speeds up left motor and right motor
-
-		duty_cycleL++;
-		duty_cycleR++;
-
-		// Continues moving
-
-		move(distance_time, duty_cycleL, duty_cycleR);
-	}
+	int mine_count = 0;
 
 	// 00000 Randomly rotate out of  situation, does about face consistently
 
@@ -250,6 +249,8 @@ void navigate(int RS_status[])
 	{
 		n = 2;
 
+		int r = rand() % n;
+
 		if (r = 0)
 		{
 			// Speeds up right motor and slows down left motor
@@ -279,9 +280,60 @@ void navigate(int RS_status[])
 		}
 	}
 
-	// 00100
+	// 00100 Stuck on right edge, shift left OR Stuck on left edge, shift right
 
-	// 00101
+	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] == 0))
+	{
+		n = 2;
+
+		int r = rand() % n;
+
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// Continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 5000;
+			long rot_time_R = 5000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+		}
+	}
+
+	// 00101 Shift right
+
+	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] >= 1))
+	{
+		// Speeds up left motor and slows down right motor
+
+		duty_cycleL++;
+		duty_cycleR--;
+
+		// Makes small right rotations to straighten movement
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
+	}
 
 	// 00110 Correct left oversteer
 
@@ -305,25 +357,35 @@ void navigate(int RS_status[])
 
 	if ((RS_status[0] == 0) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
 	{
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Generates "random" 0 or 1
+
 		n = 2;
 
-		if (r = 0)
+		int r = rand() % n;
+
+		if (r = 1)
 		{
 			// Speeds up left motor and slows down right motor
 
-			duty_cycleL++;
-			duty_cycleR--;
+			// duty_cycleL++;
+			// duty_cycleR--;
 
 			// Makes small right rotations to straighten movement
 
-			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+			// rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 
 			// continues moving
 
 			move(distance_time, duty_cycleL, duty_cycleR);
 		}
 
-		if (r = 1)
+		if (r = 0)
 		{
 			// Sets larger rotation time to allow full 90 degree right turn
 
@@ -354,7 +416,67 @@ void navigate(int RS_status[])
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	// 01001
+	// 01001 4-way and stuck on right corner, shift left
+
+	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] == 0) & (RS_status[4] >= 1))
+	{
+		// Generates "random" 0 or 1
+
+		n = 3;
+
+		int r = rand() % n;
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 2)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+	}
 
 	// 01010 Conditional to navigate forward
 
@@ -362,15 +484,31 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and right motor
 
-		duty_cycleL++;
-		duty_cycleR++;
+		// duty_cycleL++;
+		// duty_cycleR++;
 
 		// Continues moving
 
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	// 01011
+	// 01011 Condtional to correct left oversteer
+
+	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
+	{
+		// Speeds up left motor and slows down right motor
+
+		duty_cycleL++;
+		duty_cycleR--;
+
+		// Makes small right rotations to straighten movement
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
+	}
 
 	// 01100 Condtional to correct left oversteer
 
@@ -390,18 +528,18 @@ void navigate(int RS_status[])
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	// 01101 Condtional to correct right oversteer
+	// 01101 Condtional to correct left oversteer
 
 	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] >= 1))
 	{
-		// Speeds up right motor and slows down left motor
+		// Speeds up left motor and slows down right motor
 
-		duty_cycleL--;
-		duty_cycleR++;
+		duty_cycleL++;
+		duty_cycleR--;
 
-		// Makes small left rotations to straighten movement
+		// Makes small right rotations to straighten movement
 
-		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 
 		// continues moving
 
@@ -414,15 +552,66 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and right motor
 
-		duty_cycleL++;
-		duty_cycleR++;
+		// duty_cycleL++;
+		// duty_cycleR++;
 
 		// Continues moving
 
 		move(distance_time, duty_cycleL, duty_cycleR);
 	}
 
-	// 01111
+	// 01111 Right 3-way intersection (can go forward or right)
+
+	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
+	{
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Generates "random" 0 or 1
+
+		n = 2;
+
+		int r = rand() % n;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			// rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 5000;
+			long rot_time_R = 5000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+	}
 
 	// 10000 Conditional to handle left corner
 
@@ -438,10 +627,18 @@ void navigate(int RS_status[])
 		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
 	}
 
-	// 10001 Stuck on left edge, shift right
+	// 10001 MINE DETECTION PLUS Stuck on left edge, shift right
 
 	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] == 0) & (RS_status[3] == 0) & (RS_status[4] >= 1))
 	{
+		// Counts mine
+
+		mine_count++;
+
+		// Calls display function
+
+		display(RS_status, mine_count);
+
 		// Sets larger rotation time to allow full 90 degree right turn
 
 		long rot_time_L = 5000;
@@ -480,9 +677,41 @@ void navigate(int RS_status[])
 		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 	}
 
-	// 10100
+	// 10100 Correct left oversteer
 
-	// 10101
+	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] == 0))
+	{
+		// Speeds up left motor and slows down right motor
+
+		duty_cycleL++;
+		duty_cycleR--;
+
+		// Makes small right rotations to straighten movement
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
+	}
+
+	// 10101 Correct left oversteer
+
+	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] >= 1))
+	{
+		// Speeds up left motor and slows down right motor
+
+		duty_cycleL++;
+		duty_cycleR--;
+
+		// Makes small right rotations to straighten movement
+
+		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+		// continues moving
+
+		move(distance_time, duty_cycleL, duty_cycleR);
+	}
 
 	// 10110 Stuck on left corner, rotate right, 3-way intersection possible randomly choose forward or left?
 
@@ -498,7 +727,67 @@ void navigate(int RS_status[])
 		rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
 	}
 
-	// 10111
+	// 10111 4-way and stuck on right corner, shift left
+
+	if ((RS_status[0] >= 1) & (RS_status[1] == 0) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
+	{
+		// Generates "random" 0 or 1
+
+		n = 3;
+
+		int r = rand() % n;
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR++;
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 2)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+	}
 
 	// 11000 Stuck on right corner, rotate left
 
@@ -528,14 +817,126 @@ void navigate(int RS_status[])
 		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
 	}
 
-	// 11010
+	// 11010 Stuck on right corner, rotate left
 
-	// 11011
+	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] == 0))
+	{
+		// Sets larger rotation time to allow full 90 degree left turn
+
+		long rot_time_L = 5000;
+		long rot_time_R = 5000;
+
+		// Makes left turn
+
+		rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+	}
+
+	// 11011 Conditional to handle 4-way intersection
+
+	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
+	{
+		// Generates "random" 0 or 1
+
+		n = 3;
+
+		int r = rand() % n;
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			// rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 2)
+		{
+			PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+			PORTB |= (1 << 3);
+
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR--;
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR--;
+		}
+
+		if (r = 1)
+		{
+			PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+			PORTB |= (1 << 3);
+
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR--;
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR--;
+		}
+	}
 
 	// 11100 Condtional to correct right oversteer AND 3-way intersection on the left
 
 	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] == 0))
 	{
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
 		// Generates "random" 0 or 1
 
 		n = 2;
@@ -544,6 +945,7 @@ void navigate(int RS_status[])
 
 		// Determines which direction to turn based on random number
 
+		if (r = 0)
 		{
 			// Speeds up right motor and slows down left motor
 
@@ -552,7 +954,7 @@ void navigate(int RS_status[])
 
 			// Makes small left rotations to straighten movement
 
-			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+			// rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
 
 			// continues moving
 
@@ -572,31 +974,217 @@ void navigate(int RS_status[])
 		}
 	}
 
-	// 11101
+	// 11101 Conditional to handle 4-way intersection
 
-	// 11110
+	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] == 0) & (RS_status[4] >= 1))
+	{
+		// Generates "random" 0 or 1
+
+		n = 3;
+
+		int r = rand() % n;
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 0)
+		{
+			// Speeds up right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			// rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 2)
+		{
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+	}
+
+	// 11110 Right 3-way intersection (can go forward or left)
+
+	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] == 0))
+	{
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Generates "random" 0 or 1
+
+		n = 2;
+
+		int r = rand() % n;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 1)
+		{
+			// Speeds up right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR++;
+
+			// Makes small left rotations to straighten movement
+
+			// rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 0)
+		{
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 5000;
+			long rot_time_R = 5000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+	}
 
 	// 11111 Conditional to handle 4-way intersection
-}
 
-// Random number generator INCOMPLETE NEED TO CONFIRM WORKING
-
-/* void random_number_generator(int n)
-{
-	int i;
-	time_t t;
-
-	// Initializes random number generator
-
-	srand((unsigned)time(&t));
-
-	// Prints random 0 or 1
-
-	for (i = 0; i < n; i++)
+	if ((RS_status[0] >= 1) & (RS_status[1] >= 1) & (RS_status[2] >= 1) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
 	{
-		printf("%d\n", rand() % 2);
+		// Generates "random" 0 or 1
+
+		n = 3;
+
+		int r = rand() % n;
+
+		// Slows down right motor and slows down left motor
+
+		duty_cycleL--;
+		duty_cycleR--;
+
+		// Determines which direction to turn based on random number
+
+		if (r = 0)
+		{
+
+			// continues moving
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+		}
+
+		if (r = 1)
+		{
+			PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+			PORTB |= (1 << 3);
+
+			// Sets larger rotation time to allow full 90 degree left turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes left turn
+
+			rotate_90_left(rot_time_L, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR--;
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR--;
+		}
+
+		if (r = 2)
+		{
+			PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+			PORTB |= (1 << 3);
+
+			// Sets larger rotation time to allow full 90 degree right turn
+
+			long rot_time_L = 15000;
+			long rot_time_R = 15000;
+
+			// Makes right turn
+
+			rotate_90_right(rot_time_R, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			duty_cycleL--;
+			duty_cycleR--;
+
+			// continues moving
+
+			distance_time = 5000;
+
+			move(distance_time, duty_cycleL, duty_cycleR);
+
+			// Slows down right motor and slows down left motor
+
+			// duty_cycleL--;
+			// duty_cycleR--;
+		}
 	}
-} */
+}
 
 //=============move================
 void move(long distance_time, unsigned int duty_cycleL, unsigned int duty_cycleR)

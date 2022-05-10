@@ -17,3 +17,5 @@ Currently biased towards the right corner of the board
 Navigation is starting to look good
 
 Needs to make more turns at 3 and 4-way intersections
+
+Every intersection is left turn biased

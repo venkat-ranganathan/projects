@@ -10,19 +10,22 @@
 #include "lcd_driver.h"
 #include "port_macros.h"
 #define PWM_TOP 255
+#define G 430
 
 void display(unsigned int step, unsigned int mines_on_grid, unsigned int mines_found);
 uint8_t sensor_detect();
 void straight_line(uint8_t sensor_sum, unsigned int forward_time, unsigned int rot_adj_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 uint8_t intersection_detect(unsigned int duty_cycleL, unsigned int duty_cycleR);
 void intersection_movement(uint8_t intersection_ID, unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void celebrate();
 
 void forward(unsigned int forward_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void adjust_left(unsigned int rot_adj_time, unsigned int duty_cycleR);
 void adjust_right(unsigned int rot_adj_time, unsigned int duty_cycleL);
 void rot_90_left(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
-// void celebrate();
+void play_note(unsigned int pitch, long note_length, unsigned int rest);
+
 // void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 
 int main()
@@ -38,25 +41,23 @@ int main()
     PORTB |= (1 << 4);                                                 // enable pull-up resistor
     DDRB &= ~(1 << 5);                                                 // Configure right push-button input
     PORTB |= (1 << 5);                                                 // enable pull-up resistor
-    unsigned int duty_cycleL = 40;
-    unsigned int duty_cycleR = 40;
-    unsigned int rot_adj_time = 1000;
+    unsigned int duty_cycleL = 36;
+    unsigned int duty_cycleR = 35;
+    unsigned int rot_adj_time = 1500;
     unsigned int forward_time = 2000;
-    unsigned int rot_90_time = 15000;
+    unsigned int rot_90_time = 17500;
     uint8_t intersection_ID = 0x00;
     uint8_t sensor_sum = 0x00;
     unsigned int step = 0;
     unsigned int mines_on_grid = 1;
     unsigned int mines_found = 0;
-    //	unsigned int reverse_time = 12000;
-    unsigned int rotate_180_time = 50000;
+    unsigned int rotate_180_time = 28000;
     unsigned int last_left_button_state = (PINB & (1 << 1));
     unsigned int left_button_pressed = 0;
     unsigned int last_middle_button_state = (PINB & (1 << 4));
     unsigned int middle_button_pressed = 0;
     unsigned int last_right_button_state = (PINB & (1 << 5));
     unsigned int right_button_pressed = 0;
-
     initialize_LCD_driver();
     LCD_execute_command(TURN_ON_DISPLAY);
 
@@ -80,26 +81,26 @@ int main()
 
         display(step, mines_on_grid, mines_found);
 
-        if (step == 1)
+        if (step == 1) // Straight Line Section
         {
-            _delay_ms(1000);
+            _delay_ms(100);
             while (1)
             {
                 sensor_sum = sensor_detect();
-                if ((sensor_sum == 0x1F) | (sensor_sum == 0x0F) | (sensor_sum == 0x1E)) // INTERSECTION! If either the [0] or [4] sensor = black
+                if ((sensor_sum == 0x1F) | (sensor_sum == 0x0F) | (sensor_sum == 0x1E) | (sensor_sum == 0x1C) | (sensor_sum == 0x07)) // INTERSECTION! If either the [0] or [4] sensor = black
                 {
                     step = 2;
                     break;
                 }
-                else if (sensor_sum == 0x00) // MINE! 00000
+                else if ((sensor_sum == 0x00) | (sensor_sum == 0x0A)) // MINE!
                 {
                     step = 3;
                     break;
                 }
                 else
                 {
-                    straight_line(sensor_sum, forward_time, rot_adj_time, duty_cycleL, duty_cycleR);
-                }
+                    straight_line(sensor_sum, forward_time, rot_adj_time, 31, 35);
+                } // Nothing of importance, keep going
             }
         }
 
@@ -112,25 +113,21 @@ int main()
 
         if (step == 3)
         {
-            _delay_ms(1000);
+            _delay_ms(500);
+            play_note(G, 100000, 80);
+            play_note(G, 100000, 80);
+            play_note(G, 100000, 80);
             mines_found++;
             display(step, mines_on_grid, mines_found);
-            // reverse(reverse_time, duty_cycleL, duty_cycleR);
             _delay_ms(250);
             rot_90_left(rotate_180_time, duty_cycleL, duty_cycleR); // turn around
-            _delay_ms(1000);
+            _delay_ms(200);
             step = 1; // Go back to straight line
         }
 
         if (mines_found == mines_on_grid)
         {
-            LCD_execute_command(CLEAR_DISPLAY);
-            LCD_move_cursor_to_col_row(0, 0);
-            LCD_print_String("No More");
-            LCD_move_cursor_to_col_row(0, 1);
-            LCD_print_String("Mines");
-            // Celebration function
-            _delay_ms(10000);
+            celebrate();
             break;
         }
         //================================PULSERS===================================
@@ -220,31 +217,34 @@ void straight_line(uint8_t sensor_sum, unsigned int forward_time, unsigned int r
     if (sensor_sum == 0x0E) // FORWARD
     {
         forward(forward_time, duty_cycleL, duty_cycleR);
+        _delay_ms(30);
     }                                                     // Continues forward movement
     else if ((sensor_sum == 0x06) | (sensor_sum == 0x02)) // LEFT ADJUST
     {
-        adjust_left(rot_adj_time, duty_cycleR); // Makes small left rotations to straighten movement
+        adjust_left(rot_adj_time, duty_cycleR);
+        _delay_ms(30); // Makes small left rotations to straighten movement
         forward(forward_time, duty_cycleL, duty_cycleR);
+        _delay_ms(30);
     }                                                     // Continues forward movement
     else if ((sensor_sum == 0x0C) | (sensor_sum == 0x08)) // RIGHT ADJUST
     {
-        adjust_right(rot_adj_time, duty_cycleL); // Makes small right rotations to straighten movement
+        adjust_right(rot_adj_time, duty_cycleL);
+        _delay_ms(30); // Makes small right rotations to straighten movement
         forward(forward_time, duty_cycleL, duty_cycleR);
+        _delay_ms(30);
     } // Continues forward movement
-    _delay_ms(40);
 }
 //=====================INTERSECTION_DETECT============================
 uint8_t intersection_detect(unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
     unsigned int intersection_ID_arr[5] = {0, 0, 0, 0, 0};
     uint8_t intersection_ID_sum = 0x00;
-    _delay_ms(1000); // JUST FOR TESTING PURPOSES
-    forward(5000, duty_cycleL, duty_cycleR);
+    _delay_ms(100);
+    forward(6500, duty_cycleL, duty_cycleR);
     _delay_ms(200);
     intersection_ID_arr[0] = PINC & (1 << 0);
     intersection_ID_arr[4] = PINC & (1 << 4); // MEASURING IF INTERSECTION HAS LEFT OR RIGHT PATHS
-    _delay_ms(1000);                          // JUST FOR TESTING PURPOSES
-    forward(11000, duty_cycleL, duty_cycleR);
+    forward(15500, duty_cycleL, duty_cycleR);
     _delay_ms(200);
     intersection_ID_arr[1] = PINC & (1 << 1);
     intersection_ID_arr[2] = PINC & (1 << 2);
@@ -310,6 +310,21 @@ void intersection_movement(uint8_t intersection_ID, unsigned int rot_90_time, un
     {
         rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
     }
+}
+//======================CELEBRATE=========================
+void celebrate()
+{
+    LCD_execute_command(CLEAR_DISPLAY);
+    LCD_move_cursor_to_col_row(0, 0);
+    LCD_print_String("No More");
+    LCD_move_cursor_to_col_row(0, 1);
+    LCD_print_String("Mines");
+    _delay_ms(500);
+    rot_90_right(10000, 100, 100);
+    rot_90_left(10000, 100, 100);
+    _delay_ms(500);
+    play_note(G, 1000000, 80);
+    _delay_ms(10000);
 }
 
 //===============FORWARD==================
@@ -477,6 +492,30 @@ void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned i
     }
     PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
     PORTB &= ~(1 << 3);
+}
+//=====================PLAY_NOTE=======================
+void play_note(unsigned int pitch, long note_length, unsigned int rest)
+{
+    long timer = 0;
+    long pwm_counter = 0;
+    for (timer = 0; timer < note_length; timer++)
+    {
+        pwm_counter++;
+        if (pwm_counter >= pitch) // pitch is analogous to PWM_TOP it acts as the wavelength
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < (pitch / 2)) // square wave
+        {
+            PORTB |= (1 << 2);
+        } // PIEZO ON
+        else
+        {
+            PORTB &= ~(1 << 2);
+        } // PIEZO OFF
+    }
+    PORTB &= ~(1 << 2);
+    _delay_ms(rest);
 }
 
 //======================REVERSE======================
