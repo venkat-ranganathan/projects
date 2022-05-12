@@ -11,12 +11,16 @@
 #include "port_macros.h"
 #define PWM_TOP 255
 #define G 430
+#define C 1290
+#define D 1150
+#define E 1025
 
 void display(unsigned int step, unsigned int mines_on_grid, unsigned int mines_found);
 uint8_t sensor_detect();
 void straight_line(uint8_t sensor_sum, unsigned int forward_time, unsigned int rot_adj_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 uint8_t intersection_detect(unsigned int duty_cycleL, unsigned int duty_cycleR);
 void intersection_movement(uint8_t intersection_ID, unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void mine_detected(unsigned int reverse_time, unsigned int rotate_360_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void celebrate();
 
 void forward(unsigned int forward_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
@@ -24,9 +28,8 @@ void adjust_left(unsigned int rot_adj_time, unsigned int duty_cycleR);
 void adjust_right(unsigned int rot_adj_time, unsigned int duty_cycleL);
 void rot_90_left(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
+void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 void play_note(unsigned int pitch, long note_length, unsigned int rest);
-
-// void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR);
 
 int main()
 {
@@ -41,17 +44,26 @@ int main()
     PORTB |= (1 << 4);                                                 // enable pull-up resistor
     DDRB &= ~(1 << 5);                                                 // Configure right push-button input
     PORTB |= (1 << 5);                                                 // enable pull-up resistor
-    unsigned int duty_cycleL = 36;
-    unsigned int duty_cycleR = 35;
+    DDRB |= (1 << 2);                                                  // sets piezo as output
+    // STRIGHT LINE
+    unsigned int straight_line_duty_cycleL = 31;
+    unsigned int straight_line_duty_cycleR = 35;
     unsigned int rot_adj_time = 1500;
     unsigned int forward_time = 2000;
-    unsigned int rot_90_time = 17500;
-    uint8_t intersection_ID = 0x00;
     uint8_t sensor_sum = 0x00;
-    unsigned int step = 0;
+    // INTERSECTION
+    unsigned int duty_cycleL = 36;
+    unsigned int duty_cycleR = 35;
+    unsigned int rot_90_time = 23000;
+    uint8_t intersection_ID = 0x00;
+    // MINES
     unsigned int mines_on_grid = 1;
     unsigned int mines_found = 0;
-    unsigned int rotate_180_time = 28000;
+    unsigned int rotate_360_time = 60000;
+    unsigned int reverse_time = 9000;
+    // OTHER
+    unsigned int step = 0;
+    // BUTTONS
     unsigned int last_left_button_state = (PINB & (1 << 1));
     unsigned int left_button_pressed = 0;
     unsigned int last_middle_button_state = (PINB & (1 << 4));
@@ -73,7 +85,7 @@ int main()
             {
                 mines_on_grid++;
             }
-            else if (middle_button_pressed == 1) // Press Middle Button to Move On
+            else if (middle_button_pressed == 1) // Press middle button to start
             {
                 step = 1;
             }
@@ -81,29 +93,36 @@ int main()
 
         display(step, mines_on_grid, mines_found);
 
-        if (step == 1) // Straight Line Section
+        // STRAIGHT LINE
+        if (step == 1)
         {
             _delay_ms(100);
             while (1)
             {
                 sensor_sum = sensor_detect();
-                if ((sensor_sum == 0x1F) | (sensor_sum == 0x0F) | (sensor_sum == 0x1E) | (sensor_sum == 0x1C) | (sensor_sum == 0x07)) // INTERSECTION! If either the [0] or [4] sensor = black
+                // INTERSECTION!
+                if ((sensor_sum == 0x1F) | (sensor_sum == 0x0F) | (sensor_sum == 0x1E) | (sensor_sum == 0x1C) | (sensor_sum == 0x07))
                 {
+                    PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BRAKE MOTORS
+                    PORTB |= (1 << 3);
                     step = 2;
                     break;
                 }
-                else if ((sensor_sum == 0x00) | (sensor_sum == 0x0A)) // MINE!
+                // MINE!
+                else if ((sensor_sum == 0x00)) //| (sensor_sum == 0x0A))
                 {
                     step = 3;
                     break;
                 }
+                // NOTHING, KEEP GOING
                 else
                 {
-                    straight_line(sensor_sum, forward_time, rot_adj_time, 31, 35);
-                } // Nothing of importance, keep going
+                    straight_line(sensor_sum, forward_time, rot_adj_time, straight_line_duty_cycleL, straight_line_duty_cycleR);
+                }
             }
         }
 
+        // INTERSECTION
         if (step == 2)
         {
             intersection_ID = intersection_detect(duty_cycleL, duty_cycleR);               // Determines intersection
@@ -111,26 +130,23 @@ int main()
             step = 1;                                                                      // Go back to straight line
         }
 
+        // MINE DETECTION
         if (step == 3)
         {
-            _delay_ms(500);
-            play_note(G, 100000, 80);
-            play_note(G, 100000, 80);
-            play_note(G, 100000, 80);
+            _delay_ms(100);
             mines_found++;
-            display(step, mines_on_grid, mines_found);
-            _delay_ms(250);
-            rot_90_left(rotate_180_time, duty_cycleL, duty_cycleR); // turn around
-            _delay_ms(200);
+            mine_detected(reverse_time, rotate_360_time, duty_cycleL, duty_cycleR);
             step = 1; // Go back to straight line
         }
 
+        // ALL MINES FOUND
         if (mines_found == mines_on_grid)
         {
             celebrate();
-            break;
+            break; // Exits the while loop and ends the program
         }
-        //================================PULSERS===================================
+
+        //==========PULSERS===========
         // LEFT BUTTON
         if ((PINB & (1 << 1)) != last_left_button_state)
         {
@@ -199,6 +215,7 @@ void display(unsigned int step, unsigned int mines_on_grid, unsigned int mines_f
     }
     _delay_ms(50);
 }
+
 //==================SENSOR_DETECT===================
 uint8_t sensor_detect()
 {
@@ -206,111 +223,150 @@ uint8_t sensor_detect()
     uint8_t sensor_sum = 0x00;
     for (int i = 0; i < 5; i++)
     {
-        sensor_arr[i] = PINC & (1 << i); // Reads all 5 sensors
+        sensor_arr[i] = PINC & (1 << i); // Reads all 5 sensor values into an array
         sensor_sum = sensor_arr[i] + sensor_sum;
-    } // sums all sensor measurements
+    } // sums all sensor values
     return sensor_sum;
 }
+
 //==================STRAIGHT_LINE=================
 void straight_line(uint8_t sensor_sum, unsigned int forward_time, unsigned int rot_adj_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
-    if (sensor_sum == 0x0E) // FORWARD
+    unsigned int delay = 20;
+    // FORWARD (no correction)
+    if ((sensor_sum == 0x0E) | (sensor_sum == 0x0A))
     {
-        forward(forward_time, duty_cycleL, duty_cycleR);
-        _delay_ms(30);
-    }                                                     // Continues forward movement
-    else if ((sensor_sum == 0x06) | (sensor_sum == 0x02)) // LEFT ADJUST
+        forward(forward_time, duty_cycleL, duty_cycleR); // Continues forward movement
+        _delay_ms(delay);
+    }
+    // LEFT ADJUST
+    else if ((sensor_sum == 0x06) | (sensor_sum == 0x02) | (sensor_sum == 0x03) | (sensor_sum == 0x01) | (sensor_sum == 0x12) | (sensor_sum == 0x1A) | (sensor_sum == 0x16) | (sensor_sum == 0x13) | (sensor_sum == 0x1B) | (sensor_sum == 0x17))
     {
-        adjust_left(rot_adj_time, duty_cycleR);
-        _delay_ms(30); // Makes small left rotations to straighten movement
-        forward(forward_time, duty_cycleL, duty_cycleR);
-        _delay_ms(30);
-    }                                                     // Continues forward movement
-    else if ((sensor_sum == 0x0C) | (sensor_sum == 0x08)) // RIGHT ADJUST
+        adjust_left(rot_adj_time, duty_cycleR); // Makes small left rotations
+        _delay_ms(delay);
+        forward(forward_time, duty_cycleL, duty_cycleR); // Continues forward movement
+        _delay_ms(delay);
+    }
+    // RIGHT ADJUST
+    else if ((sensor_sum == 0x0C) | (sensor_sum == 0x08) | (sensor_sum == 0x18) | (sensor_sum == 0x10) | (sensor_sum == 0x11) | (sensor_sum == 0x09) | (sensor_sum == 0x19) | (sensor_sum == 0x0D) | (sensor_sum == 0x1D) | (sensor_sum == 0x0B))
     {
-        adjust_right(rot_adj_time, duty_cycleL);
-        _delay_ms(30); // Makes small right rotations to straighten movement
-        forward(forward_time, duty_cycleL, duty_cycleR);
-        _delay_ms(30);
-    } // Continues forward movement
+        adjust_right(rot_adj_time, duty_cycleL); // Makes small right rotations
+        _delay_ms(delay);
+        forward(forward_time, duty_cycleL, duty_cycleR); // Continues forward movement
+        _delay_ms(delay);
+    }
 }
+
 //=====================INTERSECTION_DETECT============================
 uint8_t intersection_detect(unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
     unsigned int intersection_ID_arr[5] = {0, 0, 0, 0, 0};
     uint8_t intersection_ID_sum = 0x00;
+    // MEASURING IF INTERSECTION HAS LEFT OR RIGHT PATHS
     _delay_ms(100);
-    forward(6500, duty_cycleL, duty_cycleR);
-    _delay_ms(200);
+    forward(6500, duty_cycleL, duty_cycleR); // Aligns the leftmost and rightmost sensors with the intersection
+    _delay_ms(100);
     intersection_ID_arr[0] = PINC & (1 << 0);
-    intersection_ID_arr[4] = PINC & (1 << 4); // MEASURING IF INTERSECTION HAS LEFT OR RIGHT PATHS
-    forward(15500, duty_cycleL, duty_cycleR);
-    _delay_ms(200);
+    intersection_ID_arr[4] = PINC & (1 << 4);
+    // MEASURING IF INTERSECTION HAS FORWARD PATH
+    forward(13500, duty_cycleL, duty_cycleR); // Aligns the center of the robot with the center of the intersection
+    _delay_ms(100);
     intersection_ID_arr[1] = PINC & (1 << 1);
     intersection_ID_arr[2] = PINC & (1 << 2);
-    intersection_ID_arr[3] = PINC & (1 << 3); // MEASURING IF INTERSECTION HAS FORWARD PATH
+    intersection_ID_arr[3] = PINC & (1 << 3);
     for (int i = 0; i < 5; i++)
     {
         intersection_ID_sum = intersection_ID_arr[i] + intersection_ID_sum;
-    } // sums all intersection_ID_arr measurements
+    } // Sums all intersection_ID_arr measurements
     return intersection_ID_sum;
 }
+
 //====================INTERSECTION_MOVEMENT========================
 void intersection_movement(uint8_t intersection_ID, unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
     unsigned int rand_direction = 0;
-    if ((intersection_ID == 0x1F) | (intersection_ID == 0x17) | (intersection_ID == 0x1D) | (intersection_ID == 0x13) | (intersection_ID == 0x19)) // 4-WAY
+    // 4-WAY
+    if ((intersection_ID == 0x1F) | (intersection_ID == 0x17) | (intersection_ID == 0x1D) | (intersection_ID == 0x13) | (intersection_ID == 0x19))
     {
-        rand_direction = rand() % 3;
-        if (rand_direction == 0) // LEFT
+        rand_direction = rand() % 6;
+        if (rand_direction == 0)
         {
             rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
         }
-        else if (rand_direction == 1) // RIGHT
+        else if (rand_direction == 1)
         {
             rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
         }
-        // 2 = STRAIGHT (no turn)
+        // 2-5 = STRAIGHT (no turn)
     }
-    else if ((intersection_ID == 0x0F) | (intersection_ID == 0x07) | (intersection_ID == 0x0D) | (intersection_ID == 0x03) | (intersection_ID == 0x09)) // EDGE LEFT
+    // EDGE LEFT
+    else if ((intersection_ID == 0x0F) | (intersection_ID == 0x07) | (intersection_ID == 0x0D) | (intersection_ID == 0x03) | (intersection_ID == 0x09))
     {
-        rand_direction = rand() % 2;
-        if (rand_direction == 0) // LEFT
+        rand_direction = rand() % 4;
+        if (rand_direction == 0)
         {
             rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
         }
-        // 1 = STRAIGHT (no turn)
+        // 1-3 = STRAIGHT (no turn)
     }
-    else if ((intersection_ID == 0x1E) | (intersection_ID == 0x16) | (intersection_ID == 0x1C) | (intersection_ID == 0x12) | (intersection_ID == 0x18)) // EDGE RIGHT
+    // EDGE RIGHT
+    else if ((intersection_ID == 0x1E) | (intersection_ID == 0x16) | (intersection_ID == 0x1C) | (intersection_ID == 0x12) | (intersection_ID == 0x18))
     {
-        rand_direction = rand() % 2;
-        if (rand_direction == 0) // RIGHT
+        rand_direction = rand() % 4;
+        if (rand_direction == 0)
         {
             rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
         }
-        // 1 = STRAIGHT (no turn)
+        // 1-3 = STRAIGHT (no turn)
     }
-    else if (intersection_ID == 0x11) // T EDGE
+    // T EDGE
+    else if (intersection_ID == 0x11)
     {
         rand_direction = rand() % 2;
-        if (rand_direction == 0) // LEFT
+        if (rand_direction == 0)
         {
             rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
         }
-        else if (rand_direction == 1) // RIGHT
+        else if (rand_direction == 1)
         {
             rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
         }
     }
-    else if (intersection_ID == 0x01) // CORNER LEFT
+    // CORNER LEFT
+    else if (intersection_ID == 0x01)
     {
         rot_90_left(rot_90_time, duty_cycleL, duty_cycleR);
     }
-    else if (intersection_ID == 0x10) // CORNER RIGHT
+    // CORNER RIGHT
+    else if (intersection_ID == 0x10)
     {
         rot_90_right(rot_90_time, duty_cycleL, duty_cycleR);
     }
 }
+
+//==================MINE_DETECTED========================
+void mine_detected(unsigned int reverse_time, unsigned int rotate_360_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    play_note(G, 100000, 80);
+    play_note(G, 100000, 80);
+    play_note(G, 100000, 80);
+    LCD_execute_command(CLEAR_DISPLAY);
+    LCD_move_cursor_to_col_row(0, 0);
+    LCD_print_String("Mine");
+    LCD_move_cursor_to_col_row(0, 1);
+    LCD_print_String("Detected");
+    _delay_ms(500);
+    reverse(reverse_time, duty_cycleL, duty_cycleR);
+    _delay_ms(500);
+    rot_90_left(rotate_360_time, duty_cycleL, duty_cycleR);
+    LCD_execute_command(CLEAR_DISPLAY);
+    LCD_move_cursor_to_col_row(0, 0);
+    LCD_print_String("CLEAR");
+    LCD_move_cursor_to_col_row(0, 1);
+    LCD_print_String("MINE");
+    _delay_ms(2000);
+}
+
 //======================CELEBRATE=========================
 void celebrate()
 {
@@ -318,13 +374,17 @@ void celebrate()
     LCD_move_cursor_to_col_row(0, 0);
     LCD_print_String("No More");
     LCD_move_cursor_to_col_row(0, 1);
-    LCD_print_String("Mines");
+    LCD_print_String("Mines!");
     _delay_ms(500);
-    rot_90_right(10000, 100, 100);
-    rot_90_left(10000, 100, 100);
-    _delay_ms(500);
-    play_note(G, 1000000, 80);
-    _delay_ms(10000);
+    play_note(C, 300000, 100);
+    play_note(C, 66666, 100);
+    play_note(C, 66666, 100);
+    play_note(C, 66666, 100);
+    play_note(D, 200000, 100);
+    play_note(C, 200000, 100);
+    play_note(D, 200000, 100);
+    play_note(E, 400000, 100);
+    _delay_ms(5000);
 }
 
 //===============FORWARD==================
@@ -421,7 +481,8 @@ void adjust_right(unsigned int rot_adj_time, unsigned int duty_cycleL)
     PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
     PORTB &= ~(1 << 3);
 }
-//=============ROTATE_LEFT===============
+
+//=============ROT_90_LEFT===============
 void rot_90_left(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
     unsigned int timer = 0;
@@ -454,10 +515,11 @@ void rot_90_left(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned in
         }
         _delay_us(10);
     }
-    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
-    PORTB &= ~(1 << 3);
+    PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BOTH BRAKE
+    PORTB |= (1 << 3);
 }
-//===============ROTATE_RIGHT=================
+
+//===============ROT_90_RIGHT=================
 void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
 {
     unsigned int timer = 0;
@@ -490,18 +552,56 @@ void rot_90_right(unsigned int rot_90_time, unsigned int duty_cycleL, unsigned i
         }
         _delay_us(10);
     }
-    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
-    PORTB &= ~(1 << 3);
+    PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BOTH BRAKE
+    PORTB |= (1 << 3);
 }
+
+//======================REVERSE======================9
+void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
+{
+    unsigned int timer = 0;
+    unsigned int pwm_counter = 0;
+    for (timer = 0; timer < reverse_time; timer++)
+    {
+        pwm_counter++;
+        if (pwm_counter >= PWM_TOP)
+        {
+            pwm_counter = 0;
+        }
+        if (pwm_counter < duty_cycleL)
+        {
+            PORTD |= (1 << 5);
+            PORTD &= ~(1 << 6);
+        } // LEFT FORWARD
+        else
+        {
+            PORTD &= ~((1 << 5) | (1 << 6));
+        } // LEFT COAST
+        if (pwm_counter < duty_cycleR)
+        {
+            PORTD |= (1 << 3);
+            PORTB &= ~(1 << 3);
+        } // RIGHT FORWARD
+        else
+        {
+            PORTD &= ~(1 << 3); // RIGHT COAST
+            PORTB &= ~(1 << 3);
+        }
+        _delay_us(10);
+    }
+    PORTD |= (1 << 3) | (1 << 5) | (1 << 6); // BOTH BRAKE
+    PORTB |= (1 << 3);
+}
+
 //=====================PLAY_NOTE=======================
 void play_note(unsigned int pitch, long note_length, unsigned int rest)
 {
     long timer = 0;
-    long pwm_counter = 0;
+    unsigned int pwm_counter = 0;
     for (timer = 0; timer < note_length; timer++)
     {
         pwm_counter++;
-        if (pwm_counter >= pitch) // pitch is analogous to PWM_TOP it acts as the wavelength
+        if (pwm_counter >= pitch) // pitch acts as the wavelength
         {
             pwm_counter = 0;
         }
@@ -517,30 +617,3 @@ void play_note(unsigned int pitch, long note_length, unsigned int rest)
     PORTB &= ~(1 << 2);
     _delay_ms(rest);
 }
-
-//======================REVERSE======================
-/*void reverse(unsigned int reverse_time, unsigned int duty_cycleL, unsigned int duty_cycleR)
-{
-    unsigned int timer = 0;
-    unsigned int pwm_counter = 0;
-    for (timer = 0; timer < reverse_time; timer++)
-    {
-    pwm_counter++;
-    if (pwm_counter >= PWM_TOP)
-    { pwm_counter = 0; }
-    if (pwm_counter < duty_cycleL)
-    { PORTD |= (1 << 5);
-      PORTD &= ~(1 << 6); } // LEFT FORWARD
-    else
-    { PORTD &= ~((1 << 5) | (1 << 6)); } // LEFT COAST
-    if (pwm_counter < duty_cycleR)
-    { PORTD |= (1 << 3);
-      PORTB &= ~(1 << 3); } // RIGHT FORWARD
-    else
-    { PORTD &= ~(1 << 3); // RIGHT COAST
-      PORTB &= ~(1 << 3); }
-        _delay_us(10);
-    }
-    PORTD &= ~((1 << 3) | (1 << 5) | (1 << 6)); // BOTH COAST
-    PORTB &= ~(1 << 3);
-}*/

@@ -30,7 +30,7 @@ LCD: lcd.c
 	avr-gcc  $(CCOPTS) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -o lcd -g lcd.c lcd_driver.o
 	avr-strip lcd
 	avr-objcopy -R .eeprom -O ihex lcd lcd.hex
-	avrdude -c avrisp2 -P COM5 -p m328p -U flash:w:lcd.hex 
+	avrdude -c avrisp2 -P COM3 -p m328p -U flash:w:lcd.hex 
 	rm lcd lcd.hex
 	
 MOTOR: main.c
@@ -44,6 +44,12 @@ SKYNET: skynet.c
 	avr-gcc  $(CCOPTS) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -o skynet -g skynet.c lcd_driver.o
 	avr-strip skynet
 	avr-objcopy -R .eeprom -O ihex skynet skynet.hex
-	avrdude -c avrisp2 -P COM3 -p m328p -U flash:w:skynet.hex 
+	avrdude -c avrisp2 -P COM5 -p m328p -U flash:w:skynet.hex 
 	rm skynet skynet.hex
 	
+PIEZO: piezo.c
+	avr-gcc  $(CCOPTS) -mmcu=$(MCU) -DF_CPU=$(F_CPU) -o piezo -g piezo.c lcd_driver.o
+	avr-strip piezo
+	avr-objcopy -R .eeprom -O ihex piezo piezo.hex
+	avrdude -c avrisp2 -P COM3 -p m328p -U flash:w:piezo.hex 
+	rm piezo piezo.hex
