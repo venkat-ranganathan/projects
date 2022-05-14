@@ -93,16 +93,16 @@ int main()
 
 		// -101- MINE DETECTION
 
-		if ((RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1))
-		{
-			// Increments mine count
+		/* 		if ((RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1))
+				{
+					// Increments mine count
 
-			mine_count++;
+					mine_count++;
 
-			// Calls display function
+					// Calls display function
 
-			display(RS_status, mine_count);
-		}
+					display(RS_status, mine_count);
+				} */
 
 		// Calls navigation function
 
@@ -110,7 +110,7 @@ int main()
 
 		// Calls display function
 
-		// display(RS_status, mine_count);
+		display(RS_status, mine_count);
 	}
 }
 
@@ -134,29 +134,29 @@ void display(int RS_status[], int mine_count)
 
 	// Print out reflectance sensor states to LCD
 
-	/* 	LCD_move_cursor_to_col_row(0, 0);
-		sprintf(char_RS_status_0, "%d", RS_status[0]);
-		LCD_print_String(char_RS_status_0);
+	LCD_move_cursor_to_col_row(0, 0);
+	sprintf(char_RS_status_0, "%d", RS_status[0]);
+	LCD_print_String(char_RS_status_0);
 
-		LCD_move_cursor_to_col_row(1, 0);
-		sprintf(char_RS_status_1, "%d", RS_status[1]);
-		LCD_print_String(char_RS_status_1);
+	LCD_move_cursor_to_col_row(1, 0);
+	sprintf(char_RS_status_1, "%d", RS_status[1]);
+	LCD_print_String(char_RS_status_1);
 
-		LCD_move_cursor_to_col_row(2, 0);
-		sprintf(char_RS_status_2, "%d", RS_status[2]);
-		LCD_print_String(char_RS_status_2);
+	LCD_move_cursor_to_col_row(2, 0);
+	sprintf(char_RS_status_2, "%d", RS_status[2]);
+	LCD_print_String(char_RS_status_2);
 
-		LCD_move_cursor_to_col_row(3, 0);
-		sprintf(char_RS_status_3, "%d", RS_status[3]);
-		LCD_print_String(char_RS_status_3);
+	LCD_move_cursor_to_col_row(3, 0);
+	sprintf(char_RS_status_3, "%d", RS_status[3]);
+	LCD_print_String(char_RS_status_3);
 
-		LCD_move_cursor_to_col_row(4, 0);
-		sprintf(char_RS_status_4, "%d", RS_status[4]);
-		LCD_print_String(char_RS_status_4); */
+	LCD_move_cursor_to_col_row(4, 0);
+	sprintf(char_RS_status_4, "%d", RS_status[4]);
+	LCD_print_String(char_RS_status_4);
 
-	LCD_move_cursor_to_col_row(0, 1);
-	sprintf(char_mine_count, "%d", mine_count);
-	LCD_print_String(char_mine_count);
+	/* 	LCD_move_cursor_to_col_row(0, 1);
+		sprintf(char_mine_count, "%d", mine_count);
+		LCD_print_String(char_mine_count); */
 }
 
 // Truth table
@@ -280,8 +280,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -304,8 +304,8 @@ void navigate(int RS_status[])
 		{
 			// Speeds up right motor and slows down left motor
 
-			duty_cycleL--;
-			duty_cycleR++;
+			/* 			duty_cycleL--;
+						duty_cycleR++; */
 
 			// Makes small left rotations to straighten movement
 
@@ -341,8 +341,8 @@ void navigate(int RS_status[])
 		{
 			// Speeds up right motor and slows down left motor
 
-			duty_cycleL--;
-			duty_cycleR++;
+			/* 			duty_cycleL--;
+						duty_cycleR++; */
 
 			// Makes small left rotations to straighten movement
 
@@ -372,8 +372,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -390,8 +390,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -453,8 +453,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up right motor and slows down left motor
 
-		duty_cycleL--;
-		duty_cycleR++;
+		/* 		duty_cycleL--;
+				duty_cycleR++; */
 
 		// Makes small left rotations to straighten movement
 
@@ -485,9 +485,9 @@ void navigate(int RS_status[])
 		if (r = 0)
 		{
 			// Speeds up right motor and slows down left motor
-
-			duty_cycleL--;
-			duty_cycleR++;
+			/*
+						duty_cycleL--;
+						duty_cycleR++; */
 
 			// Makes small left rotations to straighten movement
 
@@ -546,9 +546,9 @@ void navigate(int RS_status[])
 	if ((RS_status[0] == 0) & (RS_status[1] >= 1) & (RS_status[2] == 0) & (RS_status[3] >= 1) & (RS_status[4] >= 1))
 	{
 		// Speeds up left motor and slows down right motor
-
-		duty_cycleL++;
-		duty_cycleR--;
+		/*
+				duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -565,8 +565,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -583,8 +583,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -732,8 +732,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -750,8 +750,8 @@ void navigate(int RS_status[])
 	{
 		// Speeds up left motor and slows down right motor
 
-		duty_cycleL++;
-		duty_cycleR--;
+		/* 		duty_cycleL++;
+				duty_cycleR--; */
 
 		// Makes small right rotations to straighten movement
 
@@ -998,8 +998,8 @@ void navigate(int RS_status[])
 		{
 			// Speeds up right motor and slows down left motor
 
-			duty_cycleL--;
-			duty_cycleR++;
+			/* 			duty_cycleL--;
+						duty_cycleR++; */
 
 			// Makes small left rotations to straighten movement
 
@@ -1115,8 +1115,8 @@ void navigate(int RS_status[])
 		{
 			// Speeds up right motor and slows down left motor
 
-			duty_cycleL--;
-			duty_cycleR++;
+			/* 			duty_cycleL--;
+						duty_cycleR++; */
 
 			// Makes small left rotations to straighten movement
 

@@ -19,3 +19,21 @@ Navigation is starting to look good
 Needs to make more turns at 3 and 4-way intersections
 
 Every intersection is left turn biased
+
+05/14/2022
+
+Goals for completing solo project_2:
+
+1. Convert decimal sensor values to combined decimal sum, then convert to hex to be able to easily consolidate similar movements
+
+2. Create individual functions for moving forward, handling right and left turns, handling corners, and handling intersections
+    - Combine 3 and 4-way intersections into one intersection function?
+
+3. Create mine detection function
+    - Only activate when moving forward?
+    - Add small celebration when mine found
+    - Wait until mine removed before continuining or have it reverse and continue movement on its own?
+
+4. Create piezo (sound) function
+    - Add sound when mine detected
+    - Add celebration function
