@@ -37,3 +37,6 @@ Goals for completing solo project_2:
 4. Create piezo (sound) function
     - Add sound when mine detected
     - Add celebration function
+
+5. Draw out likely cases to be encountered on 36x48 grid?
+    - Draw out likely cases where mines are detected?
