@@ -6,7 +6,9 @@ LTSpice, then built physical circuit. Added additional “party mode” strobe l
 input voltage with function generator using triangle wave
 
 https://youtu.be/-QS3QFqIXqw
+
 https://youtu.be/ZHAc84ZIXrE
+
 https://youtu.be/rmEVREj6PuM
 
 ## Minesweeper - Sophomore Design
