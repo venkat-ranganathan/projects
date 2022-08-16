@@ -1,7 +1,5 @@
 ## Analog-to-Digital Converter - Electronics I
 
-Electronics I
-Nov 2021 - Dec 2021 (2 months)
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
 volts into an equivalent digital (discrete) signal output through LEDs. Designed and verified circuit in
 LTSpice, then built physical circuit. Added additional “party mode” strobe light effect by swapping DC
