@@ -1,4 +1,4 @@
-## Analog-to-Digital Converter - Electronics I
+## Analog-to-Digital Converter
 
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
 volts into an equivalent digital (discrete) signal output through LEDs. Designed and verified circuit in
@@ -11,7 +11,7 @@ input voltage with function generator using triangle wave
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Minesweeper - Sophomore Design
+## Minesweeper
 
 Programmed Pololu 3pi Robot to traverse 36x48” black-lined grid and find user defined number of
 1x1” white “mines”. Directly programmed hardware. Defined motors as output, light sensors as input,
@@ -20,7 +20,7 @@ movement to stay on grid by using current state of light sensors and adjusting l
 using PWM; 360-spin when mine found, play music when mine found, separately handle three/four-way
 intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
-## FPGA Calculator - Sophomore Design
+## FPGA Calculator
 
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
 multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display. Programmed in Verilog. Implemented and synthesized in Vivado.
