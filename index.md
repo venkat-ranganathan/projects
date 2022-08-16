@@ -5,8 +5,6 @@ volts into an equivalent digital (discrete) signal output through LEDs. Designed
 LTSpice, then built physical circuit. Added additional “party mode” strobe light effect by swapping DC
 input voltage with function generator using triangle wave
 
-[![adc_action_shot - Copy](https://user-images.githubusercontent.com/96662693/184943880-87e4904f-f5dc-404c-a6c3-6ce6fa443d57.png)](https://www.icloud.com/iclouddrive/025r8UMmOgD-mSIiR0y7d0TkQ#adc_circuit_-_Copy)
-
 ## Minesweeper - Sophomore Design
 
 Programmed Pololu 3pi Robot to traverse 36x48” black-lined grid and find user defined number of
