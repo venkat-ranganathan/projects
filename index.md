@@ -5,13 +5,10 @@ volts into an equivalent digital (discrete) signal output through LEDs. Designed
 LTSpice, then built physical circuit. Added additional “party mode” strobe light effect by swapping DC
 input voltage with function generator using triangle wave
 
-![adc_action_shot - Copy](https://user-images.githubusercontent.com/96662693/184941927-6f3cd2d3-1f1a-4550-b9a8-6c3c316bd629.png)
-
-![adc_circuit - Copy](https://user-images.githubusercontent.com/96662693/184942134-fca6ea09-9f23-4cd8-9747-9329b33cc7ad.png)
-
-![adc_circuit_and_schematic - Copy](https://user-images.githubusercontent.com/96662693/184942197-83026e6d-e2c7-4baa-9652-89059bfb5d96.png)
-
-![adc_circuit_working - Copy](https://user-images.githubusercontent.com/96662693/184942310-d79dfbec-456b-46a3-aa77-cd504212b815.png)
+![adc_action_shot - Copy](https://user-images.githubusercontent.com/96662693/184943360-7057077d-6922-44b2-9523-f0fa70595e47.jpeg)
+![adc_circuit - Copy](https://user-images.githubusercontent.com/96662693/184943363-09524cba-6e5c-4355-ae50-66792ce33eda.jpeg)
+![adc_circuit_and_schematic - Copy](https://user-images.githubusercontent.com/96662693/184943367-427e2b5f-104a-4353-a957-df7504350f24.jpeg)
+![adc_circuit_working - Copy](https://user-images.githubusercontent.com/96662693/184943368-17386484-ca03-40f5-9de7-d8944f94fe04.jpeg)
 
 ## Minesweeper - Sophomore Design
 
