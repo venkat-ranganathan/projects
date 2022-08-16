@@ -4,6 +4,7 @@ Used LM741CN op-amps as comparators to convert an analog voltage signal ranging 
 volts into an equivalent digital (discrete) signal output through LEDs. Designed and verified circuit in
 LTSpice, then built physical circuit. Added additional “party mode” strobe light effect by swapping DC
 input voltage with function generator using triangle wave
+
 ![adc_action_shot - Copy](https://user-images.githubusercontent.com/96662693/184943788-6d7cd27a-1873-4b2f-8f1f-2a19da83c20e.gif)
 
 
