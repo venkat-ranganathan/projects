@@ -5,11 +5,7 @@ volts into an equivalent digital (discrete) signal output through LEDs. Designed
 LTSpice, then built physical circuit. Added additional “party mode” strobe light effect by swapping DC
 input voltage with function generator using triangle wave
 
-https://www.youtube.com/watch?v=-QS3QFqIXqw
-
-https://www.youtube.com/watch?v=ZHAc84ZIXrE
-
-https://www.youtube.com/watch?v=rmEVREj6PuM
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Minesweeper - Sophomore Design
 
