@@ -1,3 +1,18 @@
+## Analog-to-Digital Converter - Electronics I
+
+## Minesweeper - Sophomore Design
+
+## FPGA Calculator - Sophomore Design
+
+
+
+
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/venkat-ranganathan/projects/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
