@@ -31,7 +31,9 @@ I cleaned off as much of the super glue I could using acetone (nail polish remov
 
 <iframe width="693" height="1231" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 ## FPGA Calculator
 
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
 multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display. Programmed in Verilog. Implemented and synthesized in Vivado.
+
