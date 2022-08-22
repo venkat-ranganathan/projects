@@ -26,7 +26,7 @@ I broke off one the 3pi's IR reflectance sensors by repeatedly crashing it into 
 
 Since the sensor broke off cleanly, I first tried to match up the orientation of the sensor to the sensor contact points on the 3pi and super glued it back on, but that didn't work.
 
-I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally
+I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally again
 
 <iframe width="693" height="1231" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
