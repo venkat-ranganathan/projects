@@ -22,7 +22,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
 ## Pololu 3pi IR sensor repair
 
-https://youtube.com/shorts/oCuWAioy6bY?feature=share
+<iframe width="693" height="1231" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## FPGA Calculator
 
