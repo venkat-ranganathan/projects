@@ -20,6 +20,10 @@ movement to stay on grid by using current state of light sensors and adjusting l
 using PWM; 360-spin when mine found, play music when mine found, separately handle three/four-way
 intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
+## Pololu 3pi IR sensor repair
+
+https://youtube.com/shorts/oCuWAioy6bY?feature=share
+
 ## FPGA Calculator
 
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
