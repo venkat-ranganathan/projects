@@ -24,7 +24,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
 I broke off one the 3pi's IR reflectance sensors by repeatedly crashing it into a concrete wall (by accident) at high speeds while learning how to adjust the left/right motor speeds. Since the five IR reflectance sensors are connected in series, when one doesn't work, all of them stop working.
 
-Since the sensor broke off cleanly, I first tried to match up the orientation of the sensor to the sensor contact points on the 3pi and super glue it back on, but that didn't work.
+Since the sensor broke off cleanly, I first tried to match up the orientation of the sensor to the sensor contact points on the 3pi and super glued it back on, but that didn't work.
 
 I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally
 
