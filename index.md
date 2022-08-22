@@ -20,7 +20,7 @@ movement to stay on grid by using current state of light sensors and adjusting l
 using PWM; 360-spin when mine found, play music when mine found, separately handle three/four-way
 intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
-## Pololu 3pi IR sensor repair
+## Pololu 3pi IR reflectance sensor repair
 
 <iframe width="693" height="1231" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
