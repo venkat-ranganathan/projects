@@ -22,6 +22,12 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
 ## Pololu 3pi IR reflectance sensor repair
 
+I broke off one the 3pi's IR reflectance sensor off by repeatedly crashing it into a wall (by accident) at high speeds while learning how to adjust the left/right motor speeds. Since the five IR reflectance sensors are connected in series, when one doesn't work, all of them stop working.
+
+Since the sensor broke off cleanly, I first tried to match up the orientation of the sensor to the sensor contact points on the 3pi and super glue it back on, but that didn't work.
+
+I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally
+
 <iframe width="693" height="1231" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## FPGA Calculator
