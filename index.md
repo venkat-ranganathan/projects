@@ -21,7 +21,11 @@ movement to stay on grid by using current state of light sensors and adjusting l
 using PWM; 360-spin when mine found, play music when mine found, separately handle three/four-way
 intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
-https://youtu.be/QYsK_otjukI
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QYsK_otjukI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BOo6CoiAndg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Pololu 3pi IR reflectance sensor repair
 
