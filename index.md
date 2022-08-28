@@ -1,4 +1,4 @@
-Venkat Ranganathan
+[Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
 
 ## Minesweeper
 
