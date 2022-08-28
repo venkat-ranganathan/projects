@@ -1,19 +1,5 @@
 # Venkat Ranganathan
 
-## Analog-to-Digital Converter
-
-Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
-volts into an equivalent digital (discrete) signal output through LEDs. Designed and verified circuit in
-LTSpice, then built physical circuit. Added additional strobe light effect by swapping DC
-input voltage with function generator using triangle wave
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-QS3QFqIXqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZHAc84ZIXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 ## Minesweeper
 
 Programmed Pololu 3pi Robot to traverse 36x48” black-lined grid and find user defined number of
@@ -28,6 +14,21 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BOo6CoiAndg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Analog-to-Digital Converter
+
+Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
+volts into an equivalent digital (discrete) signal output through LEDs. Designed and verified circuit in
+LTSpice, then built physical circuit. Added additional strobe light effect by swapping DC
+input voltage with function generator using triangle wave
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-QS3QFqIXqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZHAc84ZIXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Pololu 3pi IR reflectance sensor repair
 
