@@ -1,6 +1,6 @@
 # Hello 🤖
 
-About me:
+## About me:
 
 I'm an electrical engineering major at Binghamton University. 
 
