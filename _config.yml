@@ -1,8 +1,9 @@
 theme: minima
 title: projects
-header_pages:
-  -index.md
+about:
+  - test.md
+  - test2.md
+  - test3.md
   
 author: Venkat Ranganathan
-about: test
-  -index.md
+
