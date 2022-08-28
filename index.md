@@ -6,7 +6,7 @@ Here are some projects I've completed as an Electrical Engineering student
 
 ## Minesweeper
 
-Programmed Pololu 3pi Robot to navigate 36x48” black-lined grid and find user defined number of
+Programmed Pololu 3pi Robot to navigate a 36x48” black-lined grid and find user defined number of
 1x1” white “mines”. Directly programmed hardware. Defined motors as output, light sensors as input,
 buttons as input, LCD display as output, and piezo (speaker) as output. Created functions to self-correct
 movement to stay on grid by using current state of light sensors and adjusting left/right motor power
