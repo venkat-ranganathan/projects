@@ -1,5 +1,7 @@
 [Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
 
+🤖
+
 ## Minesweeper
 
 Programmed Pololu 3pi Robot to traverse 36x48” black-lined grid and find user defined number of
