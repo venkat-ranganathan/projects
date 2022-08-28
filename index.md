@@ -2,6 +2,8 @@
 
 🤖
 
+blah blah blah
+
 ## Minesweeper
 
 Programmed Pololu 3pi Robot to traverse 36x48” black-lined grid and find user defined number of
