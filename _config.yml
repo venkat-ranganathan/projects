@@ -4,3 +4,5 @@ header_pages:
   -index.md
   
 author: Venkat Ranganathan
+About:
+  -index.md
