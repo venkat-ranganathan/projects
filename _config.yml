@@ -1,7 +1,6 @@
 theme: minima
 title: projects
 header_pages:
-  - index.md
   - about.md
   - portfolio.md
   
