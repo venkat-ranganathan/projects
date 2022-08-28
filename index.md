@@ -1,3 +1,5 @@
+### Venkat Ranganathan
+
 ## Analog-to-Digital Converter
 
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
