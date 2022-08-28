@@ -2,7 +2,7 @@
 
 # 🤖
 
-wut 
+Here's some projects I've completed as an Electrical Engineering student
 
 ## Minesweeper
 
