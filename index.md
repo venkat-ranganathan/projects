@@ -1,4 +1,4 @@
-### Venkat Ranganathan
+# Venkat Ranganathan
 
 ## Analog-to-Digital Converter
 
