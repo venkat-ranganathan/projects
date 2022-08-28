@@ -1,11 +1,5 @@
 # Hello 🤖
 
-I'm an electrical engineering major at Binghamton University graduating in May, 2024. 
+## I'm an electrical engineering major at Binghamton University graduating in May, 2024. 
 
-I enjoy hiking, camping, and going on road trips with my dog. 
-
-## About me:
-
-I'm an electrical engineering major at Binghamton University. 
-
-I enjoy hiking, camping, and going on road trips with my dog. 
+## I enjoy hiking, camping, and going on road trips with my dog. 
