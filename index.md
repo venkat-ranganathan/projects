@@ -42,7 +42,7 @@ Since the sensor broke off cleanly, I first tried to match up the orientation of
 
 I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally again
 
-<iframe width="500" height="888" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## FPGA Calculator
