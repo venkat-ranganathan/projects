@@ -19,7 +19,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+<p>&nbsp;</p>
 ## Analog-to-Digital Converter
 
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
@@ -33,7 +33,7 @@ input voltage with function generator using triangle wave
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+<p>&nbsp;</p>
 ## Pololu 3pi IR reflectance sensor repair
 
 I broke off one the 3pi's IR reflectance sensors by repeatedly crashing it into a concrete wall (by accident) at high speeds while learning how to adjust the left/right motor speeds. Since the five IR reflectance sensors are connected in series, when one doesn't work, all of them stop working.
@@ -44,7 +44,7 @@ I cleaned off as much of the super glue I could using acetone (nail polish remov
 
 <iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+<p>&nbsp;</p>
 ## FPGA Calculator
 
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
