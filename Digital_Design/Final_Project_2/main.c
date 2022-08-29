@@ -47,7 +47,7 @@ int main()
     DDRB |= (1 << 2);                                                  // sets piezo as output
     // STRIGHT LINE
     unsigned int straight_line_duty_cycleL = 31;
-    unsigned int straight_line_duty_cycleR = 35;
+    unsigned int straight_line_duty_cycleR = 31;
     unsigned int rot_adj_time = 1500;
     unsigned int forward_time = 2000;
     uint8_t sensor_sum = 0x00;
