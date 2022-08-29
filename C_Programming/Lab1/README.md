@@ -1,4 +1,4 @@
-# 2021 Fall CS211 - Binghamton University
+# 2022 Fall CS211 - Binghamton University
 
 ## Lab-1: C Data Types, Header Files, and Libraries
 
@@ -6,21 +6,22 @@
 
 ### SUMMARY
 
-< Provide a short description of your program's functionality, no more than a couple sentences >
+< created header.h file that gets called by lab1.c, defined values for RADIUS, PI, CARBRAND,
+ARITHMETIC, FAHRENHEIT  >
 
 ### KNOWN BUGS AND INCOMPLETE PARTS
 
-< What parts of the project you were not able to complete >
+< Everything works >
 
 ### REFERENCES
 
-< List any outside resources used >
+< Lab1.docx >
 
 ### SUBMISSION
 
 By submitting this lab project, you confirm that you have followed the course guidelines and policies as well as the academic honesty policy.
 
-< Submission date >
+< 08/29/22 >
 
-< Your name >
+< Prasanna Venkatesh Ranganathan >
 
