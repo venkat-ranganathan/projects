@@ -1,3 +1,6 @@
+#ifndef HEADER_H
+#define HEADER_H
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdbool.h>
@@ -8,3 +11,5 @@
 #define CARBRAND "Toyota"
 #define ARITHMETIC *
 #define FAHRENHEIT 98
+
+#endif
