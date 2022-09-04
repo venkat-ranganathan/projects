@@ -23,7 +23,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
 ## Analog-to-Digital Converter
 
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7
-volts into an equivalent digital (discrete) signal output through LEDs. Designed and verified circuit in
+volts (including decimal values in between into an equivalent digital, discrete signal output (as integers--whole numbers that include both positive and negative values) through LEDs. Designed and verified circuit in
 LTSpice, then built physical circuit. Added additional strobe light effect by swapping DC
 input voltage with function generator using triangle wave
 
