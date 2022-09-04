@@ -11,7 +11,7 @@ Programmed Pololu 3pi Robot to navigate a 36x48” black-lined grid and find use
 buttons as input, LCD display as output, and piezo (speaker) as output. Created functions to self-correct
 movement to stay on grid by using current state of light sensors and adjusting left/right motor power
 using PWM; 360-spin when mine found, play music when mine found, separately handle three/four-way
-intersections and corners. Worked with teammate. Used AVR-GCC to compile C code.
+intersections and corners. Worked with teammate. Used AVR-GCC to compile C code. Worked with a teammate
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QYsK_otjukI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
