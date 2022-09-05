@@ -3,11 +3,8 @@ title: projects
 header_pages:
   - about.md
   - doggo.md
- 
-footer_pages:
-  - index.md
-  - about.md
-  - doggo.md
+
+
 author: Venkat Ranganathan
 linkedin_username: venkatesh-ranganathan
 
