@@ -1,15 +1,14 @@
 # Hello 🤖
 
-
-
+<p>&nbsp;</p>
 
 ## Hi, I'm Venkat and I'm an electrical engineering major at Binghamton University graduating in May, 2024. I enjoy hiking, camping, and going on road trips with my dog. 
 
----
----
----
+<p>&nbsp;</p>
 
 ### My VSCode setup:
+
+<p>&nbsp;</p>
 
 This isn't super-important, so I set it off to the side
 
