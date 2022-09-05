@@ -2,9 +2,8 @@ theme: minima
 title: projects
 header_pages:
   - about.md
-  - doggo.md
-  - Cheatsheet-c.pdf
   - c_cheatsheet.md
+  - doggo.md
 
 author: Venkat Ranganathan
 linkedin_username: venkatesh-ranganathan
