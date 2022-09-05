@@ -2,30 +2,30 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run C++",
+            "label": "Build and Run C",
             "type": "shell",
-            "command": "g++ -g \"${fileDirname}\\${fileBasename}\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
+            "command": "gcc -g \"${fileDirname}\\${fileBasename}\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build and Run C++ (Multiple cpp files)",
+            "label": "Build and Run C (Multiple cpp files)",
             "type": "shell",
-            "command": "g++ -g \"${fileDirname}\"\\*.cpp -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
+            "command": "gcc -g \"${fileDirname}\"\\*.cpp -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build C++",
+            "label": "Build C",
             "type": "shell",
-            "command": "g++ -g \"${fileDirname}\\${fileBasename}\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"",
+            "command": "gcc -g \"${fileDirname}\\${fileBasename}\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build C++ (Multiple cpp files)",
+            "label": "Build C (Multiple cpp files)",
             "type": "shell",
-            "command": "g++ -g \"${fileDirname}\\*.cpp\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"",
+            "command": "gcc -g \"${fileDirname}\\*.cpp\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
             "problemMatcher": "$gcc"
         },
@@ -70,7 +70,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file",
-            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -88,12 +88,12 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: \"C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe\""
+            "detail": "compiler: \"C:\\msys64\\mingw64\\bin\\gcc.exe"
         },
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file",
-            "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -108,7 +108,7 @@
                 "$gcc"
             ],
             "group": "build",
-            "detail": "compiler: \"C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe\""
+            "detail": "compiler: \"C:\\msys64\\mingw64\\bin\\gcc.exe"
         }
     ]
 }

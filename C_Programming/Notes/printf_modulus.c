@@ -42,7 +42,7 @@ int main()
     // the input will be stored in
     // printf specifier for double is %lf
 
-    printf("Enter something: ");
+    printf("Enter a number with decimals: ");
     scanf("%lf", &number);
     printf("This is what was entered %lf\n", number);
 
