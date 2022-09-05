@@ -2,7 +2,7 @@ theme: minima
 title: projects
 header_pages:
   - about.md
-  - portfolio.md
+  - doggo.md
   
 social_links:
   linkedin: venkatesh-ranganathan
