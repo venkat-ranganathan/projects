@@ -1,4 +1,4 @@
-[Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
+[GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
 
 # 🤖 🚀 🌎 🇺🇸
 
