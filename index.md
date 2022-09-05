@@ -2,7 +2,7 @@
 
 # 🤖 🚀 🌎 🇺🇸
 
-**Here are some projects I've completed as an Electrical Engineering student:**
+## Here are some projects I've completed as an Electrical Engineering student:
 
 ## Minesweeper
 
