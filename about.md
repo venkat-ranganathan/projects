@@ -8,8 +8,6 @@
 
 ### My VSCode setup:
 
-<p>&nbsp;</p>
-
 This isn't super-important, so I set it off to the side
 
 I wanted to share that I figured out how to setup my debug environment for C using GDB. I'm stoked I can step through my code _and be able to see the values of my variables as the code is being executed AND be able to see what's changing in the register_
