@@ -8,8 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-### My VSCode setup:
-~09/04/2022
+### My VSCode setup, 09/04/2022:
 
 This isn't super-important, so I set it off to the side
 
