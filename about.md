@@ -6,7 +6,7 @@
 
 ---
 
-## My VSCode setup:
+### My VSCode setup:
 
 Is this important? Probably, not. 
 
