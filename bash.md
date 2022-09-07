@@ -1,6 +1,6 @@
 # Bash 🅱️
 
- A cheat sheet for bash commands.
+
 
 ## Command History
 
