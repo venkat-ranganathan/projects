@@ -7,7 +7,7 @@ void introduction(void)
 
 float castToFloat(int numi)
 {
-    float numd = (float) numi;
+    float numd = (float)numi;
     return numd;
 }
 
@@ -36,11 +36,10 @@ unsigned int factorial(unsigned int num)
 {
     unsigned int factorial = 1;
 
-    for(unsigned int i = 1; i <= num; i++)
+    for (unsigned int i = 1; i <= num; i++)
     {
         factorial = factorial * i;
     }
 
     return factorial;
 }
-

@@ -14,4 +14,3 @@ int fahrenheit2Celsius(int fahrenheit);
 unsigned int factorial(unsigned int num);
 
 #endif
-

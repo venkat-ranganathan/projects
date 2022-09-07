@@ -11,7 +11,7 @@
         {
             "label": "Build and Run C (Multiple cpp files)",
             "type": "shell",
-            "command": "gcc -g \"${fileDirname}\"\\*.cpp -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
+            "command": "gcc -g \"${fileDirname}\"\\*.c -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
             "problemMatcher": "$gcc"
         },
