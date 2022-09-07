@@ -3,6 +3,7 @@ title: projects
 header_pages:
   - about.md
   - c_cheatsheet.md
+  - matlab.md
   - verilog.md
 
 author: Venkat Ranganathan
