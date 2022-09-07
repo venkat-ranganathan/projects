@@ -1,4 +1,4 @@
-# Bash Cheat Sheet
+# Bash 🅱️
 
  A cheat sheet for bash commands.
 
