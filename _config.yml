@@ -2,7 +2,7 @@ theme: minima
 title: projects
 header_pages:
   - about.md
-  - c_cheatsheet.md
+  - c.md
   - MATLAB.md
   - verilog.md
 
