@@ -35,13 +35,25 @@ unsigned int factorial(unsigned int num)
     // factorial works backwards from n!, so you can reverse the order and use a loop
     // to go from 1 to n, i.e. instead of n! = n * (n-1) * (n-2) * etc.., you can use a for loop
     // to start from 1 and keep going until you reach the value of num, then you set
-    // factorial equal to factorial * num, so the value of the factorial is constantly updated
+    // factorial equal to factorial * i (or whatever variable name in the for loop),
+    // so the value of the factorial is constantly updated
     // until you reach the specified end of the loop, then you just return the value of factorial
 
-    for (int i = 1; i <= num; i++)
+    // This also works, using a increment operator in the for loop
+
+    /*     for (int i = 1; i <= num; i++)
+        {
+            factorial = factorial * i;
+        } */
+
+    // let's try use negative incrememnt to calculate n!, which is more directly represenative of the operation
+
+    for (int i = num - 1; i < num; i--)
     {
         factorial = factorial * i;
     }
 
     return factorial;
+
+    // the above works
 }

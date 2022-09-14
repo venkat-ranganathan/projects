@@ -19,13 +19,13 @@ int main()
     int itemQuantity;
 
     // ask user to enter variable value for item cost
-    // don't include data type modulus if you aren't printing out a variable value
+    // don't include data type modulus for printf() if you aren't printing out a variable value
 
     printf("\nEnter the cost of the item: $");
 
     // need to use reference operator '&' when storing user-input data into variable
     // store value in variable
-
+    // DO include data type modulus for scanf()
     // don't set a modulus decimal place limit for the input value
 
     scanf("%f", &itemCost);
