@@ -39,21 +39,10 @@ unsigned int factorial(unsigned int num)
     // so the value of the factorial is constantly updated
     // until you reach the specified end of the loop, then you just return the value of factorial
 
-    // This also works, using a increment operator in the for loop
-
-    /*     for (int i = 1; i <= num; i++)
-        {
-            factorial = factorial * i;
-        } */
-
-    // let's try use negative incrememnt to calculate n!, which is more directly represenative of the operation
-
-    for (int i = num - 1; i < num; i--)
+    for (unsigned int i = 1; i <= num; i++)
     {
         factorial = factorial * i;
     }
 
     return factorial;
-
-    // the above works
 }
