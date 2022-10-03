@@ -77,6 +77,10 @@ void InitializeArray(int array[])
 
         counter++;
     }
+
+    // add new line when loop completes
+
+    printf("\n");
 }
 
 void PrintArray(int array[])
