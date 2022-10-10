@@ -15,7 +15,7 @@ int main()
 // find the left most bit that has a '1'
 unsigned int leftmostOnePos(int number)
 {
-    return 0;
+    // use loop to check if every bit is 1, then update left_most variable to set current highest bit
 }
 
 // use bitshift to convert from deciaml to binary
