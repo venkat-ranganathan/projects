@@ -1,0 +1,4 @@
+Donald Duck         60 7500
+Mickey Mouse        100 10000
+Goofy               80 500
+Pluto the dog       75 100

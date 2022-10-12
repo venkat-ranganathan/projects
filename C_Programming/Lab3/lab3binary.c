@@ -1,6 +1,7 @@
 // call header file
 #include "lab3binary.h"
 
+// print bit position of most significant bit
 unsigned int leftmostOnePos(int number)
 {
     // I followed the hints from class
