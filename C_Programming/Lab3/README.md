@@ -6,21 +6,23 @@
 
 ### SUMMARY
 
-< Provide a short description of your program's functionality, no more than a couple sentences >
+< There are two parts to the lab: Part 1 is printing the msb of a given decimal number & Part 2
+ converts a decimal to a binary and prints it in the correct order if the decimal is even, and reverse
+ order if decimal is odd>
 
 ### KNOWN BUGS AND INCOMPLETE PARTS
 
-< What parts of the project you were not able to complete >
+< Somehow everything works >
 
 ### REFERENCES
 
-< List any outside resources used >
+< Class lecture tips and google >
 
 ### SUBMISSION
 
 By submitting this lab project, you confirm that you have followed the course guidelines and policies as well as the academic honesty policy.
 
-< Submission date >
+< 10/11/2022 >
 
-< Your name >
+< Venkat Ranganathan >
 
