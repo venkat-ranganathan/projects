@@ -23,7 +23,8 @@ void loop(int number)
     for (int i = number; i > 0; i--)
     {
         // prints value of 'i' separated by a space
-        printf("%d ", i);
+        // adding the 4 after the modulus spaces the numbers evenly
+        printf("%4d", i);
 
         // new line after every 10 entries
         if (i % 10 == 1)

@@ -65,6 +65,7 @@ int getUserChoice(void)
 }
 
 // using pointer because you want to both send the value and call it back
+// i.e. variables are both inputs and outputs
 void getTwoNumbers(int *number1, int *number2)
 {
     // prompt user for number
@@ -110,7 +111,6 @@ double executeOperation(int selection, int number1, int number2)
         break;
 
     default:
-        answer = -1;
         printf("\nInvalid selection\n");
         break;
     }
