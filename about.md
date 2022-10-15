@@ -12,6 +12,8 @@
 
 I got a Raspberry Pi 4B and used it to setup an adblocker on my network. 
 
+<img width="960" alt="Screenshot_20221014_105709 - Copy" src="https://user-images.githubusercontent.com/96662693/195965951-204c7d7a-0ee2-46ae-9b3b-4d6c517938f8.png">
+
 Setup was relatively simple:
 
 - There's a Raspberry Pi app that formats and installs the Raspberry Pi OS onto your microSD card
@@ -23,9 +25,9 @@ Setup was relatively simple:
 - After that, you can disconnect the monitor, keyboard, and mouse because you can now connect to the Raspberry Pi through SSH since it's on your network
 - With SSH I can update the OS & adblocker from my laptop using bash (I use MobaXterm to SSH into my Raspberry Pi)
 
-With the device setup, I can just go to the IP address and and look at the dashboard to see what's being blocked, the uptime/memory usage/temperature of the Raspberry Pi, add adblock filters, adjust settings, etc.
+<img width="960" alt="Screenshot_20221014_105612 - Copy" src="https://user-images.githubusercontent.com/96662693/195965968-0c2da8ca-1fdc-424e-8695-ae25028eaf5f.png">
 
-<img width="1919" alt="Screenshot_20221014_100538" src="https://user-images.githubusercontent.com/96662693/195964606-0b19cd92-b63c-4598-90b2-200ce7bfb9a6.png">
+With the device setup, I can just go to the IP address and and look at the dashboard to see what's being blocked, the uptime/memory usage/temperature of the Raspberry Pi, add adblock filters, adjust settings, etc.
 
 I also drilled some holes on the top of the Raspberry Pi case because it otherwise had no airflow. I installed a small heatsink on the CPU and a fan over it to keep the device cool.
 
