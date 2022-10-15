@@ -25,8 +25,7 @@ _This will speed up loading websites if there are ads or trackers on the website
 **Who is this good for?** Everyone, but especially for people who don't know how to install a local ad blocker (like family members). You just set up this little device on their home network and leave it alone. Since you can SSH into the Raspberry Pi when you're on the same local network, you can update it from your computer without needing to connect a monitor, keyboard, and mouse to the Raspberry Pi. 
 
 It won't block _everything_, but it blocks _a lot more_ than nothing, so it's a net-positive result.
-
-<img width="960" alt="Screenshot_20221014_105709 - Copy" src="https://user-images.githubusercontent.com/96662693/195965951-204c7d7a-0ee2-46ae-9b3b-4d6c517938f8.png">
+<img width="960" alt="Screenshot_20221015_100317 - Copy" src="https://user-images.githubusercontent.com/96662693/195990751-1382c541-490d-42c5-afb9-ed76fec3f43f.png">
 
 Setup was relatively simple:
 
@@ -39,7 +38,7 @@ Setup was relatively simple:
 - After that, you can disconnect the monitor, keyboard, and mouse because you can now connect to the Raspberry Pi through SSH since it's on your network
 - With SSH I can update the OS & ad blocker from my laptop using bash (I use MobaXterm to SSH into my Raspberry Pi)
 
-<img width="960" alt="Screenshot_20221015_100317 - Copy" src="https://user-images.githubusercontent.com/96662693/195990729-25dbcf0e-7340-4818-a506-65b547c80ab3.png">
+<img width="960" alt="Screenshot_20221014_105612 - Copy" src="https://user-images.githubusercontent.com/96662693/195990759-18aea83a-30e1-4b5b-b12a-b3f572a3d98d.png">
 
 With the device setup, I can just go to the IP address and and look at the dashboard to see what's being blocked, the uptime/memory usage/temperature of the Raspberry Pi, add adblock filters, adjust settings, etc.
 
