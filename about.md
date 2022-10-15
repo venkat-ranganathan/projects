@@ -12,7 +12,7 @@
 
 I got a Raspberry Pi 4B and used it to setup an adblocker on my network. 
 
-Setup was smooth:
+Setup was relatively simple:
 
 - There's a Raspberry Pi app that formats and installs the Raspberry Pi OS on your microSD card
 - Then you plug the microSD into the Raspberry Pi, turn it on connect it to a monitor, keyboard, and mouse, then connect it to your Wi-Fi/ethernet
