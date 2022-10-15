@@ -18,9 +18,9 @@ The idea is as follows: normally you need to set up an ad blocker on each of you
 
 Will this slow down my internet connection? No, it won't slow down the internet at all because the filter list is just a text file of website addresses to block, there's no other data or instructions there. The router checks if the website attempting to connect is on the list, if it is, it blocks the connection. That's it.
 
-A network-wide ad blocker isn't perfect--it doesn't block YouTube or Hulu ads on streaming devices because a filter list doesn't block elements in an application, which is what the ads on YouTube and Hulu are. The ad blocker you install on a web browser does block and hide elements, so that's why you still want to use a local ad blocker even if you set up this Raspberry Pi as a network-wide ad blocker.
+**A network-wide ad blocker isn't perfect**--it doesn't block YouTube or Hulu ads on streaming devices because a filter list doesn't block elements in an application, which is what the ads on YouTube and Hulu are. The ad blocker you install on a web browser does block and hide elements, so that's why you still want to use a local ad blocker even if you set up this Raspberry Pi as a network-wide ad blocker.
 
-Who is this good for? Everyone, but especially for people who don't know how to install a local ad blocker (like family members). You just set up this little device on their home network and leave it alone. It won't block _everything_, but it blocks _a lot more_ than nothing, so it's a net-positive result.
+**Who is this good for?** Everyone, but especially for people who don't know how to install a local ad blocker (like family members). You just set up this little device on their home network and leave it alone. It won't block _everything_, but it blocks _a lot more_ than nothing, so it's a net-positive result.
 
 <img width="960" alt="Screenshot_20221014_105709 - Copy" src="https://user-images.githubusercontent.com/96662693/195965951-204c7d7a-0ee2-46ae-9b3b-4d6c517938f8.png">
 
