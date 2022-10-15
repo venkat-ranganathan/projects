@@ -8,33 +8,6 @@
 ---
 <p>&nbsp;</p>
 
-### Network-wide adblocker, 10/14/2022:
-
-I got a Raspberry Pi 4B and used it to setup an adblocker on my network. 
-
-<img width="960" alt="Screenshot_20221014_105709 - Copy" src="https://user-images.githubusercontent.com/96662693/195965951-204c7d7a-0ee2-46ae-9b3b-4d6c517938f8.png">
-
-Setup was relatively simple:
-
-- There's a Raspberry Pi app that formats and installs the Raspberry Pi OS onto your microSD card
-- Then you plug the microSD card into the Raspberry Pi, turn it on and connect it to a monitor, keyboard, and mouse; then connect it to your Wi-Fi/ethernet
-- You run: "sudo apt-get update & sudo apt-get upgrade -y" to update the OS
-- Then install the Pi-hole adblocker using the installer from the Pi-hole website
-- In the installer, you choose your static IP address for the Raspberry Pi
-- You then set that IP address as your DNS address on your router (I also use a secondary DNS server as a backup on my router, in case the Raspberry Pi ever goes down)
-- After that, you can disconnect the monitor, keyboard, and mouse because you can now connect to the Raspberry Pi through SSH since it's on your network
-- With SSH I can update the OS & adblocker from my laptop using bash (I use MobaXterm to SSH into my Raspberry Pi)
-
-<img width="960" alt="Screenshot_20221014_105612 - Copy" src="https://user-images.githubusercontent.com/96662693/195965968-0c2da8ca-1fdc-424e-8695-ae25028eaf5f.png">
-
-With the device setup, I can just go to the IP address and and look at the dashboard to see what's being blocked, the uptime/memory usage/temperature of the Raspberry Pi, add adblock filters, adjust settings, etc.
-
-I also drilled some holes on the top of the Raspberry Pi case because it otherwise had no airflow. I installed a small heatsink on the CPU and a fan over it to keep the device cool.
-
-![IMG_3904 - Copy](https://user-images.githubusercontent.com/96662693/195964714-78ff049a-ce09-425e-ab78-3e61d114b47a.jpg)
-
-
-
 ## Minesweeper
 
 Programmed Pololu 3pi Robot to navigate a 36x48” black-lined grid and find user defined number of
