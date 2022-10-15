@@ -37,7 +37,7 @@ Setup was relatively simple:
 - In the installer, you choose your static IP address for the Raspberry Pi
 - You then set that IP address as your DNS address on your router (I also use Google/Cloudflare secondary DNS server as a backup on my router, in case the Raspberry Pi ever goes down)
 - After that, you can disconnect the monitor, keyboard, and mouse because you can now connect to the Raspberry Pi through SSH since it's on your network
-- With SSH I can update the OS & adblocker from my laptop using bash (I use MobaXterm to SSH into my Raspberry Pi)
+- With SSH I can update the OS & ad blocker from my laptop using bash (I use MobaXterm to SSH into my Raspberry Pi)
 
 <img width="960" alt="Screenshot_20221014_105612 - Copy" src="https://user-images.githubusercontent.com/96662693/195965968-0c2da8ca-1fdc-424e-8695-ae25028eaf5f.png">
 
