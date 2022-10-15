@@ -28,7 +28,7 @@ It won't block _everything_, but it blocks _a lot more_ than nothing, so it's a 
 
 <img width="960" alt="Screenshot_20221015_100317 - Copy" src="https://user-images.githubusercontent.com/96662693/195990856-c6d4d4ff-1567-4a70-9002-79926b7808d7.png">
 
-Setup was relatively simple using this guide from Tom's Hardware: https://www.tomshardware.com/how-to/set-up-pi-hole-raspberry-pi
+Setup was relatively simple:
 
 - There's a Raspberry Pi app that formats and installs the Raspberry Pi OS onto your microSD card
 - Then you plug the microSD card into the Raspberry Pi, turn it on and connect it to a monitor, keyboard, and mouse; then connect it to your Wi-Fi/ethernet
