@@ -8,7 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-### Set up network-wide adblocker, 10/14/2022:
+### I set up a network-wide adblocker, 10/14/2022:
 
 I got a Raspberry Pi 4B and used it to setup an adblocker on my network. 
 
