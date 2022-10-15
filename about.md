@@ -15,7 +15,7 @@ I got a Raspberry Pi 4B and used it to setup an adblocker on my network.
 Setup was relatively simple:
 
 - There's a Raspberry Pi app that formats and installs the Raspberry Pi OS on your microSD card
-- Then you plug the microSD card into the Raspberry Pi, turn it on connect it to a monitor, keyboard, and mouse, then connect it to your Wi-Fi/ethernet
+- Then you plug the microSD card into the Raspberry Pi, turn it on and connect it to a monitor, keyboard, and mouse; then connect it to your Wi-Fi/ethernet
 - You run: "sudo apt-get update & sudo apt-get upgrade -y" to update the OS
 - Then install the Pi-hole adblocker using the installer from the Pi-hole website
 - In the installer, you choose your static IP address for the Raspberry Pi
