@@ -70,3 +70,53 @@ void convertAndOrder(int number, int binary[])
         }
     }
 }
+
+/* void convertAndOrder(int number, int binary[])
+{
+    // this was frustrating
+
+    // i used a standard way of checking if a number is even by using a modulus operator
+    if (number % 2 == 0)
+    {
+        // runs a loop in reverse to print binary values in *correct* order
+        // don't know why but it works
+
+        int i = 31;
+
+        while (i >= 0)
+        // for (int i = 31; i >= 0; i--)
+        {
+            // prints 0 or 1 for the current bit value
+            binary[i] = number % 2;
+
+            // LSR
+            number = number >> 1;
+
+            // prints current binary value in array
+            printf("%d ", binary[i]);
+
+            i--;
+        }
+    }
+
+    else
+    {
+        // prints array in reverse order for non-even numbers
+        int i = 0;
+
+        while (i < 32)
+        // for (int i = 0; i < 32; i++)
+        {
+            // prints 0 or 1 for the current bit value
+            binary[i] = number % 2;
+
+            // LSR
+            number = number >> 1;
+
+            // prints current binary value in array
+            printf("%d ", binary[i]);
+
+            i++;
+        }
+    }
+} */
