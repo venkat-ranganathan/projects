@@ -18,7 +18,7 @@ Setup was relatively simple:
 
 - There's a Raspberry Pi app that formats and installs the Raspberry Pi OS onto your microSD card
 - Then you plug the microSD card into the Raspberry Pi, turn it on and connect it to a monitor, keyboard, and mouse; then connect it to your Wi-Fi/ethernet
-- You run: "sudo apt-get update & sudo apt-get upgrade -y" to update the OS
+- You run: "sudo apt-get update" & "sudo apt-get upgrade -y" to update the OS
 - Then install the Pi-hole adblocker using the installer from the Pi-hole website
 - In the installer, you choose your static IP address for the Raspberry Pi
 - You then set that IP address as your DNS address on your router (I also use a secondary DNS server as a backup on my router, in case the Raspberry Pi ever goes down)
