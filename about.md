@@ -25,7 +25,8 @@ _This will speed up loading websites if there are ads or trackers on the website
 **Who is this good for?** Everyone, but especially for people who don't know how to install a local ad blocker (like family members). You just set up this little device on their home network and leave it alone. Since you can SSH into the Raspberry Pi when you're on the same local network, you can update it from your computer without needing to connect a monitor, keyboard, and mouse to the Raspberry Pi. 
 
 It won't block _everything_, but it blocks _a lot more_ than nothing, so it's a net-positive result.
-<img width="960" alt="Screenshot_20221015_100317 - Copy" src="https://user-images.githubusercontent.com/96662693/195990751-1382c541-490d-42c5-afb9-ed76fec3f43f.png">
+
+<img width="960" alt="Screenshot_20221015_100317 - Copy" src="https://user-images.githubusercontent.com/96662693/195990856-c6d4d4ff-1567-4a70-9002-79926b7808d7.png">
 
 Setup was relatively simple:
 
