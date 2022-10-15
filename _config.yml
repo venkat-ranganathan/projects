@@ -2,10 +2,6 @@ theme: minima
 title: projects
 header_pages:
   - about.md
-  - c.md
-  - MATLAB.md
-  - verilog.md
-  - bash.md
 
 author: Venkat Ranganathan
 linkedin_username: venkatesh-ranganathan
