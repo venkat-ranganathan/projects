@@ -27,7 +27,7 @@ With the device setup, I can just go to the IP address and and look at the dashb
 
 <img width="1919" alt="Screenshot_20221014_100538" src="https://user-images.githubusercontent.com/96662693/195964606-0b19cd92-b63c-4598-90b2-200ce7bfb9a6.png">
 
-I also drilled some holes on the top of the case because it otherwise had no airflow. I installed a small heatsink on the CPU and a fan over it to keep the device cool.
+I also drilled some holes on the top of the Raspberry Pi case because it otherwise had no airflow. I installed a small heatsink on the CPU and a fan over it to keep the device cool.
 
 ![IMG_3904 - Copy](https://user-images.githubusercontent.com/96662693/195964714-78ff049a-ce09-425e-ab78-3e61d114b47a.jpg)
 
