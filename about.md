@@ -12,7 +12,7 @@
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
 
-I got a Raspberry Pi 4B and used it to setup an adblocker on my network. The advantage of this is that it's not device-dependent, meaning I don't need to have an adblocker setup on individual devices because this Raspberry Pi acts as the primary DNS server for my router. This works for devices that don't have adblockers available, like my Google Speaker that I use to play music for my dog when I go to class. It also doesn't interfere with other adblockers that are used locally on individual devices.
+I got a Raspberry Pi 4B and used it to setup an adblocker on my network. The advantage of this is that it's not device-dependent, meaning I don't need to have an adblocker setup on individual devices because this Raspberry Pi acts as the primary DNS server for my router (the Raspberry Pi automatically uses Google/Cloudflare as the next DNS server after adblock filter list is applied). This works for devices that don't have adblockers available, like my Google Speaker that I use to play music for my dog when I go to class. It also doesn't interfere with other adblockers that are used locally on individual devices.
 
 The idea is as follows: normally you need to setup an adblocker on each of your individual devices (phone, computer, etc.) to block ads on those devices. By using this Raspberry Pi as my primary DNS server on my router, all data that goes into and out of the router first checks the filter list on my Raspberry Pi for any websites identified as ad networks or tracking links, if the link coming into or out of the router matches one of those links, it tells the router to block the connection. 
 
