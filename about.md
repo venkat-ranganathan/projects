@@ -10,6 +10,8 @@
 
 ### Network-wide adblocker, 10/14/2022:
 
+![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
+
 I got a Raspberry Pi 4B and used it to setup an adblocker on my network. 
 
 <img width="960" alt="Screenshot_20221014_105709 - Copy" src="https://user-images.githubusercontent.com/96662693/195965951-204c7d7a-0ee2-46ae-9b3b-4d6c517938f8.png">
