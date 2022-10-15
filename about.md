@@ -12,7 +12,11 @@
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
 
-I got a Raspberry Pi 4B and used it to setup an adblocker on my network. 
+I got a Raspberry Pi 4B and used it to setup an adblocker on my network. The advantage of this is that it's not device-dependent, meaning I don't need to have an adblocker setup on individual devices because this Raspberry Pi acts as the primary DNS server for my router.
+
+The idea is as follows: normally you need to setup an adblocker on each of your individual devices (phone, computer, etc.) to block ads on those devices. By using this Raspberry Pi as my primary DNS server on my router, all data that passes goes into and out of the router first checks the filter list on my Raspberry Pi for any websites identified as ad networks or tracking links, if the link coming into or out of the router matches one of those links, it tells the router to block the connection. 
+
+Will this slow down my internet connection? No, it won't slow down the internet at all because the filter list is just a text file of website addresses to block, there's no other data there. The router checks the if the website attempting to connect is on the list, if it is, it blocks the connection. That's it.
 
 <img width="960" alt="Screenshot_20221014_105709 - Copy" src="https://user-images.githubusercontent.com/96662693/195965951-204c7d7a-0ee2-46ae-9b3b-4d6c517938f8.png">
 
