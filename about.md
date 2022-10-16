@@ -8,7 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-### I setup a network-wide adblocker, 10/14/2022:
+### I setup a network-wide Ad Blocker, 10/14/2022:
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
 
