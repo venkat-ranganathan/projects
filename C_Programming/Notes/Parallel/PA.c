@@ -6,19 +6,14 @@ int main(void)
 	int selection;
 
 	// Parallel arrays
-	// char is two dimensional array, every name is an array of characters
-	// name[][STRING_SIZE] is column (second array)
 	char name[MAX][STRING_SIZE];
-
-	// MAX is a constant defined in the header file
 	int rating[MAX];
 	int highScore[MAX];
 
 	// tag field
 	int tagField = 0;
 
-	do
-	{
+	do {
 
 		DisplayMenu();
 
@@ -28,46 +23,88 @@ int main(void)
 
 	} while (selection != DONE);
 
+
 	return 0;
 }
 
 void PrintDivider(char symbol, int length)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	// Output divider to the screen
-	for (int counter = 0; counter < length; counter++)
+	for(int counter = 0; counter < length; counter++)
 	{
+		// Print one character to the screen
 		printf("%c", symbol);
 	}
-
-	printf(DOUBLE_RETURN);
+	
+	// Move cursor down one line
+	printf("\n");
 }
 
-void ReadInData(FILE *fin, char names[][STRING_SIZE], int rating[], int highScore[], int *tagField)
+void ClearBuffer(char lastCharacter)
+{
+		// check to see if there data in the buffer
+	if (lastCharacter != '\n')
+	{
+		// Clear the buffer
+		while (getchar() != '\n');
+	}
+}
+
+
+void ReadStringFromKeybaord(char text[], int maxSize)
+{
+	char oneLetter;
+	int index = 0;
+	
+	// Retrieve one lettter from the input buffer
+	oneLetter = getchar();
+	
+	while (oneLetter != '\n' && index < maxSize-1)
+	{
+		// Assign letter to the text
+		text[index] = oneLetter;
+		
+		// Incrament index
+		index++;
+		
+		// Retrieve one character from the input buffer
+		oneLetter = getchar();
+	}
+	
+	// Assign the null terminator to the string
+	text[index] = '\0';
+	
+	ClearBuffer(oneLetter);
+}
+
+void ReadInData(FILE * fin,  char names[][STRING_SIZE], int rating[], int highScore[], int * tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	// File to open
 	char fileName[STRING_SIZE];
-
+	
 	// Single record from the data file
 	char nameFromFile[STRING_SIZE];
 	int ratingFromFile;
 	int highScoreFromfile;
-
+	
 	// Variables needed to process data file
 	int dataInFile;
 	char processEOL;
-
+	int nameIndex;
+	char oneLetter;
+	
 	// Prompt the user
 	printf("Enter file name to open: ");
 
@@ -76,7 +113,7 @@ void ReadInData(FILE *fin, char names[][STRING_SIZE], int rating[], int highScor
 
 	// Open file
 	fin = fopen(fileName, "r");
-
+	
 	// Check to see if the file open
 	if (fin != NULL)
 	{
@@ -89,22 +126,47 @@ void ReadInData(FILE *fin, char names[][STRING_SIZE], int rating[], int highScor
 
 		// Initialization - Check to see if there is data in the file
 		dataInFile = fgetc(fin);
-
-		// checks if there's data in the file and there's room in the array
+		
+		// Check to see if you have reached the end of the file and 
+		// that there is room in the array to store the next record
 		while (dataInFile != EOF && *tagField < MAX)
 		{
 			// Put the character back
 			ungetc(dataInFile, fin);
-
-			// Now we know there is still data in the file
+			
+			// Now we know that there is still data in the file
 			// Read in all three pieces of data
-			fgets(nameFromFile, STRING_SIZE, fin);
-			fscanf(fin, "%d", &ratingFromFile);
-			fscanf(fin, "%d", &highScoreFromfile);
+			
+			/* Use a sentinel loop to store the name */
+			
+			// Start nameIndex at 0
+			nameIndex = 0;
+			
+			// Initialization - Retrieve the first letter of the name
+			oneLetter = fgetc(fin);
 
+			while (oneLetter != '#')
+			{
+				// Store letter in name in the array
+				nameFromFile[nameIndex] = oneLetter;
+
+				// Increase index by 1
+				nameIndex++;
+				
+				// Changer - Retrieve the next letter of the name
+				oneLetter = fgetc(fin);
+				
+			} 
+			
+			// Add null terminator to the string
+			nameFromFile[nameIndex] = '\0';
+			
+			fscanf(fin, "%d", &ratingFromFile);
+			fscanf(fin, "%d", &highScoreFromfile);	
+			
 			// Process the enter key
 			processEOL = fgetc(fin);
-			while (processEOL != '\n' && processEOL != EOF)
+			while ( processEOL != '\n' && processEOL != EOF )
 			{
 				// Get the next character from the file
 				processEOL = fgetc(fin);
@@ -114,59 +176,56 @@ void ReadInData(FILE *fin, char names[][STRING_SIZE], int rating[], int highScor
 			strcpy(names[*tagField], nameFromFile);
 			rating[*tagField] = ratingFromFile;
 			highScore[*tagField] = highScoreFromfile;
-
+			
 			// Incrament the tagField
 			(*tagField)++;
-
+			
 			// Changer - Check to see if there is data in the file
 			dataInFile = fgetc(fin);
-
+			
 		} // CLOSE while-loop
-
-	} // CLOSE if-statement
+	
+	} // CLOSE if-statement 
 	else
 	{
 		// Print error message to the scree
 		printf("File did not open\n\n");
 	}
-
-	// Close the input file.
+	
+	// Close the input file. 
 	fclose(fin);
 
 } // Close ReadInData
 
 int FindName(char nameToFind[], const char names[][STRING_SIZE], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	int position = -1;
-
-	// continues searching text until number of items in array is exhausted AND position value is changed
-	for (int index = 0; index < tagField && position == -1; index++)
+	
+	for(int index = 0; index < tagField && position == -1; index++)
 	{
-		printf("Index = %d\n", index);
-		printf("name ot search: %s$\n", nameToFind);
-		printf("current name: %s$\n\n", namesToFind);
-		// if name is found, sets it as position
-		if (strcmp(nameToFind, names[index]) == 0)
+		
+		// Check to see if the current name and the name to find are equal
+		if(strcmp(nameToFind, names[index]) == 0)
 		{
+			// Set position to the current index 
 			position = index;
 		}
 	}
 
-	// returns position of name
 	return position;
 }
 
 void DisplayMenu(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
@@ -194,42 +253,47 @@ void DisplayMenu(void)
 	printf("\t0) Quit\n");
 
 	PrintDivider('*', 80);
+
 }
 
 int GetSelection(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	int selection;
 
-	// Prompt user for selection
+	// Prompt user for selection 
 	printf("\tEnter selection: ");
 
 	// Get value from the keyboard
-	scanf("%d", &selection);
+	selection = (getchar() - 48);
 
 	// Mover cursor down to the next line
 	printf("\n");
+	
+	ClearBuffer(selection + 48);
 
 	return selection;
 }
 
-void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], int highScore[], int *tagField)
+void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], int highScore[], int * tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
-	FILE *fin;
+	FILE * fin;
 	char nameToFind[STRING_SIZE];
 	int location;
 	int sum;
+	char oneLetter;
+	int nameIndex;
 	// double average;
 
 	switch (selection)
@@ -239,18 +303,17 @@ void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], in
 		break;
 
 	case 1:
-		// reads data from file
 		ReadInData(fin, names, rating, highScore, tagField);
 		break;
 
 	case 2:
 		// Print one record
 		printf("Enter name to find: ");
-		scanf("%s", nameToFind);
-
-		// tagField is a pointer because we want the value to change if condition is met
+		
+		ReadStringFromKeybaord(nameToFind, STRING_SIZE);
+		
 		location = FindName(nameToFind, names, *tagField);
-
+		
 		if (location != -1)
 		{
 			PrintDataHeader();
@@ -265,7 +328,6 @@ void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], in
 
 	case 3:
 		// Print all the records
-		PrintDataHeader();
 		PrintAllRecords(names, rating, highScore, *tagField);
 		break;
 
@@ -278,7 +340,7 @@ void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], in
 		// Delete one record
 		printf("Enter name to find: ");
 		scanf("%s", nameToFind);
-
+		
 		location = FindName(nameToFind, names, *tagField);
 
 		if (location != -1)
@@ -305,32 +367,32 @@ void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], in
 		break;
 
 	case 8:
-
+	
 		break;
 
 	case 9:
 		// Average hi score
-
+	
 		break;
 
 	case 10:
 		// Find the highest rating
-
+	
 		break;
 
 	case 11:
 		// Find the lowest rating
-
+	
 		break;
 
 	case 12:
 		// Find the highest hi score
-
+	
 		break;
 
 	case 13:
 		// Find the lowest hi score
-
+	
 		break;
 
 	default:
@@ -342,9 +404,9 @@ void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], in
 
 void PrintResult(double value, char message[])
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
@@ -354,88 +416,96 @@ void PrintResult(double value, char message[])
 
 void PrintDataHeader(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
-	printf("Name					");
-	printf("Rating	");
+	printf("Name                ");
+	printf("Rating\t");
 	printf("High Score\n");
-
+	
 	PrintDivider('-', 45);
 }
 
-void PrintOneRecord(char name[], int rating, int highScore)
+void PrintOneRecord(const char name[], int rating, int highScore)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
-	// %s is a string
 	printf("%s", name);
-	printf("%d", rating);
+	
+	// Pad the name with spaces
+	for (int index = 0; index < (20 - strlen(name)); index++)
+	{
+		// Print a space
+		printf(" ");
+	}
+	
+	printf("%d\t\t", rating);
 	printf("%d\n", highScore);
+
 }
 
-// used const before variables because we're not changing the values of the array
 void PrintAllRecords(const char names[][STRING_SIZE], const int rating[], const int highScore[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	PrintDataHeader();
-
-	// tagField is number of items in the array
+	
 	for (int index = 0; index < tagField; index++)
 	{
 		PrintOneRecord(names[index], rating[index], highScore[index]);
 	}
 }
 
-void AddOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int *tagField)
+void AddOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int * tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
+	
 }
 
-void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int *tagField, int location)
+void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int * tagField, int location)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
+	
 }
 
 int CalculateTotal(const int array[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
-
+	
 	return 0;
 }
 
 int FindHighest(const int array[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
@@ -444,9 +514,9 @@ int FindHighest(const int array[], int tagField)
 
 int FindLowest(const int array[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name:
-// Inputs:
-// Outputs:
+// Function Name: 
+// Inputs:  
+// Outputs: 
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
