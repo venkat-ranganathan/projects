@@ -50,7 +50,7 @@ unsigned int maxPrimeFactor(unsigned int number)
     // lmao this kept failing test 7 and 8 until I switched the order of loops 2 & 3
 
     // 3) returns largest prime factor of "number" if neither of the above are true
-    // starts by dividing the integer "number" by 2, and working backwards until "number" >= 2
+    // starts by dividing the integer "number" by 2, and working backwards until i >= 2
     for (int i = number / 2; i >= 2; i--)
     {
         // checks if integer "number" is divisible i
