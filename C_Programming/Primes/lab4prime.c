@@ -66,6 +66,8 @@ unsigned int maxPrimeFactor(unsigned int number)
     }
 
     // 2) checks if number is a prime number itself, and returns the value of the number if true
+    // since you've evaluated the other two options above, the only remaining possibility at this point
+    // is that the number is able to be divided by itself, aka the number is a prime number itself
     for (int i = 2; i <= number; i++)
     {
         if (number % i == 0)
