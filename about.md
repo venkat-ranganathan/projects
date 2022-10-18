@@ -39,7 +39,7 @@ Setup was relatively simple using this guide: https://www.tomshardware.com/how-t
 - After that, you can disconnect the monitor, keyboard, and mouse because you can now connect to the Raspberry Pi through SSH since it's on your network
 - With SSH I can update the OS & ad blocker from my laptop using bash (I use MobaXterm to SSH into my Raspberry Pi)
 
-<img width="960" alt="Screenshot_20221014_105612 - Copy" src="https://user-images.githubusercontent.com/96662693/195990759-18aea83a-30e1-4b5b-b12a-b3f572a3d98d.png">
+<img width="960" alt="Screenshot_20221018_115834 - Copy" src="https://user-images.githubusercontent.com/96662693/196483378-a6700dfe-97c6-4f2c-a7a4-ebae8508ab03.png">
 
 With the device setup, I can just go to the IP address and and look at the dashboard to see what's being blocked, the uptime/memory usage/temperature of the Raspberry Pi, add adblock filters, adjust settings, etc.
 
