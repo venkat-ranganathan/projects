@@ -41,7 +41,7 @@ int main(void)
     printf("> Passed compareAndSwap() tests!\n");
 
     printf("########## Testing searchArray() ##########\n");
-    int array[] = {25, 12, 7, 0, 69, 34, 21, 86, 4, 9, 64};
+    int array[] = {25,12,7,0,69,34,21,86,4,9,64};
     int *ptr;
     ptr = searchArray(array, 11, 4);
     assert(ptr == &(array[8]));
@@ -67,3 +67,4 @@ int main(void)
 
     printf("> All Tests Passed Successfully!\n");
 }
+

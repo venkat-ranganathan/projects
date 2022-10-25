@@ -2,6 +2,7 @@
     "files.associations": {
         "port_macros.h": "c",
         "stdint.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "algorithm": "c"
     }
 }
