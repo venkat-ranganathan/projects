@@ -6,7 +6,7 @@ int main()
 
     Loops have three parts:
 
-    know three parts: initialization, test, counter
+    know three parts: initialization, test, changer
 
     int counter;
 
