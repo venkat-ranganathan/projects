@@ -16,7 +16,7 @@ From the transfer function, H(z), we're plotting its zero-pole plot on the real/
 
 I was able to conceptualize all these steps and calculate them, but the I had difficulty visualizing what the frequency response, H(Ω), would look like from the zero-pole plot, so I looked into using MATLAB to plot it...
 
-After reading the MATLAB documentation (and a lot of trial and error) I finally got a 3D visualization of how the frequency response would look like for a given zero-pole plot!
+After reading the MATLAB documentation (and a lot of trial and error) I got a 3D visualization of how the frequency response would look like for a given zero-pole plot!
 
 Here's the frequency response vs the zero-pole plot I produced from my difference equation:
 
