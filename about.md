@@ -8,6 +8,16 @@
 ---
 <p>&nbsp;</p>
 
+### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022:
+
+![zeropole](https://user-images.githubusercontent.com/96662693/198832961-00777355-3c1b-45b2-8da9-72ec8cc28513.jpg)
+
+<img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
+
+<p>&nbsp;</p>
+---
+<p>&nbsp;</p>
+
 ### I setup a network-wide Ad Blocker, 10/14/2022:
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
