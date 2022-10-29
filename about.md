@@ -22,7 +22,7 @@ Here's the frequency response vs the zero-pole plot I produced from my differenc
 
 <img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198833015-ee0523f8-e78a-4414-b233-c6253aab697b.png">
 
-Here's the messy code I used to generate it:
+Here's the messy code I used to generate it (I comment the code for my assignments, but this is something I hacked together to learn how to use it, so it's currently uncommented):
 
 <img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
 
