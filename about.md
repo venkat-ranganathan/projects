@@ -8,28 +8,6 @@
 ---
 <p>&nbsp;</p>
 
-### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022:
-
-We're currently learning about calculating transfer functions, H(z), from a given (recursive/non-recursive) difference equation, y[n] = x[n], then converting the transfer function into its corresponding frequency response, H(Ω).
-
-From the transfer function, H(z), we're plotting its zero-pole plot on the real/imaginary plane inside a unit circle and determining whether it's stable or not (based on whether the poles are inside the unit circle).
-
-So, I was able to conceptualize all these steps and calculate them, but the I had difficulty visualizing what the frequency response, H(Ω), would look like from the zero-pole plot, so I looked into using MATLAB to plot it...
-
-After reading the MATLAB documentation (and a lot of trial and error) I finally got a 3D visualization of how the frequency response would look like for a given zero-pole plot!
-
-Here's the frequency response vs the zero-pole plot I produced from my difference equation:
-
-<img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198833015-ee0523f8-e78a-4414-b233-c6253aab697b.png">
-
-Here's the messy code I used to generate it:
-
-<img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
-
-<p>&nbsp;</p>
----
-<p>&nbsp;</p>
-
 ### I setup a network-wide Ad Blocker, 10/14/2022:
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
