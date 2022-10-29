@@ -28,8 +28,6 @@ Here's the messy code I used to generate it:
 
 <img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
 
-Bon appétit
-
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
