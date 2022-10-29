@@ -10,7 +10,7 @@
 
 ### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022:
 
-![zeropole](https://user-images.githubusercontent.com/96662693/198832961-00777355-3c1b-45b2-8da9-72ec8cc28513.jpg)
+<img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198833015-ee0523f8-e78a-4414-b233-c6253aab697b.png">
 
 <img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
 
