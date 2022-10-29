@@ -28,8 +28,6 @@ Here's the messy code I used to generate it:
 
 <img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
 
-![6yrej2](https://user-images.githubusercontent.com/96662693/198834300-3c34b00a-3335-427c-9676-248a915ff65b.jpg)
-
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
