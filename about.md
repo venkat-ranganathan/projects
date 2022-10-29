@@ -18,11 +18,13 @@ I was able to conceptualize all these steps and calculate them, but I had diffic
 
 After reading the MATLAB documentation (and a lot of trial and error) I got a 3D visualization of how the frequency response would look like for a given zero-pole plot!
 
+I'm using MATLAB as a visual aid to help me conceptulaize how to go from a 2D zero-pole plot, to a 3D frequency response-zero-pole plot. My code isn't documented because I made this post shortly after I got it working, and I wanted to share it since it's cool.
+
 Here's the frequency response vs the zero-pole plot I produced from my difference equation:
 
 <img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198833015-ee0523f8-e78a-4414-b233-c6253aab697b.png">
 
-Here's the messy code I used to generate it (I comment the code for my assignments, but this is something I hacked together to learn how to use it, so it's currently uncommented):
+Here's the messy code I used to generate it:
 
 <img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
 
