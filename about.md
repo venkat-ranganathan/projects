@@ -14,7 +14,7 @@ We're currently learning about calculating transfer functions, H(z), from a give
 
 From the transfer function, H(z), we're plotting its zero-pole plot on the real/imaginary plane inside a unit circle and determining whether it's stable or not (based on whether the poles are inside the unit circle).
 
-So, I was able to conceptualize all these steps and calculate them, but the I had difficulty visualizing what the frequency response, H(Ω), would look like from the zero-pole plot, so I looked into using MATLAB to plot it...
+I was able to conceptualize all these steps and calculate them, but the I had difficulty visualizing what the frequency response, H(Ω), would look like from the zero-pole plot, so I looked into using MATLAB to plot it...
 
 After reading the MATLAB documentation (and a lot of trial and error) I finally got a 3D visualization of how the frequency response would look like for a given zero-pole plot!
 
