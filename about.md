@@ -10,6 +10,10 @@
 
 ### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022:
 
+We're currently learning about calculating transfer functions, H(z), from a given (recursive/non-recursive) difference equation, y[n] = x[n], then converting the transfer function into its corresponding  frequency response, H(Ω).
+
+From there, from the transfer function, H(z), we're plotting zero-pole plots on the real/imaginary plane inside a unit circle 
+
 <img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198833015-ee0523f8-e78a-4414-b233-c6253aab697b.png">
 
 <img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
