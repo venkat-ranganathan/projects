@@ -22,11 +22,11 @@ I'm using MATLAB as a visual aid to help me conceptulaize how to go from a 2D ze
 
 Here's the frequency response vs the zero-pole plot I produced from my difference equation:
 
-<img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198833015-ee0523f8-e78a-4414-b233-c6253aab697b.png">
+<img width="416" alt="hw_prob_2" src="https://user-images.githubusercontent.com/96662693/198834540-ed951bf5-e807-435d-8b08-9185a631b633.png">
 
 Here's the messy code I used to generate it:
 
-<img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198832976-0dc33df5-33d6-4e34-9bbb-419b3d84ad2c.png">
+<img width="960" alt="hw_prob" src="https://user-images.githubusercontent.com/96662693/198834559-6aefbf5f-db5a-40fe-a2d1-57634763367f.png">
 
 <p>&nbsp;</p>
 ---
