@@ -12,7 +12,7 @@
 
 We're currently learning about calculating transfer functions, H(z), from a given (recursive/non-recursive) difference equation, y[n] = x[n], then converting the transfer function into its corresponding frequency response, H(Ω).
 
-From the transfer function, H(z), we're plotting its zero-pole plots on the real/imaginary plane inside a unit circle and determining whether it's stable or not (based on whether the poles are inside the unit circle).
+From the transfer function, H(z), we're plotting its zero-pole plot on the real/imaginary plane inside a unit circle and determining whether it's stable or not (based on whether the poles are inside the unit circle).
 
 So, I was able to conceptualize all these steps and calculate them, but the I had difficulty visualizing what the frequency response, H(Ω), would look like from the zero-pole plot, so I looked into using MATLAB to plot it...
 
