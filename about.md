@@ -22,7 +22,7 @@ I'm using MATLAB as a visual aid to help me conceptulaize how to go from a 2D ze
 
 Here's the frequency response vs the zero-pole plot I produced from my difference equation:
 
-<img width="842" alt="hw_prob_2_d_1" src="https://user-images.githubusercontent.com/96662693/199073009-ed0dcbb6-c603-4a2b-b1c0-b8edaff82c3b.png">
+<img width="407" alt="hw_prob_2_d_2" src="https://user-images.githubusercontent.com/96662693/199073167-3872b687-1a78-4447-b6af-1a9ae311b605.png">
 
 Here's the messy code I used to generate it:
 
@@ -30,7 +30,7 @@ Here's the messy code I used to generate it:
 
 Here's the more direct zero-pole, frequency response, and phase plots:
 
-<img width="407" alt="hw_prob_2_d_2" src="https://user-images.githubusercontent.com/96662693/199073167-3872b687-1a78-4447-b6af-1a9ae311b605.png">
+<img width="842" alt="hw_prob_2_d_1" src="https://user-images.githubusercontent.com/96662693/199073009-ed0dcbb6-c603-4a2b-b1c0-b8edaff82c3b.png">
 
 and here's the code I used to generate it:
 
