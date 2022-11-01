@@ -598,6 +598,18 @@ void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], i
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
+	for (int index = location; index < *tagField; index++)
+	{
+		// move everything in the index up one space, aka delete the selected record
+		rating[index] = rating[index + 1];
+
+		highScore[index] = highScore[index + 1];
+
+		strcpy(names[index], names[index + 1]);
+	}
+
+	// de-referance pointer and decrement
+	(*tagField)--;
 }
 
 int CalculateTotal(const int array[], int tagField)
@@ -693,4 +705,19 @@ int FindLowest(const int array[], int tagField)
 	}
 
 	return lowestIndex;
+}
+
+void Swap(int *first, int *second)
+{
+	int temp = *first;
+
+	*first = *second;
+	*second = temp;
+}
+
+void SelectionSort(int array1[], int array2[], char names[][STRING_SIZE], int arrayLength)
+{
+	// add code after it gets posted on bright space
+
+	// uses selection sort
 }

@@ -5,7 +5,7 @@
 int searchArray(int array[], int arraySize, int tagField);
 
 // main function
-void main()
+int main()
 {
     // declare MAX_SIZE as an integer that will determine how many elements will be in the array
     int MAX_SIZE = 0;
@@ -18,6 +18,8 @@ void main()
 
     // ask user to set how many elements will be in the array
     printf("Enter how many elements will be in the array: ");
+
+    // store in memory location of variable MAX_SIZE
     scanf("%d", &MAX_SIZE);
 
     // use a loop to store the values in the array;
@@ -39,6 +41,8 @@ void main()
 
     // pass values to to function and print out result simultaneously
     printf("\nThe value %d appears %d times in the array\n", tagField, searchArray(array, MAX_SIZE, tagField));
+
+    return 0;
 }
 
 // function

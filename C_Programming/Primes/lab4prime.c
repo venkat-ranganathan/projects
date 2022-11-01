@@ -20,7 +20,7 @@ unsigned int isPrime(unsigned int number)
 
     // checks if integer "number" values greater than or equal to 5 are prime or not
     // starts at i = 5, keeps running until i^2 is less than or equal to "number",
-    // then sets i = i + 6 and continues loop
+    // then sets i = i + 6 and continues loop, because it results in a prime number when you start with 5
     for (int i = 5; i * i <= number; i += 6)
     {
         // checks if integer "number" is divisible by i or i + 2 and returns not prime if true
