@@ -6,6 +6,8 @@ int flipSign(int *x)
 {
     // if "x" is pointing to a positive or negative value: switch the signs of the value and return '1'
 
+    int temp = *x;
+
     // if "x" is pointing to a '0' value: return '0'
 }
 

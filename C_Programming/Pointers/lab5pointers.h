@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>
+
+// constant declaration
 #define STR_SIZE 50
 
 // function prototypes

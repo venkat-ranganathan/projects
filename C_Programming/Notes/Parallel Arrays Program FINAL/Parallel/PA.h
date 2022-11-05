@@ -22,6 +22,7 @@ const int DONE = 0;
 const int MAX = 100;
 const int STRING_SIZE = 20;
 
+
 // Utility function prototypes
 void PrintDivider(char symbol, int length);
 int FindName(char nameToFind[], const char names[][STRING_SIZE], int tagField);
@@ -29,13 +30,13 @@ void ClearBuffer(char lastCharacter);
 void ReadStringFromKeybaord(char text[], int maxSize);
 
 // Fie function prototypes
-void OpenFile(FILE *fin);
-void ReadInData(FILE *fin, char name[][STRING_SIZE], int rating[], int highScore[], int *tagField);
+void OpenFile(FILE * fin);
+void ReadInData(FILE * fin, char name[][STRING_SIZE], int rating[], int highScore[], int * tagField);
 
 // Main menu function prototypes
 void DisplayMenu(void);
 int GetSelection(void);
-void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], int hiScore[], int *tagField);
+void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], int hiScore[], int * tagField);
 
 // Print data function prototypes
 void PrintDataHeader(void);
@@ -43,8 +44,8 @@ void PrintOneRecord(const char name[], int rating, int hiScore);
 void PrintAllRecords(const char names[][STRING_SIZE], const int rating[], const int hiScore[], int tagField);
 
 // Add and delete record prototypes
-void AddOneRecord(char names[][STRING_SIZE], int rating[], int hiScore[], int *tagField);
-void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int hiScore[], int *tagField, int location);
+void AddOneRecord(char names[][STRING_SIZE], int rating[], int hiScore[], int * tagField);
+void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int hiScore[], int * tagField, int location);
 
 // Other prototypes
 int CalculateTotal(const int array[], int tagField);
@@ -52,11 +53,9 @@ int FindHighest(const int array[], int tagField);
 int FindLowest(const int array[], int tagField);
 void PrintResult(double average, char message[]);
 
-// swap function prototypes
-void Swap(int *first, int *second);
+void SelectionSort(int array1[], int array2[], char names[][STRING_SIZE], int arrayLength);
+void SelectionSortByName(int array1[], int array2[], char names[][STRING_SIZE], int arrayLength);
 void Swap(char first[], char second[]);
-
-// sort function prototype
-void SelectionSortByName(int array1[], int array2[], char names[][STRING_SIZE], int arrayLength)
+void SwapI(int * first, int * second);
 
 #endif
