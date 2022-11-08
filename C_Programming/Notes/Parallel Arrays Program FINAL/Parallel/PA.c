@@ -1,4 +1,3 @@
-
 #include "PA.h"
 
 int main(void)
@@ -13,7 +12,8 @@ int main(void)
 	// tag field
 	int tagField = 0;
 
-	do {
+	do
+	{
 
 		DisplayMenu();
 
@@ -23,91 +23,90 @@ int main(void)
 
 	} while (selection != DONE);
 
-
 	return 0;
 }
 
 void PrintDivider(char symbol, int length)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	// Output divider to the screen
-	for(int counter = 0; counter < length; counter++)
+	for (int counter = 0; counter < length; counter++)
 	{
 		// Print one character to the screen
 		printf("%c", symbol);
 	}
-	
+
 	// Move cursor down one line
 	printf("\n");
 }
 
 void ClearBuffer(char lastCharacter)
 {
-		// check to see if there data in the buffer
+	// check to see if there data in the buffer
 	if (lastCharacter != '\n')
 	{
 		// Clear the buffer
-		while (getchar() != '\n');
+		while (getchar() != '\n')
+			;
 	}
 }
-
 
 void ReadStringFromKeybaord(char text[], int maxSize)
 {
 	char oneLetter;
 	int index = 0;
-	
+
 	// Retrieve one lettter from the input buffer
 	oneLetter = getchar();
-	
-	while (oneLetter != '\n' && index < maxSize-1)
+
+	while (oneLetter != '\n' && index < maxSize - 1)
 	{
 		// Assign letter to the text
 		text[index] = oneLetter;
-		
+
 		// Incrament index
 		index++;
-		
+
 		// Retrieve one character from the input buffer
 		oneLetter = getchar();
 	}
-	
+
 	// Assign the null terminator to the string
 	text[index] = '\0';
-	
+
 	// Move the cursor down one line
 	printf("\n");
-	
+
 	ClearBuffer(oneLetter);
 }
 
-void ReadInData(FILE * fin,  char names[][STRING_SIZE], int rating[], int highScore[], int * tagField)
+void ReadInData(FILE *fin, char names[][STRING_SIZE], int rating[], int highScore[], int *tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	// File to open
 	char fileName[STRING_SIZE];
-	
+
 	// Single record from the data file
 	char nameFromFile[STRING_SIZE];
 	int ratingFromFile;
 	int highScoreFromfile;
-	
+
 	// Variables needed to process data file
 	int dataInFile;
 	char processEOL;
 	int nameIndex;
 	char oneLetter;
-	
+
 	// Prompt the user
 	printf("Enter file name to open: ");
 
@@ -116,7 +115,7 @@ void ReadInData(FILE * fin,  char names[][STRING_SIZE], int rating[], int highSc
 
 	// Open file
 	fin = fopen(fileName, "r");
-	
+
 	// Check to see if the file open
 	if (fin != NULL)
 	{
@@ -129,22 +128,22 @@ void ReadInData(FILE * fin,  char names[][STRING_SIZE], int rating[], int highSc
 
 		// Initialization - Check to see if there is data in the file
 		dataInFile = fgetc(fin);
-		
-		// Check to see if you have reached the end of the file and 
+
+		// Check to see if you have reached the end of the file and
 		// that there is room in the array to store the next record
 		while (dataInFile != EOF && *tagField < MAX)
 		{
 			// Put the character back
 			ungetc(dataInFile, fin);
-			
+
 			// Now we know that there is still data in the file
 			// Read in all three pieces of data
-			
+
 			/* Use a sentinel loop to store the name */
-			
+
 			// Start nameIndex at 0
 			nameIndex = 0;
-			
+
 			// Initialization - Retrieve the first letter of the name
 			oneLetter = fgetc(fin);
 
@@ -155,21 +154,20 @@ void ReadInData(FILE * fin,  char names[][STRING_SIZE], int rating[], int highSc
 
 				// Increase index by 1
 				nameIndex++;
-				
+
 				// Changer - Retrieve the next letter of the name
 				oneLetter = fgetc(fin);
-				
-			} 
-			
+			}
+
 			// Add null terminator to the string
 			nameFromFile[nameIndex] = '\0';
-			
+
 			fscanf(fin, "%d", &ratingFromFile);
-			fscanf(fin, "%d", &highScoreFromfile);	
-			
+			fscanf(fin, "%d", &highScoreFromfile);
+
 			// Process the enter key
 			processEOL = fgetc(fin);
-			while ( processEOL != '\n' && processEOL != EOF )
+			while (processEOL != '\n' && processEOL != EOF)
 			{
 				// Get the next character from the file
 				processEOL = fgetc(fin);
@@ -179,44 +177,44 @@ void ReadInData(FILE * fin,  char names[][STRING_SIZE], int rating[], int highSc
 			strcpy(names[*tagField], nameFromFile);
 			rating[*tagField] = ratingFromFile;
 			highScore[*tagField] = highScoreFromfile;
-			
+
 			// Incrament the tagField
 			(*tagField)++;
-			
+
 			// Changer - Check to see if there is data in the file
 			dataInFile = fgetc(fin);
-			
+
 		} // CLOSE while-loop
-	
-	} // CLOSE if-statement 
+
+	} // CLOSE if-statement
 	else
 	{
 		// Print error message to the scree
 		printf("File did not open\n\n");
 	}
-	
-	// Close the input file. 
+
+	// Close the input file.
 	fclose(fin);
 
 } // Close ReadInData
 
 int FindName(char nameToFind[], const char names[][STRING_SIZE], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	int position = -1;
-	
-	for(int index = 0; index < tagField && position == -1; index++)
+
+	for (int index = 0; index < tagField && position == -1; index++)
 	{
-		
+
 		// Check to see if the current name and the name to find are equal
-		if(strcmp(nameToFind, names[index]) == 0)
+		if (strcmp(nameToFind, names[index]) == 0)
 		{
-			// Set position to the current index 
+			// Set position to the current index
 			position = index;
 		}
 	}
@@ -226,9 +224,9 @@ int FindName(char nameToFind[], const char names[][STRING_SIZE], int tagField)
 
 void DisplayMenu(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
@@ -255,34 +253,33 @@ void DisplayMenu(void)
 	printf("\t14) Sort data by rating\n");
 	printf("\t15) Sort data by high score\n");
 	printf("\t16) Sort data by name\n");
-	
+
 	printf("\t-------------\n");
 	printf("\t0) Quit\n");
 
 	PrintDivider('*', 80);
-
 }
 
 int GetSelection(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	int selection;
 	char nextChar;
 
-	// Prompt user for selection 
+	// Prompt user for selection
 	printf("\tEnter selection: ");
 
 	// Get value from the keyboard
 	selection = (getchar() - 48);
-	
+
 	// Grab the next character from the input buffer
 	nextChar = getchar();
-	
+
 	// Check to see if the next character was the enter key
 	if (nextChar != '\n')
 	{
@@ -292,7 +289,7 @@ int GetSelection(void)
 
 	// Mover cursor down to the next line
 	printf("\n");
-	
+
 	// Check to see if the next character was the enter key
 	if (nextChar != '\n')
 	{
@@ -303,15 +300,15 @@ int GetSelection(void)
 	return selection;
 }
 
-void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], int highScore[], int * tagField)
+void ExecuteSelection(int selection, char names[][STRING_SIZE], int rating[], int highScore[], int *tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
-	FILE * fin;
+	FILE *fin;
 	char nameToFind[STRING_SIZE];
 	int location;
 	int sum;
@@ -332,11 +329,11 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 	case 2:
 		// Print one record
 		printf("Enter name to find: ");
-		
+
 		ReadStringFromKeybaord(nameToFind, STRING_SIZE);
-		
+
 		location = FindName(nameToFind, names, *tagField);
-		
+
 		if (location != -1)
 		{
 			PrintDataHeader();
@@ -363,7 +360,7 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 		// Delete one record
 		printf("Enter name to find: ");
 		scanf("%s", nameToFind);
-		
+
 		location = FindName(nameToFind, names, *tagField);
 
 		if (location != -1)
@@ -392,36 +389,36 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 	case 8:
 		// Average ratings
 		sum = CalculateTotal(rating, *tagField);
-		
-		if(*tagField != 0)
+
+		if (*tagField != 0)
 		{
 			// Calcualte the average
 			average = (double)sum / *tagField;
 		}
-		
+
 		printf("Average high Score = %lf\n", average);
-							
+
 		break;
 
 	case 9:
 		// Average hi score
 		// Average ratings
 		sum = CalculateTotal(highScore, *tagField);
-		
-		if(*tagField != 0)
+
+		if (*tagField != 0)
 		{
 			// Calcualte the average
 			average = (double)sum / *tagField;
 		}
-		
+
 		printf("Average high Score = %lf\n", average);
-	
+
 		break;
 
 	case 10:
 		// Find the highest rating
 		location = FindHighest(rating, *tagField);
-		
+
 		if (location != -1)
 		{
 			printf("The position of the highest rating is: %d\n", location);
@@ -431,13 +428,13 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 		{
 			printf(ARRAY_IS_EMPTY);
 		}
-	
+
 		break;
 
 	case 11:
 		// Find the lowest rating
 		location = FindLowest(rating, *tagField);
-		
+
 		if (location != -1)
 		{
 			printf("The position of the lowest rating is: %d\n", location);
@@ -452,7 +449,7 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 	case 12:
 		// Find the highest high score
 		location = FindHighest(highScore, *tagField);
-		
+
 		if (location != -1)
 		{
 			printf("The position of the highest high score is: %d\n", location);
@@ -462,13 +459,13 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 		{
 			printf(ARRAY_IS_EMPTY);
 		}
-	
+
 		break;
 
 	case 13:
 		// Find the lowest high score
 		location = FindLowest(highScore, *tagField);
-		
+
 		if (location != -1)
 		{
 			printf("The position of the lowest high score is: %d\n", location);
@@ -478,25 +475,25 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 		{
 			printf(ARRAY_IS_EMPTY);
 		}
-	
+
 		break;
-		
+
 	case 14:
 		// Sort by rating
 		SelectionSort(rating, highScore, names, *tagField);
-		
+
 		break;
-		
+
 	case 15:
 		// Sort by high score
 		SelectionSort(highScore, rating, names, *tagField);
 		break;
-		
+
 	case 16:
 		// Sort by name
 		SelectionSortByName(highScore, rating, names, *tagField);
 		break;
-		
+
 	default:
 		// Output error message
 		printf(DOUBLE_RETURN);
@@ -506,9 +503,9 @@ void ExecuteSelection(int selection,  char names[][STRING_SIZE], int rating[], i
 
 void PrintResult(double value, char message[])
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
@@ -518,146 +515,144 @@ void PrintResult(double value, char message[])
 
 void PrintDataHeader(void)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	printf("Name                ");
 	printf("Rating\t");
 	printf("High Score\n");
-	
+
 	PrintDivider('-', 45);
 }
 
 void PrintOneRecord(const char name[], int rating, int highScore)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	printf("%s", name);
-	
+
 	// Pad the name with spaces
 	for (int index = 0; index < (20 - strlen(name)); index++)
 	{
 		// Print a space
 		printf(" ");
 	}
-	
+
 	printf("%d\t\t", rating);
 	printf("%d\n", highScore);
-
 }
 
 void PrintAllRecords(const char names[][STRING_SIZE], const int rating[], const int highScore[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	PrintDataHeader();
-	
+
 	for (int index = 0; index < tagField; index++)
 	{
 		PrintOneRecord(names[index], rating[index], highScore[index]);
 	}
 }
 
-void AddOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int * tagField)
+void AddOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int *tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	char newName[STRING_SIZE];
 	int newRating;
 	int newHighScore;
-	
+
 	if (*tagField < MAX)
 	{
 		// Get the data
 		printf("Enter new name: ");
 		ReadStringFromKeybaord(newName, STRING_SIZE);
-		
-		printf ("Enter new rating: ");
+
+		printf("Enter new rating: ");
 		scanf("%d", &newRating);
-		
+
 		printf("Enter new high score: ");
 		scanf("%d", &newHighScore);
-		
+
 		// Copy the new data into the array
 		strcpy(names[*tagField], newName);
 		rating[*tagField] = newRating;
 		highScore[*tagField] = newHighScore;
-		
+
 		// Increase the tag
 		(*tagField)++;
 	}
-		
 }
 
-void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int * tagField, int location)
+void DeleteOneRecord(char names[][STRING_SIZE], int rating[], int highScore[], int *tagField, int location)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	for (int index = location; index < *tagField; index++)
 	{
-		rating[index] = rating[index+1];
-		highScore[index] = highScore[index+1];
-		
-		strcpy(names[index], names[index+1]);
+		rating[index] = rating[index + 1];
+		highScore[index] = highScore[index + 1];
+
+		strcpy(names[index], names[index + 1]);
 	}
-	
+
 	(*tagField)--;
 }
 
 int CalculateTotal(const int array[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	int total = 0;
-	
+
 	for (int index = 0; index < tagField; index++)
 	{
 		// Add one element of the array to the total
 		total += array[index];
 	}
-	
+
 	return total;
 }
 
 int FindHighest(const int array[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	// Assume that element 0 is the highest
 	int highestIndex = 0;
-	
+
 	// Check to make sure the array is not empty
-	if ( tagField != 0)
-	{		
+	if (tagField != 0)
+	{
 		// Compare higest to all other elements of the array
-		for (int index  = 1; index < tagField; index++)
+		for (int index = 1; index < tagField; index++)
 		{
 			// Check one element of the array against the highest
 			if (array[index] > array[highestIndex])
@@ -665,33 +660,33 @@ int FindHighest(const int array[], int tagField)
 				// Record new highest
 				highestIndex = index;
 			}
-		}	
+		}
 	}
 	else
 	{
 		// If the array is empty, set highest to -1
 		highestIndex = -1;
 	}
-	
+
 	return highestIndex;
 }
 
 int FindLowest(const int array[], int tagField)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Function Name: 
-// Inputs:  
-// Outputs: 
+// Function Name:
+// Inputs:
+// Outputs:
 // Description:
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 {
 	// Assume that element 0 is the highest
 	int lowestIndex = 0;
-	
+
 	// Check to make sure the array is not empty
-	if ( tagField != 0)
-	{		
+	if (tagField != 0)
+	{
 		// Compare higest to all other elements of the array
-		for (int index  = 1; index < tagField; index++)
+		for (int index = 1; index < tagField; index++)
 		{
 			// Check one element of the array against the highest
 			if (array[index] < array[lowestIndex])
@@ -699,18 +694,18 @@ int FindLowest(const int array[], int tagField)
 				// Record new highest
 				lowestIndex = index;
 			}
-		}	
+		}
 	}
 	else
 	{
 		// If the array is empty, set highest to -1
 		lowestIndex = -1;
 	}
-	
+
 	return lowestIndex;
 }
 
-void SwapI(int * first, int * second)
+void SwapI(int *first, int *second)
 {
 	int temp = *first;
 
@@ -741,7 +736,7 @@ void SelectionSort(int array1[], int array2[], char names[][STRING_SIZE], int ar
 		// of the smallest value.
 		// Initialize smallest to the first element in the sub array.
 		smallest = currentElement;
-		
+
 		/// check ALL other elements in sub-array against current smallest position
 		for (int i = currentElement + 1; i < arrayLength; i++)
 		{
@@ -750,7 +745,7 @@ void SelectionSort(int array1[], int array2[], char names[][STRING_SIZE], int ar
 				smallest = i;
 			}
 		}
-		
+
 		// now that sub-array has been searched, we have the index of the smallest value
 		// exchange the values contained in current element and smallest element.
 		SwapI(&array1[currentElement], &array1[smallest]);
@@ -758,7 +753,6 @@ void SelectionSort(int array1[], int array2[], char names[][STRING_SIZE], int ar
 		Swap(names[currentElement], names[smallest]);
 	}
 }
-
 
 void SelectionSortByName(int array1[], int array2[], char names[][STRING_SIZE], int arrayLength)
 {
@@ -771,17 +765,17 @@ void SelectionSortByName(int array1[], int array2[], char names[][STRING_SIZE], 
 		// of the smallest value.
 		// Initialize smallest to the first element in the sub array.
 		smallest = currentElement;
-		
+
 		/// check ALL other elements in sub-array against current smallest position
 		for (int i = currentElement + 1; i < arrayLength; i++)
 		{
-			//if (array1[i] < array1[smallest])
+			// if (array1[i] < array1[smallest])
 			if (strcmp(names[i], names[smallest]) < 0)
 			{
 				smallest = i;
 			}
 		}
-		
+
 		// now that sub-array has been searched, we have the index of the smallest value
 		// exchange the values contained in current element and smallest element.
 		SwapI(&array1[currentElement], &array1[smallest]);

@@ -13,8 +13,8 @@
 // function prototypes
 int flipSign(int *x);
 int compareAndSwap(int *x, int *y);
-int searchArray(int array[], int size, int item);
-int copyString(char str[], char str2[]);
+int *searchArray(int array[], int size, int item);
+int copyString(char str1[], char str2[]);
 
 // close header guard
 #endif

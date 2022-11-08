@@ -14,11 +14,11 @@ int main(void)
 
     The encryption will add each ASCII value of the letters to the "key"
 
+    RESULT:
+
     CASE-SENSITIVE ASCII values PLUS key:
-    R = 82; O = 79; V = 86; V = 86; Y = 89; * = 42; a = 97; Y = 89;  = 92; V = 86;  = 78
 
-    Result:
-
+    R = 82; O = 79; V = 86; V = 86; Y = 89; * = 42; a = 97; Y = 89; \ = 92; V = 86; N = 78
 
     */
 
@@ -45,6 +45,7 @@ int main(void)
     // set single character as first element of string
     oneCharacter = string[counter];
 
+    // repeat until encountering null terminator, '\0'
     while (oneCharacter != '\0')
     {
         // converts character into a temporary integer
