@@ -49,7 +49,7 @@ int main(void)
 
     printf("########## Testing wordReverse() ##########\n");
     unsigned int status = 0;
-    
+
     printf("Test 1: ");
     str1[0] = '\0';
     status = wordReverse(str1);
@@ -102,4 +102,3 @@ int main(void)
 
     printf("> All Tests Passed Successfully!\n");
 }
-
