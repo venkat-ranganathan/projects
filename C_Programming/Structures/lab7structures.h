@@ -1,0 +1,4 @@
+#ifndef LAB7STRUCTURES_H
+#define LAB7STRUCTURES_H
+
+#endif

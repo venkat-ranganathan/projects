@@ -3,6 +3,7 @@
         "port_macros.h": "c",
         "stdint.h": "c",
         "stdio.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "iostream": "cpp"
     }
 }
