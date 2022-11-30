@@ -23,7 +23,7 @@ public:
     // CONSTRUCTOR name is the same as CLASS NAME
     vehicleType() { cout << "Object Created" << endl; }
 
-    // CONSTRUCTOR with OVERLOADED FUNCTION; can as many CONSTRUCTOR OVERLOAD as you want
+    // CONSTRUCTOR with OVERLOADED FUNCTION; can use as many CONSTRUCTOR OVERLOAD as you want
     vehicleType(string carName) { name = carName; }
     vehicleType(bool radio);
 
