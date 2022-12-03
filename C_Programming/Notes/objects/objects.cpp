@@ -8,6 +8,31 @@
 // main function
 int main()
 {
+    vehicleType *pointerArray[2];
+
+    pointerArray[0] = new car();
+    pointerArray[1] = new bike();
+
+    for (int index = 0; index < 2; index++)
+    {
+        pointerArray[index]->foo();
+    }
+
+    for (int index = 0; index < 2; index++)
+    {
+        delete pointerArray[index];
+    }
+
+    car newCar("Doggo");
+
+    newCar.SetTires(4);
+
+    newCar.foo();
+
+    bike tike;
+
+    tike.foo();
+
     // call class and define; carA is called an INSTANCE, the variable is called the OBJECT
     // instance of class is called an object
     // vehicleType carA;

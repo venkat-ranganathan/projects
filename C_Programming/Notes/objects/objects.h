@@ -49,10 +49,52 @@ public:
         cout << "Object number " << count << " has been destroyed" << endl;
     }
 
+    // protected class can be seen child class, in between public and private in terms of visibility
+protected:
+    // method is function inside a class
+    void ClearName(void) { name = ""; }
+
 private:
     string name;
     int numberOfTires;
     bool hasARadio;
+};
+
+// class car can see public class of vehicleType, but not private; class by default is private though, so need to set public
+class car : public vehicleType
+{
+public:
+    car() { SetName("Toyoter"); }
+
+    // SetName is a public function, so it can be seen by class car
+    car(string newName) { SetName(newName); }
+
+    void foo()
+    {
+        cout << "Called from parent" << endl;
+    }
+
+    // destructor ~ and has same name as class, can have no parameters
+    ~car() { ClearName(); }
+
+private:
+    int value;
+};
+
+class bike : public vehicleType
+{
+public:
+    bike()
+    {
+        SetHasRadio(false);
+        SetTires(2);
+    }
+
+    void foo() { cout << "Called from bike" << endl; }
+
+private:
+    string pedals;
+    string handleBars;
 };
 
 // function prototype declarations
