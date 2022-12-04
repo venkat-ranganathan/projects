@@ -4,6 +4,7 @@
         "stdint.h": "c",
         "stdio.h": "c",
         "algorithm": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "new": "cpp"
     }
 }
