@@ -2,14 +2,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build and Run C",
+            "label": "C: Build and Run",
             "type": "shell",
             "command": "gcc -g \"${fileDirname}\\${fileBasename}\" -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Build and Run C (Multiple C files)",
+            "label": "C: Build and Run Multiple files",
             "type": "shell",
             "command": "gcc -g \"${fileDirname}\"\\*.c -o \"${fileDirname}\\${fileBasenameNoExtension}\"  && \"${fileDirname}\\${fileBasenameNoExtension}\"",
             "group": "build",
@@ -17,7 +17,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
+            "label": "C/C++: build active file",
             "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
@@ -36,7 +36,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "C++: g++.exe Build Multiple C++ files",
+            "label": "C++: Build Multiple C++ files",
             "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-win32-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",

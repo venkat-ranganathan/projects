@@ -28,7 +28,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: g++.exe build active file"
+            "preLaunchTask": "C/C++: build active file"
         },
         {
             "name": "Debug Multiple C Files",
@@ -54,7 +54,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Build and Run C (Multiple C files)"
+            "preLaunchTask": "C: Build and Run Multiple files"
         },
         {
             "name": "Debug Multiple C++ Files",
@@ -80,7 +80,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C++: g++.exe Build Multiple C++ files"
+            "preLaunchTask": "C++: Build Multiple C++ files"
         }
     ]
 }
