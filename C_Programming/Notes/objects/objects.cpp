@@ -13,7 +13,7 @@ int main()
     pointerArray[0] = new car();
     pointerArray[1] = new bike();
 
-    for (int index = 0; index < 2; index++)
+    /*for (int index = 0; index < 2; index++)
     {
         pointerArray[index]->foo();
     }
@@ -22,6 +22,7 @@ int main()
     {
         delete pointerArray[index];
     }
+    */
 
     car newCar("Doggo");
 
