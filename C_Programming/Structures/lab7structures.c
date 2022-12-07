@@ -159,16 +159,19 @@ unsigned int dayOfWeek(Date d, char daystr[])
     }
 
     // declare integer day equal to calculated 'N' value minus 621049
-    int day = calculateN(d) - 621049;
+    // int day = calculateN(d) - 621049;
 
     // sets day of week equal to the remainder of calculated day value divided by 7
-    int dayWeek = day % 7;
+    // int dayWeek = day % 7;
 
-    // checks remainder from variable "week" with cases and returns corresonding day
+    // set structure d.day equal to the calculated N value minus 621049 (given constant) and used modulus operator to find the remainder
+    d.day = (calculateN(d) - 621049) % 7;
+
+    // checks remainder from d.day with cases and returns corresonding day of week
     // remainder is from 0 to 6, Sunday to Sataruday, respectively
     // originally used a bunch of if / if else statements, but switch statement looks cleaner
     // it wouldn't work when I tried to just set daystr equal to a specific day of the week, had to use strcpy()
-    switch (dayWeek)
+    switch (d.day)
     {
     case 0:
         strcpy(daystr, "Sunday");
