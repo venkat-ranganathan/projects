@@ -10,7 +10,7 @@
 // const definition
 #define STR_SIZE 20
 
-// typedef structure prototype
+// typedef structure declaration
 typedef struct
 {
     unsigned int year;
