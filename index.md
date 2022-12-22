@@ -10,12 +10,12 @@
 
 #### Table of Contents
 
-- [Minesweeper](##Minesweeper)
-- [Analog-to-Digital Converter](##Analog-to-Digital Converter)
-- [Pololu 3pi IR reflectance sensor repair](##Pololu 3pi IR reflectance sensor repair)
-- [FPGA Calculator](##FPGA Calculator)
+- [Minesweeper](## Minesweeper)
+- [Analog-to-Digital Converter](## Analog-to-Digital Converter)
+- [Pololu 3pi IR reflectance sensor repair](## Pololu 3pi IR reflectance sensor repair)
+- [FPGA Calculator](## FPGA Calculator)
 
-## Minesweeper
+[Minesweeper](## Minesweeper)
 
 Programmed Pololu 3pi Robot to navigate a 36x48” black-lined grid and find user defined number of
 1x1” white “mines”. Directly programmed hardware. Defined motors as output, light sensors as input,
