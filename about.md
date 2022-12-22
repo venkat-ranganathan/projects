@@ -8,7 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-#### Table of Contents
+#### Table of Contents {#TOP}
 
 - [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#3D_MATLAB)
 - [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
@@ -41,6 +41,8 @@ Here's the more direct zero-pole, frequency response, and phase plots:
 and here's the code I used to generate it:
 
 <img width="502" alt="image" src="https://user-images.githubusercontent.com/96662693/199073449-1ca42d6b-ffbe-45f9-94d5-eb1ffc58781d.png">
+
+[Back to Top] {#TOP}
 
 <p>&nbsp;</p>
 ---
@@ -85,6 +87,8 @@ I also drilled some holes on the top of the Raspberry Pi case because it otherwi
 
 ![IMG_3904 - Copy](https://user-images.githubusercontent.com/96662693/195964714-78ff049a-ce09-425e-ab78-3e61d114b47a.jpg)
 
+[Back to Top] {#TOP}
+
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
@@ -94,5 +98,8 @@ I also drilled some holes on the top of the Raspberry Pi case because it otherwi
 This isn't super-important, so I set it off to the side
 
 I figured out how to setup my VSCode debug environment for C using GDB. I'm stoked I can step through my code _and be able to see the values of my variables as the code is being executed, see what's changing in the register, AND see what stacks are being called_. Prior to setting up my debug environment, I was using a standard compile & run combination with a GCC compiler, and I used GDB through a bash terminal to debug my code on the school server. My current setup is _much_ nicer 🙂
+
+[Back to Top] {#TOP}
+
 <p>&nbsp;</p>
 <img width="960" alt="my_vs_code_setup" src="https://user-images.githubusercontent.com/96662693/188341444-268b0cdd-fa57-4db5-b0ee-930dd6af753f.png">
