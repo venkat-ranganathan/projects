@@ -10,11 +10,11 @@
 
 #### Table of Contents
 
-- [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#3D_Matlab)
+- [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#3D_MATLAB)
 - [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
 - [My VSCode setup, 09/04/2022](#VSCode)
 
-### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022:
+### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022: {#3D_MATLAB)
 
 We're currently learning about calculating transfer functions, H(z), from a given (recursive/non-recursive) difference equation, y[n] = x[n], then converting the transfer function into its corresponding frequency response, H(Ω).
 
@@ -46,7 +46,7 @@ and here's the code I used to generate it:
 ---
 <p>&nbsp;</p>
 
-### I setup a network-wide Ad Blocker, 10/14/2022:
+### I setup a network-wide Ad Blocker, 10/14/2022: {#AdBlocker}
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
 
@@ -89,7 +89,7 @@ I also drilled some holes on the top of the Raspberry Pi case because it otherwi
 ---
 <p>&nbsp;</p>
 
-### My VSCode setup, 09/04/2022:
+### My VSCode setup, 09/04/2022: {#VSCode}
 
 This isn't super-important, so I set it off to the side
 
