@@ -1,8 +1,8 @@
-# Hello 🤖 {#TOP}
+# Hello 🤖
 
 <p>&nbsp;</p>
 
-## Hi, I'm Venkat and I'm an Electrical Engineering major at Binghamton University graduating in May, 2024. I enjoy hiking, camping, and going on road trips with my dog. 🚶‍♂️🏕️🚙🐕
+## Hi, I'm Venkat and I'm an Electrical Engineering major at Binghamton University graduating in May, 2024. I enjoy hiking, camping, and going on road trips with my dog. 🚶‍♂️🏕️🚙🐕 {#TOP}
 
 <p>&nbsp;</p>
 ---
