@@ -1,6 +1,6 @@
 [GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
-
-# 🤖 🚀 🌎 🇺🇸 {#TOP}
+{#TOP}
+# 🤖 🚀 🌎 🇺🇸
 
 ## Here are some projects I've completed as an Electrical Engineering student:
 
