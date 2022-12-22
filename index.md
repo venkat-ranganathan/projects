@@ -8,6 +8,13 @@
 ---
 <p>&nbsp;</p>
 
+#### Table of Contents
+
+- [Minesweeper](## Minesweeper)
+- [Analog-to-Digital Converter](## Analog-to-Digital Converter)
+- [Pololu 3pi IR reflectance sensor repair](## Pololu 3pi IR reflectance sensor repair)
+- [FPGA Calculator](## FPGA Calculator)
+
 ## Minesweeper
 
 Programmed Pololu 3pi Robot to navigate a 36x48” black-lined grid and find user defined number of
