@@ -1,4 +1,4 @@
-[GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects) {#TOP}
+{#TOP}[GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
 
 # 🤖 🚀 🌎 🇺🇸
 
