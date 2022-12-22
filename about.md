@@ -8,6 +8,12 @@
 ---
 <p>&nbsp;</p>
 
+#### Table of Contents
+
+- [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#3D_Matlab)
+- [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
+- [My VSCode setup, 09/04/2022](#VSCode)
+
 ### Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022:
 
 We're currently learning about calculating transfer functions, H(z), from a given (recursive/non-recursive) difference equation, y[n] = x[n], then converting the transfer function into its corresponding frequency response, H(Ω).
