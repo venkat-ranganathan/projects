@@ -8,7 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-#### Table of Contents
+#### Table of Contents {#TOP}
 
 - [Minesweeper](#Minesweeper)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
@@ -30,7 +30,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+[Back to Top](#TOP)
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
@@ -47,7 +47,7 @@ In the YouTube videos, I mistakenly said that each op-amp represents a 0.5V drop
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+[Back to Top](#TOP)
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
@@ -62,7 +62,7 @@ I cleaned off as much of the super glue I could using acetone (nail polish remov
 
 <iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+[Back to Top](#TOP)
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
@@ -72,3 +72,4 @@ I cleaned off as much of the super glue I could using acetone (nail polish remov
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
 multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display. Programmed in Verilog. Synthesized and implemented in Vivado.
 
+[Back to Top](#TOP)
