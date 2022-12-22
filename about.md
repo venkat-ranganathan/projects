@@ -1,4 +1,4 @@
-# Hello 🤖
+# Hello 🤖 {#TOP}
 
 <p>&nbsp;</p>
 
@@ -8,7 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-#### Table of Contents {#TOP}
+#### Table of Contents
 
 - [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#3D_MATLAB)
 - [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
