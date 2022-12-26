@@ -1,0 +1,5 @@
+# ninja log v5
+51	112	6937860260818696	projects.exe	ac83c763b9d8bcf1
+0	61	6937868277747185	CMakeFiles/projects.dir/C_Programming/Primes/lab4.c.obj	47459d265bfa99b3
+4	62	6937868277747185	CMakeFiles/projects.dir/C_Programming/Primes/lab4prime.c.obj	a41aa11f224fde34
+62	125	6937868278357814	projects.exe	7a22405fc7b855f3

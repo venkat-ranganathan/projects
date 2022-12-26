@@ -3,11 +3,9 @@ project(projects)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(C_Programming/Structures)
+include_directories(C_Programming/Primes/)
 
 add_executable(projects
-        C_Programming/Structures/lab7.c
-        C_Programming/Structures/lab7.exe
-        C_Programming/Structures/lab7structures.c
-        C_Programming/Structures/lab7structures.exe
-        C_Programming/Structures/lab7structures.h)
+        C_Programming/Primes/lab4.c
+        C_Programming/Primes/lab4prime.c
+        C_Programming/Primes/lab4prime.h)
