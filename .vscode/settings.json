@@ -5,6 +5,7 @@
         "stdio.h": "c",
         "algorithm": "c",
         "iostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "lab7structures.h": "c"
     }
 }
