@@ -1,6 +1,21 @@
 {
     "configurations": [
         {
+            "name": "clang-x64",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\msys64\\clang64\\bin\\clang.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-clang-x64"
+        },
+        {
             "name": "gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**"
