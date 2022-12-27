@@ -122,7 +122,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "Clang C++: build active file",
+            "label": "Clang++: build active C++ file",
             "command": "C:\\msys64\\clang64\\bin\\clang++.exe",
             "args": [
                 "-Wall",
@@ -164,7 +164,7 @@
         },
         {
             "type": "cppbuild",
-            "label": "Clang C++: Build Multiple C++ files",
+            "label": "Clang++: Build Multiple C++ files",
             "command": "C:\\msys64\\clang64\\bin\\clang++.exe",
             "args": [
                 "-Wall",

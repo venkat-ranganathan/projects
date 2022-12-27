@@ -133,7 +133,7 @@
             "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "Clang C++: build active file"
+            "preLaunchTask": "Clang++: build active C++ file"
         },
         {
             "type": "lldb",
@@ -142,7 +142,7 @@
             "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "Clang C++: Build Multiple C++ files"
+            "preLaunchTask": "Clang++: Build Multiple C++ files"
         },
     ]
 }
