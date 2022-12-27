@@ -7,11 +7,20 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "LLDB Single C/C++ File",
+            "name": "LLDB Single C File",
             "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "Clang C/C++: build active file"
+            "preLaunchTask": "Clang C: build active file"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "LLDB Single C++ File",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Clang C++: build active file"
         },
         {
             "type": "lldb",
