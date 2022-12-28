@@ -7,5 +7,6 @@
         "iostream": "cpp",
         "new": "cpp",
         "lab7structures.h": "c"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
