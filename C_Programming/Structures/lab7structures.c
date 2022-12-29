@@ -1,3 +1,14 @@
+/**
+ * @file lab7structures.c
+ * @Venkat Ranganathan
+ * @brief
+ * @version 0.1
+ * @date 2022-12-28
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 // preprocessor directives
 #include "lab7structures.h"
 
