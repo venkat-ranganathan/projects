@@ -9,6 +9,8 @@ int main() {
     // declare variable of structure
     struct Rectangle r;
     struct student s;
+    // structure variable as an array with multiple entries for each array set
+    struct card deck[52] = {{1, 0, 0, 10}};
 
     // access member of structure using dot operator
     r.breadth = 15;
@@ -17,7 +19,13 @@ int main() {
     s.roll = 10;
     strcpy(s.name, "Venkat");
 
-    printf_s("Area of a rectangle is %d", r.length * r.breadth);
+    printf("%s\n", s.name);
+    printf_s("Area of a rectangle is %d\n", r.length * r.breadth);
+
+    printf("%d", deck[0].face);
+    printf("%d", deck[0].shape);
+    printf("%d", deck[0].color);
+    printf("%d", deck[0].number);
 /*
     int A[5] = {1, 2, 5, 23, 3};
 

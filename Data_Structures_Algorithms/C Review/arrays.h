@@ -26,4 +26,10 @@ struct student {
     char address[50];
 };
 
+struct card {
+    int face;
+    int shape;
+    int color;
+    int number;
+};
 #endif //C_REVIEW_ARRAYS_H
