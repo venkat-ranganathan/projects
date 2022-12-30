@@ -9,4 +9,9 @@
 #include "stdlib.h"
 #include "strings.h"
 
+struct Rectangle {
+  int length;
+  int breadth;
+};
+
 #endif // POINTERSTRUCTURE_POINTERSTRUCTURE_H
