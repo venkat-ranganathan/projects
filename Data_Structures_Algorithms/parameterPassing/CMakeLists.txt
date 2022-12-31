@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
-project(parameterPassing C)
+project(parameterPassing)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
-include_directories(.)
-
-add_executable(parameterPassing
-        parameterPassing.c
-        parameterPassing.h)
+add_executable(parameterPassing parameterPassing.h parameterPassing.cpp)
