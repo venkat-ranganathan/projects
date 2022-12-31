@@ -6,11 +6,8 @@
 #define POINTERSTRUCTURE_FUNCTIONS_H
 
 #include "stdio.h"
-#include "stdlib.h"
-#include "strings.h"
 
 // function prototypes
-void ding();
-void dong();
+int add(int a, int b);
 
 #endif // POINTERSTRUCTURE_FUNCTIONS_H
