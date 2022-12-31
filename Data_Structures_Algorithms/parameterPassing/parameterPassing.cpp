@@ -32,6 +32,7 @@ int main() {
 // pass-by-value
 void swap(int x, int y) {
   int temp;
+
   temp = x;
   x = y;
   y = temp;
@@ -41,6 +42,7 @@ void swap(int x, int y) {
 // variables are going to be changed
 void callAddress(int *x, int *y) {
   int temp;
+
   temp = *x;
   *x = *y;
   *y = temp;
@@ -50,6 +52,7 @@ void callAddress(int *x, int *y) {
 // not used often
 void callReference(int &x, int &y) {
   int temp;
+
   temp = x;
   x = y;
   y = temp;
