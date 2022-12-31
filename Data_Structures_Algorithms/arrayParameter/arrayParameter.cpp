@@ -9,6 +9,7 @@ int main() {
   return 0;
 }
 
+// arrays are passed by address
 void fun(int A[], int n) {
   for (int i = 0; i < n; ++i) {
     printf("%d", A[i]);
