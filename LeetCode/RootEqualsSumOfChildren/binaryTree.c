@@ -5,6 +5,9 @@
 // preprocessor directive
 #include "binaryTree.h"
 
+// accessing a structure using a pointer requires (*pointer).name or
+// pointer->name
+
 // checks if the Root value is equal to the sum of its Children
 int isSum(struct TreeNode *node) {
 
