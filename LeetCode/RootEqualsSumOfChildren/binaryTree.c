@@ -31,7 +31,7 @@ int isSum(struct TreeNode *node) {
 
     // checks if root is equal to the sum of its children AND if sum of Children
     // of Child_Root is equal to corresponding Child_Root, then returns 1 if all
-    // Root/Child_Root are equal to the sum of its children , zero otherwise
+    // Root/Child_Root are equal to the sum of its Children , zero otherwise
     if ((node->val == left_data + right_data) && isSum(node->left) &&
         isSum(node->right)) {
       return 1;
