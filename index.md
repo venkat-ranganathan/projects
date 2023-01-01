@@ -1,6 +1,6 @@
-[GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
+[GitHub - Venkat Ranganathan]target=”_blank”(https://github.com/venkat-ranganathan/projects)
 
-[LeetCode](https://leetcode.com/venka_/)
+[LeetCode]target=”_blank”(https://leetcode.com/venka_/)
 
 # 🤖 🚀 🌎 🇺🇸 {#TOP}
 
