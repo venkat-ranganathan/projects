@@ -8,7 +8,7 @@
 ---
 <p>&nbsp;</p>
 
-#### Table of Contents
+#### Table of Contents:
 
 - [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
