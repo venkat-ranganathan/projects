@@ -49,7 +49,6 @@ time and my brain was fried 🧠⚡
 
 [Back to Top](#TOP)
 
-<p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
 
@@ -72,7 +71,6 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 
 [Back to Top](#TOP)
 
-<p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
 
@@ -95,7 +93,6 @@ metal-to-metal contact between the sensor and the board. This got the IR relfect
 
 [Back to Top](#TOP)
 
-<p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
 
