@@ -8,12 +8,42 @@
 ---
 <p>&nbsp;</p>
 
-#### Table of Contents 
+#### Table of Contents
 
 - [Minesweeper](#Minesweeper)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
+
+## Analog-to-Digital Converter {#Analog-to-Digital-Converter}
+
+Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7 volts (including decimal
+values in between) into an equivalent digital, discrete signal (positive and negative whole numbers) output through
+LEDs. With a 7V reference voltage, the LEDs are connected to the op-amp from top-to-bottom, 7V to 1V (any decimal value
+between 0V and less than 1V will not turn on the last LED), the last op amp will use a 1V reference voltage, the second
+last, 2V, etc., up to the top-most op amp using a 7V reference voltage--all integer values because we’re converting
+real-world, continuous signals into digital, discrete signals that can be read by a digital device, such as an Arduino (
+due to time constraints, and because I worked on this project alone, I chose seven LEDs as being representative of a
+3-bit
+output [000 would be no LEDs on, 001 1 LED, 010 2 LEDs, 011 3 LEDs, 100 4 LEDs, 101 5 LEDs, 110 6 LEDs, 111 7 LEDs]).
+Designed and verified circuit in LTSpice, then built physical circuit. Added additional strobe light effect by swapping
+DC input voltage with function generator using triangle wave with frequency and phase adjustment (professor helped with
+this last part)
+
+In the YouTube videos, I mistakenly said that each op-amp represents a 0.5V drop, instead of a 1V drop. It was finals
+time and my brain was fried 🧠⚡
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-QS3QFqIXqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZHAc84ZIXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Back to Top](#TOP)
+
+<p>&nbsp;</p>
+---
+<p>&nbsp;</p>
 
 ## Minesweeper {#Minesweeper}
 
@@ -36,31 +66,18 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 ---
 <p>&nbsp;</p>
 
-## Analog-to-Digital Converter {#Analog-to-Digital-Converter}
-
-Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7 volts (including decimal values in between) into an equivalent digital, discrete signal (positive and negative whole numbers) output through LEDs. With a 7V reference voltage, the LEDs are connected to the op-amp from top-to-bottom, 7V to 1V (any decimal value between 0V and less than 1V will not turn on the last LED), the last op amp will use a 1V reference voltage, the second last, 2V, etc., up to the top-most op amp using a 7V reference voltage--all integer values because we’re converting real-world, continuous signals into digital, discrete signals that can be read by a digital device, such as an Arduino (due to time constraints, and because I worked on this project alone, I chose seven LEDs as being representative of a 3-bit output [000 would be no LEDs on, 001 1 LED, 010 2 LEDs, 011 3 LEDs, 100 4 LEDs, 101 5 LEDs, 110 6 LEDs, 111 7 LEDs]). Designed and verified circuit in LTSpice, then built physical circuit. Added additional strobe light effect by swapping DC input voltage with function generator using triangle wave with frequency and phase adjustment (professor helped with this last part)
-
-In the YouTube videos, I mistakenly said that each op-amp represents a 0.5V drop, instead of a 1V drop. It was finals time and my brain was fried 🧠⚡
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-QS3QFqIXqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZHAc84ZIXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-[Back to Top](#TOP)
-
-<p>&nbsp;</p>
----
-<p>&nbsp;</p>
-
 ## Pololu 3pi IR reflectance sensor repair {#Pololu-3pi-IR-reflectance-sensor-repair}
 
-I broke off one the 3pi's IR reflectance sensors by repeatedly crashing it into a concrete wall (by accident) at high speeds while learning how to adjust the left/right motor speeds. Since the five IR reflectance sensors are connected in series, when one doesn't work, all of them stop working.
+I broke off one the 3pi's IR reflectance sensors by repeatedly crashing it into a concrete wall (by accident) at high
+speeds while learning how to adjust the left/right motor speeds. Since the five IR reflectance sensors are connected in
+series, when one doesn't work, all of them stop working.
 
-Since the sensor broke off cleanly, I first tried to match up the orientation of the sensor to the sensor contact points on the 3pi and super glued it back on, but that didn't work.
+Since the sensor broke off cleanly, I first tried to match up the orientation of the sensor to the sensor contact points
+on the 3pi and super glued it back on, but that didn't work.
 
-I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally again
+I cleaned off as much of the super glue I could using acetone (nail polish remover) and a qtip/tweezer, then I used a
+soldering iron with a fine tip, heated up the contact points of the sensor and added a drop of solder to restore the
+metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally again
 
 <iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -73,6 +90,7 @@ I cleaned off as much of the super glue I could using acetone (nail polish remov
 ## FPGA Calculator {#FPGA-Calculator}
 
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
-multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display. Programmed in Verilog. Synthesized and implemented in Vivado.
+multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display.
+Programmed in Verilog. Synthesized and implemented in Vivado.
 
 [Back to Top](#TOP)
