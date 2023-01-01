@@ -10,10 +10,13 @@
 
 #### Table of Contents
 
+- [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
 - [Minesweeper](#Minesweeper)
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
+
+## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
 ## Analog-to-Digital Converter {#Analog-to-Digital-Converter}
 
