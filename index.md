@@ -1,7 +1,6 @@
-[GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects){target=”_blank”}
+<a href="https://github.com/venkat-ranganathan/projects">target="_blank">GitHub>/a>
 
-<p><a href="https://leetcode.com/venka_/" target="_blank">LeetCode</a></p>
-[LeetCode](https://leetcode.com/venka_/){target=”_blank”}
+<a href="https://leetcode.com/venka_/" >target="_blank"> LeetCode</a>
 
 # 🤖 🚀 🌎 🇺🇸 {#TOP}
 
