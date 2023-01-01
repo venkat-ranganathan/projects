@@ -1,5 +1,5 @@
 [GitHub - Venkat Ranganathan](https://github.com/venkat-ranganathan/projects)
-<p>&nbsp;</p>
+
 [LeetCode](https://leetcode.com/venka_/)
 
 # 🤖 🚀 🌎 🇺🇸 {#TOP}
