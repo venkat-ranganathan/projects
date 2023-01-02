@@ -4,8 +4,8 @@
 
 // Focus of this code is to convert a class into a template
 
-#ifndef CLASSCONSTRUCTOR_TEMPLATECLASS_H
-#define CLASSCONSTRUCTOR_TEMPLATECLASS_H
+#ifndef TEMPLATECLASS_TEMPLATECLASS_H
+#define TEMPLATECLASS_TEMPLATECLASS_H
 
 #include "iostream"
 #include <cstdio>
@@ -52,4 +52,4 @@ template <class T>
 // Destructor
 arithmetic<T>::~arithmetic() {}
 
-#endif // CLASSCONSTRUCTOR_TEMPLATECLASS_H
+#endif // TEMPLATECLASS_TEMPLATECLASS_H
