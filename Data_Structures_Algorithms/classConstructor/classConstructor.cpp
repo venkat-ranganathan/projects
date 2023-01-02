@@ -7,6 +7,12 @@
 #include "classConstructor.h"
 
 int main() {
+  // declare local length and breadth values
+  // int l = 0, b = 0;
+
+  // ask user to input values for length and breadth
+  // printf("Enter the values for Length and Breadth");
+  // scanf_s("%d %d", l, b);
 
   // Rectangle r is now an object and is initialized with length and breadth
   // values of 10 and 5, respectively
@@ -26,6 +32,7 @@ int main() {
   printf("This is the new Perimeter of the Rectangle after the length has been "
          "changed: %d\n",
          r.perimeter());
+  printf("This is length: %d\n ", r.getLength());
 
   return 0;
 }
