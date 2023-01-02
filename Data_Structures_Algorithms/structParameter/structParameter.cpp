@@ -13,8 +13,33 @@ int main() {
   r.breadth = 5;
 
   // pass struct variable to function "area", and return result
-  return printf("%d", area(r));
+  // pass-by-value
+  printf("%d\n", area(r));
+
+  // pass-by-reference
+  printf("%d\n", area2(r));
+
+  // pass-by-address, values are changed in function and new area is returned
+  printf("%d\n", area3(&r));
+
+  // print new r.length and r.breadth values to confirm the values are different
+  // r.length is now 11 instead of 10 and r.breadth is now 4 instead of 5
+  printf("%d\t %d\n", r.length, r.breadth);
+
+  return 0;
 }
 
 // function calculates area of rectangle using struct
+// this is call-by-value since r1 is just a regular datatype
 int area(struct Rectangle r1) { return r1.length * r1.breadth; }
+
+// pass-by-reference
+int area2(struct Rectangle &r1) { return r1.length * r1.breadth; }
+
+// pass-by-address, increasing value of length by 1 and decreasing value of
+// breadth by 1
+int area3(struct Rectangle *r1) {
+  r1->length++;
+  r1->breadth--;
+  return r1->length * r1->breadth;
+}

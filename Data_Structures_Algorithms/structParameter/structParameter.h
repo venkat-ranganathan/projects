@@ -15,8 +15,13 @@ struct Rectangle {
   int breadth;
 };
 
-// function prototype
+// function prototypes
+// pass-by-value
 int area(struct Rectangle r1);
+// pass-by-reference
+int area2(struct Rectangle &r1);
+// pass-by-address
+int area3(struct Rectangle *r1);
 
 // close header guard
 #endif // ARRAYPARAMETER_STRUCTPARAMETER_H
