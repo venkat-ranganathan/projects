@@ -3,7 +3,7 @@
 <a href="https://leetcode.com/venka_/" target="_blank">LeetCode</a>
 
 
-# 🤖 🚀 🌎 :us: {#TOP}
+# 🤖 🚀 🌎 🇺🇸 {#TOP}
 
 ## Here are some projects I've completed as an Electrical Engineering student:
 
