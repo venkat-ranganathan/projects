@@ -25,19 +25,11 @@ public:
     length = l;
     breadth = b;
   }
-  // function calculates area of rectangle using struct
-  // this is call-by-value since r1 is just a regular datatype
+  // methods because these functions are bound to class Rectangle
   int area() { return length * breadth; }
+  int perimeter() { return 2 * (length + breadth); }
   void changeLength(int l) { length = l; }
 };
-
-// function prototypes
-// initializes members length and breadth of Rectangle *r
-// void initialize(class Rectangle *r, int l, int b);
-// calculates area
-int area(class Rectangle r);
-// changes length value
-void changeLength(class Rectangle *r, int l);
 
 // close header guard
 #endif // CLASSCONSTRUCTOR_CLASSCONSTRUCTOR_H

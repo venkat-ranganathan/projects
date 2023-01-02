@@ -13,15 +13,19 @@ int main() {
   Rectangle r(10, 5);
 
   // r is the object, area, and changeLength are members
-  r.area();
+  // r.area();
 
-  printf("This is the original area of the Rectangle: %d\n", r.area());
-
+  printf("This is the original Area of the Rectangle: %d\n", r.area());
+  printf("This is the original Perimeter of the Rectangle: %d\n",
+         r.perimeter());
   r.changeLength(20);
 
-  printf("This is the new area of the Rectangle after the length has been "
+  printf("This is the new Area of the Rectangle after the length has been "
          "changed: %d\n",
          r.area());
+  printf("This is the new Perimeter of the Rectangle after the length has been "
+         "changed: %d\n",
+         r.perimeter());
 
   return 0;
 }
