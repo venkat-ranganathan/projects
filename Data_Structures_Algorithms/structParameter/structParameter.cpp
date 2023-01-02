@@ -12,6 +12,9 @@ int main() {
   r.length = 10;
   r.breadth = 5;
 
+  // print initial values of length and breadth
+  printf("Original Length: %d\t Original Breadth: %d\n", r.length, r.breadth);
+
   // pass struct variable to function "area", and return result
   // pass-by-value
   printf("pass-by-value Area: %d\n", area(r));
@@ -24,7 +27,7 @@ int main() {
 
   // print new r.length and r.breadth values to confirm the values are different
   // r.length is now 11 instead of 10 and r.breadth is now 4 instead of 5
-  printf("Length: %d\t Breadth: %d\n", r.length, r.breadth);
+  printf("New Length: %d\t New Breadth: %d\n", r.length, r.breadth);
 
   return 0;
 }
