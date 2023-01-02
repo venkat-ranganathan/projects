@@ -1,0 +1,52 @@
+//
+// Created by Venkat Ranganathan on 1/2/2023.
+//
+#ifndef CLASSCONSTRUCTOR_TEMPLATECLASS_H
+#define CLASSCONSTRUCTOR_TEMPLATECLASS_H
+
+#include "iostream"
+#include <cstdio>
+
+using namespace std;
+
+// declare class as a Template called 'T'
+template <class T>
+
+class arithmetic {
+private:
+  // 'T' is a generic data type, can be int, float, double, etc.
+  T a;
+  T b;
+
+public:
+  // Constructor
+  arithmetic(T a, T b);
+  T add();
+  T sub();
+
+  // Destructor
+  ~arithmetic();
+};
+
+// need to declare Template again
+template <class T>
+
+// need to add <T> before :: when using Template
+arithmetic<T>::arithmetic(T a, T b) {
+  // accessing same object, so need to use -> instead of .
+  this->a = a;
+  this->b = b;
+}
+
+// need to declare Template again
+template <class T> T arithmetic<T>::add() { return a + b; }
+
+// need to declare Template again
+template <class T> T arithmetic<T>::sub() { return a - b; }
+
+// need to declare Template again
+template <class T>
+// Destructor
+arithmetic<T>::~arithmetic() {}
+
+#endif // CLASSCONSTRUCTOR_TEMPLATECLASS_H

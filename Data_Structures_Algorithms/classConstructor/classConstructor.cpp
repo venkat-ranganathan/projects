@@ -33,6 +33,7 @@ int main() {
          "changed: %d\n",
          r.perimeter());
   printf("This is length: %d\n ", r.getLength());
+  printf("This is breadth: %d\n ", r.getBreadth());
 
   return 0;
 }
