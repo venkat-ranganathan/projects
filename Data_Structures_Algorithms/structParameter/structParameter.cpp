@@ -1,7 +1,25 @@
 //
 // Created by Venkat Ranganathan on 1/1/2023.
 //
+
+// preprocessor directive
 #include "structParameter.h"
+
+// declare struct datatype pointer
+struct Rectangle *fun() {
+  struct Rectangle *ptr;
+  // cpp syntax, new means will be created in heap
+  // ptr = new Rectangle;
+
+  // c syntax to create object of type Rectangle using pointer created in heap
+  ptr = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+
+  ptr->length = 15;
+  ptr->breadth = 7;
+
+  // returns pointer to a structure
+  return ptr;
+}
 
 int main() {
 
