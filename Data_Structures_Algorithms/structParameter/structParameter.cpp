@@ -14,17 +14,17 @@ int main() {
 
   // pass struct variable to function "area", and return result
   // pass-by-value
-  printf("%d\n", area(r));
+  printf("pass-by-value Area: %d\n", area(r));
 
   // pass-by-reference
-  printf("%d\n", area2(r));
+  printf("pass-by-reference Area: %d\n", area2(r));
 
   // pass-by-address, values are changed in function and new area is returned
-  printf("%d\n", area3(&r));
+  printf("pass-by-address with values changed Area: %d\n", area3(&r));
 
   // print new r.length and r.breadth values to confirm the values are different
   // r.length is now 11 instead of 10 and r.breadth is now 4 instead of 5
-  printf("%d\t %d\n", r.length, r.breadth);
+  printf("Length: %d\t Breadth: %d\n", r.length, r.breadth);
 
   return 0;
 }
