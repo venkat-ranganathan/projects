@@ -8,6 +8,9 @@ int main() {
   // declare struct variable type Rectangle called 'r'
   struct Rectangle r;
 
+  // declare struct datatype Rectangle pointer to object created in heap
+  struct Rectangle *ptr = fun();
+
   // define values of variables inside struct
   r.length = 10;
   r.breadth = 5;
@@ -28,6 +31,10 @@ int main() {
   // print new r.length and r.breadth values to confirm the values are different
   // r.length is now 11 instead of 10 and r.breadth is now 4 instead of 5
   printf("New Length: %d\t New Breadth: %d\n", r.length, r.breadth);
+
+  // print out values of struct Rectangle pointer cast to object created in heap
+  printf("Pointer Length: %d\t Pointer Breadth: %d\n", ptr->length,
+         ptr->breadth);
 
   return 0;
 }
