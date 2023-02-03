@@ -1,0 +1,25 @@
+# ninja log v5
+2	53	6941226622167435	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+53	129	6941226622907565	pointerStructure.exe	91759a7dda5518b
+2	69	6941348325036273	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+70	165	6941348325974290	pointerStructure.exe	91759a7dda5518b
+3	57	6941348598744104	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+58	126	6941348599414445	pointerStructure.exe	91759a7dda5518b
+2	55	6941349030761957	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+55	136	6941349031517765	pointerStructure.exe	91759a7dda5518b
+2	50	6941349105037320	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+51	120	6941349105703534	pointerStructure.exe	91759a7dda5518b
+1	50	6941349161722390	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+50	119	6941349162379582	pointerStructure.exe	91759a7dda5518b
+1	53	6941349655828063	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+53	121	6941349656474314	pointerStructure.exe	91759a7dda5518b
+2	53	6941349970717402	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+54	119	6941349971352732	pointerStructure.exe	91759a7dda5518b
+2	50	6941350327640561	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+51	133	6941350328441291	pointerStructure.exe	91759a7dda5518b
+2	75	6941350632223465	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+75	153	6941350632973811	pointerStructure.exe	91759a7dda5518b
+2	76	6941351350259203	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+76	163	6941351351098328	pointerStructure.exe	91759a7dda5518b
+1	52	6941351456370003	CMakeFiles/pointerStructure.dir/pointerStructure.c.obj	a49ff3ef76621d8d
+52	131	6941351457140298	pointerStructure.exe	91759a7dda5518b

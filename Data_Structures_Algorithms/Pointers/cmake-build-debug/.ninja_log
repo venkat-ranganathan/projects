@@ -1,0 +1,21 @@
+# ninja log v5
+0	47	6939869894313904	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+48	120	6939869895026305	Pointers.exe	6ddf7d6b59143015
+2	50	6939870784079289	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+50	117	6939870784720160	Pointers.exe	6ddf7d6b59143015
+2	48	6939871339943530	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+48	116	6939871340603479	Pointers.exe	6ddf7d6b59143015
+2	46	6939871880003569	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+47	114	6939871880652760	Pointers.exe	6ddf7d6b59143015
+1	329	6940347996175988	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+330	431	6940347997185168	Pointers.exe	6ddf7d6b59143015
+2	58	6940348178065040	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+59	130	6940348178772343	Pointers.exe	6ddf7d6b59143015
+2	64	6940348742853867	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+65	150	6940348743681212	Pointers.exe	6ddf7d6b59143015
+1	66	6940348816284586	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+67	148	6940348817070087	Pointers.exe	6ddf7d6b59143015
+2	82	6940349409173204	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+82	159	6940349409931984	Pointers.exe	6ddf7d6b59143015
+2	52	6940349844226164	CMakeFiles/Pointers.dir/pointers.c.obj	f5e84b98ad32abe4
+53	121	6940349844870820	Pointers.exe	6ddf7d6b59143015

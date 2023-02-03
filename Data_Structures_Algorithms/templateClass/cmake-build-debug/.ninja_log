@@ -1,0 +1,13 @@
+# ninja log v5
+0	606	6943980435579023	CMakeFiles/templateClass.dir/templateClass.cpp.obj	e35cffc02856cf98
+611	694	6943980436467876	templateClass.exe	afcbc83eea6068e0
+4	597	6943980543988432	CMakeFiles/templateClass.dir/templateClass.cpp.obj	e35cffc02856cf98
+598	672	6943980544708172	templateClass.exe	afcbc83eea6068e0
+4	601	6943980662972166	CMakeFiles/templateClass.dir/templateClass.cpp.obj	e35cffc02856cf98
+602	673	6943980663677156	templateClass.exe	afcbc83eea6068e0
+5	632	6943985473288295	CMakeFiles/templateClass.dir/templateClass.cpp.obj	e35cffc02856cf98
+633	708	6943985474025048	templateClass.exe	afcbc83eea6068e0
+5	653	6943985746144668	CMakeFiles/templateClass.dir/templateClass.cpp.obj	e35cffc02856cf98
+653	727	6943985746903921	templateClass.exe	afcbc83eea6068e0
+5	682	6943985853962119	CMakeFiles/templateClass.dir/templateClass.cpp.obj	e35cffc02856cf98
+683	754	6943985854686532	templateClass.exe	afcbc83eea6068e0
