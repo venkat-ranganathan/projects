@@ -6,7 +6,8 @@
         "algorithm": "c",
         "iostream": "cpp",
         "new": "cpp",
-        "lab7structures.h": "c"
+        "lab7structures.h": "c",
+        "pointers.h": "c"
     },
     "cmake.configureOnOpen": false
 }
