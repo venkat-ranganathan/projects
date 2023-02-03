@@ -1,7 +1,7 @@
 set(CMAKE_C_COMPILER "C:/msys64/clang64/bin/clang.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "Clang")
-set(CMAKE_C_COMPILER_VERSION "15.0.5")
+set(CMAKE_C_COMPILER_VERSION "15.0.7")
 set(CMAKE_C_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_C_COMPILER_WRAPPER "")
 set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "17")
@@ -66,7 +66,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/msys64/clang64/lib/clang/15.0.5/include;C:/msys64/clang64/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/msys64/clang64/lib/clang/15.0.7/include;C:/msys64/clang64/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/msys64/clang64/x86_64-w64-mingw32/lib;C:/msys64/clang64/x86_64-w64-mingw32/mingw/lib;C:/msys64/clang64/lib;C:/msys64/clang64/x86_64-w64-mingw32/sys-root/mingw/lib;C:/msys64/clang64/lib/clang/15.0.5/lib/windows")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/msys64/clang64/x86_64-w64-mingw32/lib;C:/msys64/clang64/x86_64-w64-mingw32/mingw/lib;C:/msys64/clang64/lib;C:/msys64/clang64/x86_64-w64-mingw32/sys-root/mingw/lib;C:/msys64/clang64/lib/clang/15.0.7/lib/windows")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

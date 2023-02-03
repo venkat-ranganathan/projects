@@ -10,7 +10,7 @@
 				{
 					"includeDirectories" : 
 					[
-						"C:/msys64/clang64/lib/clang/15.0.5/include",
+						"C:/msys64/clang64/lib/clang/15.0.7/include",
 						"C:/msys64/clang64/include"
 					],
 					"linkDirectories" : 
@@ -19,7 +19,7 @@
 						"C:/msys64/clang64/x86_64-w64-mingw32/mingw/lib",
 						"C:/msys64/clang64/lib",
 						"C:/msys64/clang64/x86_64-w64-mingw32/sys-root/mingw/lib",
-						"C:/msys64/clang64/lib/clang/15.0.5/lib/windows"
+						"C:/msys64/clang64/lib/clang/15.0.7/lib/windows"
 					],
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : 
@@ -40,7 +40,7 @@
 					]
 				},
 				"path" : "C:/msys64/clang64/bin/clang.exe",
-				"version" : "15.0.5"
+				"version" : "15.0.7"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 

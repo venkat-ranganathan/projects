@@ -1,9 +1,3 @@
 # ninja log v5
-30	273	6942929707441725	CMakeFiles/RootEqualsSumOfChildren.dir/binaryTree.c.obj	36524cf5f7d4cc80
-274	517	6942929709825831	RootEqualsSumOfChildren.exe	d0ad2960f9aea4f1
-2	51	6943277780845286	CMakeFiles/RootEqualsSumOfChildren.dir/binaryTree.c.obj	9164804cc017d3e2
-52	124	6943277781536904	RootEqualsSumOfChildren.exe	d5cdbf5527cf00c0
-2	53	6943278828204875	CMakeFiles/RootEqualsSumOfChildren.dir/binaryTree.c.obj	9164804cc017d3e2
-54	124	6943278828881647	RootEqualsSumOfChildren.exe	d5cdbf5527cf00c0
-2	54	6943279349788831	CMakeFiles/RootEqualsSumOfChildren.dir/binaryTree.c.obj	9164804cc017d3e2
-54	126	6943279350485137	RootEqualsSumOfChildren.exe	d5cdbf5527cf00c0
+1	629	6963075279089481	CMakeFiles/RootEqualsSumOfChildren.dir/binaryTree.c.obj	9164804cc017d3e2
+630	738	6963075280203598	RootEqualsSumOfChildren.exe	d5cdbf5527cf00c0
