@@ -9,5 +9,6 @@
         "lab7structures.h": "c",
         "pointers.h": "c"
     },
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": "${workspaceFolder}/Data_Structures_Algorithms/Recursion"
 }
