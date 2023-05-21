@@ -13,11 +13,22 @@
 
 #### Table of Contents:
 
+- [Metal Detector using Colpitts Oscillator & FPGA](#MetalDetector)
 - [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
 - [Minesweeper](#Minesweeper)
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
+
+## Metal Detector using Colpitts Oscillator & FPGA {#MetalDetector}
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-WaQUf2m0IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NohT7cfAe3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sM72W-lKSLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
