@@ -61,8 +61,6 @@ time and my brain was fried 🧠⚡
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>&nbsp;</p>
-
 [Back to Top](#TOP)
 
 ---
@@ -83,8 +81,6 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>&nbsp;</p>
-
 [Back to Top](#TOP)
 
 ---
@@ -104,8 +100,6 @@ soldering iron with a fine tip, heated up the contact points of the sensor and a
 metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally again
 
 <iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<p>&nbsp;</p>
 
 [Back to Top](#TOP)
 
