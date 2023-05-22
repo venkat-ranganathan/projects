@@ -22,10 +22,10 @@
 
 ## Metal Detector using Colpitts Oscillator & FPGA {#MetalDetector}
 
-Our Junior Design final project was to create a metal detector system using off-the-shelf parts. Our team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
+Our Junior Design final project was to create a metal detector system using off-the-shelf parts. Our team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Christopher Shortt, Kyle Duran, Arvind Balajee). 
 
-Our system consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and a voltage
-divider. Each circuit is connected to a magnetic coil that functions to detect the presence of metal using
+System consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and a voltage
+divider. Each circuit connected to a magnetic coil that functions to detect the presence of metal using
 the principles of electromagnetic induction and Lenz’s law. The output signal from each coil is fed to the
 analog-to-digital converters of the FPGA/BASYS board. The BASYS board displays four separate digits on
 the seven-segment display. The LEFT-most three digits display the number of conductive objects
