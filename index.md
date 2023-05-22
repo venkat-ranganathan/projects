@@ -24,13 +24,13 @@
 
 Junior Design final project was to create a metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
 
-###Electrical Engineers: 
+####Electrical Engineers: 
 System consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and voltage
 divider. Each circuit connected to magnetic coil that detects presence of metal using
 principles of electromagnetic induction and Lenz’s law. Output signal from each coil fed to
 analog-to-digital converters of FPGA board. 
 
-###Computer Engineers:
+####Computer Engineers:
 Designed MicroBlaze microprocessor hardware platform in Xilinx Vivado. Developed custom AXI IP hardware modules in VHDL for voltage sampling. Implemented metal detecting functionality using embedded C programming on Basys 3 FPGA board.
 FPGA board displays four digits on
 seven-segment display. LEFT-most three digits displays number of conductive objects
@@ -38,7 +38,7 @@ detected by left, middle, and right magnetic coils. RIGHT-most digit displays to
 conductive objects detected. Switch LEDs operate as strength meter and more active LEDs
 correlate to conductive object being closer to magnetic coil. 
 
-###Team result:
+####Team result:
 System correctly detected 15/15 conductive objects in various combinations of position and distance from magnetic coils during demonstration.
 
 
