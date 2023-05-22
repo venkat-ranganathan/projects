@@ -33,7 +33,8 @@ analog-to-digital converters of FPGA board.
 Computer Engineers:
 Designed MicroBlaze microprocessor hardware platform in Xilinx Vivado. Developed custom AXI IP hardware modules in VHDL for voltage sampling. Implemented metal detecting functionality using embedded C programming on Basys 3 FPGA board. 
 
-Combined:<p>&nbsp;</p>
+Combined:
+<p>&nbsp;</p>
 FPGA board displays four digits on
 seven-segment display. LEFT-most three digits displays number of conductive objects
 detected by left, middle, and right magnetic coils. RIGHT-most digit displays total number of
