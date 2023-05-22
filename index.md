@@ -31,18 +31,14 @@ principles of electromagnetic induction and Lenz’s law. Output signal from eac
 analog-to-digital converters of FPGA board. 
 
 Computer Engineers:
-Designed MicroBlaze microprocessor hardware platform in Xilinx Vivado. Developed custom AXI IP hardware modules in VHDL for voltage sampling. Implemented metal detecting functionality using embedded C programming on Basys 3 FPGA board. 
-
-Combined:
-<p>&nbsp;</p>
+Designed MicroBlaze microprocessor hardware platform in Xilinx Vivado. Developed custom AXI IP hardware modules in VHDL for voltage sampling. Implemented metal detecting functionality using embedded C programming on Basys 3 FPGA board.
 FPGA board displays four digits on
 seven-segment display. LEFT-most three digits displays number of conductive objects
 detected by left, middle, and right magnetic coils. RIGHT-most digit displays total number of
-conductive objects detected. 
-
-Switch LEDs operate as strength meter and more active LEDs
+conductive objects detected. Switch LEDs operate as strength meter and more active LEDs
 correlate to conductive object being closer to magnetic coil. 
 
+Team result:
 System correctly detected 15/15 conductive objects in various combinations of position and distance from magnetic coils during demonstration.
 
 
