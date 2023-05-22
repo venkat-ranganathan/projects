@@ -27,7 +27,7 @@ Junior Design final project was to create a metal detector system using off-the-
 System consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and voltage
 divider. Each circuit connected to magnetic coil that detects presence of metal using
 principles of electromagnetic induction and Lenz’s law. Output signal from each coil fed to
-analog-to-digital converters of FPGA/BASYS board. BASYS board displays four digits on
+analog-to-digital converters of FPGA board. FPGA board displays four digits on
 seven-segment display. LEFT-most three digits displays number of conductive objects
 detected by left, middle, and right magnetic coils. RIGHT-most digit displays total number of
 conductive objects detected. Switch LEDs operate as strength meter and more active LEDs
