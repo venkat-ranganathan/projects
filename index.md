@@ -22,7 +22,17 @@
 
 ## Metal Detector using Colpitts Oscillator & FPGA {#MetalDetector}
 
-
+A metal detector system was created using off-the-shelf parts. The system consists of three circuits,
+each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and a voltage
+divider. Each circuit is connected to a magnetic coil that functions to detect the presence of metal using
+the principles of electromagnetic induction and Lenz’s law. The output signal from each coil is fed to the
+analog-to-digital converters of the FPGA/BASYS board. The BASYS board displays four separate digits on
+the seven-segment display. The LEFT-most three digits display the number of conductive objects
+detected by the left, middle, and right magnetic coils. The RIGHT-most digit displays the total number of
+conductive objects detected. The switch LEDs operate as the strength meter and more active LEDs
+correlate to a conductive object being closer to the magnetic coil. The system correctly detected 15/15
+conductive objects in various combinations of position and distance from the magnetic coils during the
+demonstration.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-WaQUf2m0IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
