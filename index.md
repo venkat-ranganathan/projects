@@ -24,13 +24,13 @@
 
 Junior Design final project was to create a metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
 
-EE side: 
+Electrical Engineers: 
 System consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and voltage
 divider. Each circuit connected to magnetic coil that detects presence of metal using
 principles of electromagnetic induction and Lenz’s law. Output signal from each coil fed to
 analog-to-digital converters of FPGA board. 
 
-CoE side:
+Computer Engineers:
 Designed MicroBlaze microprocessor hardware platform in Xilinx Vivado. Developed custom AXI IP hardware modules in VHDL for voltage sampling. Implemented metal detecting functionality using embedded C programming on Basys 3 FPGA board. 
 
 Combined:<p>&nbsp;</p>
