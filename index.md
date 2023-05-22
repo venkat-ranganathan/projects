@@ -13,14 +13,14 @@
 
 #### Table of Contents:
 
-- [Metal Detection system using Colpitts Oscillator & FPGA](#MetalDetector)
+- [Metal Detection System using Colpitts Oscillator & FPGA](#MetalDetector)
 - [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
 - [Minesweeper](#Minesweeper)
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
 
-## Metal Detection system using Colpitts Oscillator & FPGA {#MetalDetector}
+## Metal Detection System using Colpitts Oscillator & FPGA {#MetalDetector}
 
 Junior Design final project was to create a metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
 
