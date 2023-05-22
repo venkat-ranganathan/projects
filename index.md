@@ -33,7 +33,7 @@ analog-to-digital converters of FPGA board.
 Computer Engineers:
 Design implemented using embedded MicroBlaze soft processor on FPGA. Microprocessor system uses GPIO peripherals for inputs/outputs.
 Main loop running at 1ms period using alarm timer custom IP enabled controlled timing of
-FSMs (finite state machines) and increased accuracy of our peak values in Peak Finder IP, since code allows for
+FSMs (finite state machines) and increased accuracy of peak values in Peak Finder IP, since code allows for
 multiple periods to run through the IP before clearing its value. Major FSM used in design is 
 Metal Detect Debounce. LED strength meter logic implemented into function using bit shifting
 to turn on correct amount of LEDs based on how close or far metal is from coil. Register
