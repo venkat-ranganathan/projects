@@ -60,6 +60,11 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
+[Back to Top](#TOP)
+
+---
+<p>&nbsp;</p>
+
 ## Analog-to-Digital Converter {#Analog-to-Digital-Converter}
 
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7 volts (including decimal
