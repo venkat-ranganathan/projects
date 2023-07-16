@@ -7,5 +7,7 @@ header_pages:
   - index.md
 
 author: Venkat Ranganathan
-linkedin_username: venkatesh-ranganathan
+#linkedin_username: venkatesh-ranganathan
+social links:
+  - { platform: linkedin, user_url: "https://www.linkedin.com/in/venkatesh-ranganathan/" }
 
