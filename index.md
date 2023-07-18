@@ -20,6 +20,11 @@
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
 
+## Setting up EtherCAT MainDevice (MPU) with multiple SubDevices (MCU)
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P9woMKp68rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Metal Detection System using Colpitts Oscillator & FPGA {#MetalDetector}
 
 Junior Design final project: create metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
