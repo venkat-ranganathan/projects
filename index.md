@@ -21,7 +21,7 @@
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
 
-## TI '23 Summer intern project: Set up EtherCAT TI AM62x-EVM MainDevice (MPU) with multiple SubDevices AM64x/AM243x-EVM/LP (MCU) {#EtherCAT}
+## TI '23 Summer intern project: Set up EtherCAT TI AM62x-EVM (MPU) MainDevice with multiple AM64x/AM243x-EVM/LP (MCU) SubDevices {#EtherCAT}
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P9woMKp68rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
