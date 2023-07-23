@@ -23,6 +23,8 @@
 
 ## TI '23 Summer intern project: Set up EtherCAT TI AM62x-EVM (MPU) MainDevice with multiple AM64x/AM243x-EVM/LP (MCU) SubDevices {#EtherCAT}
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 My intern project demonstrates that a TI AM62x (microprocessor) running RT-Linux (real-time Linux, Yocto/Arago) on its ARM A53 cores can function as an EtherCAT MainDevice to control test LEDs on multiple TI AM243x SubDevices (microcontrollers running RTOS; real-time operating system). In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
 
 I generated public-facing TI documentation for the end-user to get an EtherCAT TI Main/SubDevice system setup and running and be able to manipulate test LEDs on multiple SubDevices connected via standard Ethernet
@@ -44,7 +46,7 @@ To setup TI AM64x/243x-EVM (General purpose), TI AM243x-LP (HSFS, high-security 
 
 -
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 
 [Back to Top](#TOP)
