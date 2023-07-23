@@ -112,6 +112,9 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
+<img width="941" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/db0c6fb3-0980-430a-939e-f57ac014d3a8">
+
+
 [Back to Top](#TOP)
 
 ---
