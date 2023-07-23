@@ -40,7 +40,7 @@ To setup the TI AM62x-EVM MainDevice:
 -   connected remotely to AM62x from PowerShell on Windows PC using SSH
 - Corporate environment blocked USB storage devices from connecting to corporate computers, to move files over Ethernet:
 -   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to on the test computer (ip link, ip addr add/del)
--   used scp command to transfer CODESYS deb files from computer to the AM62x Linux root directory (files needed to setup AM62x as an EtherCAT MainDevice)
+-   used scp command and set encryption to transfer CODESYS deb files from computer to the AM62x Linux root directory (files needed to setup AM62x as an EtherCAT MainDevice)
 -   installed files on AM62x using opkg
 -   confirmed CODESYS MainDevice configuration ran on the AM62x
 
