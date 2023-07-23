@@ -112,7 +112,7 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
-For our Signals & Systems final project we took a pre-recorded guitar note, imported it into MATLAB as a discrete time signal. Then we plotted the signal against a time vector to normalize the data relative to the sampling rate. 
+For our Signals & Systems final project we took a pre-recorded guitar note, imported it into MATLAB as a discrete time signal. Then plotted the signal against a time vector to normalize the data relative to the sampling rate. 
 
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/e771535d-8d68-4937-99b5-673305451da0">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/780c4b94-4c70-4e1d-83a7-2454370855ea">
