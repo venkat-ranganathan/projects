@@ -40,25 +40,25 @@ To setup the TI AM62x-EVM MainDevice:
 - Used Linux command-line tools (screen, dmesg, grep, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM
 -   connected remotely to AM62x from PowerShell on Windows PC using SSH
 - Corporate environment blocked USB storage devices from connecting to corporate computers, to move files over Ethernet:
--   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to on the test computer (ip link, ip addr add/del)
+-   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to Windows PC (ip link, ip addr add/del) (connected to Windows PC so AM62x can be detected by CODESYS software that is only available on Windows)
 -   used scp command and set encryption to transfer CODESYS deb files from computer to the AM62x Linux root directory (files needed to setup AM62x as an EtherCAT MainDevice)
 -   installed files on AM62x using opkg
 -   confirmed CODESYS MainDevice configuration ran on the AM62x
 
-To setup TI AM64x/243x-EVM (General purpose), TI AM243x-LP (HSFS, high-security field-securable), TI AM243x-EVM (HSFS):
+To setup TI AM64x/243x-EVM (GP, General purpose), TI AM243x-LP (HSFS, high-security field-securable), TI AM243x-EVM (HSFS):
 
 - Built EtherCAT demo project using TI Code Composer Studio (software to program and debug real-time cores)
 -   modified build configuration
 -   debugged build errors
 -   filed JIRA ticket with debug information, steps to recreate, and solution (if known)
-- loaded application onto AM243x R5F RT core
+- manually connected to and loaded application onto AM243x R5F RT core
 - monitored terminal output over JTAG (XDS110)
-- flashed (via UART) modified configuration to load built application after power cycle
+- flashed (via UART) modified configuration to automatically load built application onto AM243x R5F RT core after power cycle
 
 To get system working:
 - Built project on CODESYS Devolopment System. Detected SubDevices connected to MainDevice
 - located physical addresses of test LEDs on SubDevices, assigned to variables
-- set up visualization to change state of LEDs on all boards on the fly simultaneously
+- set up visualization to manually change state of LEDs on all boards, on the fly, simultaneously
 - debugged hardware, software issues: detected fault in boards, SDK documentation missing/incorrect, examples not building or running
 
 To edit video:
