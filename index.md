@@ -23,7 +23,26 @@
 
 ## TI '23 Summer intern project: Set up EtherCAT TI AM62x-EVM (MPU) MainDevice with multiple AM64x/AM243x-EVM/LP (MCU) SubDevices {#EtherCAT}
 
-My intern project demonstrates that a TI AM62x (microprocessor) running RT-Linux (real-time Linux) on its ARM A53 cores can function as an EtherCAT MainDevice to control test LEDs on multiple TI AM243x SubDevices (microcontrollers running RTOS; real-time operating system). In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
+My intern project demonstrates that a TI AM62x (microprocessor) running RT-Linux (real-time Linux, Yocto/Arago) on its ARM A53 cores can function as an EtherCAT MainDevice to control test LEDs on multiple TI AM243x SubDevices (microcontrollers running RTOS; real-time operating system). In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
+
+I generated public-facing TI documentation for the end-user to get an EtherCAT TI Main/SubDevice system setup and running and be able to manipulate test LEDs on multiple SubDevices connected via standard Ethernet
+
+Speaking broadly, I did the following to get my system up-and-running:
+
+To setup the TI AM62x-EVM MainDevice:
+
+- Loaded Yocto (Arago) Linux onto the AM62x-EVM
+- Used bash commmands from desktop Linux (Ubuntu) to screen into the AM62x
+- Used Linux command-line tools (screen, dmesg, grep, ip a, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM (Ubuntu)
+- Corporate environment blocked USB storage devices from connection to corporate computers
+-   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port on the test computer (ip link, ip addr add/del)
+-   used scp command to transfer CODESYS deb files from computer to the AM62x Linux root directory
+-   built files on AM62x using opkg
+-   confirmed CODESYS MainDevice configuration ran on the AM62x
+
+To setup TI AM64x/243x-EVM (General purpose), TI AM243x-LP (HSFS, high-security field-securable), TI AM243x-EVM (HSFS):
+
+-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
