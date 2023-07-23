@@ -70,7 +70,7 @@ To get system working:
 To edit video:
 - Got feedback from colleagues & fellow interns that it was difficult to know where to look
 - Added arrow image to show device being changed
-- Added zoomed in picture to clearly see LED states changing
+- Added zoomed in picture-in-picture to clearly see LED states changing
 
 [Back to Top](#TOP)
 
