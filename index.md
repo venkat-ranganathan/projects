@@ -61,6 +61,11 @@ To get system working:
 - set up visualization to change state of LEDs on all boards on the fly simultaneously
 - debugged hardware, software issues: detected fault in boards, SDK documentation missing/incorrect, examples not building or running
 
+To edit video:
+- got feedback from colleagues & fellow interns that difficult to know where to look
+- added arrow image to show device being changed
+- added zoomed in picture to more clearly LED states changing
+
 [Back to Top](#TOP)
 
 ---
