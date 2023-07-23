@@ -119,6 +119,8 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 For our Signals & Systems final project, we took a pre-recorded guitar note, imported it into MATLAB as a discrete time signal. Then plotted the signal against a time vector to normalize the data relative to the sampling rate. 
 
+Formulas formatted using LaTex
+
 <p>&nbsp;</p>
 
 <img width="690" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/c0414d56-4c15-4f21-b801-b6ef39d81cb4">
