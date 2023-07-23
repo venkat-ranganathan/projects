@@ -36,11 +36,12 @@ To setup the TI AM62x-EVM MainDevice:
 
 - Loaded Yocto (Arago) Linux onto AM62x-EVM
 - Used bash commmand from desktop Linux VM (Ubuntu) to screen into AM62x via UART
-- Used Linux command-line tools (screen, dmesg, grep, ip a, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM
+- Used Linux command-line tools (screen, dmesg, grep, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM
+-   connected remotely to AM62x from PowerShell on Windows PC using SSH
 - Corporate environment blocked USB storage devices from connecting to corporate computers, to move files over Ethernet:
--   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port on the test computer (ip link, ip addr add/del)
+-   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to on the test computer (ip link, ip addr add/del)
 -   used scp command to transfer CODESYS deb files from computer to the AM62x Linux root directory (files needed to setup AM62x as an EtherCAT MainDevice)
--   built files on AM62x using opkg
+-   installed files on AM62x using opkg
 -   confirmed CODESYS MainDevice configuration ran on the AM62x
 
 To setup TI AM64x/243x-EVM (General purpose), TI AM243x-LP (HSFS, high-security field-securable), TI AM243x-EVM (HSFS):
