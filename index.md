@@ -64,7 +64,7 @@ To setup TI AM64x/243x-EVM (GP, General purpose), TI AM243x-LP (HSFS, high-secur
 To get system working:
 - Built project on CODESYS Devolopment System. Detected SubDevices connected to MainDevice
 - Located physical addresses of test LEDs on SubDevices, assigned to variables
-- Built visualization to manually change state of LEDs on all boards, on the fly, simultaneously
+- Set up visualization to manually change state of LEDs on all boards, on the fly, simultaneously
 - Debugged hardware, software issues: detected fault in boards, SDK documentation missing/incorrect, examples not building or running
 
 To edit video:
