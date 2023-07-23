@@ -116,8 +116,8 @@ For our Signals & Systems final project we took a pre-recorded guitar note, impo
 
 <p>&nbsp;</p>
 
-<img width="608" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/d49852ab-e0c7-49bb-9ca1-08bb9e4fcb0f">
-<img width="608" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/6683f52e-e1fc-4a3d-8928-24fb1d4e3325">
+<img width="690" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/c0414d56-4c15-4f21-b801-b6ef39d81cb4">
+<img width="690" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/958555c5-31d6-4118-9858-51126bf2a718">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/90f6bd52-2481-405f-8422-0494a7b2ca60">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/da7aecc5-c41f-4bdd-9298-03649104809c">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/1b34680d-cfc4-4a48-837e-3529e9ac8886">
