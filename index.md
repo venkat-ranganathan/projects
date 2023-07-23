@@ -59,7 +59,7 @@ To setup TI AM64x/243x-EVM (GP, General purpose), TI AM243x-LP (HSFS, high-secur
 - Manually connected to and loaded application onto AM243x R5F RT core
 - Monitored AM243x terminal output over JTAG (XDS110)
 - Flashed (via UART) modified configuration to automatically load built application onto AM243x R5F RT core after power cycle
-- AM2423x boards set to boot OSPI to load flashed instructions
+- AM243x boards set to boot OSPI to load flashed instructions
 
 To get system working:
 - Built project on CODESYS Devolopment System. Detected SubDevices connected to MainDevice
