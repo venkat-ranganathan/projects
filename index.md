@@ -52,7 +52,7 @@ To setup TI AM64x/243x-EVM (GP, General purpose), TI AM243x-LP (HSFS, high-secur
 -   debugged build errors
 -   filed JIRA ticket with debug information, steps to recreate, and solution (if known)
 - manually connected to and loaded application onto AM243x R5F RT core
-- monitored AM243x application terminal output over JTAG (XDS110)
+- monitored AM243x terminal output over JTAG (XDS110)
 - flashed (via UART) modified configuration to automatically load built application onto AM243x R5F RT core after power cycle
 
 To get system working:
