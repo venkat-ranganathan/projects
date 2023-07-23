@@ -50,6 +50,11 @@ To setup TI AM64x/243x-EVM (General purpose), TI AM243x-LP (HSFS, high-security 
 -   modified build configuration
 -   debugged build errors
 -     filed JIRA ticket with debug information, steps to recreate, and solution (if known)
+- loaded application onto AM243x R5F RT core
+- monitored terminal output over JTAG (XDS110)
+- flashed modified configuration to load build application after power cycle
+
+To get system working:
 - 
 
 
