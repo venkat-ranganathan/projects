@@ -64,7 +64,7 @@ To get system working:
 To edit video:
 - got feedback from colleagues & fellow interns that it was difficult to know where to look
 - added arrow image to show device being changed
-- added zoomed in picture to more clearly see LED states changing
+- added zoomed in picture to clearly see LED states changing
 
 [Back to Top](#TOP)
 
