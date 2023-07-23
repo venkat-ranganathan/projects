@@ -25,6 +25,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+<p>&nbsp;</p>
 
 My intern project demonstrates that a TI AM62x (microprocessor) running RT-Linux (real-time Linux, Yocto/Arago) on its ARM A53 cores can function as an EtherCAT MainDevice to control test LEDs on multiple TI AM243x SubDevices (microcontrollers running RTOS; real-time operating system). In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
 
@@ -55,10 +56,10 @@ To setup TI AM64x/243x-EVM (General purpose), TI AM243x-LP (HSFS, high-security 
 - flashed modified configuration to load build application after power cycle
 
 To get system working:
-- 
-
-
-
+- Built project on CODESYS Devolopment System. Detected SubDevices connected to MainDevice
+- located physical addresses of test LEDs on SubDevices, assigned to variables
+- set up visualization to change state of LEDs on all boards on the fly simultaneously
+- debugged hardware, software issues: detected fault in boards, SDK documentation missing/incorrect, examples not building or running
 
 [Back to Top](#TOP)
 
