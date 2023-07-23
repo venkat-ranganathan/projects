@@ -38,34 +38,34 @@ To setup the TI AM62x-EVM MainDevice:
 - Loaded Yocto (Arago) Linux onto AM62x-EVM
 - Connected to AM62x via UART using screen
 - Used Linux command-line tools (screen, dmesg, grep, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM
--   connected remotely to AM62x from PowerShell on Windows PC using SSH
+-   Connected remotely to AM62x from PowerShell on Windows PC using SSH
 - Corporate environment blocked USB storage devices from connecting to corporate computers, to move files over Ethernet:
--   set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to Windows PC (ip link, ip addr add/del) (connected to Windows PC so AM62x can be detected by CODESYS software that is only available on Windows)
--   used scp command and set encryption to transfer CODESYS .deb files from computer to the AM62x Linux root directory (files needed to setup AM62x as an EtherCAT MainDevice)
--   installed files on AM62x using opkg
--   confirmed CODESYS MainDevice configuration ran on the AM62x
+-   Set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to Windows PC (ip link, ip addr add/del) (connected to Windows PC so AM62x can be detected by CODESYS software that is only available on Windows)
+-   Used scp command and set encryption to transfer CODESYS .deb files from computer to the AM62x Linux root directory (files needed to setup AM62x as an EtherCAT MainDevice)
+-   Installed files on AM62x using opkg
+-   Confirmed CODESYS MainDevice configuration ran on the AM62x
 
 To setup TI AM64x/243x-EVM (GP, General purpose), TI AM243x-LP (HSFS, high-security field-securable), TI AM243x-EVM (HSFS):
 
 - Built EtherCAT demo project using TI Code Composer Studio (software to program and debug real-time cores)
--   modified build configuration
--   debugged build errors
--   filed JIRA ticket with debug information, steps to recreate, and solution (if known)
-- manually connected to and loaded application onto AM243x R5F RT core
-- monitored AM243x terminal output over JTAG (XDS110)
-- flashed (via UART) modified configuration to automatically load built application onto AM243x R5F RT core after power cycle
-- Am2423x boards set to boot OSPI to load flashed instructions
+-   Modified build configuration
+-   Debugged build errors
+-   Filed JIRA ticket with debug information, steps to recreate, and solution (if known)
+- Manually connected to and loaded application onto AM243x R5F RT core
+- Monitored AM243x terminal output over JTAG (XDS110)
+- Flashed (via UART) modified configuration to automatically load built application onto AM243x R5F RT core after power cycle
+- AM2423x boards set to boot OSPI to load flashed instructions
 
 To get system working:
 - Built project on CODESYS Devolopment System. Detected SubDevices connected to MainDevice
-- located physical addresses of test LEDs on SubDevices, assigned to variables
-- set up visualization to manually change state of LEDs on all boards, on the fly, simultaneously
-- debugged hardware, software issues: detected fault in boards, SDK documentation missing/incorrect, examples not building or running
+- Located physical addresses of test LEDs on SubDevices, assigned to variables
+- Set up visualization to manually change state of LEDs on all boards, on the fly, simultaneously
+- Debugged hardware, software issues: detected fault in boards, SDK documentation missing/incorrect, examples not building or running
 
 To edit video:
-- got feedback from colleagues & fellow interns that it was difficult to know where to look
-- added arrow image to show device being changed
-- added zoomed in picture to clearly see LED states changing
+- Got feedback from colleagues & fellow interns that it was difficult to know where to look
+- Added arrow image to show device being changed
+- Added zoomed in picture to clearly see LED states changing
 
 [Back to Top](#TOP)
 
