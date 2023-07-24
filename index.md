@@ -117,7 +117,9 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
-Signals & Systems final project. Imported 30 msec guitar note sample into MATLAB and generated synthesized guitar signal that was modified to replicate two additional notes by changing only the fundemental frequency, f0, of the signal.
+Signals & Systems final team project. Members: Venkat Ranganathan (myself) & Benjamin Telfer.
+
+Imported 30 msec guitar note sample into MATLAB and generated synthesized guitar signal that was modified to replicate two additional notes by changing only the fundemental frequency, f0, of the signal.
 
 Original signal extracted, listened to, and visualized using concepts of Fourier Series, its coefficients, and Fourier Transforms. Concept of Discrete Fourier Transform used to generate synthesized guitar signal from manually recorded FS coefficients. Concepts of stopband, transition band, and passband used to create FIR and IIR (recursive) filters to modify the sound profile of the synthesized signals. Transfer Function used to find poles and zeroes of plot, those values used to create peaks or nulls in signal to change its sound.
 
