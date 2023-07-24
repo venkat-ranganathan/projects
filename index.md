@@ -41,7 +41,7 @@ Speaking broadly, I did the following to get my system up-and-running:
 To setup the TI AM62x-EVM MainDevice:
 
 - Loaded Yocto (Arago) Linux onto AM62x-EVM
-- Connected to AM62x via UART using screen command
+- Connected to AM62x via UART using screen
 - Used Linux command-line tools (screen, dmesg, grep, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM & Windows PC
 -   Connected remotely to AM62x from PowerShell on Windows PC using SSH
 - Corporate environment blocked USB storage devices from connecting to corporate computers, to move files over Ethernet:
