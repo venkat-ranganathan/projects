@@ -117,7 +117,8 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
-Signals & Systems final team project. Members: Venkat Ranganathan (myself) & Benjamin Telfer.
+Signals & Systems final team project. 
+Team members: Venkat Ranganathan (myself) & Benjamin Telfer.
 
 Imported 30 msec guitar note sample into MATLAB and generated synthesized guitar signal that was modified to replicate two additional notes by changing only the fundemental frequency, f0, of the signal.
 
