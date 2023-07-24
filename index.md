@@ -14,7 +14,7 @@
 
 #### Table of Contents:
 
-- [TI '23 Summer intern project: Set up EtherCAT TI AM62x-EVM MainDevice (MPU) with multiple SubDevices AM64x/AM243x-EVM/LP (MCU)](#EtherCAT)
+- [Texas Instruments '23 Summer intern project: Set up EtherCAT TI AM62x-EVM MainDevice (MPU) with multiple SubDevices AM64x/AM243x-EVM/LP (MCU)](#EtherCAT)
 - [Metal Detection System using Colpitts Oscillator & FPGA](#MetalDetector)
 - [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
 - [Analog-to-Digital Converter](#Analog-to-Digital-Converter)
@@ -26,7 +26,7 @@
 ---
 <p>&nbsp;</p>
 
-## TI '23 Summer intern project: Set up EtherCAT TI AM62x-EVM (MPU) MainDevice with multiple AM64x/AM243x-EVM/LP (MCU) SubDevices {#EtherCAT}
+## Texas Instruments '23 Summer intern project: Set up EtherCAT TI AM62x-EVM (MPU) MainDevice with multiple AM64x/AM243x-EVM/LP (MCU) SubDevices {#EtherCAT}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
