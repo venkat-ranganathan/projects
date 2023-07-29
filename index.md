@@ -34,7 +34,7 @@
 
 My intern project demonstrates that a TI AM62x (microprocessor) running RT-Linux (real-time Linux, Yocto/Arago) on its ARM A53 cores can function as an <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank">EtherCAT</a> MainDevice to control test LEDs on multiple TI AM243x SubDevices (microcontrollers running <a href="https://en.wikipedia.org/wiki/Real-time_operating_system" target="_blank">RTOS</a>; real-time operating system) simultaneously. In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
 
-I wrote public-facing TI documentation for the end-user to get an EtherCAT TI Main/SubDevice system set up and running and be able to manipulate test LEDs on multiple SubDevices simultaneously connected via standard Ethernet
+I created public-facing TI documentation for the end-user to get an EtherCAT TI Main/SubDevice system set up and running and be able to manipulate test LEDs on multiple SubDevices simultaneously connected via standard Ethernet
 
 Speaking broadly, I did the following to get my system up-and-running:
 
