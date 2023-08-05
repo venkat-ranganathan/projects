@@ -56,7 +56,7 @@ To setup the TI AM62x-EVM MainDevice:
 
 To setup TI AM64x/243x-EVM (GP, General purpose), TI AM243x-LP (HSFS, high-security field-securable), TI AM243x-EVM (HSFS):
 
-- Built EtherCAT demo project using TI Code Composer Studio (software to program and debug real-time cores)
+- Built EtherCAT demo project using TI Code Composer Studio (IDE to program and debug real-time cores)
 -   Modified build configuration
 -   Debugged build errors
 -   Filed JIRA ticket with debug information, steps to recreate, and solution (if known)
