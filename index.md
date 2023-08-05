@@ -83,7 +83,7 @@ To edit video:
 
 ## Metal Detection System using Colpitts Oscillator & FPGA {#MetalDetector}
 
-Spring '23 Junior Design final project: create metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
+Spring '23 Junior Design final team project: create metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
 
 Electrical Engineers: 
 System consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and voltage
@@ -161,7 +161,7 @@ Formulas set using LaTeX
 
 ## Analog-to-Digital Converter {#Analog-to-Digital-Converter}
 
-Spring '21 Electronics final project
+Spring '21 Electronics final individual project
 
 Used LM741CN op-amps as comparators to convert an analog voltage signal ranging from 0 to 7 volts (including decimal
 values in between) into an equivalent digital, discrete signal (positive and negative whole numbers) output through
@@ -192,7 +192,7 @@ time and my brain was fried 🧠⚡
 
 ## Minesweeper {#Minesweeper}
 
-Fall '21 Sophomore Design final project
+Fall '21 Sophomore Design final team project
 
 Programmed Pololu 3pi Robot to navigate a 36x48” black-lined grid and find user defined number of
 1x1” white “mines”. Directly programmed hardware. Defined motors as output, light sensors as input,
