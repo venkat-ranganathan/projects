@@ -83,7 +83,7 @@ To edit video:
 
 ## Metal Detection System using Colpitts Oscillator & FPGA {#MetalDetector}
 
-Junior Design final team project: create metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
+Junior Design final project: create metal detection system using off-the-shelf parts. Team consists of two Electrical Engineers (Venkat Ranganathan (myself), Muhaned Abdelmoniem) and three Computer Engineers (Kyle Duran, Christopher Shortt, Arvind Balajee). 
 
 Electrical Engineers: 
 System consists of three circuits, each having a Colpitts oscillator, high-pass filter, half-wave rectifier, low-pass filter, and voltage
@@ -121,7 +121,7 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
 
-Signals & Systems final team project. 
+Signals & Systems final project. 
 
 Team members: Venkat Ranganathan (myself) & Benjamin Telfer.
 
