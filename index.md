@@ -1,5 +1,5 @@
 Venkat Ranganathan
-<p>&nbsp;</p>
+&nbsp;
 <a href="https://github.com/venkat-ranganathan/projects" target="_blank">GitHub</a>
 &
 <a href="https://linkedin.com/in/venkatesh-ranganathan" target="_blank">LinkedIn</a>
