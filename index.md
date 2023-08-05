@@ -1,4 +1,4 @@
-Venkat Ranganathan
+Venkat Ranganathan  
 &nbsp;  
 <a href="https://github.com/venkat-ranganathan/projects" target="_blank">GitHub</a>
 &
