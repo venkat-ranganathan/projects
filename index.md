@@ -210,7 +210,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 
 ## Pololu 3pi IR reflectance sensor repair {#Pololu-3pi-IR-reflectance-sensor-repair}
 
-I broke off one the 3pi's IR reflectance sensors by repeatedly crashing it into a concrete wall (by accident) at high
+I broke off one of the 3pi's IR reflectance sensors by repeatedly crashing it into a concrete wall (by accident) at high
 speeds while learning how to adjust the left/right motor speeds. Since the five IR reflectance sensors are connected in
 series, when one doesn't work, all of them stop working.
 
