@@ -38,7 +38,7 @@ I spent my Summer as an Applications Engineer intern with Sitara Embedded Linux 
 
 My intern project demonstrates that a TI AM62x microprocessor running RT-Linux (<a href="https://www.yoctoproject.org/software-overview/" target="_blank">Yocto</a>) on its ARM A53 cores can function as an <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank">EtherCAT</a> MainDevice to control test LEDs on multiple TI AM243x microcontroller SubDevices running <a href="https://en.wikipedia.org/wiki/Real-time_operating_system" target="_blank">RTOS</a> on its ARM R5F RT cores simultaneously. In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
 
-I wrote public-facing TI documentation for the end-user to get an EtherCAT TI Main/SubDevice system set up and running and be able to manipulate test LEDs on multiple SubDevices simultaneously connected via standard Ethernet
+I wrote <a href="https://e2e.ti.com/support/processors-group/processors/f/processors-forum/1257180/faq-how-to-set-up-an-ethercat-system-with-am6xx-maindevice-and-am64-am243-subdevice-using-codesys-development-system" target="_blank">public-facing TI documentation</a> for the end-user to get an EtherCAT TI Main/SubDevice system set up and running and be able to manipulate test LEDs on multiple SubDevices simultaneously connected via standard Ethernet
 
 Speaking broadly, I did the following to get my system up-and-running:
 
