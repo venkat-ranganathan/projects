@@ -36,7 +36,7 @@ Venkat Ranganathan
 
 I spent my Summer as an Applications Engineer intern with Sitara Embedded Linux Applications at Texas Instruments in Dallas, TX.
 
-My intern project demonstrates that a TI AM62x microprocessor running RT-Linux (<a href="https://www.yoctoproject.org/software-overview/" target="_blank">Yocto</a>) on its ARM A53 cores can function as an <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank">EtherCAT</a> MainDevice to control test LEDs on multiple TI AM243x microcontroller SubDevices running <a href="https://en.wikipedia.org/wiki/Real-time_operating_system" target="_blank">RTOS</a> on its ARM R5F RT cores simultaneously. In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
+My intern project demonstrates that a TI AM62x microprocessor running RT-Linux (<a href="https://www.yoctoproject.org/software-overview/" target="_blank">Yocto</a>) on its ARM A53 cores can function as an <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank">EtherCAT</a> MainDevice to control test LEDs on multiple TI AM243x microcontroller SubDevices running <a href="https://en.wikipedia.org/wiki/Real-time_operating_system" target="_blank">RTOS</a> on its ARM R5F cores simultaneously. In factory automation, the test LEDs can be replaced with motors, servos, robotic arms, etc.
 
 I wrote <a href="https://e2e.ti.com/support/processors-group/processors/f/processors-forum/1257180/faq-how-to-set-up-an-ethercat-system-with-am6xx-maindevice-and-am64-am243-subdevice-using-codesys-development-system" target="_blank">public-facing Texas Instruments documentation</a> for the end-user to get an EtherCAT TI Main/SubDevice system set up and running and be able to manipulate test LEDs on multiple SubDevices simultaneously connected via standard Ethernet
 
@@ -46,7 +46,7 @@ To setup the TI AM62x-EVM MainDevice:
 
 - Loaded Yocto (Arago) RT-Linux onto AM62x-EVM
 - Connected to AM62x via UART using screen
-- Used Linux command-line tools (screen, dmesg, grep, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from my Linux VM & Windows PC
+- Used Linux command-line tools (screen, dmesg, grep, ifconfig, ip link, ip addr, tcpdump, htop) to set up and debug the network connection to the AM62x from Linux & Windows
 -   Connected remotely to AM62x from PowerShell on Windows PC using SSH
 - Corporate environment blocked USB storage devices from connecting to corporate computers, to move files over Ethernet:
 -   Set IP address of Ethernet port on AM62x to be on same subnet as the Ethernet port connected to Windows PC (ip link, ip addr add/del) (connected to Windows PC so AM62x can be detected by CODESYS software that is only available on Windows)
