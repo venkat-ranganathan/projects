@@ -4,6 +4,8 @@
 
 ## 08/26/23
 
+![A230D284-B1DA-44D4-B0C4-4276E4FBEC31_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e074d1f1-dcd4-4776-9d2a-564ff589d49c)
+
 I roadtripped around the country after my internship ended and before classes started
 
 <img width="740" alt="Screenshot 2023-08-26 at 2 28 00 PM" src="https://github.com/venkat-ranganathan/projects/assets/96662693/0e5fb035-7664-433e-bc67-5319222be970">
