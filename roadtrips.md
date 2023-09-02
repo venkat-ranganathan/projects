@@ -88,6 +88,8 @@ Here are some photos:
 
 ![1976ABB0-3757-48EE-9878-C9E82B926D00_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/0fa0203c-6ef2-455c-a584-cfb9cd1957c6)
 
+![A230D284-B1DA-44D4-B0C4-4276E4FBEC31_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/6a51e872-78aa-429b-8a72-42fd514f9b3b)
+
 ## Mount Rushmore National Monument, South Dakota:
 
 ![EF57969C-324D-4B3E-ABAC-171B3808C346_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/0c5d2363-fbed-4be6-b72f-1e97d189b3df)
