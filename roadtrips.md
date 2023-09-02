@@ -10,13 +10,17 @@ My path was:
 
 Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa Clara, CA > Redwood NP, CA > Gold Beach, OR > Eugene, OR > Mt. Rainier NP, WA > Yakima, WA > Kootenai National Forest, MT > Kalispell, MT > Glacier NP, MT > Great Falls, MT > Billings, MT > Gillette, WY > Mt. Rushmore National Monument, SD > Grasslands National Forest, SD > Minnesota > Wisconsin > Illinois > Indiana > Ohio > Pennsylvania > Binghamton, New York
 
-I didn't plan the trip beyond setting the destinations on my maps, and ran into some unexpected trouble along the way, i.e., getting stuck on highway 40 an hour outside of Albequerque, NM due to truck pile up on a single lane highway due to construction. I was stuck on the highway in my car from ~ 7 PM until 7 AM the next morning. It was absolutely not fun because I had all my stuff in the front and backseak, and my dog took the trunk area along with his bed, so I alternated between sleeping on my center console (painful) and the leaning on the window (also painful).
+![580D8B5D-B14B-4B4C-9BC5-0F232C3150B3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/31a7daf4-b506-4549-a7b6-cee209cccaec)
 
-The other issue was when I was on my way to Glacier National Park in Montana, a wildfire broke out in Plains, MT so the roads were closed off, and I had to take a detour to get to Kalispell, MT.
+![E7079183-A539-4D07-94F1-E19E2FF24A5F_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/9aa633d5-fa9d-4239-9d14-8dd81ff50baf)
+
+I didn't plan the trip beyond setting the destinations on my maps, and ran into some unexpected trouble along the way, i.e., getting stuck on highway 40 an hour outside of Albequerque, NM due to truck pile up on a single lane highway due to construction. I was stuck on the highway in my car from ~ 7 PM until 7 AM the next morning. It was absolutely not fun because I had all my stuff in the front and backseak, and my dog took the trunk area along with his bed, so I alternated between sleeping on my center console (painful) and the leaning on the window (also painful).
 
 ![1FAE048D-B424-4193-9F89-E061DBF76EC4_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/f1ab4731-568f-422a-9e2b-e0b3518308d3)
 
+![2622C7A1-794F-40DE-8B3B-0044E3C4BEB3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e8657dd5-5570-479d-98cc-f9432dfeda29)
 
+The other issue was when I was on my way to Glacier National Park in Montana, a wildfire broke out in Plains, MT so the roads were closed off, and I had to take a detour to get to Kalispell, MT.
 
 <img width="740" alt="Screenshot 2023-08-26 at 2 28 00 PM" src="https://github.com/venkat-ranganathan/projects/assets/96662693/0e5fb035-7664-433e-bc67-5319222be970">
 
