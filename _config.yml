@@ -2,6 +2,7 @@ theme: minima
 title: projects
 header_pages:
   - about.md
+  - roadtrips.md
   #- bash.md
   #- doggo.md
   #- index.md
