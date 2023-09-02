@@ -22,6 +22,9 @@ I didn't plan the trip beyond setting the destinations on my maps, and ran into 
 
 ![2622C7A1-794F-40DE-8B3B-0044E3C4BEB3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e8657dd5-5570-479d-98cc-f9432dfeda29)
 
+![B7493403-643C-4621-8BF1-436872F3C800_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/c5effd6f-dd83-41ba-b272-927de1c20b23)
+
+
 The other issue was when I was on my way to Glacier National Park in Montana, a wildfire broke out in Plains, MT so the roads were closed off, and I had to take a detour to get to Kalispell, MT.
 
 ![0E0515AD-6D99-48B3-970A-B9D089F70838_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/d314063f-e4af-4088-9fb7-d09c55efaee1)
