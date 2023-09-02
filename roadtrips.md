@@ -6,7 +6,7 @@
 
 ![A230D284-B1DA-44D4-B0C4-4276E4FBEC31_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e074d1f1-dcd4-4776-9d2a-564ff589d49c)
 
-I roadtripped around the country after my internship ended and before classes started (I hacked together three screenshots to get the entire trip approximately on the same image bc maps limits the number of destinations you can have)
+I roadtripped around the country after my internship ended and before classes started <font size="2">(I hacked together three screenshots to get the entire trip approximately on the same image bc maps limits the number of destinations you can have)<font>
 
 <img width="865" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/b6b38245-3a1c-4629-bf7a-9a8fd1a41d82">
 
