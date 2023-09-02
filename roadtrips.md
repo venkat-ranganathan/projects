@@ -14,7 +14,7 @@ My path was:
 
 Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa Clara, CA > Redwood NP, CA > Gold Beach, OR > Eugene, OR > Mt. Rainier NP, WA > Yakima, WA > Kootenai National Forest, MT > Kalispell, MT > Glacier NP, MT > Great Falls, MT > Billings, MT > Gillette, WY > Mt. Rushmore National Monument, SD > Grasslands National Forest, SD > Minnesota > Wisconsin > Illinois > Indiana > Ohio > Pennsylvania > Binghamton, New York
 
-## 12-mile backed up traffic due to multiple truck crash on interstate 40 West an hour outside Albequerque, New Mexico
+## 12-mile backed up traffic on interstate 40 West in New Mexico
 
 ![580D8B5D-B14B-4B4C-9BC5-0F232C3150B3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/31a7daf4-b506-4549-a7b6-cee209cccaec)
 
