@@ -8,7 +8,7 @@
 
 I roadtripped around the country after my internship ended and before classes started
 
-<img width="740" alt="Screenshot 2023-08-26 at 2 28 00 PM" src="https://github.com/venkat-ranganathan/projects/assets/96662693/0e5fb035-7664-433e-bc67-5319222be970">
+<img width="865" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/b6b38245-3a1c-4629-bf7a-9a8fd1a41d82">
 
 My path was: 
 
