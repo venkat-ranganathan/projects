@@ -14,6 +14,8 @@ My path was:
 
 Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa Clara, CA > Redwood NP, CA > Gold Beach, OR > Eugene, OR > Mt. Rainier NP, WA > Yakima, WA > Kootenai National Forest, MT > Kalispell, MT > Glacier NP, MT > Great Falls, MT > Billings, MT > Gillette, WY > Mt. Rushmore National Monument, SD > Grasslands National Forest, SD > Minnesota > Wisconsin > Illinois > Indiana > Ohio > Pennsylvania > Binghamton, New York
 
+## 12-mile backed up traffic due to multiple truck crash on interstate 40 West an hour outside Albequerque, New Mexico
+
 ![580D8B5D-B14B-4B4C-9BC5-0F232C3150B3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/31a7daf4-b506-4549-a7b6-cee209cccaec)
 
 ![E7079183-A539-4D07-94F1-E19E2FF24A5F_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/9aa633d5-fa9d-4239-9d14-8dd81ff50baf)
@@ -25,6 +27,8 @@ I didn't plan the trip beyond setting the destinations on my maps, and ran into 
 I was stuck on the highway in my car from ~ 7 PM until 7 AM the next morning. It was absolutely not fun because I had all my stuff in the front and backseat, and my dog took the trunk area along with his bed, so I alternated between sleeping on my center console (painful) and the leaning on the window (also painful).
 
 I also learned the importance of carrying lots of water because we nearly ran out of water in the desert while stuck in traffic for 12 hours (we had plenty of food)
+
+## Wildfires in Plains, Montana
 
 ![1FAE048D-B424-4193-9F89-E061DBF76EC4_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/f1ab4731-568f-422a-9e2b-e0b3518308d3)
 
