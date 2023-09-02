@@ -42,6 +42,8 @@ Here are some photos:
 
 ## Kingman, Arizona:
 
+![2536B644-7555-497C-B57B-BF2F5062AAE6_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/4bf58f49-b6f0-407e-aa83-fa92f3fd09ab)
+
 ![0E0515AD-6D99-48B3-970A-B9D089F70838_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/d314063f-e4af-4088-9fb7-d09c55efaee1)
 
 ![448EBF4B-7D42-4870-A632-3A2B7C512614_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/84011b77-b5ee-489b-ac8a-04b93b10ddb8)
