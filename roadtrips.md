@@ -6,7 +6,7 @@
 
 ![A230D284-B1DA-44D4-B0C4-4276E4FBEC31_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e074d1f1-dcd4-4776-9d2a-564ff589d49c)
 
-I roadtripped around the country after my internship ended and before classes started
+I roadtripped around the country after my internship ended and before classes started (I hacked together three screenshots to get the entire trip approximately on the same map bc maps limits the number of destinations you can have)
 
 <img width="865" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/b6b38245-3a1c-4629-bf7a-9a8fd1a41d82">
 
@@ -24,7 +24,7 @@ I didn't plan the trip beyond setting the destinations on my maps, and ran into 
 
 I was stuck on the highway in my car from ~ 7 PM until 7 AM the next morning. It was absolutely not fun because I had all my stuff in the front and backseat, and my dog took the trunk area along with his bed, so I alternated between sleeping on my center console (painful) and sleeping with my head on the window (also painful).
 
-I also learned the importance of carrying lots of water because we nearly ran out of water in the desert while stuck in traffic for 12 hours (we had plenty of food)
+I was reminded of the importance of carrying lots of water because we nearly ran out of water in the desert while stuck in traffic for 12 hours (we had plenty of food)
 
 ## Wildfires in Plains, Montana
 
