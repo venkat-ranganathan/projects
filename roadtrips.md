@@ -1,6 +1,8 @@
 # Roadtrips 🏔️
 
-08/26/23
+<p>&nbsp;</p>
+
+## 08/26/23
 
 I roadtripped around the country after my internship ended and before classes started
 
