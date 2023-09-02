@@ -38,7 +38,7 @@ Even including those events, the roadtrip was really fun. It was definitely exha
 
 Here are some photos:
 
-Kingman, Arizona:
+## Kingman, Arizona:
 
 ![0E0515AD-6D99-48B3-970A-B9D089F70838_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/d314063f-e4af-4088-9fb7-d09c55efaee1)
 
@@ -56,7 +56,7 @@ Big Sur, California & California Coast:
 
 ![ACF4ECFE-1740-4B15-8B6D-444260D4D66F_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e4a26b79-f591-477c-a160-617cf4af8fd3)
 
-Redwoods National Park, California:
+## Redwoods National Park, California:
 
 ![24797C78-E37E-4187-8DC7-2F142A59F4CF_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/da4f4c6b-1b7f-494d-87ac-4f7dc7463a70)
 
@@ -64,26 +64,26 @@ Redwoods National Park, California:
 
 ![2CD44D5F-21FD-4D0D-9C9D-7A70F0592E8E_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e8e0821d-bd5b-4cda-88aa-0615531d7869)
 
-Ice cream stop in Oregon:
+## Ice cream stop in Oregon:
 
 ![A0A80E8C-7F2C-4F00-BB55-335818496236_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/d2c50972-f067-4a59-ae00-6641e6d6f82c)
 
 ![09DCE02E-222C-4153-B2F3-914DE4E604D5_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/26dc85eb-006f-49a8-a3a4-4ee525d78276)
 
-Gold Beach, Oregon:
+## Gold Beach, Oregon:
 
 ![C42125C5-B901-4946-9121-97973ADFA13F_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e3faa394-f841-4b69-8320-16aed4488e1f)
 
 ![B057E265-17B9-418E-9619-7B400E2A83F8_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/3e5d47ac-3a98-49cf-bf29-918932dceea6)
 
-Mount Rainier National Park, Washington:
+## Mount Rainier National Park, Washington:
 
 ![360611A3-786E-4DA1-B2C1-88158930886B_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/540d1341-74a8-4ea5-a78e-c513f0940008)
 
-Glacier National Park, Montana:
+## Glacier National Park, Montana:
 
 ![1976ABB0-3757-48EE-9878-C9E82B926D00_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/0fa0203c-6ef2-455c-a584-cfb9cd1957c6)
 
-Mount Rushmore National Monument, South Dakota:
+## Mount Rushmore National Monument, South Dakota:
 
 ![EF57969C-324D-4B3E-ABAC-171B3808C346_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/0c5d2363-fbed-4be6-b72f-1e97d189b3df)
