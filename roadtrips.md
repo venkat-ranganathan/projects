@@ -6,6 +6,8 @@
 
 I roadtripped around the country after my internship ended and before classes started
 
+<img width="740" alt="Screenshot 2023-08-26 at 2 28 00 PM" src="https://github.com/venkat-ranganathan/projects/assets/96662693/0e5fb035-7664-433e-bc67-5319222be970">
+
 My path was: 
 
 Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa Clara, CA > Redwood NP, CA > Gold Beach, OR > Eugene, OR > Mt. Rainier NP, WA > Yakima, WA > Kootenai National Forest, MT > Kalispell, MT > Glacier NP, MT > Great Falls, MT > Billings, MT > Gillette, WY > Mt. Rushmore National Monument, SD > Grasslands National Forest, SD > Minnesota > Wisconsin > Illinois > Indiana > Ohio > Pennsylvania > Binghamton, New York
@@ -21,8 +23,6 @@ I didn't plan the trip beyond setting the destinations on my maps, and ran into 
 ![2622C7A1-794F-40DE-8B3B-0044E3C4BEB3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e8657dd5-5570-479d-98cc-f9432dfeda29)
 
 The other issue was when I was on my way to Glacier National Park in Montana, a wildfire broke out in Plains, MT so the roads were closed off, and I had to take a detour to get to Kalispell, MT.
-
-<img width="740" alt="Screenshot 2023-08-26 at 2 28 00 PM" src="https://github.com/venkat-ranganathan/projects/assets/96662693/0e5fb035-7664-433e-bc67-5319222be970">
 
 ![0E0515AD-6D99-48B3-970A-B9D089F70838_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/d314063f-e4af-4088-9fb7-d09c55efaee1)
 
