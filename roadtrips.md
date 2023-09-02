@@ -8,7 +8,14 @@ I roadtripped around the country after my internship ended and before classes st
 
 My path was: 
 
-Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa Clara, CA > Redwood NP, CA > Gold Beach, OR > Eugene, OR > Mt. Rainier NP, WA > Yakima, WA > Kootenai National Forest, MT > Kalispell, MT > Glacier NP, MT > Great Falls, MT > Billings, MT > Gillette, WY > Mt. Rushmore National Monument, SD > Grasslands National Forest, SD > Minnesota > Wisconsin > Illinois > Indiana > Ohio > Pennsylvania > New York
+Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa Clara, CA > Redwood NP, CA > Gold Beach, OR > Eugene, OR > Mt. Rainier NP, WA > Yakima, WA > Kootenai National Forest, MT > Kalispell, MT > Glacier NP, MT > Great Falls, MT > Billings, MT > Gillette, WY > Mt. Rushmore National Monument, SD > Grasslands National Forest, SD > Minnesota > Wisconsin > Illinois > Indiana > Ohio > Pennsylvania > Binghamton, New York
+
+I didn't plan the trip beyond setting the destinations on my maps, and ran into some unexpected trouble along the way, i.e., getting stuck on highway 40 an hour outside of Albequerque, NM due to truck pile up on a single lane highway due to construction. I was stuck on the highway in my car from ~ 7 PM until 7 AM the next morning. It was absolutely not fun because I had all my stuff in the front and backseak, and my dog took the trunk area along with his bed, so I alternated between sleeping on my center console (painful) and the leaning on the window (also painful).
+
+The other issue was when I was on my way to Glacier National Park in Montana, a wildfire broke out in Plains, MT so the roads were closed off, and I had to take a detour to get to Kalispell, MT.
+
+![1FAE048D-B424-4193-9F89-E061DBF76EC4_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/f1ab4731-568f-422a-9e2b-e0b3518308d3)
+
 
 
 <img width="740" alt="Screenshot 2023-08-26 at 2 28 00 PM" src="https://github.com/venkat-ranganathan/projects/assets/96662693/0e5fb035-7664-433e-bc67-5319222be970">
