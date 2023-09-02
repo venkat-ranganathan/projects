@@ -24,8 +24,11 @@ I didn't plan the trip beyond setting the destinations on my maps, and ran into 
 
 ![B7493403-643C-4621-8BF1-436872F3C800_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/c5effd6f-dd83-41ba-b272-927de1c20b23)
 
-
 The other issue was when I was on my way to Glacier National Park in Montana, a wildfire broke out in Plains, MT so the roads were closed off, and I had to take a detour to get to Kalispell, MT.
+
+Even including those events, the roadtrip was really fun. It was definitely exhausting because I drove nearly 6,000 miles over 9 days, but I got to spend a lot of time with my dog and just enjoy the change in scenery
+
+Here are some photos:
 
 ![0E0515AD-6D99-48B3-970A-B9D089F70838_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/d314063f-e4af-4088-9fb7-d09c55efaee1)
 
