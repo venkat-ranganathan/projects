@@ -20,8 +20,6 @@ Dallas, TX > Albequerque, NM > Flagstaff, AZ > Kingman, AZ > Big Sur, CA > Santa
 
 ![E7079183-A539-4D07-94F1-E19E2FF24A5F_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/9aa633d5-fa9d-4239-9d14-8dd81ff50baf)
 
-The image above shows part of the 12 mile backed up traffic on route 40
-
 I didn't plan the trip beyond setting the destinations on my maps, and ran into some unexpected trouble along the way, i.e., getting stuck on highway 40 an hour outside of Albequerque, NM due to a truck pile up on a single lane highway due to construction. 
 
 I was stuck on the highway in my car from ~ 7 PM until 7 AM the next morning. It was absolutely not fun because I had all my stuff in the front and backseat, and my dog took the trunk area along with his bed, so I alternated between sleeping on my center console (painful) and the leaning on the window (also painful).
