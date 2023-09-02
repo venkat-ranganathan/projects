@@ -44,7 +44,7 @@ Here are some photos:
 
 ![448EBF4B-7D42-4870-A632-3A2B7C512614_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/84011b77-b5ee-489b-ac8a-04b93b10ddb8)
 
-Big Sur, California & California Coast:
+## Big Sur, California & California Coast:
 
 ![1C25D623-E20B-4DB6-9B2A-98BE50D78BD8_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/fcfd1a5e-c04b-4f17-b4b7-e601e728d055)
 
