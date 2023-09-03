@@ -1,8 +1,6 @@
 # Roadtrips 🏔️
 
-<p>&nbsp;</p>
-
-{#TOP}
+<p>&nbsp;</p>{#TOP}
 
 ## 08/26/23
 
