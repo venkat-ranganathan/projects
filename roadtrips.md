@@ -96,4 +96,3 @@ Here are some photos:
 ![EF57969C-324D-4B3E-ABAC-171B3808C346_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/0c5d2363-fbed-4be6-b72f-1e97d189b3df)
 
 [Back to Top](#TOP)
-<p>&nbsp;</p>
