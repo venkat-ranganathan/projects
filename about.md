@@ -52,7 +52,7 @@ and here's the code I used to generate it:
 
 <img width="502" alt="image" src="https://user-images.githubusercontent.com/96662693/199073449-1ca42d6b-ffbe-45f9-94d5-eb1ffc58781d.png">
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
@@ -119,7 +119,7 @@ heatsink on the CPU and a fan over it to keep the device cool.
 
 ![IMG_3904 - Copy](https://user-images.githubusercontent.com/96662693/195964714-78ff049a-ce09-425e-ab78-3e61d114b47a.jpg)
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
@@ -136,4 +136,4 @@ _much_ nicer 🙂
 <p>&nbsp;</p>
 <img width="960" alt="my_vs_code_setup" src="https://user-images.githubusercontent.com/96662693/188341444-268b0cdd-fa57-4db5-b0ee-930dd6af753f.png">
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
