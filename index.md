@@ -76,7 +76,7 @@ To edit video:
 - Added arrow image to show device being changed
 - Added zoomed in picture-in-picture to clearly see LED states changing
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 
 ---
 <p>&nbsp;</p>
@@ -114,7 +114,7 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sM72W-lKSLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 
 ---
 <p>&nbsp;</p>
@@ -154,7 +154,7 @@ Formulas set using LaTeX
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/4a187b1f-4d46-48ef-b61d-251d3d48b11d">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/6f02e405-d7a2-4e10-a507-91450754b236">
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 
 ---
 <p>&nbsp;</p>
@@ -183,7 +183,7 @@ time and my brain was fried 🧠⚡
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 
 ---
 <p>&nbsp;</p>
@@ -203,7 +203,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 
 ---
 <p>&nbsp;</p>
@@ -223,7 +223,7 @@ metal-to-metal contact between the sensor and the board. This got the IR relfect
 
 <iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
 
 ---
 <p>&nbsp;</p>
@@ -234,4 +234,4 @@ Used logic gates, adders, and multiplexers to design and implement a calculator 
 multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display.
 Programmed in Verilog. Synthesized and implemented in Vivado.
 
-[Back to Top](#TOP)
+[Back to top](#TOP)
