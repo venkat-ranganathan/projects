@@ -29,6 +29,8 @@ I was reminded of the importance of carrying lots of water because we nearly ran
 
 ## Wildfires in Plains, Montana
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w9uKNjkjyvI?si=tPa0BQddPkwk6NL0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ![1FAE048D-B424-4193-9F89-E061DBF76EC4_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/f1ab4731-568f-422a-9e2b-e0b3518308d3)
 
 ![2622C7A1-794F-40DE-8B3B-0044E3C4BEB3_1_105_c](https://github.com/venkat-ranganathan/projects/assets/96662693/e8657dd5-5570-479d-98cc-f9432dfeda29)
