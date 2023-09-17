@@ -11,8 +11,6 @@ Venkat Ranganathan
 ## Here are some projects I've completed as an Electrical Engineering student:
 
 <p>&nbsp;</p>
----
-<p>&nbsp;</p>
 
 #### Table of Contents:
 
@@ -24,8 +22,6 @@ Venkat Ranganathan
 - [Pololu 3pi IR reflectance sensor repair](#Pololu-3pi-IR-reflectance-sensor-repair)
 - [FPGA Calculator](#FPGA-Calculator)
 
-<p>&nbsp;</p>
----
 <p>&nbsp;</p>
 
 ## Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS) {#EtherCAT}
