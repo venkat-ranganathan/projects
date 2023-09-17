@@ -8,6 +8,8 @@ header_pages:
   #- index.md
 
 color_theme: auto
+katex: true 
+
 author: Venkat Ranganathan
 linkedin_username: venkatesh-ranganathan
 #social links:
