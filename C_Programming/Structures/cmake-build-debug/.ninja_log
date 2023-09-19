@@ -1,4 +1,5 @@
 # ninja log v5
-1	59	6938953868269956	CMakeFiles/Structures.dir/lab7structures.c.obj	32b7a62795e5794
-4	62	6938953868300001	CMakeFiles/Structures.dir/lab7.c.obj	e8b423833e5d7c84
 62	130	6938953868969969	Structures.exe	d274b53248218bcc
+282	420	1693152098226897289	Structures	b5f975de77ddf55a
+4	281	1693152098085960282	CMakeFiles/Structures.dir/lab7.c.o	3fc756586ce5f528
+4	282	1693152098086160114	CMakeFiles/Structures.dir/lab7structures.c.o	f8d311ae6b83f144

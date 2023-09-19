@@ -1,0 +1,13 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/venka/Library/CloudStorage/OneDrive-Personal/projects/projects/C_Programming/Notes -B /Users/venka/Library/CloudStorage/OneDrive-Personal/projects/projects/C_Programming/Notes/cmake-build-debug
+-- Configuring done (0.0s)
+CMake Error at CMakeLists.txt:8 (add_executable):
+  Cannot find source file:
+
+    String
+
+
+CMake Error at CMakeLists.txt:8 (add_executable):
+  No SOURCES given to target: Notes
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

@@ -5,7 +5,5 @@ set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 
-add_executable(Structures
-        lab7.c
-        lab7structures.c
-        lab7structures.h)
+add_executable(Notes
+        String Functions Code.c)
