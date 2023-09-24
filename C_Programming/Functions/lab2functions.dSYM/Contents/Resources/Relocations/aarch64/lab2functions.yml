@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Library/CloudStorage/OneDrive-Personal/projects/projects/C_Programming/Functions/lab2functions'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0x234 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0x234 }
+  - { offsetInCU: 0x26, offset: 0x87, size: 0x8, addend: 0x0, symName: _introduction, symObjAddr: 0x0, symBinAddr: 0x100003B8C, symSize: 0x1C }
+  - { offsetInCU: 0x48, offset: 0xA9, size: 0x8, addend: 0x0, symName: _introduction, symObjAddr: 0x0, symBinAddr: 0x100003B8C, symSize: 0x1C }
+  - { offsetInCU: 0x5D, offset: 0xBE, size: 0x8, addend: 0x0, symName: _castToFloat, symObjAddr: 0x1C, symBinAddr: 0x100003BA8, symSize: 0x20 }
+  - { offsetInCU: 0x93, offset: 0xF4, size: 0x8, addend: 0x0, symName: _circleArea, symObjAddr: 0x3C, symBinAddr: 0x100003BC8, symSize: 0x48 }
+  - { offsetInCU: 0xC9, offset: 0x12A, size: 0x8, addend: 0x0, symName: _circlePerimeter, symObjAddr: 0x84, symBinAddr: 0x100003C10, symSize: 0x38 }
+  - { offsetInCU: 0xFF, offset: 0x160, size: 0x8, addend: 0x0, symName: _fahrenheit2Celsius, symObjAddr: 0xBC, symBinAddr: 0x100003C48, symSize: 0x30 }
+  - { offsetInCU: 0x135, offset: 0x196, size: 0x8, addend: 0x0, symName: _factorial, symObjAddr: 0xEC, symBinAddr: 0x100003C78, symSize: 0x60 }
+...
