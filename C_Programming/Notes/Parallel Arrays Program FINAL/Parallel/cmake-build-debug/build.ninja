@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_Parallel: phony || CMakeFiles/Parallel.d
 
 build CMakeFiles/Parallel.dir/PA.c.o: C_COMPILER__Parallel_unscanned_Debug /Users/venka/Library/CloudStorage/OneDrive-Personal/projects/projects/C_Programming/Notes/Parallel$ Arrays$ Program$ FINAL/Parallel/PA.c || cmake_object_order_depends_target_Parallel
   DEP_FILE = CMakeFiles/Parallel.dir/PA.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
   INCLUDES = -I"/Users/venka/Library/CloudStorage/OneDrive-Personal/projects/projects/C_Programming/Notes/Parallel Arrays Program FINAL/Parallel/."
   OBJECT_DIR = CMakeFiles/Parallel.dir
   OBJECT_FILE_DIR = CMakeFiles/Parallel.dir
@@ -67,7 +67,7 @@ build CMakeFiles/Parallel.dir/PA.c.o: C_COMPILER__Parallel_unscanned_Debug /User
 # Link the executable Parallel
 
 build Parallel: C_EXECUTABLE_LINKER__Parallel_Debug CMakeFiles/Parallel.dir/PA.c.o
-  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=13.6
   OBJECT_DIR = CMakeFiles/Parallel.dir
   POST_BUILD = :
   PRE_LINK = :
