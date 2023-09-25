@@ -1,0 +1,10 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Library/CloudStorage/OneDrive-Personal/projects/projects/LeetCode/RootEqualsSumOfChildren/binaryTree'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _isSum, symObjAddr: 0x0, symBinAddr: 0x100003CA4, symSize: 0x140 }
+  - { offsetInCU: 0x7A, offset: 0x7A, size: 0x8, addend: 0x0, symName: _isSum, symObjAddr: 0x0, symBinAddr: 0x100003CA4, symSize: 0x140 }
+  - { offsetInCU: 0xBE, offset: 0xBE, size: 0x8, addend: 0x0, symName: _newNode, symObjAddr: 0x140, symBinAddr: 0x100003DE4, symSize: 0x48 }
+  - { offsetInCU: 0xF4, offset: 0xF4, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x188, symBinAddr: 0x100003E2C, symSize: 0xA0 }
+  - { offsetInCU: 0x11C, offset: 0x11C, size: 0x8, addend: 0x0, symName: _checkTree, symObjAddr: 0x228, symBinAddr: 0x100003ECC, symSize: 0x60 }
+...
