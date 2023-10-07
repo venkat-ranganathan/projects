@@ -49,7 +49,7 @@ Tools used: Linux, Jupyter Notebook, PyTorch, Torch2RT, OpenCV
 
 Current status: Have car operating autonomously around track. Stays in lane, takes basic turns, has variable throttle for straights/turns. Using NVIDIA JetRacer GitHub. Camera connected via CSI to Jetson Nano. Camera is activated from PyTorch, images used to train inference model. LaTrax Rally RC car has IMU (inertial measurement unit) to capture position in space, velocity, & acceleration. RC car components controlled by Jetson Nano via GPIO
 
-Next steps: implement object detection -> object avoidance -> lane keeping
+Next steps: implement object detection > object avoidance > lane keeping
 
 ## Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS) {#EtherCAT}
 
