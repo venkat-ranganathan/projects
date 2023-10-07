@@ -37,6 +37,8 @@ Venkat Ranganathan
  allowfullscreen>
 </iframe>
 
+<p>&nbsp;</p>
+
 Project is in-progress. 
 
 Senior Design year-long project: Machine learning based autonomous RC car 
