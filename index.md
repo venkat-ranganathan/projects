@@ -37,11 +37,10 @@ Venkat Ranganathan
  allowfullscreen>
 </iframe>
 
-https://www.youtube.com/shorts/Crt7o4zLEpg
-
 Project is in-progress. 
 
-Senior Design year-long project: Machine learning based autonomous RC car; 
+Senior Design year-long project: Machine learning based autonomous RC car 
+
 Team members (major): myself (EE), Justin Anderson (CoE), Jack Bonfiglio (CoE), Kyle Duran (CoE)
 
 Current status: Have car operating autonomously around track following NVIDIA JetRacer GitHub docs.
