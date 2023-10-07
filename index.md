@@ -51,6 +51,8 @@ Current status: Have car operating autonomously around track. Stays in lane, tak
 
 Next steps: implement object detection > object avoidance > lane keeping
 
+[Back to top](#TOP)
+
 ## Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS) {#EtherCAT}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -101,7 +103,6 @@ To edit video:
 
 [Back to top](#TOP)
 
----
 <p>&nbsp;</p>
 
 ## Metal Detection System using Colpitts Oscillator & FPGA {#MetalDetector}
@@ -139,7 +140,6 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 [Back to top](#TOP)
 
----
 <p>&nbsp;</p>
 
 ## Synthesizing a Guitar Signal w/ MATLAB {#Synthesizing}
@@ -179,7 +179,6 @@ Formulas set using LaTeX
 
 [Back to top](#TOP)
 
----
 <p>&nbsp;</p>
 
 ## Analog-to-Digital Converter {#Analog-to-Digital-Converter}
@@ -208,7 +207,6 @@ time and my brain was fried 🧠⚡
 
 [Back to top](#TOP)
 
----
 <p>&nbsp;</p>
 
 ## Minesweeper {#Minesweeper}
@@ -228,7 +226,6 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 
 [Back to top](#TOP)
 
----
 <p>&nbsp;</p>
 
 ## Pololu 3pi IR reflectance sensor repair {#Pololu-3pi-IR-reflectance-sensor-repair}
@@ -248,7 +245,6 @@ metal-to-metal contact between the sensor and the board. This got the IR relfect
 
 [Back to top](#TOP)
 
----
 <p>&nbsp;</p>
 
 ## FPGA Calculator {#FPGA-Calculator}
