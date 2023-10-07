@@ -50,7 +50,7 @@ Tools used: Linux, Jupyter Notebook, PyTorch, Torch2RT, OpenCV
 Current status: Have car operating autonomously around track. Stays in lane, takes basic turns, has variable throttle for straights/turns. Using NVIDIA JetRacer GitHub. Camera connected via CSI to Jetson Nano. Camera is activated from PyTorch, images used to train inference model. LaTrax Rally RC car has IMU (inertial measurement unit) to capture position in space, velocity, & acceleration. RC car components controlled by Jetson Nano via GPIO
 
 Next steps: implement object detection > object avoidance > lane keeping
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 ## Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS) {#EtherCAT}
@@ -100,7 +100,7 @@ To edit video:
 - Got feedback from colleagues & fellow interns that it was difficult to know where to look
 - Added arrow image to show device being changed
 - Added zoomed in picture-in-picture to clearly see LED states changing
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 <p>&nbsp;</p>
@@ -137,7 +137,7 @@ System correctly detected 15/15 conductive objects in various combinations of po
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NohT7cfAe3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sM72W-lKSLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 <p>&nbsp;</p>
@@ -176,7 +176,7 @@ Formulas set using LaTeX
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/daa3acbb-9fb6-4c80-9515-b691decf759f">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/4a187b1f-4d46-48ef-b61d-251d3d48b11d">
 <img width="675" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/6f02e405-d7a2-4e10-a507-91450754b236">
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 <p>&nbsp;</p>
@@ -204,7 +204,7 @@ time and my brain was fried 🧠⚡
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZHAc84ZIXrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rmEVREj6PuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 <p>&nbsp;</p>
@@ -223,7 +223,7 @@ intersections and corners. Worked with teammate. Used AVR-GCC to compile C code
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BOo6CoiAndg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aQm8Qw_Mvac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 <p>&nbsp;</p>
@@ -242,7 +242,7 @@ soldering iron with a fine tip, heated up the contact points of the sensor and a
 metal-to-metal contact between the sensor and the board. This got the IR relfectance sensors working normally again
 
 <iframe width="350" height="621" src="https://www.youtube.com/embed/oCuWAioy6bY" title="How I fixed an IR reflectance sensor that I broke" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
 
 <p>&nbsp;</p>
@@ -252,5 +252,5 @@ metal-to-metal contact between the sensor and the board. This got the IR relfect
 Used logic gates, adders, and multiplexers to design and implement a calculator that can add, subtract,
 multiply, and divide using toggle switches on the BASYS 3 Artix-7 and output results on the seven-segment display.
 Programmed in Verilog. Synthesized and implemented in Vivado.
-
+<p>&nbsp;</p>
 [Back to top](#TOP)
