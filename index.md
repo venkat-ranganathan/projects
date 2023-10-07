@@ -55,6 +55,8 @@ Next steps: implement object detection > object avoidance > lane keeping
 
 [Back to top](#TOP)
 
+<p>&nbsp;</p>
+
 ## Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS) {#EtherCAT}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iQLYndh6RPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
