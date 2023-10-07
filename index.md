@@ -42,9 +42,11 @@ Venkat Ranganathan
 Project is in-progress
 
 Senior Design year-long project: Machine learning based autonomous RC car 
+
 Team members (major): myself (EE), Justin Anderson (CoE), Jack Bonfiglio (CoE), Kyle Duran (CoE)
 
 Current status: Have car operating autonomously around track following NVIDIA JetRacer GitHub docs.
+
 Tools used: Linux, Jupyter Notebook, PyTorch, Torch2RT, OpenCV
 
 Next steps: implement object detection -> object avoidance -> lane keeping
