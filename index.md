@@ -14,6 +14,7 @@ Venkat Ranganathan
 
 #### Table of Contents:
 
+- [AI/ML Autonomous RC car operated by NVIDIA Jetson Nano](#nano)
 - [Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS)](#EtherCAT)
 - [Metal Detection System using Colpitts Oscillator & FPGA](#MetalDetector)
 - [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
@@ -23,6 +24,20 @@ Venkat Ranganathan
 - [FPGA Calculator](#FPGA-Calculator)
 
 <p>&nbsp;</p>
+
+## AI/ML Autonomous RC car operated by NVIDIA Jetson Nano (#nano)
+
+<iframe width="560" height="315" src="https://youtube.com/shorts/Crt7o4zLEpg?si=V8qA-MYQ1pxtBDXh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Project is in-progress. 
+
+Senior Design year-long project: Machine learning based autonomous RC car
+
+Current status: Have car operating autonomously around track following NVIDIA JetRacer GitHub docs.
+
+Tools used: Linux, Jupyter Notebook, PyTorch, Torch2RT, OpenCV
+
+Next steps: implement object detection -> object avoidance -> lane keeping
 
 ## Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS) {#EtherCAT}
 
