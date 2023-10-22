@@ -1,7 +1,3 @@
-//
-// Created by Venkat Ranganathan on 12/31/2022.
-//
-
 // preprocessor directive
 #include "binaryTree.h"
 
