@@ -8,6 +8,8 @@
 
 I roadtripped around the country after my internship ended and before classes started <font size="1">(I hacked together three screenshots to get the entire trip approximately on the same image bc maps limits the number of destinations you can have)<font>
 
+<img width="865" alt="265234982-b6b38245-3a1c-4629-bf7a-9a8fd1a41d82" src="https://github.com/venkat-ranganathan/projects/assets/96662693/d01775da-7f8e-4051-a469-e6aed0c33417">
+
 ![image](https://github.com/venkat-ranganathan/projects/assets/96662693/fdc8d912-46f0-4497-b037-cf19472da354)
 
 
