@@ -10,10 +10,20 @@
 
 #### Table of Contents:
 
+- [Raspberry Pi Pico keypad driver and finite state machine, 11/06/23](#RPI)
 - [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#Matlab)
 - [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
 - [My VSCode setup, 09/04/2022](#VSCode)
 
+<p>&nbsp;</p>
+---
+<p>&nbsp;</p>
+
+### Raspberry Pi Pico keypad driver and finite state machine, 11/06/23 {#RPI}
+
+https://www.youtube.com/shorts/HLiK1RpgQQo
+
+[Back to top](#TOP)
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
