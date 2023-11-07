@@ -21,7 +21,7 @@
 
 ### Raspberry Pi Pico keypad driver and finite state machine, 11/06/23 {#RPI}
 
-<iframe width="720" height="576" src="{{'https://www.youtube.com/shorts/HLiK1RpgQQo' . $video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<iframe width="720" height="576" src="{{'https://www.youtube.com/embed/HLiK1RpgQQo' . $video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 
 We're learning how to write drivers in C in my Embedded Systems Design class and this assignment was getting a finite state machine working to output onto the terminal the keys entered on a physical keypad
 
