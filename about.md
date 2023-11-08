@@ -23,11 +23,9 @@
 
 <iframe width="720" height="576" src="{{'https://www.youtube.com/embed/HLiK1RpgQQo' . $video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 <p>&nbsp;</p>
-We're learning how to write drivers in C in my Embedded Systems Design class and this assignment was getting a finite state machine working to output onto the terminal the keys entered on a physical keypad. 
+We're learning how to write drivers in C for an M0+ ARM processor running on a Raspberry Pi Pico H in my Embedded Systems Design class. The goal of this assignment was getting a finite state machine working to output onto the terminal the keys entered on a physical keypad. 
 
 The program is using the systick and watchdog drivers coded in the previous assignment. The watchdog driver resets the processor if the timer expires--it functions as a safety to restart the proessor if code gets stuck in a loop; the systick controls the timing of the main loop. In this case, the main loop restarts every 1 ms. If systick stops working and the main loop takes more than 1.499999... ms to loop, then the watchdog timer will expire and the processor will be reset. This is desired behavior to prevent faulty code from continually executing
-
-We're learning on the M0+ processor on the Raspberry Pi Pico H
 
 [Back to top](#TOP)
 <p>&nbsp;</p>
