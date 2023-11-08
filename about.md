@@ -43,7 +43,7 @@ The goal of this assignment is to set up systick and watchdog drivers, then test
 
 The systick driver controls the timing of the main loop, which by default is set to loop every 1 second. The watchdog driver resets the processor if its timer expires. I have the watchdog timer set to expire at 1.5 seconds
 
-At the end of my code the function, "feed_the_watchdog();" is called, which restarts the watchdog timer. By default, the watchdog should not reset the processor because the timer is being reset in the code. 
+At the end of my code the function, "feed_the_watchdog();" is called, which resets the watchdog timer. By default, the watchdog should not reset the processor because the timer is being reset in the code. 
 
 In this assignemnt, a blocking function is included at the top of the main loop that stops the systick from running when the push button is pressed on the Raspberry Pi Pico H, which allows the watchdog timer to expire, so the processor will continually be reset while the push button is held down.
 
