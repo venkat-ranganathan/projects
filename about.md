@@ -10,7 +10,8 @@
 
 #### Table of Contents:
 
-- [Raspberry Pi Pico keypad driver and finite state machine, 11/06/23](#RPI)
+- [Raspberry Pi Pico keypad driver and finite state machine, 11/06/23](#RPI2)
+- [Raspberry Pi Pico systick and watchdog drivers, 10/31/23](#RPI1)
 - [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#Matlab)
 - [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
 - [My VSCode setup, 09/04/2022](#VSCode)
@@ -19,13 +20,34 @@
 ---
 <p>&nbsp;</p>
 
-### Raspberry Pi Pico keypad driver and finite state machine, 11/06/23 {#RPI}
+### Raspberry Pi Pico keypad driver and finite state machine, 11/06/23 {#RPI2}
 
 <iframe width="720" height="576" src="{{'https://www.youtube.com/embed/HLiK1RpgQQo' . $video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 <p>&nbsp;</p>
-We're learning how to write drivers in C for an M0+ ARM processor running on a Raspberry Pi Pico H in my Embedded Systems Design class. The goal of this assignment was getting a finite state machine working to output onto the terminal the keys entered on a physical keypad. 
+The goal of this assignment was getting a finite state machine working to output onto the terminal the keys entered on a physical keypad. 
 
 The program is using the systick and watchdog drivers coded in the previous assignment. The watchdog driver resets the processor if the timer expires--it functions as a safety to restart the proessor if code gets stuck in a loop; the systick controls the timing of the main loop. In this case, the main loop restarts every 1 ms. If systick stops working and the main loop takes more than 1.499999... ms to loop, then the watchdog timer will expire and the processor will be reset. This is desired behavior to prevent faulty code from continually executing
+
+[Back to top](#TOP)
+<p>&nbsp;</p>
+---
+<p>&nbsp;</p>
+
+### Raspberry Pi Pico systick and watchdog drivers, 10/31/23 {#RPI1}
+
+<iframe width="720" height="576" src="{{'https://youtube.com/embed/9OybPA_ri5k' . $video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+<p>&nbsp;</p>
+We're learning how to write drivers in C for an M0+ ARM processor running on a Raspberry Pi Pico H in my Embedded Systems Design class. 
+
+The goal of this assignment is to set up systick and watchdog drivers, then test the watchdog driver by using a blocking function to cause the processor to restart. This is tested on the Raspberry Pi Pico H by using an LED that's programmed in the finite state machine to blink at a 0.5 Hz frequency (LED on for one second, LED off for one second; total period is 2 seconds)
+
+The systick driver controls the timing of the main loop, which by default is set to loop every 1 second. The watchdog driver restarts the processor if it its timer expires, i.e., due to issues caused by incorrect code. I have the watchdog set timer set to 1.5 sec.
+
+At the end of my code the function, "feed_the_watchdog();" is called, which restarts the watchdog timer. By default, the watchdog should not reset the processor because the timer is being reset in the code. 
+
+In this assignemnt, a blocking function is included at the top of the main loop that stops the systick from running when the push button on the Raspberry Pi Pico H is pressed, which allows the watchdog timer to expire, so the processor will continually be reset while the push button is held down.
+
+This is demonstrated in the video as the LED flashing very fast while the push button is held down
 
 [Back to top](#TOP)
 <p>&nbsp;</p>
