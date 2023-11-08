@@ -41,13 +41,13 @@ We're learning how to write drivers in C for an M0+ ARM processor running on a R
 
 The goal of this assignment is to set up systick and watchdog drivers, then test the watchdog driver by using a blocking function to cause the processor to restart. This is tested on the Raspberry Pi Pico H by using an LED that's programmed in the finite state machine to blink at a 0.5 Hz frequency (LED on for one second, LED off for one second; total period is 2 seconds)
 
-The systick driver controls the timing of the main loop, which by default is set to loop every 1 second. The watchdog driver restarts the processor if it its timer expires, i.e., due to issues caused by incorrect code. I have the watchdog set timer set to 1.5 sec.
+The systick driver controls the timing of the main loop, which by default is set to loop every 1 second. The watchdog driver resets the processor if it its timer expires. I have the watchdog timer set to 1.5 sec.
 
 At the end of my code the function, "feed_the_watchdog();" is called, which restarts the watchdog timer. By default, the watchdog should not reset the processor because the timer is being reset in the code. 
 
-In this assignemnt, a blocking function is included at the top of the main loop that stops the systick from running when the push button on the Raspberry Pi Pico H is pressed, which allows the watchdog timer to expire, so the processor will continually be reset while the push button is held down.
+In this assignemnt, a blocking function is included at the top of the main loop that stops the systick from running when the push button is pressed on the Raspberry Pi Pico H, which allows the watchdog timer to expire, so the processor will continually be reset while the push button is held down.
 
-This is demonstrated in the video as the LED flashing very fast while the push button is held down
+This is demonstrated in the video as the LED flashing very fast while the push button is held down, and turning on and off every second when the button is not pressed
 
 [Back to top](#TOP)
 <p>&nbsp;</p>
