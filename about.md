@@ -39,9 +39,9 @@ The program is using the systick and watchdog drivers coded in the previous assi
 <p>&nbsp;</p>
 We're learning how to write drivers in C for an M0+ ARM processor running on a Raspberry Pi Pico H in my Embedded Systems Design class. 
 
-The goal of this assignment is to set up systick and watchdog drivers, then test the watchdog driver by using a blocking function to cause the processor to restart. This is tested on the Raspberry Pi Pico H by using an LED that's programmed in the finite state machine to blink at a 0.5 Hz frequency (LED on for one second, LED off for one second; total period is 2 seconds)
+The goal of this assignment is to set up systick and watchdog drivers, then test the watchdog driver by using a blocking function to cause the processor to restart. This is tested on the Raspberry Pi Pico H by using an LED that's programmed in the finite state machine to blink at 0.5 Hz frequency (LED on for one second, LED off for one second; total period is 2 seconds)
 
-The systick driver controls the timing of the main loop, which by default is set to loop every 1 second. The watchdog driver resets the processor if it its timer expires. I have the watchdog timer set to 1.5 sec.
+The systick driver controls the timing of the main loop, which by default is set to loop every 1 second. The watchdog driver resets the processor if its timer expires. I have the watchdog timer set to expire at 1.5 seconds
 
 At the end of my code the function, "feed_the_watchdog();" is called, which restarts the watchdog timer. By default, the watchdog should not reset the processor because the timer is being reset in the code. 
 
