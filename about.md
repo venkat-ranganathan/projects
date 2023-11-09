@@ -24,7 +24,7 @@
 
 <iframe width="720" height="576" src="{{'https://www.youtube.com/embed/HLiK1RpgQQo' . $video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
 <p>&nbsp;</p>
-The goal of this assignment was to code a finite state machine to output onto the terminal the keys entered on a physical keypad. 
+The goal of this assignment was to code a finite state machine to output onto the terminal (using serial connection via minicom) the keys entered on a physical keypad. 
 
 The program is using the systick and watchdog drivers coded in the previous assignment. The watchdog driver resets the processor if the timer expires--it functions as a safety to restart the proessor if code gets stuck in a loop; the systick controls the timing of the main loop. In this case, the main loop restarts every 1 s. If systick stops working and the main loop takes more than 1.499999... s to loop, then the watchdog timer will expire and the processor will be reset. This is desired behavior to prevent faulty code from continually executing
 
