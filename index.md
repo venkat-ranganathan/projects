@@ -27,6 +27,13 @@ Venkat Ranganathan
 
 ## AI/ML Autonomous RC car operated using NVIDIA Jetson Nano {#nano}
 
+<iframe width="560" height="315" src="https://youtube.com/embed/mJ2f-fdebcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+Minor update: team improved the model to operate faster and with less wobbliness by increasing min/max speed and reducing steering gain. Changed track to add a chicane (s-shaped turn)
+
+
 <iframe
  width="720"
  height="576"
