@@ -39,7 +39,7 @@ Venkat Ranganathan
 <p>&nbsp;</p>
 Minor update: team improved the model to operate faster and with less wobbliness by increasing min/max speed and reducing steering gain. Changed track to add a chicane (s-shaped turn)
 
-
+<p>&nbsp;</p>
 <iframe
  width="720"
  height="576"
