@@ -41,16 +41,6 @@ Venkat Ranganathan
 
 <iframe width="560" height="315" src="https://youtube.com/embed/mJ2f-fdebcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<iframe
- width="720"
- height="576"
- src="{{'https://youtube.com/embed/mJ2f-fdebcI' . $video}}"
- title="YouTube video player"
- frameborder="0"
- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
- allowfullscreen>
-</iframe>
-
 <p>&nbsp;</p>
 
 **10/31/23**
@@ -58,16 +48,6 @@ Venkat Ranganathan
 <p>&nbsp;</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Crt7o4zLEpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe
- width="720"
- height="576"
- src="{{'https://www.youtube.com/embed/Crt7o4zLEpg' . $video}}"
- title="YouTube video player"
- frameborder="0"
- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
- allowfullscreen>
-</iframe>
 
 <p>&nbsp;</p>
 
