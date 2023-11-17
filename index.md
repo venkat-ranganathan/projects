@@ -27,7 +27,7 @@ Venkat Ranganathan
 
 ## AI/ML Autonomous RC car operated using NVIDIA Jetson Nano {#nano}
 
-**11/17/23**, New video
+**11/17/23**, New video shows car operating on track & ML GUI at the same time
 
 <p>&nbsp;</p>
 
