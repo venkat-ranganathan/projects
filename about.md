@@ -13,7 +13,7 @@
 - [Raspberry Pi Pico keypad driver and finite state machine, 11/06/23](#RPI2)
 - [Raspberry Pi Pico systick and watchdog drivers, 10/31/23](#RPI1)
 - [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#Matlab)
-- [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
+<!---- [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker) --->
 - [My VSCode setup, 09/04/2022](#VSCode)
 
 <p>&nbsp;</p>
@@ -92,7 +92,7 @@ and here's the code I used to generate it:
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
-
+<!---
 ### I setup a network-wide Ad Blocker, 10/14/2022: {#AdBlocker}
 
 ![IMG_3908 - Copy](https://user-images.githubusercontent.com/96662693/195987388-c60aebf4-d2e1-43dd-9e1b-ccd38cb2e28f.jpg)
@@ -159,7 +159,7 @@ heatsink on the CPU and a fan over it to keep the device cool.
 <p>&nbsp;</p>
 ---
 <p>&nbsp;</p>
-
+--->
 ### My VSCode setup, 09/04/2022: {#VSCode}
 
 This isn't super-important, so I set it off to the side
