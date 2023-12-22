@@ -13,8 +13,9 @@
 - [Raspberry Pi Pico keypad driver and finite state machine, 11/06/23](#RPI2)
 - [Raspberry Pi Pico systick and watchdog drivers, 10/31/23](#RPI1)
 - [Cool 3D zero-pole plot I visualized in MATLAB for Signals & Systems, 10/29/2022](#Matlab)
-- [My VSCode setup, 09/04/2022](#VSCode)
 - [I setup a network-wide Ad Blocker, 10/14/2022](#AdBlocker)
+- [My VSCode setup, 09/04/2022](#VSCode)
+
 
 <p>&nbsp;</p>
 ---
