@@ -5,13 +5,14 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "program": "${fileDirname}/a.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb"
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang build multiple files"
         },
         {
             "name": "C/C++: clang build and debug active file",
@@ -22,9 +23,9 @@
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang build multiple files"
+            "preLaunchTask": "C/C++: clang build active file"
         }
     ]
 }

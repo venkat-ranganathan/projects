@@ -1,0 +1,8 @@
+********************************************************************************
+                             Binghamton University
+                         Program written by: Prof. Foos
+                              Simple File Handling
+********************************************************************************
+Line 1: Hello World!!
+Number 1: 16
+Number 2: 80

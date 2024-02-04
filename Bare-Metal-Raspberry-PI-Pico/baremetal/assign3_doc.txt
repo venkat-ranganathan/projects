@@ -1,0 +1,9 @@
+Create the watchdog and systic drivers.  (From this assignment forward, unless otherwise specified, your programs should use these drivers.)  Set up your main loop to run with a period of 1ms and a watchdog timeout of 1.5ms.  
+
+Create an FSM to flash the LED at 0.5 Hz.  In your main loop, add a blocking loop similar to the following to test the watchdog:
+
+while( pb_is_pressed() );
+
+The led should flash once every 2 seconds.  When you hold the button down, you should notice the processor resetting continuously (you may see the LED flash, flicker, or remain on or off depending on your program configuration.
+
+Make sure to rename your source files by adding a .txt (as in previous assignments).  Submit assign3.c.txt and your watchdog and systick drivers (.c.txt and .h.txt) as well as a video demonstrating that the watchdog is triggering.

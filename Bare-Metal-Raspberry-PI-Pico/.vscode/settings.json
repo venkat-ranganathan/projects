@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "sio.h": "c",
+        "pads_bank0.h": "c",
+        "resets.h": "c",
+        "stdint.h": "c",
+        "watchdog.h": "c",
+        "uart0.h": "c"
+    }
+}

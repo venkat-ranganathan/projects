@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Documents/projects/Data_Structures_Algorithms/module 1/lab1'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000038D4, symSize: 0x40C }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _PI, symObjAddr: 0x418, symBinAddr: 0x100003D00, symSize: 0x0 }
+  - { offsetInCU: 0x62, offset: 0x62, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000038D4, symSize: 0x40C }
+...

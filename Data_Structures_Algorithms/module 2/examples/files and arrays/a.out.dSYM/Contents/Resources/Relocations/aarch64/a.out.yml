@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     a.out
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003738, symSize: 0x16C }
+  - { offsetInCU: 0x55, offset: 0x55, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003738, symSize: 0x16C }
+  - { offsetInCU: 0xA8, offset: 0xA8, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x16C, symBinAddr: 0x1000038A4, symSize: 0xB0 }
+  - { offsetInCU: 0xF6, offset: 0xF6, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x21C, symBinAddr: 0x100003954, symSize: 0x80 }
+  - { offsetInCU: 0x11A, offset: 0x11A, size: 0x8, addend: 0x0, symName: _FillArray, symObjAddr: 0x29C, symBinAddr: 0x1000039D4, symSize: 0x11C }
+  - { offsetInCU: 0x176, offset: 0x176, size: 0x8, addend: 0x0, symName: _PrintArray, symObjAddr: 0x3B8, symBinAddr: 0x100003AF0, symSize: 0x108 }
+  - { offsetInCU: 0x1D7, offset: 0x1D7, size: 0x8, addend: 0x0, symName: _AddThreeWithPointerArithmatic, symObjAddr: 0x4C0, symBinAddr: 0x100003BF8, symSize: 0x6C }
+  - { offsetInCU: 0x22A, offset: 0x22A, size: 0x8, addend: 0x0, symName: _CloseFiles, symObjAddr: 0x52C, symBinAddr: 0x100003C64, symSize: 0x70 }
+  - { offsetInCU: 0x25C, offset: 0x25C, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x59C, symBinAddr: 0x100003CD4, symSize: 0x84 }
+  - { offsetInCU: 0x2AA, offset: 0x2AA, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x620, symBinAddr: 0x100003D58, symSize: 0xB8 }
+...

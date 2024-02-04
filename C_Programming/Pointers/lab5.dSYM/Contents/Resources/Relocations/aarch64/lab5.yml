@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Documents/projects/C_Programming/Pointers/lab5'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003204, symSize: 0x7E4 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003204, symSize: 0x7E4 }
+  - { offsetInCU: 0x26, offset: 0x10D, size: 0x8, addend: 0x0, symName: _flipSign, symObjAddr: 0x0, symBinAddr: 0x1000039E8, symSize: 0x70 }
+  - { offsetInCU: 0x33, offset: 0x11A, size: 0x8, addend: 0x0, symName: _flipSign, symObjAddr: 0x0, symBinAddr: 0x1000039E8, symSize: 0x70 }
+  - { offsetInCU: 0x5B, offset: 0x142, size: 0x8, addend: 0x0, symName: _compareAndSwap, symObjAddr: 0x70, symBinAddr: 0x100003A58, symSize: 0xC4 }
+  - { offsetInCU: 0xAD, offset: 0x194, size: 0x8, addend: 0x0, symName: _searchArray, symObjAddr: 0x134, symBinAddr: 0x100003B1C, symSize: 0x8C }
+  - { offsetInCU: 0x10D, offset: 0x1F4, size: 0x8, addend: 0x0, symName: _copyString, symObjAddr: 0x1C0, symBinAddr: 0x100003BA8, symSize: 0x90 }
+...
