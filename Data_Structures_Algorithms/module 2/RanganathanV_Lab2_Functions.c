@@ -9,30 +9,6 @@
 //-----------------------------------------------------------------------------
 void PrintHeader(FILE* pOutput)
 {
-
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⣴⣶⣶⣶⣶⣶⣦⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⣿⡿⠿⠛⠛⠋⠉⠉⠉⠉⠉⠙⠛⠻⠿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⣠⣾⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣄⣀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣷⡄⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⢀⣾⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣴⣾⣿⣿⣿⡿⣶⣦⡀⠀⠀⠀⠀⠀⠈⠻⣿⣦⡀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⢠⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢤⣤⣿⣿⣿⣿⣿⣿⣿⣆⠘⣿⠟⣷⣦⣄⡀⠀⠀⠀⠘⣿⣷⡀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⢠⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢶⣤⣽⣿⣿⣿⣿⣿⣿⣿⡋⢠⣿⡧⠈⠙⣿⣿⣿⣶⣦⡄⠘⣿⣷⡀⠀\n");
-	fprintf(pOutput,"\t\t⠀⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣦⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣴⣯⣩⣿⣿⣿⣿⣦⠘⣿⣧⠀\n");
-	fprintf(pOutput,"\t\t⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⠉⠉⠉⠛⢻⣿⢿⡿⡿⡿⢿⡟⠀⢻⣿⡄\n");
-	fprintf(pOutput,"\t\t⣾⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢲⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣳⠀⠀⠀⠹⠋⠛⠽⠟⠋⠋⠀⠀⢸⣿⡇\n");
-	fprintf(pOutput,"\t\t⣿⣿⠀⠀⠀⠀⠀⠀⠀⢀⡀⣦⣪⣿⣿⣿⣿⣿⡿⠹⠹⣿⣿⣿⣿⣷⣓⣴⢀⡀⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇\n");
-	fprintf(pOutput,"\t\t⣿⣿⠀⠀⠀⠀⠀⣤⣳⣶⣿⣿⣿⣿⣿⣿⡏⡿⠃⢀⡀⠈⠉⠛⠻⠿⣿⣷⣽⣟⠷⠶⡄⠀⠀⠀⠀⠀⢸⣿⡇\n");
-	fprintf(pOutput,"\t\t⢸⣿⡆⣤⣄⣻⣷⣿⣿⣿⣿⣿⣿⡿⣿⡁⠇⠁⠀⢻⡞⠉⠀⠀⠀⠀⠀⠙⠻⠿⠟⠛⠀⠀⠀⠀⠀⠀⣸⣿⠇\n");
-	fprintf(pOutput,"\t\t⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣾⣄⣠⣠⡴⠿⣣⣿⡵⠧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⡿⠀\n");
-	fprintf(pOutput,"\t\t⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⠿⣿⣿⣿⣿⣴⡞⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⠃⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠹⣿⣿⣿⣿⣿⣿⢻⠿⣆⠘⠢⡘⠘⠛⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⠃⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠙⣿⣿⣿⡏⠙⢦⣣⠈⠖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⣀⢀⣦⣀⠀⢀⣠⣾⡿⠃⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠈⠻⣿⣧⡀⠀⠉⠣⡀⠀⠀⣠⣤⣀⣠⣤⣐⣴⣷⣅⣤⣦⣟⣿⢿⣸⣿⣿⣾⣿⣿⠟⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⠀⠉⠻⣿⣷⣄⣀⣴⣦⣤⣽⣟⣙⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\t\t⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-	fprintf(pOutput,"\n\n");
-
 	// Call function to print a divider to the screen
 	PrintDivider(pOutput, STAR, SCREEN_WIDTH);
 
@@ -282,6 +258,7 @@ void CountEvenOddNumbers(int intArray[], int* isEven, int* isOdd)
 	// declare and initliaze to zero integer variables to store count of even and odd numbers in array
 	int even = 0;
 	int odd = 0;
+
 	// loop through array until MAX value is reached
 	for (int index = 0; index < MAX; index++)
 	{
@@ -300,7 +277,7 @@ void CountEvenOddNumbers(int intArray[], int* isEven, int* isOdd)
 		}
 	}
 
-	// updates pointer values for even and odd
+	// update pointer values for even and odd
 	*isEven = even;
 	*isOdd = odd;
 } // END CountEvenOddNumbers
@@ -319,6 +296,7 @@ int TotalArray(int intArray[])
 	// loop through array until MAX value is reached
 	for (int index = 0; index < MAX; index++)
 	{
+		// keep rolling tally of number of elements in array
 		totalArrayNums = totalArrayNums + intArray[index];
 	}
 	return totalArrayNums;

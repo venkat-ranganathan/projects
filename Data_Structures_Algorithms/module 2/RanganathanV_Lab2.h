@@ -38,7 +38,6 @@ void OpenFile(FILE** filePointer, char message[], char type[]);
 void CloseFiles(FILE** file1, FILE** file2);
 
 void ReadDataFromFile(FILE* pFin, int intArray[], int* arrayCounter);
-void AddThreeWithPointerArithmatic(int intArray[], int arrayCounter);
 void PrintArray(FILE* pFout, const int intArray[], int arrayCounter);
 
 void FillArrayWithRandomNumbers(int intArray[]);
