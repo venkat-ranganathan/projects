@@ -1,0 +1,41 @@
+********************************************************************************
+                             Binghamton University
+                     Program written by: Venkat Ranganathan
+                                     Lab 2
+********************************************************************************
+
+Array One
+----------------------------------------------------
+                   Array Contents
+----------------------------------------------------
+   C1   C2   C3   C4   C5   C6   C7   C8   C9   C10
+R1  541  693  145  364  596  951  456  357  852  456
+R2  247  269  521  523  698  547  875  496  649  753
+R3  222  952  363  548  977  885  697  334  698  714
+R4  454  656  858  323  145  965  247  365  845  856
+R5  187  604  907  450  900  578  111  840  904  840
+
+
+Number of even numbers = 24
+Number of odd numbers = 26
+Total number of elements in the array = 29414
+Average value of the array = 588.00
+# elements > array average = 25
+
+Array Two
+----------------------------------------------------
+                   Array Contents
+----------------------------------------------------
+   C1   C2   C3   C4   C5   C6   C7   C8   C9   C10
+R1  308  250   74  159  431  273   45  379  424  210
+R2  441  166  493   43  488    4  328  230  341  113
+R3  304  170  210  158   61  434  100  279  317  336
+R4   98  327   13  268  311  134  480  150   80  322
+R5  468  173  394  337  486  246  229   92  195  358
+
+
+Number of even numbers = 30
+Number of odd numbers = 20
+Total number of elements in the array = 12730
+Average value of the array = 254.00
+# elements > array average = 25

@@ -9,6 +9,12 @@
 // Include for strlen
 #include <string.h>
 
+// Include for srand and rand functions
+#include <stdlib.h>
+
+// Include for time function
+#include <time.h>
+
 // macros
 #define MAX 50
 
@@ -31,9 +37,18 @@ void CenterString(FILE* pFout, char string[], int lengthToCenterAcross);
 void OpenFile(FILE** filePointer, char message[], char type[]);
 void CloseFiles(FILE** file1, FILE** file2);
 
-void FillArray(FILE* pFin, int intArray[], int* arrayCounter);
+void ReadDataFromFile(FILE* pFin, int intArray[], int* arrayCounter);
 void AddThreeWithPointerArithmatic(int intArray[], int arrayCounter);
 void PrintArray(FILE* pFout, const int intArray[], int arrayCounter);
+
+void FillArrayWithRandomNumbers(int intArray[]);
+
+void CountEvenOddNumbers(int intArray[], int* isEven, int* isOdd);
+int TotalArray(int intArray[]);
+double CalculateAverage(int intArray[], int arrayCounter);
+int CountNumberAboveAverage(int intArray[], int arrayCounter);
+
+void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int isOdd);
 
 // close header guard
 #endif
