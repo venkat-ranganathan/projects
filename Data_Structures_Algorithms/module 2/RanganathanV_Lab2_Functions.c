@@ -195,6 +195,13 @@ void ReadDataFromFile(FILE* pFin, int intArray[], int* arrayCounter)
 //-----------------------------------------------------------------------------
 void FillArrayWithRandomNumbers(int intArray[])
 {
+	// declare time variable
+	time_t t;
+
+	// initialize random number generator to clock so new numbers generated
+	// each time code is run
+	srand((unsigned int) time(&t));
+
 	for (int index = 0; index < MAX; index++)
 	{		
 		// Set each element of the array to a number between 0 and 500
