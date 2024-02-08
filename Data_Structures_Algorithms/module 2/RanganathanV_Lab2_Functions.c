@@ -391,10 +391,10 @@ void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int
 //-----------------------------------------------------------------------------
 void assignArray(int intArray[], int* arrayCounter)
 {
-	// reset arrayCounter pointer to zero prior to populating arrays with dummy values
+	// reset arrayCounter pointer to zero prior to populating array elements with dummy values
 	*arrayCounter = 0;
 
-	// loops through array and initializes all elements to zero to start
+	// loops through array elements and initializes all elements to zero to start
 	// need to do this to avoid having values created by stack allocation
 	while (*arrayCounter < MAXER)
 	{
@@ -402,12 +402,13 @@ void assignArray(int intArray[], int* arrayCounter)
 		(*arrayCounter)++;
 	}
 	
-	// initialize arrayCounter pointer to zero to reset value
+	// initialize arrayCounter pointer to one to reset value
 	*arrayCounter = 1;
 
 	// set initial value of array
 	intArray[0] = MAXERER;
-
+	
+	// loop through algorithm until terminating conditions reached
 	while (intArray[*arrayCounter - 1] != 1 && *arrayCounter < MAXER)
 	{
 		if (intArray[*arrayCounter - 1] % 2 == 0)
