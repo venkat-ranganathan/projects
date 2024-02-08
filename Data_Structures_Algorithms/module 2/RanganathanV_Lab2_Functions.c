@@ -270,7 +270,7 @@ void CountEvenOddNumbers(int intArray[], int arrayCounter, int* isEven, int* isO
 	*isEven = 0;
 	*isOdd = 0;
 
-	// loop through array until MAX value is reached
+	// loop through array until arrayCounter value is reached
 	for (int index = 0; index < arrayCounter; index++)
 	{
 		// check if array value is even
@@ -300,7 +300,7 @@ int TotalArray(int intArray[], int arrayCounter)
 	// declare and initialize to zero array total variable
 	int totalArrayNums = 0;
 
-	// loop through array until MAX value is reached
+	// loop through array until arrayCounter value is reached
 	for (int index = 0; index < arrayCounter; index++)
 	{
 		// keep rolling tally of value of array
@@ -320,12 +320,9 @@ double CalculateAverage(int intArray[], int arrayCounter)
 	// declare and initialize to zero array total variable
 	double average = 0;
 
-	// calculates average from TotalArray function divided by the arrayCounter value
-	average = TotalArray(intArray, arrayCounter) / arrayCounter;
-
-	// returns calculated average if arrayCounter doesn't equal zeor, otherwise
-	// returns 0 and ends program
-	return (arrayCounter != 0 ? average : 0);
+	// inline condtional returns calculated average if arrayCounter doesn't equal zero, otherwise
+	// returns 0 and ends program; protects from dividing by zero
+	return (arrayCounter != 0 ? average = TotalArray(intArray, arrayCounter) / arrayCounter : 0);
 
 } // END CalculateAverage
 
@@ -377,17 +374,6 @@ void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int
 //-----------------------------------------------------------------------------
 void assignArray(int intArray[], int* arrayCounter)
 {
-/* 	// reset arrayCounter pointer to zero prior to populating array elements with dummy values
-	*arrayCounter = 0;
-
-	// loops through array elements and initializes all elements to zero to start
-	// need to do this to avoid having values created by stack allocation
-	while (*arrayCounter < MAXER)
-	{
-		intArray[*arrayCounter] = 0;
-		(*arrayCounter)++;
-	} */
-	
 	// initialize arrayCounter pointer to one to reset value
 	*arrayCounter = 1;
 
