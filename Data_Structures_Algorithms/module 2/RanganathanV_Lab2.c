@@ -44,7 +44,8 @@ int main(void)
 
 	// declare and initialize to zero array counter variable
 	int arrayCounter = 0;
-	int isEven, isOdd;
+	int isEven = 0;
+	int isOdd = 0;
 	
 	OpenFile(&pFin, "Numbers.txt", "r");
 	OpenFile(&pFout, "OutputFile.txt", "w");

@@ -222,6 +222,11 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 	
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2);
 
+	if (arrayCounter < 50)
+	{
+		arrayCounter = 50;
+	}
+
 	// prints column numbers
 	for (int i = 1; i < 11; i++)
 	{
@@ -386,23 +391,34 @@ void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int
 //-----------------------------------------------------------------------------
 void assignArray(int intArray[], int* arrayCounter)
 {
-	// initialize arrayCounter pointer to zero to reset value from previous functions
+	// reset arrayCounter pointer to zero prior to populating arrays with dummy values
 	*arrayCounter = 0;
+
+	// loop through array and initializes all elements to zero to start
+	// need to do this to avoid having values created by stack allocation
+	while (*arrayCounter < MAXER)
+	{
+		intArray[*arrayCounter] = 0;
+		(*arrayCounter)++;
+	}
+	
+	// initialize arrayCounter pointer to zero to reset value
+	*arrayCounter = 1;
 
 	// set initial value of array
 	intArray[0] = MAXERER;
 
-	while (intArray[*arrayCounter + 1] != 1 && *arrayCounter < MAXER)
+	while (intArray[*arrayCounter - 1] != 1 && *arrayCounter < MAXER)
 	{
-		if (intArray[*arrayCounter] % 2 == 0)
+		if (intArray[*arrayCounter - 1] % 2 == 0)
 		{
-			intArray[*arrayCounter + 1] = intArray[*arrayCounter] / 2;
+			intArray[*arrayCounter] = intArray[*arrayCounter - 1] / 2;
 			(*arrayCounter)++;
 		}
 
-		else
+	 	else
 		{
-			intArray[*arrayCounter + 1] = 3 * intArray[*arrayCounter] + 1;
+			intArray[*arrayCounter] = 3 * intArray[*arrayCounter - 1] + 1;
 			(*arrayCounter)++;
 		}
 	}
