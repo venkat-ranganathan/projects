@@ -222,17 +222,13 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 	
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2);
 
-	if (arrayCounter < 50)
+	// print column
+	for (int index = 1; index < 11; index++)
 	{
-		arrayCounter = 100;
+		fprintf(pFout, "   C%d", index);
 	}
-
-	// prints column numbers
-	for (int i = 1; i < 11; i++)
-	{
-		fprintf(pFout, "   C%d", i);
-	}
-
+	
+	// primer for row
 	fprintf(pFout, "\nR%d", counter);
 
 	for (int index = 0; index < arrayCounter; index++)
@@ -243,16 +239,10 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 		// Check to see if 10 integers have been printed
 		if ((index + 1) % 10 == 0)
 		{
-			if (counter < arrayCounter / 10)
+			if (counter < arrayCounter / 10 || arrayCounter < MAX)
 			{
 				// Move the cursor down to the next line and print row number
 				fprintf(pFout, "\nR%d", ++counter);
-			}
-
-			// prevents printing extra row
-			else
-			{
-				fprintf(pFout, "\n");
 			}
 		}
 	}
@@ -298,7 +288,7 @@ void CountEvenOddNumbers(int intArray[], int* isEven, int* isOdd)
 
 //-----------------------------------------------------------------------------
 // Function Name: TotalArray
-// Description: counts and returns the total number of elements in the array
+// Description: totals all numbers in array
 //
 //
 //-----------------------------------------------------------------------------
@@ -310,7 +300,7 @@ int TotalArray(int intArray[])
 	// loop through array until MAX value is reached
 	for (int index = 0; index < MAX; index++)
 	{
-		// keep rolling tally of number of elements in array
+		// keep rolling tally of value of array
 		totalArrayNums = totalArrayNums + intArray[index];
 	}
 	return totalArrayNums;
@@ -366,7 +356,7 @@ int CountNumberAboveAverage(int intArray[], int arrayCounter)
 
 //-----------------------------------------------------------------------------
 // Function Name: PrintResults
-// Description: need to pass in isEven & isOdd since the CounterEvenOddNumbers
+// Description: need to pass in isEven & isOdd since the CountEvenOddNumbers
 // function doesn't return a value; prints results to output file
 //
 //-----------------------------------------------------------------------------
