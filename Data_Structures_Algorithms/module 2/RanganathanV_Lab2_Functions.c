@@ -224,7 +224,7 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 
 	if (arrayCounter < 50)
 	{
-		arrayCounter = 50;
+		arrayCounter = 100;
 	}
 
 	// prints column numbers
