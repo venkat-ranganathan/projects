@@ -9,15 +9,6 @@
 //-----------------------------------------------------------------------------
 void PrintHeader(FILE* pOutput)
 {
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
-	printf("⣀⠤⠴⠒⠒⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡟⠻⢿⡀⠀⠀⠀⠀⠀\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢿⣿⠟⠀⠸⣊⡽⠀⠀⠀⠀⠀\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⡁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-
 	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
 	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
 	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
@@ -247,7 +238,7 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 		// Check to see if 10 integers have been printed
 		if ((index + 1) % 10 == 0)
 		{
-			if (counter < 5)
+			if (counter < arrayCounter / 10)
 			{
 				// Move the cursor down to the next line and print row number
 				fprintf(pFout, "\nR%d", ++counter);
@@ -389,7 +380,28 @@ void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int
 //
 //
 //-----------------------------------------------------------------------------
-void assignArray(int intArray[], int arrayCounter)
+void assignArray(int intArray[], int* arrayCounter)
 {
-	
+	// initialize arrayCounter pointer ot zero to reset value from previous functinos
+	*arrayCounter = 0;
+
+	// set initial value of array
+	intArray[0] = MAXERER;
+
+	while (intArray[*arrayCounter + 1] != 1 && *arrayCounter < MAXER)
+	{
+		if (intArray[*arrayCounter] % 2 == 0)
+		{
+			intArray[*arrayCounter + 1] = intArray[*arrayCounter] / 2;
+			//intArray[*arrayCounter + 1] = rand() % 500 + 1;
+			(*arrayCounter)++;
+		}
+
+		else
+		{
+			intArray[*arrayCounter + 1] = 3 * intArray[*arrayCounter] + 1;
+			//intArray[*arrayCounter + 1] = rand() % 500 + 1;
+			(*arrayCounter)++;
+		}
+	}
 }

@@ -47,3 +47,26 @@ odd numbers = 20
 total value of array = 12730
 average value in array = 254.000
 # elements > array average = 25
+
+Array Three (Extra Credit)
+----------------------------------------------------
+                   Array Contents
+----------------------------------------------------
+   C1   C2   C3   C4   C5   C6   C7   C8   C9   C10
+R1 1500  750  375 1126  563 1690  845 2536 1268  634
+R2  317  952  476  238  119  358  179  538  269  808
+R3  404  202  101  304  152   76   38   19   58   29
+R4   88   44   22   11   34   17   52   26   13   40
+R5   20   10    5   16    8    4    2    1    4    2
+R6    1    4    2    1    4    2    1    4    2    1
+R7    4    2    1    4    2    1    4    2    1    4
+R8    2    1    4    2    1    4    2    1    4    2
+R9    1    4    2    1    4    2    1    4    2    1
+R10    4    2    1    4    2    1    4    2    1    4
+
+
+even numbers = 35
+odd numbers = 15
+total value of array = 17343
+average value in array = 173.000
+# elements > array average = 22

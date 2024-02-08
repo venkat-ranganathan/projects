@@ -79,6 +79,20 @@ int main(void)
 
 	PrintResults(pFout, arrayTwo, arrayCounter, isEven, isOdd);
 
+	// third array
+	assignArray(arrayThree, &arrayCounter);
+
+	fprintf(pFout, "\nArray Three (Extra Credit)\n");
+
+	PrintArray(pFout, arrayThree, arrayCounter);
+
+	CountEvenOddNumbers(arrayThree, &isEven, &isOdd);
+	TotalArray(arrayThree);
+	CalculateAverage(arrayThree, arrayCounter);
+	CountNumberAboveAverage(arrayThree, arrayCounter);
+
+	PrintResults(pFout, arrayThree, arrayCounter, isEven, isOdd);
+
 	// close input and output files
 	CloseFiles(&pFin, &pFout);
 

@@ -52,7 +52,7 @@ int CountNumberAboveAverage(int intArray[], int arrayCounter);
 void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int isOdd);
 
 // extra credit function
-void assignArray(int intArray[], int arrayCounter);
+void assignArray(int intArray[], int* arrayCounter);
 
 // close header guard
 #endif
