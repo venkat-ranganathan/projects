@@ -12,7 +12,7 @@
                                      Lab 2
 ********************************************************************************
 
-Array One
+Array One: numbers from input file
 ----------------------------------------------------
                    Array Contents
 ----------------------------------------------------
@@ -29,7 +29,7 @@ total value of array = 29414
 average value in array = 588.000
 # elements > array average = 25
 
-Array Two
+Array Two: numbers from rand() function
 ----------------------------------------------------
                    Array Contents
 ----------------------------------------------------
@@ -46,7 +46,7 @@ total value of array = 12730
 average value in array = 254.000
 # elements > array average = 25
 
-Array Three (Extra Credit)
+Array Three (Extra Credit): numbers from algorithm
 ----------------------------------------------------
                    Array Contents
 ----------------------------------------------------

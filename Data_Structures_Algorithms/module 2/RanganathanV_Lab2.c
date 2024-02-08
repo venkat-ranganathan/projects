@@ -57,7 +57,7 @@ int main(void)
 	FillArrayWithRandomNumbers(arrayTwo);
 
 	// first array
-	fprintf(pFout, "\nArray One\n");
+	fprintf(pFout, "\nArray One: numbers from input file\n");
 
 	PrintArray(pFout, arrayOne, arrayCounter);
 	
@@ -69,7 +69,7 @@ int main(void)
 	PrintResults(pFout, arrayOne, arrayCounter, isEven, isOdd);
 
 	// second array
-	fprintf(pFout, "\nArray Two\n");
+	fprintf(pFout, "\nArray Two: numbers from rand() function\n");
 
 	PrintArray(pFout, arrayTwo, arrayCounter);
 
@@ -83,7 +83,7 @@ int main(void)
 	// third array
 	assignArray(arrayThree, &arrayCounter);
 
-	fprintf(pFout, "\nArray Three (Extra Credit)\n");
+	fprintf(pFout, "\nArray Three (Extra Credit): numbers from algorithm\n");
 
 	PrintArray(pFout, arrayThree, arrayCounter);
 
