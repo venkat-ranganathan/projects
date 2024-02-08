@@ -381,7 +381,7 @@ void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int
 
 //-----------------------------------------------------------------------------
 // Function Name: assignArray (Extra Credit)
-// Description: this function takes in an array and arrayCounter pointer (need
+// Description: this function takes in an array and arrayCounter pointer. Need
 // pointer bc value will be changed in function and sent to other functions to
 // be used. function initializes the first element of the array to 1500 using a
 // macro, then uses an algorithm to set the next element's value based on
