@@ -394,7 +394,7 @@ void assignArray(int intArray[], int* arrayCounter)
 	// reset arrayCounter pointer to zero prior to populating arrays with dummy values
 	*arrayCounter = 0;
 
-	// loop through array and initializes all elements to zero to start
+	// loops through array and initializes all elements to zero to start
 	// need to do this to avoid having values created by stack allocation
 	while (*arrayCounter < MAXER)
 	{
