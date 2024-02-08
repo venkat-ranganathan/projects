@@ -44,8 +44,8 @@ void PrintArray(FILE* pFout, const int intArray[], int arrayCounter);
 
 void FillArrayWithRandomNumbers(int intArray[]);
 
-void CountEvenOddNumbers(int intArray[], int* isEven, int* isOdd);
-int TotalArray(int intArray[]);
+void CountEvenOddNumbers(int intArray[], int arrayCounter, int* isEven, int* isOdd);
+int TotalArray(int intArray[], int arrayCounter);
 double CalculateAverage(int intArray[], int arrayCounter);
 int CountNumberAboveAverage(int intArray[], int arrayCounter);
 

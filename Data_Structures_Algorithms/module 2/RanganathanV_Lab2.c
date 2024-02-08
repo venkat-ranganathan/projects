@@ -61,8 +61,8 @@ int main(void)
 
 	PrintArray(pFout, arrayOne, arrayCounter);
 	
-	CountEvenOddNumbers(arrayOne, &isEven, &isOdd);
-	TotalArray(arrayOne);
+	CountEvenOddNumbers(arrayOne, arrayCounter, &isEven, &isOdd);
+	TotalArray(arrayOne, arrayCounter);
 	CalculateAverage(arrayOne, arrayCounter);
 	CountNumberAboveAverage(arrayOne, arrayCounter);
 
@@ -71,14 +71,16 @@ int main(void)
 	// second array
 	fprintf(pFout, "\nArray Two: numbers from rand() function\n");
 
-	PrintArray(pFout, arrayTwo, arrayCounter);
+	// using MAX value instead of arrayCounter since second array doesn't use
+	// tag field
+	PrintArray(pFout, arrayTwo, MAX);
 
-	CountEvenOddNumbers(arrayTwo, &isEven, &isOdd);
-	TotalArray(arrayTwo);
-	CalculateAverage(arrayTwo, arrayCounter);
-	CountNumberAboveAverage(arrayTwo, arrayCounter);
+	CountEvenOddNumbers(arrayTwo, MAX, &isEven, &isOdd);
+	TotalArray(arrayTwo, MAX);
+	CalculateAverage(arrayTwo, MAX);
+	CountNumberAboveAverage(arrayTwo, MAX);
 
-	PrintResults(pFout, arrayTwo, arrayCounter, isEven, isOdd);
+	PrintResults(pFout, arrayTwo, MAX, isEven, isOdd);
 
 	// third array
 	assignArray(arrayThree, &arrayCounter);
@@ -87,8 +89,8 @@ int main(void)
 
 	PrintArray(pFout, arrayThree, arrayCounter);
 
-	CountEvenOddNumbers(arrayThree, &isEven, &isOdd);
-	TotalArray(arrayThree);
+	CountEvenOddNumbers(arrayThree, arrayCounter, &isEven, &isOdd);
+	TotalArray(arrayThree, arrayCounter);
 	CalculateAverage(arrayThree, arrayCounter);
 	CountNumberAboveAverage(arrayThree, arrayCounter);
 
