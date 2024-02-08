@@ -375,14 +375,18 @@ void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int
 } // END PrintResults
 
 //-----------------------------------------------------------------------------
-// Function Name: assignArray
-// Description:
-//
-//
+// Function Name: assignArray (Extra Credit)
+// Description: this function takes in an array and arrayCounter pointer (need
+// pointer bc value will be changed in function and sent to other functions to
+// be used. function initializes the first element of the array to 1500 using a
+// macro, then uses an algorithm to set the next element's value based on
+// whether the previous element was an even or odd integer. this loops while
+// the previous element value doesn't equal one and the arrayCounter value 
+// hasn't reached the max value set
 //-----------------------------------------------------------------------------
 void assignArray(int intArray[], int* arrayCounter)
 {
-	// initialize arrayCounter pointer ot zero to reset value from previous functinos
+	// initialize arrayCounter pointer to zero to reset value from previous functions
 	*arrayCounter = 0;
 
 	// set initial value of array
@@ -393,14 +397,12 @@ void assignArray(int intArray[], int* arrayCounter)
 		if (intArray[*arrayCounter] % 2 == 0)
 		{
 			intArray[*arrayCounter + 1] = intArray[*arrayCounter] / 2;
-			//intArray[*arrayCounter + 1] = rand() % 500 + 1;
 			(*arrayCounter)++;
 		}
 
 		else
 		{
 			intArray[*arrayCounter + 1] = 3 * intArray[*arrayCounter] + 1;
-			//intArray[*arrayCounter + 1] = rand() % 500 + 1;
 			(*arrayCounter)++;
 		}
 	}
