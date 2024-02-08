@@ -17,6 +17,8 @@
 
 // macros
 #define MAX 50
+#define MAXER 100
+#define MAXERER 1500
 
 #define DASH '-'
 #define STAR '*'
@@ -48,6 +50,9 @@ double CalculateAverage(int intArray[], int arrayCounter);
 int CountNumberAboveAverage(int intArray[], int arrayCounter);
 
 void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int isOdd);
+
+// extra credit function
+void assignArray(int intArray[], int arrayCounter);
 
 // close header guard
 #endif

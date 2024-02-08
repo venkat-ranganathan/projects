@@ -9,6 +9,24 @@
 //-----------------------------------------------------------------------------
 void PrintHeader(FILE* pOutput)
 {
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
+	printf("⣀⠤⠴⠒⠒⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡟⠻⢿⡀⠀⠀⠀⠀⠀\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢿⣿⠟⠀⠸⣊⡽⠀⠀⠀⠀⠀\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⡁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
+
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
+	fprintf(pOutput, "⣀⠤⠴⠒⠒⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡟⠻⢿⡀⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢿⣿⠟⠀⠸⣊⡽⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⡁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
+
 	// Call function to print a divider to the screen
 	PrintDivider(pOutput, STAR, SCREEN_WIDTH);
 
@@ -358,9 +376,20 @@ int CountNumberAboveAverage(int intArray[], int arrayCounter)
 //-----------------------------------------------------------------------------
 void PrintResults(FILE* pFout, int intArray[], int arrayCounter, int isEven, int isOdd)
 {
-	fprintf(pFout, "Number of even numbers = %d\n", isEven);
-	fprintf(pFout, "Number of odd numbers = %d\n", isOdd);
-	fprintf(pFout, "Total number of elements in the array = %d\n", TotalArray(intArray));
-	fprintf(pFout, "Average value of the array = %0.2lf\n", CalculateAverage(intArray, arrayCounter));
+	fprintf(pFout, "even numbers = %d\n", isEven);
+	fprintf(pFout, "odd numbers = %d\n", isOdd);
+	fprintf(pFout, "total value of array = %d\n", TotalArray(intArray));
+	fprintf(pFout, "average value in array = %0.3lf\n", CalculateAverage(intArray, arrayCounter));
 	fprintf(pFout, "# elements > array average = %d\n",CountNumberAboveAverage(intArray, arrayCounter));
 } // END PrintResults
+
+//-----------------------------------------------------------------------------
+// Function Name: assignArray
+// Description:
+//
+//
+//-----------------------------------------------------------------------------
+void assignArray(int intArray[], int arrayCounter)
+{
+	
+}

@@ -40,6 +40,7 @@ int main(void)
 	// create two arrays, size 50 set using a macro
 	int arrayOne[MAX];
 	int arrayTwo[MAX];
+	int arrayThree[MAXER];
 
 	// declare and initialize to zero array counter variable
 	int arrayCounter = 0;
