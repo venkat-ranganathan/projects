@@ -38,6 +38,7 @@ void CenterString(FILE* pFout, char string[], int lengthToCenterAcross);
 
 void OpenFile(FILE** filePointer, char message[], char type[]);
 void CloseFiles(FILE** file1, FILE** file2);
+void CloseFile(FILE** file);
 
 void ReadDataFromFile(FILE* pFin, int intArray[], int* arrayCounter);
 void PrintArray(FILE* pFout, const int intArray[], int arrayCounter);

@@ -144,6 +144,26 @@ void CloseFiles(FILE** file1, FILE** file2)
 } // End CloseFiles
 
 //-----------------------------------------------------------------------------
+// Function Name: CloseFile (single file)
+// Description:
+//  This function will close a single file
+//
+//  Because FILE is a pointer and we want to change the value of the address
+//  we will need to use a double pointer. 
+// 
+//  The double pointer uses ** in the parameters.
+//-----------------------------------------------------------------------------
+void CloseFile(FILE** file)
+{
+	// Check to see if file is valid
+	if (*file != NULL)
+	{
+		// Close file
+		fclose(*file);
+	}
+} // END CloseFile
+
+//-----------------------------------------------------------------------------
 // Function Name: ReadDataFromFile
 // Description:
 //  This function will fill the array with integers read in from the input 

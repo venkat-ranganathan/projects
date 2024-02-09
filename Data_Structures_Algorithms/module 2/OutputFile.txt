@@ -34,17 +34,17 @@ Array Two: numbers from rand() function
                    Array Contents
 ----------------------------------------------------
    C1   C2   C3   C4   C5   C6   C7   C8   C9   C10
-R1  127  457  217  302  344  329  317  184  412  416
-R2  342  274  263   56  246  119  279  485  191  385
-R3  427   63  459   30  275   73  297  185  176  450
-R4   67   22    4  456  493  463   31  205  136  495
-R5  344  262  355  140  438  438  117  291  256  421
+R1  343  220  110  455  127   31  318  443  400  237
+R2  491   69  181  484  494  485   94  431  234  214
+R3  163  485   74   43  310  453   78  487   45  182
+R4  459  364  473  188   68  482  389  377  320  500
+R5   38  203  121  474  465  194   62  330  239  158
 
-even numbers = 22
-odd numbers = 28
-total value of array = 13614
-average value in array = 272.000
-# elements > array average = 27
+even numbers = 25
+odd numbers = 25
+total value of array = 14085
+average value in array = 281.000
+# elements > array average = 25
 
 Array Three (Extra Credit): numbers from algorithm
 ----------------------------------------------------
