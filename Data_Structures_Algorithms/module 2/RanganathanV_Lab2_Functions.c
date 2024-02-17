@@ -286,7 +286,7 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 //-----------------------------------------------------------------------------
 void CountEvenOddNumbers(int intArray[], int arrayCounter, int* isEven, int* isOdd)
 {
-	// reset even and odd values to zero
+	// initialize/reset even and odd values to zero
 	*isEven = 0;
 	*isOdd = 0;
 

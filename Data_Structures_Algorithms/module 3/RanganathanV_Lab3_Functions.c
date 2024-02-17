@@ -134,30 +134,3 @@ void CloseFile(FILE** file)
 		fclose(*file);
 	}
 } // END CloseFile
-
-//-----------------------------------------------------------------------------
-// Function Name: CloseFiles
-// Description:
-//  This function will close both files
-//
-//  Because FILE is a pointer and we want to change the value of the address
-//  we will need to use a double pointer. 
-// 
-//  The double pointer uses ** in the parameters.
-//-----------------------------------------------------------------------------
-void CloseFiles(FILE** file1, FILE** file2)
-{
-	// Check to see if file1 is valid
-	if (*file1 != NULL)
-	{
-		// Close file1
-		fclose(*file1);
-	}
-
-	// Check to see if file2 is valid
-	if (*file2 != NULL)
-	{
-		// Close file2
-		fclose(*file2);
-	}
-} // End CloseFiles

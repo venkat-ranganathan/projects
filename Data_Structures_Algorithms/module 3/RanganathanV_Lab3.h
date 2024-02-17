@@ -1,3 +1,4 @@
+// header gaurds
 #ifndef RANGANATHANV_LAB3_H
 #define RANGANATHANV_LAB3_H
 
@@ -31,6 +32,6 @@ void CenterString(FILE* pFout, char string[], int lengthToCenterAcross);
 
 void OpenFile(FILE** filePointer, char message[], char type[]);
 void CloseFile(FILE** file);
-void CloseFiles(FILE** file1, FILE** file2);
 
+// close header guard
 #endif
