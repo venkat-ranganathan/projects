@@ -149,6 +149,7 @@ void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross, int op
 			fprintf(pOutput, "%s\n", string);
 
 			break;
+			
 		case 1:
 			// Print the spaces needed to center the string
 			while (counter < numberOfBlankSpaces)
@@ -214,7 +215,9 @@ void CloseFile(FILE** file)
 void StarPattern(FILE * pFout, int number, int counter, int option) 
 { 
 	if (number == 0)
-	return;
+	{
+		return;
+	}
 
 	PrintDivider(pFout, STAR, counter, option);
 
@@ -255,7 +258,6 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option
 	switch (option)
 	{
 		case 0:
-			// primer for row
 			fprintf(pFout, "\n");
 
 			for (int index = 0; index < arrayCounter; index++)
@@ -276,7 +278,6 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option
 			break;
 
 		case 1:		
-			// primer for row
 			printf("\n");
 
 			for (int index = 0; index < arrayCounter; index++)

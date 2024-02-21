@@ -15,6 +15,8 @@ int main(void)
 	// need to pass integer values for SumArray function
 	int sizeOne = sizeof(arrayOne) / sizeof(arrayOne[0]);
 	int sizeTwo = sizeof(arrayTwo) / sizeof(arrayTwo[0]);
+	int sizeThree = sizeof(arrayThree) / sizeof(arrayThree[0]);
+	int sizeFour = sizeof(arrayFour) / sizeof(arrayFour[0]);
 
 	// declare time variable
 	time_t t;
@@ -66,23 +68,26 @@ int main(void)
 	// second recursive function sum array
 
 	// fill array with random numbers
-	FillArrayWithRandomNumbers(arrayOne, MAX, 99);
+	FillArrayWithRandomNumbers(arrayOne, sizeOne, 99);
 
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 0);
 	CenterString(pFout, "2nd Recursive Function: Sum the Array", TABLE_WIDTH+2, 0);
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 0);
 
-	PrintArray(pFout, arrayOne, MAX, 0);
+	PrintArray(pFout, arrayOne, sizeOne, 0);
 
 	fprintf(pFout, "Sum of Array One: %d", SumArray(arrayOne, 0, sizeOne));
 	fprintf(pFout, "\n\n");
 	PrintDivider(pFout, STAR, SCREEN_WIDTH, 0);
 
+	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 1);
+	CenterString(pFout, "2nd Recursive Function: Sum the Array", TABLE_WIDTH+2, 1);
+	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 1);
 	// fill array with random numbers
-	FillArrayWithRandomNumbers(arrayTwo, MAX, 99);
+	FillArrayWithRandomNumbers(arrayTwo, sizeTwo, 99);
 	
 	printf("\n");
-	PrintArray(pFout, arrayTwo, MAX, 1);
+	PrintArray(pFout, arrayTwo, sizeTwo, 1);
 
 	printf("Sum of Array Two: %d", SumArray(arrayTwo, 0, sizeTwo));
 	printf("\n\n");
@@ -114,37 +119,38 @@ int main(void)
 
 	// recursive sort
 	// fill array with random numbers
-	FillArrayWithRandomNumbers(arrayThree, MAXER, 999);
+	FillArrayWithRandomNumbers(arrayThree, sizeThree, 999);
 
 	fprintf(pFout, "\n");
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 0);
 	CenterString(pFout, "Recursive Sort: arrayThree", TABLE_WIDTH+2, 0);
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 0);
-	PrintArray(pFout, arrayThree, MAXER, 0);
 
-	QuickSort(arrayThree, 0, MAXER);
+	PrintArray(pFout, arrayThree, sizeThree, 0);
+
+	QuickSort(arrayThree, 0, sizeThree - 1);
 	fprintf(pFout, "\n");
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 0);
 	CenterString(pFout, "Quick Sort: arrayThree", TABLE_WIDTH+2, 0);
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 0);
-	
-	PrintArray(pFout, arrayThree, MAXER, 0);
+
+	PrintArray(pFout, arrayThree, sizeThree, 0);
 
 	// fill array with random numbers
-	FillArrayWithRandomNumbers(arrayFour, MAXER, 999);
+	FillArrayWithRandomNumbers(arrayFour, sizeFour, 999);
 
 	printf("\n");
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 1);
 	CenterString(pFout, "Recursive Sort: arrayFour", TABLE_WIDTH+2, 1);
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 1);
-	PrintArray(pFout, arrayFour, MAXER, 1);	
+	PrintArray(pFout, arrayFour, sizeFour, 1);	
 
-	QuickSort(arrayFour, 0, MAXER);
+	QuickSort(arrayFour, 0, sizeFour - 1);
 	printf("\n");
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 1);
 	CenterString(pFout, "Quick Sort: arrayFour", TABLE_WIDTH+2, 1);
 	PrintDivider(pFout, DASH, TABLE_WIDTH+2, 1);
-	PrintArray(pFout, arrayFour, MAXER, 1);	
+	PrintArray(pFout, arrayFour, sizeFour, 1);	
 
 	/* END PART C */
 
