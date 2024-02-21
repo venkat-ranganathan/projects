@@ -9,10 +9,14 @@
 // Include for strlen
 #include <string.h>
 
+// need for srand and rand functions
+#include <stdlib.h>
+
+// need to keep track of time to generate random numbers
+#include <time.h>
+
 // macros
-#define MAX 50
-#define MAXER 100
-#define MAXERER 1500
+#define MAX 20
 
 #define DASH '-'
 #define STAR '*'
@@ -26,12 +30,21 @@
 // constants
 
 // function prototypes
-void PrintHeader(FILE * pFout);
-void PrintDivider(FILE* pFout, char symbol, int numberOf);
-void CenterString(FILE* pFout, char string[], int lengthToCenterAcross);
+void PrintHeader(FILE * pFout, int option);
+void PrintDivider(FILE* pOutput, char symbol, int numberOf);
+void PrintDividerScreen(char symbol, int numberOf);
+void CenterString(FILE* pFout, char string[], int lengthToCenterAcros, int option);
 
 void OpenFile(FILE** filePointer, char message[], char type[]);
 void CloseFile(FILE** file);
+
+void StarPattern(FILE* pFout, int number, int counter, int option);
+
+void FillArrayWithRandomNumbers(int intArray[]);
+void PrintArray(FILE* pFout, const int intArray[], int arrayCounter, int option);
+int SumArray(int intArray[], int counter, int size);
+
+void PrintDigits(FILE* pFOut, int number, int option);
 
 // close header guard
 #endif

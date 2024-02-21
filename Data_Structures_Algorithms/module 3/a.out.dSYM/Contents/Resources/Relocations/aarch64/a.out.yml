@@ -2,13 +2,19 @@
 triple:          'arm64-apple-darwin'
 binary-path:     a.out
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003904, symSize: 0x54 }
-  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003904, symSize: 0x54 }
-  - { offsetInCU: 0x26, offset: 0x299, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0x100 }
-  - { offsetInCU: 0x49, offset: 0x2BC, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0x100 }
-  - { offsetInCU: 0x6D, offset: 0x2E0, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x100, symBinAddr: 0x100003A58, symSize: 0x84 }
-  - { offsetInCU: 0xBB, offset: 0x32E, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x184, symBinAddr: 0x100003ADC, symSize: 0xB8 }
-  - { offsetInCU: 0x133, offset: 0x3A6, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x23C, symBinAddr: 0x100003B94, symSize: 0x38 }
-  - { offsetInCU: 0x173, offset: 0x3E6, size: 0x8, addend: 0x0, symName: _CloseFile, symObjAddr: 0x274, symBinAddr: 0x100003BCC, symSize: 0x44 }
-  - { offsetInCU: 0x197, offset: 0x40A, size: 0x8, addend: 0x0, symName: _CloseFiles, symObjAddr: 0x2B8, symBinAddr: 0x100003C10, symSize: 0x70 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002D74, symSize: 0x320 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002D74, symSize: 0x320 }
+  - { offsetInCU: 0x26, offset: 0x307, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100003094, symSize: 0x20C }
+  - { offsetInCU: 0x49, offset: 0x32A, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100003094, symSize: 0x20C }
+  - { offsetInCU: 0x7B, offset: 0x35C, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x20C, symBinAddr: 0x1000032A0, symSize: 0x84 }
+  - { offsetInCU: 0xC9, offset: 0x3AA, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x290, symBinAddr: 0x100003324, symSize: 0x140 }
+  - { offsetInCU: 0x14F, offset: 0x430, size: 0x8, addend: 0x0, symName: _PrintDividerScreen, symObjAddr: 0x3D0, symBinAddr: 0x100003464, symSize: 0x78 }
+  - { offsetInCU: 0x18F, offset: 0x470, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x448, symBinAddr: 0x1000034DC, symSize: 0x38 }
+  - { offsetInCU: 0x1CF, offset: 0x4B0, size: 0x8, addend: 0x0, symName: _CloseFile, symObjAddr: 0x480, symBinAddr: 0x100003514, symSize: 0x44 }
+  - { offsetInCU: 0x1F3, offset: 0x4D4, size: 0x8, addend: 0x0, symName: _StarPattern, symObjAddr: 0x4C4, symBinAddr: 0x100003558, symSize: 0x110 }
+  - { offsetInCU: 0x241, offset: 0x522, size: 0x8, addend: 0x0, symName: _StarPatternScreen, symObjAddr: 0x5D4, symBinAddr: 0x100003668, symSize: 0x70 }
+  - { offsetInCU: 0x276, offset: 0x557, size: 0x8, addend: 0x0, symName: _FillArrayWithRandomNumbers, symObjAddr: 0x644, symBinAddr: 0x1000036D8, symSize: 0x70 }
+  - { offsetInCU: 0x2B9, offset: 0x59A, size: 0x8, addend: 0x0, symName: _PrintArray, symObjAddr: 0x6B4, symBinAddr: 0x100003748, symSize: 0x23C }
+  - { offsetInCU: 0x355, offset: 0x636, size: 0x8, addend: 0x0, symName: _SumArray, symObjAddr: 0x8F0, symBinAddr: 0x100003984, symSize: 0x74 }
+  - { offsetInCU: 0x39D, offset: 0x67E, size: 0x8, addend: 0x0, symName: _PrintDigits, symObjAddr: 0x964, symBinAddr: 0x1000039F8, symSize: 0x11C }
 ...
