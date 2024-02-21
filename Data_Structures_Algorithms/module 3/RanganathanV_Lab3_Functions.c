@@ -22,7 +22,7 @@ void PrintHeader(FILE* pOutput, int option)
 			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
 
 			// Call function to print a divider to the screen
-			PrintDivider(pOutput, STAR, SCREEN_WIDTH);
+			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 0);
 
 			// Call functions to print three strings to center to the screen
 			CenterString(pOutput, SCHOOL, SCREEN_WIDTH, option);
@@ -30,7 +30,7 @@ void PrintHeader(FILE* pOutput, int option)
 			CenterString(pOutput, LAB, SCREEN_WIDTH, option);
 
 			// Call function to print a divider to the screen
-			PrintDivider(pOutput, STAR, SCREEN_WIDTH);
+			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 0);
 
 			break;
 
@@ -45,15 +45,16 @@ void PrintHeader(FILE* pOutput, int option)
 			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
 
 			// Call function to print a divider to the screen
-			PrintDividerScreen(STAR, SCREEN_WIDTH);
-
+			//PrintDividerScreen(STAR, SCREEN_WIDTH);
+			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 1);
 			// Call functions to print three strings to center to the screen
 			CenterString(pOutput, SCHOOL, SCREEN_WIDTH, option);
 			CenterString(pOutput, PROGRAMMER, SCREEN_WIDTH, option);
 			CenterString(pOutput, LAB, SCREEN_WIDTH, option);
 
 			// Call function to print a divider to the screen
-			PrintDividerScreen(STAR, SCREEN_WIDTH);
+			//PrintDividerScreen(STAR, SCREEN_WIDTH);
+			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 1);
 			break;
 	}
 
@@ -67,49 +68,44 @@ void PrintHeader(FILE* pOutput, int option)
 //   Symbols will be printed to the output file. 
 //
 //-----------------------------------------------------------------------------
-void PrintDivider(FILE* pOutput, char symbol, int numberOf)
+void PrintDivider(FILE* pOutput, char symbol, int numberOf, int option)
 {
 	// Initialize LCV (Loop Control Variable) to 0
 	int counter = 0;
 
-	// Print a bunch of symbols across the screen
-	while (counter < numberOf)
+	switch (option)
 	{
-		// Print one character to the screen
-		fprintf(pOutput, "%c", symbol);
+		case 0:
+			// Print a bunch of symbols across the screen
+			while (counter < numberOf)
+			{
+				// Print one character to the screen
+				fprintf(pOutput, "%c", symbol);
 
-		// Increment counter
-		counter++;
+				// Increment counter
+				counter++;
+			}
+
+			// Move the cursor down to the next line
+			fprintf(pOutput, "\n");
+			break;
+
+		case 1:
+			// Print a bunch of symbols across the screen
+			while (counter < numberOf)
+			{
+				// Print one character to the screen
+				printf("%c", symbol);
+
+				// Increment counter
+				counter++;
+			}
+
+			// Move the cursor down to the next line
+			printf("\n");
+			break;
 	}
-
-	// Move the cursor down to the next line
-	fprintf(pOutput, "\n");
 } // END PrintDivider
-
-//-----------------------------------------------------------------------------
-// Function Name: PrintDivider
-// Description:
-//   Symbols will be printed to the screen. 
-//
-//-----------------------------------------------------------------------------
-void PrintDividerScreen(char symbol, int numberOf)
-{
-	// Initialize LCV (Loop Control Variable) to 0
-	int counter = 0;
-
-	// Print a bunch of symbols across the screen
-	while (counter < numberOf)
-	{
-		// Print one character to the screen
-		printf("%c", symbol);
-
-		// Increment counter
-		counter++;
-	}
-
-	// Move the cursor down to the next line
-	printf("\n");
-} // END PrintDividerScreen
 
 
 //-----------------------------------------------------------------------------
@@ -169,9 +165,6 @@ void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross, int op
 
 			break;
 	}
-
-
-
 } // END CenterString
 
 //-----------------------------------------------------------------------------
@@ -216,79 +209,41 @@ void CloseFile(FILE** file)
 // Description:
 //   This function will print a pattern of stars to an output 
 //  file and will recursively print the pattern from 1 until the set number is reached
-//
+//  The program also includes an option to choose between printing to an output file or printing to the screen
 //-----------------------------------------------------------------------------
 void StarPattern(FILE * pFout, int number, int counter, int option) 
 { 
-	switch (option)
+	if (number == 0)
+	return;
+
+	PrintDivider(pFout, STAR, counter, option);
+
+	if (number > 1)
 	{
-	case 0:
-		if (number == 0)
-		return;
-
-		PrintDivider(pFout, STAR, counter);
-
-		if (number > 1)
-		{
-			StarPattern(pFout, number - 1, counter + 1, option);
-		}
-		break;
-
-	case 1:
-		if (number == 0)
-			return;
-
-		PrintDividerScreen(STAR, counter);
-
-		if (number > 1)
-		{
-			StarPattern(pFout, number - 1, counter + 1, option);
-		}
-		break;
+		StarPattern(pFout, number - 1, counter + 1, option);
 	}
-
 
 } // END StarPatternFile
 
 //-----------------------------------------------------------------------------
-// Function Name: StarPattern2
-// Description:
-//   This function will print a pattern of stars to the screen and will recursively print the pattern from 1 until the set number is reached
-//
-//-----------------------------------------------------------------------------
-void StarPatternScreen(int number, int counter) 
-{ 
-	if (number == 0)
-		return;
-
-	PrintDividerScreen(STAR, counter);
-
-	if (number > 1)
-	{
-		StarPatternScreen(number - 1, counter + 1);
-	}
-
-} // END StarPatternScreen
-
-//-----------------------------------------------------------------------------
 // Function Name: FillArrayWithRandomNumbers
 // Description:
-//   Every element of the array will be assigned a value between 0 and 99.
+//   Every element of the array will be assigned a value between 0 and the number passed ot the function.
 //
 //-----------------------------------------------------------------------------
-void FillArrayWithRandomNumbers(int intArray[])
+void FillArrayWithRandomNumbers(int intArray[], int maximum, int number)
 {
-	for (int index = 0; index < MAX; index++)
+	for (int index = 0; index < maximum; index++)
 	{		
-		// Set each element of the array to a number between 0 and 99
-		intArray[index] = rand() % 99 + 1;
+		// Set each element of the array to a number between 0 and number value
+		intArray[index] = rand() % number + 1;
 	}
 } // END FillArrayWithRandomNumbers
 
 //-----------------------------------------------------------------------------
 // Function Name:PrintArray
 // Description:
-//  This function will print the contents of the integer array in rows of 10
+//  This function will print the contents of the integer array
 // 
 //  Because FILE is a pointer and we want to change the value of the address
 //  we will need to use a double pointer. 
@@ -297,17 +252,9 @@ void FillArrayWithRandomNumbers(int intArray[])
 //-----------------------------------------------------------------------------
 void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option)
 {
-	int counter = 1;
-
 	switch (option)
 	{
 		case 0:
-			PrintDivider(pFout, DASH, TABLE_WIDTH+2);
-			
-			CenterString(pFout, "2nd Recursive Function: Sum the Array", TABLE_WIDTH+2, 0);
-			
-			PrintDivider(pFout, DASH, TABLE_WIDTH+2);
-			
 			// primer for row
 			fprintf(pFout, "\n");
 
@@ -328,37 +275,36 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option
 			fprintf(pFout, "\n");
 			break;
 
-		case 1:
-	
-		PrintDividerScreen(DASH, TABLE_WIDTH+2);
-		
-		CenterString(pFout, "2nd Recursive Function: Sum the Array", TABLE_WIDTH+2, 1);
-		
-		PrintDividerScreen(DASH, TABLE_WIDTH+2);
-		
-		// primer for row
-		printf("\n");
+		case 1:		
+			// primer for row
+			printf("\n");
 
-		for (int index = 0; index < arrayCounter; index++)
-		{
-			// Print one integer to the screen in a width of 5 and right justified
-			printf("%5d", intArray[index]);
-
-			// Check to see if 2 integers have been printed
-			if ((index + 1) % 2 == 0)
+			for (int index = 0; index < arrayCounter; index++)
 			{
-				// Move the cursor down to the next line and print row number
-				printf("\n");
-			}
-		}
+				// Print one integer to the screen in a width of 5 and right justified
+				printf("%5d", intArray[index]);
 
-		// Move the cursor down two lines
-		printf("\n");
+				// Check to see if 2 integers have been printed
+				if ((index + 1) % 2 == 0)
+				{
+					// Move the cursor down to the next line and print row number
+					printf("\n");
+				}
+			}
+
+			// Move the cursor down two lines
+			printf("\n");
 			break;
 	}
 
 } // END PrintArray
 
+//-----------------------------------------------------------------------------
+// Function Name: SumArray
+// Description: function takes in an array and sums the conent of the array
+//
+//
+//-----------------------------------------------------------------------------
 int SumArray(int intArray[], int counter, int size)
 {
 	if (size <= 0)
@@ -367,33 +313,94 @@ int SumArray(int intArray[], int counter, int size)
 	}
 		
 	return (SumArray(intArray, counter, size - 1) + intArray[size - 1]);
-}
+} // END SumArray
 
+//-----------------------------------------------------------------------------
+// Function Name: PrintDigits
+// Description: function prints digits to of a number recursively in the correct order
+// the user selects whether to print to an output file or to the terminal
+//
+//-----------------------------------------------------------------------------
 void PrintDigits(FILE* pFout, int number, int option)
 {
+
+	if (number <= 0)
+	{
+		return;
+	}
+
+	PrintDigits(pFout, number / 10, option);
+	
 	switch (option)
 	{
 		case 0:
-			if (number <= 0)
-			{
-				return;
-			}
-
-			PrintDigits(pFout, number / 10, option);
-
 			fprintf(pFout, "%d", number % 10);
 			break;
-		case 1:	
-			if (number <= 0)
-			{
-				return;
-			}
-
-			PrintDigits(pFout, number / 10, option);
-
+		case 1:
 			printf("%d", number % 10);
 			break;
 	}
+} // END PrintDigits
 
+//-----------------------------------------------------------------------------
+// Function Name: QuickSort
+// Description: function recursively sorts numbers in an array using the
+// quick sort algorithm; uses Partition function to carry out sort
+//
+//-----------------------------------------------------------------------------
+void QuickSort (int intArray[], int m, int n) /* to sort the subarray intArray[m:n of intArray into ascending order]*/
+{
+	int i, j;
+
+	if (m < n) 
+	{
+		i = m; j = n; /* initially i and j point ot the first and last items */
+		Partition(intArray, &i, &j); /* partitions intArray[m:n] into intArray[m:j] and intArray[i:n]*/
+		QuickSort(intArray, m, j);
+		QuickSort(intArray, i, n);
+	}
+} // END QuickSort
+
+//-----------------------------------------------------------------------------
+// Function Name: Partition
+// Description: partition function carries out the actual quick sort algorithm
+//
+//
+//-----------------------------------------------------------------------------
+void Partition(int intArray[], int* i, int* j)
+{
+	int Pivot, Temp;
+
+	Pivot = intArray[(*i + *j) / 2]; /* choose middle key as the pivot*/
+
+	do {
+		while (intArray[*i] < Pivot) (*i)++; /* find leftmost i such that intArray[i] >= Pivot */
+
+		while (intArray[*j] > Pivot) (*j)--; /* find rightmost j such that intArray[j] <= Pivot */
+
+		if (*i <= *j) /* if i and j didn't cross over one another, swap */
+		{
+			Temp = intArray[*i]; /* swapping values between intArray[i] & intArray[j]*/
+			intArray[*i] = intArray[*j]; 
+			intArray[*j] = Temp;
+
+			(*i)++; /* move i one space right*/
+			(*j)--; /* move j one space left*/
+		}
+	} while (*i <= *j); /* while i and j pointers haven't crossed yet*/
+} // END Partition
+
+//-----------------------------------------------------------------------------
+// Function Name: ReverseDigitis
+// Description: recursively prints digits of a number in reverse
+//
+//
+//-----------------------------------------------------------------------------
+int ReverseDigits(int number, int counter)
+{
+	if (number == 0)
+		return counter;
+	
+	return (ReverseDigits(number / 10, counter * 10 + number % 10));
 }
-
+// END ReverseDigits

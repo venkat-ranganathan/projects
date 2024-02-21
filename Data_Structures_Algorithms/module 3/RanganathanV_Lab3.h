@@ -17,6 +17,7 @@
 
 // macros
 #define MAX 20
+#define MAXER 50
 
 #define DASH '-'
 #define STAR '*'
@@ -31,7 +32,7 @@
 
 // function prototypes
 void PrintHeader(FILE * pFout, int option);
-void PrintDivider(FILE* pOutput, char symbol, int numberOf);
+void PrintDivider(FILE* pOutput, char symbol, int numberOf, int option);
 void PrintDividerScreen(char symbol, int numberOf);
 void CenterString(FILE* pFout, char string[], int lengthToCenterAcros, int option);
 
@@ -40,11 +41,17 @@ void CloseFile(FILE** file);
 
 void StarPattern(FILE* pFout, int number, int counter, int option);
 
-void FillArrayWithRandomNumbers(int intArray[]);
+void FillArrayWithRandomNumbers(int intArray[], int maximum, int number);
 void PrintArray(FILE* pFout, const int intArray[], int arrayCounter, int option);
 int SumArray(int intArray[], int counter, int size);
 
 void PrintDigits(FILE* pFOut, int number, int option);
+
+void QuickSort (int intArray[], int m, int n);
+void Partition(int intArray[], int* i, int* j);
+
+int ReverseDigits(int number, int counter);
+
 
 // close header guard
 #endif
