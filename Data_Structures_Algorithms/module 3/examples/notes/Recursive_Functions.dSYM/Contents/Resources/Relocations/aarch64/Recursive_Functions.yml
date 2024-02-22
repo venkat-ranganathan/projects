@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Documents/projects/Data_Structures_Algorithms/module 3/examples/notes/Recursive_Functions'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003754, symSize: 0x288 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003754, symSize: 0x288 }
+  - { offsetInCU: 0x8C, offset: 0x8C, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x288, symBinAddr: 0x1000039DC, symSize: 0x80 }
+  - { offsetInCU: 0xB0, offset: 0xB0, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x308, symBinAddr: 0x100003A5C, symSize: 0x84 }
+  - { offsetInCU: 0xFE, offset: 0xFE, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x38C, symBinAddr: 0x100003AE0, symSize: 0xB8 }
+  - { offsetInCU: 0x176, offset: 0x176, size: 0x8, addend: 0x0, symName: _StarPattern, symObjAddr: 0x444, symBinAddr: 0x100003B98, symSize: 0x68 }
+  - { offsetInCU: 0x1A8, offset: 0x1A8, size: 0x8, addend: 0x0, symName: _PositiveNumberCount, symObjAddr: 0x4AC, symBinAddr: 0x100003C00, symSize: 0x90 }
+  - { offsetInCU: 0x1FB, offset: 0x1FB, size: 0x8, addend: 0x0, symName: _MathFunction, symObjAddr: 0x53C, symBinAddr: 0x100003C90, symSize: 0x70 }
+  - { offsetInCU: 0x225, offset: 0x225, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x5AC, symBinAddr: 0x100003D00, symSize: 0xB0 }
+...

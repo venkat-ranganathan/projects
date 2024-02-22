@@ -349,7 +349,7 @@ void PrintDigits(FILE* pFout, int number, int option)
 // quick sort algorithm; uses Partition function to carry out sort
 //
 //-----------------------------------------------------------------------------
-void QuickSort (int intArray[], int m, int n) /* to sort the subarray intArray[m:n of intArray into ascending order]*/
+void QuickSort(int intArray[], int m, int n) /* to sort the subarray intArray[m:n of intArray into ascending order]*/
 {
 	int i, j;
 

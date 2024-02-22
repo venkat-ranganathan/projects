@@ -98,7 +98,7 @@ int main(void)
 	/* START FUNCTION 5 */
 
 	// 3rd recursive function
-	fprintf(pFout, "\n\t\t\t3rd Recursive Function: PrintDigits\n");
+	fprintf(pFout, "\t\t\t3rd Recursive Function: PrintDigits\n");
 	PrintDivider(pFout, STAR, SCREEN_WIDTH, 0);
 	fprintf(pFout, "\n");
 	fprintf(pFout, "Digits printed recursively to output file: \n");

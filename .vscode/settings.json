@@ -1,5 +1,6 @@
 {
-    "files.associations": {
-        "ranganathanv_lab2.h": "c"
-    }
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
 }
