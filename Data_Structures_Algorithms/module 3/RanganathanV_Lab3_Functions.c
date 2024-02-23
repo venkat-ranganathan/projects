@@ -56,6 +56,9 @@ void PrintHeader(FILE* pOutput, int option)
 			//PrintDividerScreen(STAR, SCREEN_WIDTH);
 			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 1);
 			break;
+		
+		default:
+			break;
 	}
 
 
@@ -103,6 +106,9 @@ void PrintDivider(FILE* pOutput, char symbol, int numberOf, int option)
 
 			// Move the cursor down to the next line
 			printf("\n");
+			break;
+		
+		default:
 			break;
 	}
 } // END PrintDivider
@@ -164,6 +170,9 @@ void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross, int op
 			// Print the string
 			printf("%s\n", string);
 
+			break;
+
+		default:
 			break;
 	}
 } // END CenterString
@@ -296,6 +305,9 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option
 			// Move the cursor down two lines
 			printf("\n");
 			break;
+
+		default:
+			break;
 	}
 
 } // END PrintArray
@@ -308,12 +320,7 @@ void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option
 //-----------------------------------------------------------------------------
 int SumArray(int intArray[], int counter, int size)
 {
-	if (size <= 0)
-	{
-		return 0;
-	}
-		
-	return (SumArray(intArray, counter, size - 1) + intArray[size - 1]);
+	return ((size <= 0) ? 0 : SumArray(intArray, counter, size - 1) + intArray[size - 1]);
 } // END SumArray
 
 //-----------------------------------------------------------------------------
@@ -339,6 +346,8 @@ void PrintDigits(FILE* pFout, int number, int option)
 			break;
 		case 1:
 			printf("%d", number % 10);
+			break;
+		default:
 			break;
 	}
 } // END PrintDigits
@@ -381,12 +390,12 @@ void Partition(int intArray[], int* i, int* j)
 
 		if (*i <= *j) /* if i and j didn't cross over one another, swap */
 		{
-			Temp = intArray[*i]; /* swapping values between intArray[i] & intArray[j]*/
+			Temp = intArray[*i]; /* swapping values between intArray[i] & intArray[j] */
 			intArray[*i] = intArray[*j]; 
 			intArray[*j] = Temp;
 
-			(*i)++; /* move i one space right*/
-			(*j)--; /* move j one space left*/
+			(*i)++; /* move i one space right */
+			(*j)--; /* move j one space left */
 		}
 	} while (*i <= *j); /* while i and j pointers haven't crossed yet*/
 } // END Partition
@@ -398,10 +407,7 @@ void Partition(int intArray[], int* i, int* j)
 //
 //-----------------------------------------------------------------------------
 int ReverseDigits(int number, int counter)
-{
-	if (number == 0)
-		return counter;
-	
-	return (ReverseDigits(number / 10, counter * 10 + number % 10));
+{	
+	return ((number == 0) ? counter : ReverseDigits(number / 10, counter * 10 + number % 10));
 }
 // END ReverseDigits
