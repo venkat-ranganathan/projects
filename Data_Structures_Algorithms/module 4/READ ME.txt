@@ -1,0 +1,57 @@
+
+//----------------------------------------------------------------------------
+// Some things I have learned about using g++ vs. MS Visual Studio
+//
+// These observations also align chapter 15 in our text book. 
+//----------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------
+// Executing a C++ program
+//----------------------------------------------------------------------------
+
+Instead of using gcc you will use g++
+The syntax for g++ is the same
+
+  g++ file.cpp -Wall -o file.out
+  
+NOTE: Your code file must be a .cpp file. No changes will be made to your
+      header file. 
+	  
+	  
+NOTE: The declaration of your class will go in your header file
+
+//----------------------------------------------------------------------------
+// INCLUDING HEADER FILES
+//----------------------------------------------------------------------------
+
+
+Examples of including header files in MS Visual Studio:
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <fstream>
+
+
+We will continue to use the same header files we have been using
+
+#include <stdio.h>
+#include <string.h>
+
+
+//----------------------------------------------------------------------------
+// INPUT / OUTPUT
+//----------------------------------------------------------------------------
+
+In MS Visual Studio you can use cin and cout. 
+
+Example/
+
+cin >> value;
+cout << "Value = " << value << endl;
+
+
+We will not be using cin and out, we will contiue to use printf and scanf
+
+
+
