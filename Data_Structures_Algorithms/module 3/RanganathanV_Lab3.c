@@ -1,3 +1,33 @@
+/*
+|--------------------------------------------------------------------------------------------------
+| Programmers Name: Venkat Ranganathan
+| Course:           CS-212: Data Structures for Engineers
+| Program  Name:    Lab 3
+| Date:             02/23/24
+|
+|--------------------------------------------------------------------------------------------------
+| Program Description: goal of this lab is to learn to write recursive functions
+|	and implememnt a Quick Sort algorithm; and to create efficient,
+|	re-usable functions with an option for the user to print to an output file or screen
+|
+|--------------------------------------------------------------------------------------------------
+| Inputs:
+|   There are no inputs provided by a file or user for this lab
+|  
+|
+|--------------------------------------------------------------------------------------------------
+| Processing: 
+|   basic math functions are used: addition, subtraction, division, multiplication, and finding
+|  the remainder using the modulus operator
+|
+|--------------------------------------------------------------------------------------------------
+| Outputs:
+|   Results printed to terminal and output file
+|
+|
+|--------------------------------------------------------------------------------------------------
+*/
+
 #include "RanganathanV_Lab3.h"
 
 int main(void)
