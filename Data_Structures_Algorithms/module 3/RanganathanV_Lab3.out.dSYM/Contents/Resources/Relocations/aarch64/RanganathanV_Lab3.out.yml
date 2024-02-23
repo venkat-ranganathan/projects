@@ -1,0 +1,21 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Documents/projects/Data_Structures_Algorithms/module 3/RanganathanV_Lab3.out'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000026F0, symSize: 0x728 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000026F0, symSize: 0x728 }
+  - { offsetInCU: 0x26, offset: 0x34F, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100002E18, symSize: 0x230 }
+  - { offsetInCU: 0x49, offset: 0x372, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100002E18, symSize: 0x230 }
+  - { offsetInCU: 0x7B, offset: 0x3A4, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x230, symBinAddr: 0x100003048, symSize: 0x114 }
+  - { offsetInCU: 0xD7, offset: 0x400, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x344, symBinAddr: 0x10000315C, symSize: 0x144 }
+  - { offsetInCU: 0x15D, offset: 0x486, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x488, symBinAddr: 0x1000032A0, symSize: 0x38 }
+  - { offsetInCU: 0x19D, offset: 0x4C6, size: 0x8, addend: 0x0, symName: _CloseFile, symObjAddr: 0x4C0, symBinAddr: 0x1000032D8, symSize: 0x44 }
+  - { offsetInCU: 0x1C1, offset: 0x4EA, size: 0x8, addend: 0x0, symName: _StarPattern, symObjAddr: 0x504, symBinAddr: 0x10000331C, symSize: 0x88 }
+  - { offsetInCU: 0x20F, offset: 0x538, size: 0x8, addend: 0x0, symName: _FillArrayWithRandomNumbers, symObjAddr: 0x58C, symBinAddr: 0x1000033A4, symSize: 0x7C }
+  - { offsetInCU: 0x26B, offset: 0x594, size: 0x8, addend: 0x0, symName: _PrintArray, symObjAddr: 0x608, symBinAddr: 0x100003420, symSize: 0x1C0 }
+  - { offsetInCU: 0x2F8, offset: 0x621, size: 0x8, addend: 0x0, symName: _SumArray, symObjAddr: 0x7C8, symBinAddr: 0x1000035E0, symSize: 0x78 }
+  - { offsetInCU: 0x340, offset: 0x669, size: 0x8, addend: 0x0, symName: _PrintDigits, symObjAddr: 0x840, symBinAddr: 0x100003658, symSize: 0xE8 }
+  - { offsetInCU: 0x384, offset: 0x6AD, size: 0x8, addend: 0x0, symName: _QuickSort, symObjAddr: 0x928, symBinAddr: 0x100003740, symSize: 0x80 }
+  - { offsetInCU: 0x3E6, offset: 0x70F, size: 0x8, addend: 0x0, symName: _Partition, symObjAddr: 0x9A8, symBinAddr: 0x1000037C0, symSize: 0x16C }
+  - { offsetInCU: 0x448, offset: 0x771, size: 0x8, addend: 0x0, symName: _ReverseDigits, symObjAddr: 0xB14, symBinAddr: 0x10000392C, symSize: 0x78 }
+...

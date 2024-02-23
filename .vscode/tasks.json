@@ -10,7 +10,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -29,8 +29,9 @@
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
-                "*.c"
-                
+                "*.c",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
