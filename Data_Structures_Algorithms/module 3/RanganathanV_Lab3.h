@@ -31,21 +31,21 @@
 // constants
 
 // function prototypes
-void PrintHeader(FILE * pFout, int option);
-void PrintDivider(FILE* pOutput, char symbol, int numberOf, int option);
+void PrintHeader(FILE * pFout);
+void PrintDivider(FILE* pOutput, char symbol, int numberOf);
 void PrintDividerScreen(char symbol, int numberOf);
-void CenterString(FILE* pFout, char string[], int lengthToCenterAcros, int option);
+void CenterString(FILE* pFout, char string[], int lengthToCenterAcros);
 
 void OpenFile(FILE** filePointer, char message[], char type[]);
 void CloseFile(FILE** file);
 
-void StarPattern(FILE* pFout, int number, int counter, int option);
+void StarPattern(FILE* pFout, int number, int counter);
 
 void FillArrayWithRandomNumbers(int intArray[], int maximum, int number);
-void PrintArray(FILE* pFout, const int intArray[], int arrayCounter, int option);
+void PrintArray(FILE* pFout, const int intArray[], int arrayCounter);
 int SumArray(int intArray[], int counter, int size);
 
-void PrintDigits(FILE* pFOut, int number, int option);
+void PrintDigits(FILE* pFOut, int number);
 
 void QuickSort (int intArray[], int m, int n);
 void Partition(int intArray[], int* i, int* j);

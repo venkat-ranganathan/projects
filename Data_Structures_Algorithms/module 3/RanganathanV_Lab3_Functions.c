@@ -7,60 +7,27 @@
 //  screen. 
 //
 //-----------------------------------------------------------------------------
-void PrintHeader(FILE* pOutput, int option)
+void PrintHeader(FILE* pOutput)
 {
-	switch (option)
-	{
-		case 0:
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
-			fprintf(pOutput, "⣀⠤⠴⠒⠒⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀\n");
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡟⠻⢿⡀⠀⠀⠀⠀⠀\n");
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢿⣿⠟⠀⠸⣊⡽⠀⠀⠀⠀⠀\n");
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⡁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀\n");
-			fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
+	fprintf(pOutput, "⣀⠤⠴⠒⠒⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡟⠻⢿⡀⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢿⣿⠟⠀⠸⣊⡽⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⡁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀\n");
+	fprintf(pOutput, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
 
-			// Call function to print a divider to the screen
-			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 0);
+	// Call function to print a divider to the screen
+	PrintDivider(pOutput, STAR, SCREEN_WIDTH);
 
-			// Call functions to print three strings to center to the screen
-			CenterString(pOutput, SCHOOL, SCREEN_WIDTH, option);
-			CenterString(pOutput, PROGRAMMER, SCREEN_WIDTH, option);
-			CenterString(pOutput, LAB, SCREEN_WIDTH, option);
+	// Call functions to print three strings to center to the screen
+	CenterString(pOutput, SCHOOL, SCREEN_WIDTH);
+	CenterString(pOutput, PROGRAMMER, SCREEN_WIDTH);
+	CenterString(pOutput, LAB, SCREEN_WIDTH);
 
-			// Call function to print a divider to the screen
-			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 0);
-
-			break;
-
-		case 1:
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣀⣀\n");
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠿⠿⠟\n");
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣤⣴⣶⣶⣶⣤⣿⡿⠁⠀⠀⠀\n");
-			printf("⣀⠤⠴⠒⠒⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀\n");
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⣿⣿⣿⡟⠻⢿⡀⠀⠀⠀⠀⠀\n");
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢿⣿⠟⠀⠸⣊⡽⠀⠀⠀⠀⠀\n");
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⣿⡁⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀\n");
-			printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀\n");
-
-			// Call function to print a divider to the screen
-			//PrintDividerScreen(STAR, SCREEN_WIDTH);
-			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 1);
-			// Call functions to print three strings to center to the screen
-			CenterString(pOutput, SCHOOL, SCREEN_WIDTH, option);
-			CenterString(pOutput, PROGRAMMER, SCREEN_WIDTH, option);
-			CenterString(pOutput, LAB, SCREEN_WIDTH, option);
-
-			// Call function to print a divider to the screen
-			//PrintDividerScreen(STAR, SCREEN_WIDTH);
-			PrintDivider(pOutput, STAR, SCREEN_WIDTH, 1);
-			break;
-		
-		default:
-			break;
-	}
-
+	// Call function to print a divider to the screen
+	PrintDivider(pOutput, STAR, SCREEN_WIDTH);
 
 } // End PrintHeader
 
@@ -71,46 +38,24 @@ void PrintHeader(FILE* pOutput, int option)
 //   Symbols will be printed to the output file. 
 //
 //-----------------------------------------------------------------------------
-void PrintDivider(FILE* pOutput, char symbol, int numberOf, int option)
+void PrintDivider(FILE* pOutput, char symbol, int numberOf)
 {
 	// Initialize LCV (Loop Control Variable) to 0
 	int counter = 0;
 
-	switch (option)
+	// Print a bunch of symbols across the screen
+	while (counter < numberOf)
 	{
-		case 0:
-			// Print a bunch of symbols across the screen
-			while (counter < numberOf)
-			{
-				// Print one character to the screen
-				fprintf(pOutput, "%c", symbol);
+		// Print one character to the screen
+		fprintf(pOutput, "%c", symbol);
 
-				// Increment counter
-				counter++;
-			}
-
-			// Move the cursor down to the next line
-			fprintf(pOutput, "\n");
-			break;
-
-		case 1:
-			// Print a bunch of symbols across the screen
-			while (counter < numberOf)
-			{
-				// Print one character to the screen
-				printf("%c", symbol);
-
-				// Increment counter
-				counter++;
-			}
-
-			// Move the cursor down to the next line
-			printf("\n");
-			break;
-		
-		default:
-			break;
+		// Increment counter
+		counter++;
 	}
+
+	// Move the cursor down to the next line
+	fprintf(pOutput, "\n");
+
 } // END PrintDivider
 
 
@@ -123,7 +68,7 @@ void PrintDivider(FILE* pOutput, char symbol, int numberOf, int option)
 //    (lengthToCenterAcross + the string length) / 2
 //
 //-----------------------------------------------------------------------------
-void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross, int option)
+void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross)
 {
 	// Capture how long the string is
 	// Cast to an integer because strlen technically returns size_t
@@ -138,43 +83,19 @@ void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross, int op
 	// Initialize LCV (Loop Control Variable) to 0
 	int counter = 0;
 
-	switch (option)
+	// Print the spaces needed to center the string
+	while (counter < numberOfBlankSpaces)
 	{
-		case 0:
-			// Print the spaces needed to center the string
-			while (counter < numberOfBlankSpaces)
-			{
-				// Print one space
-				fprintf(pOutput, " ");
+		// Print one space
+		fprintf(pOutput, " ");
 
-				// Increment counter
-				counter++;
-			}
-
-			// Print the string
-			fprintf(pOutput, "%s\n", string);
-
-			break;
-			
-		case 1:
-			// Print the spaces needed to center the string
-			while (counter < numberOfBlankSpaces)
-			{
-				// Print one space
-				printf(" ");
-
-				// Increment counter
-				counter++;
-			}
-
-			// Print the string
-			printf("%s\n", string);
-
-			break;
-
-		default:
-			break;
+		// Increment counter
+		counter++;
 	}
+
+	// Print the string
+	fprintf(pOutput, "%s\n", string);
+
 } // END CenterString
 
 //-----------------------------------------------------------------------------
@@ -221,18 +142,18 @@ void CloseFile(FILE** file)
 //  file and will recursively print the pattern from 1 until the set number is reached
 //  The program also includes an option to choose between printing to an output file or printing to the screen
 //-----------------------------------------------------------------------------
-void StarPattern(FILE * pFout, int number, int counter, int option) 
+void StarPattern(FILE * pFout, int number, int counter) 
 { 
 	if (number == 0)
 	{
 		return;
 	}
 
-	PrintDivider(pFout, STAR, counter, option);
+	PrintDivider(pFout, STAR, counter);
 
 	if (number > 1)
 	{
-		StarPattern(pFout, number - 1, counter + 1, option);
+		StarPattern(pFout, number - 1, counter + 1);
 	}
 
 } // END StarPatternFile
@@ -262,53 +183,25 @@ void FillArrayWithRandomNumbers(int intArray[], int maximum, int number)
 // 
 //  The double pointer uses ** in the parameters.
 //-----------------------------------------------------------------------------
-void PrintArray(FILE * pFout, const int intArray[], int arrayCounter, int option)
+void PrintArray(FILE * pFout, const int intArray[], int arrayCounter)
 {
-	switch (option)
+	fprintf(pFout, "\n");
+
+	for (int index = 0; index < arrayCounter; index++)
 	{
-		case 0:
+		// Print one integer to the screen in a width of 5 and right justified
+		fprintf(pFout, "%5d", intArray[index]);
+
+		// Check to see if 2 integers have been printed
+		if ((index + 1) % 2 == 0)
+		{
+			// Move the cursor down to the next line and print row number
 			fprintf(pFout, "\n");
-
-			for (int index = 0; index < arrayCounter; index++)
-			{
-				// Print one integer to the screen in a width of 5 and right justified
-				fprintf(pFout, "%5d", intArray[index]);
-
-				// Check to see if 2 integers have been printed
-				if ((index + 1) % 2 == 0)
-				{
-					// Move the cursor down to the next line and print row number
-					fprintf(pFout, "\n");
-				}
-			}
-
-			// Move the cursor down two lines
-			fprintf(pFout, "\n");
-			break;
-
-		case 1:		
-			printf("\n");
-
-			for (int index = 0; index < arrayCounter; index++)
-			{
-				// Print one integer to the screen in a width of 5 and right justified
-				printf("%5d", intArray[index]);
-
-				// Check to see if 2 integers have been printed
-				if ((index + 1) % 2 == 0)
-				{
-					// Move the cursor down to the next line and print row number
-					printf("\n");
-				}
-			}
-
-			// Move the cursor down two lines
-			printf("\n");
-			break;
-
-		default:
-			break;
+		}
 	}
+
+	// Move the cursor down two lines
+	fprintf(pFout, "\n");
 
 } // END PrintArray
 
@@ -329,7 +222,7 @@ int SumArray(int intArray[], int counter, int size)
 // the user selects whether to print to an output file or to the terminal
 //
 //-----------------------------------------------------------------------------
-void PrintDigits(FILE* pFout, int number, int option)
+void PrintDigits(FILE* pFout, int number)
 {
 
 	if (number <= 0)
@@ -337,19 +230,10 @@ void PrintDigits(FILE* pFout, int number, int option)
 		return;
 	}
 
-	PrintDigits(pFout, number / 10, option);
-	
-	switch (option)
-	{
-		case 0:
-			fprintf(pFout, "%d", number % 10);
-			break;
-		case 1:
-			printf("%d", number % 10);
-			break;
-		default:
-			break;
-	}
+	PrintDigits(pFout, number / 10);
+
+	fprintf(pFout, "%d", number % 10);
+
 } // END PrintDigits
 
 //-----------------------------------------------------------------------------
