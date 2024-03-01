@@ -57,8 +57,7 @@ int main(void)
 
 	/* START PART A */
 	
-	// option 0 prints to output file, option 1 prints to screen
-	// applies to PrintHeader, PrintDivider, CenterString, etc.
+	// print to screen using printf(stdout, "blah");
 	PrintHeader(pFout);
 	fprintf(pFout, "\n");
 
@@ -71,12 +70,11 @@ int main(void)
 	fprintf(pFout, "\t\t\tStar Pattern - Printed to output file\n");
 	PrintDivider(pFout, STAR, SCREEN_WIDTH);
 	fprintf(pFout, "\n");
-	// print 12 lines to output file using option 0
+	// print 12 lines to output file
 	StarPattern(pFout, 12, 1);
 	fprintf(pFout, "\n");
 	PrintDivider(pFout, STAR, SCREEN_WIDTH);
 
-	// option 1 prints to screen
 	PrintHeader(stdout);
 
 	// Print star pattern to screen
@@ -86,7 +84,6 @@ int main(void)
 	printf("\n\t\t\tStar Pattern - Printed to screen\n");
 	PrintDivider(stdout, STAR, SCREEN_WIDTH);
 	printf("\n");
-	// print 15 lines to screen using option 1
 	StarPattern(stdout, 15, 1);
 	printf("\n");
 	PrintDivider(stdout, STAR, SCREEN_WIDTH);
