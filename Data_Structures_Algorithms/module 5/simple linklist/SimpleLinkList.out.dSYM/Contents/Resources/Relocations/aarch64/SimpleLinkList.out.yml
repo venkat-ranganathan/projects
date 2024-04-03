@@ -1,0 +1,18 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/venka/Documents/projects/Data_Structures_Algorithms/module 5/simple linklist/SimpleLinkList.out'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003854, symSize: 0x148 }
+  - { offsetInCU: 0x9B, offset: 0x9B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003854, symSize: 0x148 }
+  - { offsetInCU: 0xC3, offset: 0xC3, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x148, symBinAddr: 0x10000399C, symSize: 0x8C }
+  - { offsetInCU: 0xE7, offset: 0xE7, size: 0x8, addend: 0x0, symName: _CreateList, symObjAddr: 0x1D4, symBinAddr: 0x100003A28, symSize: 0x98 }
+  - { offsetInCU: 0x127, offset: 0x127, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x26C, symBinAddr: 0x100003AC0, symSize: 0xBC }
+  - { offsetInCU: 0x1AD, offset: 0x1AD, size: 0x8, addend: 0x0, symName: _IsEmpty, symObjAddr: 0x328, symBinAddr: 0x100003B7C, symSize: 0x20 }
+  - { offsetInCU: 0x1D5, offset: 0x1D5, size: 0x8, addend: 0x0, symName: _PrintList_WithRecursion_EndOfListFirst, symObjAddr: 0x348, symBinAddr: 0x100003B9C, symSize: 0x80 }
+  - { offsetInCU: 0x1FB, offset: 0x1FB, size: 0x8, addend: 0x0, symName: _FreeTheList, symObjAddr: 0x3C8, symBinAddr: 0x100003C1C, symSize: 0x64 }
+  - { offsetInCU: 0x230, offset: 0x230, size: 0x8, addend: 0x0, symName: _PrintList_WithoutRecursion, symObjAddr: 0x42C, symBinAddr: 0x100003C80, symSize: 0x6C }
+  - { offsetInCU: 0x265, offset: 0x265, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x498, symBinAddr: 0x100003CEC, symSize: 0x88 }
+  - { offsetInCU: 0x2C1, offset: 0x2C1, size: 0x8, addend: 0x0, symName: _InitializeNode, symObjAddr: 0x520, symBinAddr: 0x100003D74, symSize: 0x28 }
+  - { offsetInCU: 0x2F6, offset: 0x2F6, size: 0x8, addend: 0x0, symName: _InsertNewNode, symObjAddr: 0x548, symBinAddr: 0x100003D9C, symSize: 0x30 }
+  - { offsetInCU: 0x32B, offset: 0x32B, size: 0x8, addend: 0x0, symName: _PrintList_WithRecursion_BeginningOfListFirst, symObjAddr: 0x578, symBinAddr: 0x100003DCC, symSize: 0x80 }
+...

@@ -19,16 +19,16 @@ typedef struct
 {
 	int number;
 	
-} recordType; 
+} recordType; // where data will be stored inside linkList
 
 // Declare a node
 typedef struct dataType
 {
 	recordType record;
 
-	struct dataType * pNext;
+	struct dataType * pNext; // pointer to another node
 
-} linkList;
+} linkList; // linkList is the same as calling struct dataType
 
 #define SCREEN_WIDTH 120
 #define STAR '*'

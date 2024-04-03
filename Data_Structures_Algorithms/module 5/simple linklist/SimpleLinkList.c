@@ -45,7 +45,8 @@ int main(void)
 
 	// Create a pointer for our linked list
 	// Assign the pointer to NULL
-	linkList* pFirst = NULL;
+	linkList* pFirst = NULL; // pFirst will always point to the first node
+	// always intialize pointer to NULL
 
 	// stdout will be pass in as the file stream, this will print to the screen
 	PrintHeader(stdout);
@@ -239,7 +240,7 @@ void CreateList(linkList** pFirst)
 
 			// A double pointer is not needed here becuase we are not changing the address. 
 			// Instead, we are changeing the values pointed to by the address. 
-			InitializeNode(pTemp, input);
+			InitializeNode(pTemp, input); // only need double pointer when you want to change address
 			
 			InsertNewNode(pFirst, pTemp);
 		}
@@ -262,8 +263,8 @@ void CreateList(linkList** pFirst)
 void InitializeNode(linkList* pTemp, int input)
 {
 	// Assign members of the new node
-	pTemp->record.number = input;
-	pTemp->pNext = NULL;
+	pTemp->record.number = input; // set number equal to input
+	pTemp->pNext = NULL; // set next pointer to NULL
 }
 
 
@@ -296,7 +297,7 @@ void InsertNewNode(linkList** pFirst, linkList* pTemp)
 	//----------------------------------------------------------- 
 
 	// Assign the next pointer to the beggining of the list
-	pTemp->pNext = *pFirst;
+	pTemp->pNext = *pFirst; // de-reference pFirst bc it's a double pointer
 
 	//----------------------------------------------------------- 
     // pTemp->pNext points to the front of the list
@@ -384,7 +385,7 @@ void PrintList_WithoutRecursion(linkList* pFirst)
 	while (pTemp != NULL)
 	{
 		// Print the number of the current number
-		printf("%5d", pTemp->record.number);
+		printf("%5d", pTemp->record.number); // %5d means right-justified 5 spaces
 
 		// Move pointer to the next number in the list
 		pTemp = pTemp->pNext;
