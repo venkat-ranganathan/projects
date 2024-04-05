@@ -1,0 +1,1 @@
+1) PrintStats() doesn't overwrite data, prints on new line

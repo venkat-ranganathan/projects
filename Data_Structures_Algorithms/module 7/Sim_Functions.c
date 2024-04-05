@@ -52,7 +52,7 @@ int CreateNewCustomer(FILE * pDebug, nodeType ** pOnePerson, dataType * pData)
 	if (((double)(clock() - pData->countDownToNewCustomer) / CLOCKS_PER_SEC) >= 
 		pData->timeToNextCustomer)
 	{
-		// This will be true a % of the time
+		// This will be true a % of the time; rand number between 0 - 99
 		if ((rand() % 100) < pData->percentageToCreateNewCustomer)
 		{
 			// Create a new node
@@ -143,17 +143,7 @@ void ProcessNewCustomer(FILE* pDebug, FILE* pOutput, queueType * pLineA, queueTy
 }
 
 
-//-----------------------------------------------------------------------------
-// Function Name: QueueIsEmpty
-// Description:
-//   Returns true if the queue is empty, otherwise it returns false
-//
-//-----------------------------------------------------------------------------
-int QueueIsEmpty(queueType line)
-{
-	// Check to see if the rear pointer is NULL
-	return line.pFront == NULL;
-}
+
 
 //-----------------------------------------------------------------------------
 // Function Name: ProcessCustomerAtFront
@@ -174,7 +164,7 @@ void ProcessCustomerAtFront(FILE* pDebug, FILE* pOutput, queueType * pLineA, que
 	}
 
 	// Check to see if at least one person is in line B
-	if (!QueueIsEmpty(*pLineA))
+	if (!QueueIsEmpty(*pLineB))
 	{
 		Dequeue(pDebug, pOutput, &pData->numberInQueueB, pLineB, pData);
 	}
@@ -246,6 +236,32 @@ void CreateNode(FILE * pDebug, nodeType** pTemp, int id)
 	fprintf(pDebug, "Person ID: %d\n", (*pTemp)->person.personID);
 	fprintf(pDebug, "Time to process %lf\n\n", (*pTemp)->person.timeNeededToProcess);
 #endif
+}
+
+//-----------------------------------------------------------------------------
+// Function Name: InitializeQueue
+// Description:
+//   Initialize queue pointers
+//
+//-----------------------------------------------------------------------------
+void InitializeQueue(queueType * queue)
+{
+	// Initialize both pointers to NULL
+	queue->pFront = NULL;
+	queue->pRear = NULL;
+
+}
+
+//-----------------------------------------------------------------------------
+// Function Name: QueueIsEmpty
+// Description:
+//   Returns true if the queue is empty, otherwise it returns false
+//
+//-----------------------------------------------------------------------------
+int QueueIsEmpty(queueType line)
+{
+	// Check to see if the rear pointer is NULL
+	return line.pFront == NULL;
 }
 
 
@@ -438,6 +454,7 @@ void PrintStats(dataType data, double secondsRemaining)
 
 	// Print one line of data to the screen
 	// Use \r to return the cursor to the beginning of the line
+	// doesn't overwrite line, keeps printing to new line
 	printf("\r\t|%5d     |%7d    |%7d    |%7d    |%7d    |%6.2lfs  |%6.2lfs  |    | %0.2lfs  |",
 		data.numberInQueueA,
 		data.numberInQueueB,
@@ -448,6 +465,13 @@ void PrintStats(dataType data, double secondsRemaining)
 		averageTimeInLine,
 		secondsRemaining
 	);
+}
+
+// correctly overwrites previous data, print statement between PrintStats & PrintRemainingCustomers uses same format "\r", but different behavior, why?
+void PrintRemainingCustomers(dataType data)
+{
+	printf("\r\tPROCESSING REMAINING CUSTOMERS\t Line A: %d customers \t Line B: %d customers",
+	data.numberInQueueA, data.numberInQueueB);
 }
 
 
@@ -472,6 +496,17 @@ void FreeList(queueType* pLine)
 		// Delete pTemp
 		free(pTemp);
 
+	}
+
+}
+
+void ClearFile(FILE* pOutput)
+{
+	rewind(pOutput);
+
+	for (int counter = 0; counter < 200; counter++)
+	{
+		fwrite("Data Deleted\n", 1, 13, pOutput);
 	}
 
 }

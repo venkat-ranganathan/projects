@@ -19,7 +19,7 @@
 |
 |   Debugging Information: 
 |   -----------------------
-|    Look at the top of Simulation.h and you will find a macro called DEBUG. 
+|    Look at the top of Simulation.c and you will find a macro called DEBUG. 
 |   If this macro is uncommented, debug information will be printed to DebuggingData.txt. 
 |   If this macro is left commented out, no information will be printed to the file. 
 |
@@ -139,17 +139,10 @@
 
 int main(void)
 {
+	// Create two queues
 	queueType LineA;
 	queueType LineB;
-	
-	// Initialize pointers for line A
-	LineA.pFront = NULL;
-	LineA.pRear = NULL;
-	
-	// Initialize pointers for line B
-	LineB.pFront = NULL;
-	LineB.pRear = NULL;
-	
+
 	// Initialize pointers for a new customer
 	nodeType* pOnePerson = NULL;
 
@@ -162,12 +155,16 @@ int main(void)
 	clock_t startTime = clock();
 
 	FILE * pOutput;
-	FILE * pDebug;
+	FILE * pDebug = NULL;
 
+	int goodRatio;
 
 	PrintHeader();
 
 	OpenDataFile(&pOutput, &pDebug);
+
+	InitializeQueue(&LineA);
+	InitializeQueue(&LineB);
 
 	PrintColumnHeading();
 
@@ -192,6 +189,74 @@ int main(void)
 
 	// Move the cursor down two lines
 	printf("\n\n");
+	
+	//
+	// Process out the remaining customers who are in line
+	//
+	
+	while(!QueueIsEmpty(LineA) || !QueueIsEmpty(LineB))
+	{
+		ProcessCustomerAtFront(pDebug, pOutput, &LineA, &LineB, &data);
+		
+		PrintRemainingCustomers(data);
+	}
+	
+	// Move the cursor down two lines
+	printf("\n\n");
+	
+	//
+	// Determine if data file is good and print the results to the screen
+	//
+	
+	PrintDivider(STAR, SCREEN_WIDTH);
+
+	// Move the cursor down to the next line
+	printf("\n");
+
+	// Calculate good ratio variable
+	goodRatio = data.numberOfCustomersServed > ((data.numberOfCustomersServed + data.numberOfAngryCustomers) / 2);
+	
+	// Print data to the screen
+	CenterString(" * * Angry Customers must be less than 1/2 of all the customers * *", 100);
+	CenterString(" * * Must have at least 100 happy customers * *", 100);
+	CenterString(" * * Must have at least 20 angry customers * *", 100);
+
+	printf("\n");
+
+	printf("Total Customers: %d\n", data.numberOfCustomersServed + data.numberOfAngryCustomers);
+	printf("Happy Customers: %d\n", data.numberOfCustomersServed);
+	printf("Angry Customers: %d\n\n", data.numberOfAngryCustomers);
+	
+	printf("Status of Data File Requirements:\n");
+
+	printf("Ratio of angry customers to total customers: ");
+	(goodRatio) ? printf("GOOD\n") : printf("NO GOOD\n");
+
+	printf("Minimum of 100 Happy Customer require is: ");
+	(data.numberOfCustomersServed >= 100) ? printf("GOOD\n") : printf("NO GOOD\n");
+
+	printf("Minimum of 20 Angry Customers is: ");
+	(data.numberOfAngryCustomers >= 20) ? printf("GOOD\n\n") : printf("NO GOOD\n\n");
+
+	
+	if (data.numberOfCustomersServed >= 100 &&  data.numberOfAngryCustomers >= 20 && goodRatio)
+	{
+		// Print message is good message
+		printf("Your data file is GOOD for lab 7!\n\n");
+	}
+	else
+	{
+		// Print message is bad message
+		printf("Your data file does not meet the requirements for lab 7.\n");
+		printf("Keep playing with the inputs in the Inputs.h file\n\n");
+
+		ClearFile(pOutput);
+	}
+
+	PrintDivider(STAR, SCREEN_WIDTH);
+	
+	// Move the cursor down to the next line
+	printf("\n");
 
 #ifdef DEBUG
 	fprintf(pDebug, "END OF FRAME DATA:\n");
@@ -201,20 +266,25 @@ int main(void)
 	fprintf(pDebug, "Number of customers served: %d\n\n", data.numberOfCustomersServed);
 #endif
 
-	FreeList(&LineA);
-	FreeList(&LineB);
-
+	// Check to see if line A is empty
 	if (QueueIsEmpty(LineA))
 	{
+		// Print message to the screen
 		printf("Line A is free\n");
 	}
 
+	// Check to see if line B is empty
 	if (QueueIsEmpty(LineB))
 	{
+		// Print message to the screen
 		printf("Line B is free\n");
 	}
 
-	CloseFiles(&pDebug, &pOutput);
+    CloseFile(&pOutput);
+	
+#ifdef DEBUG
+	CloseFile(&pDebug);
+#endif
 
 	return 0;
 }

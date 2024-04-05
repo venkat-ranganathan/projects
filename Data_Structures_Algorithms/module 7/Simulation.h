@@ -121,10 +121,12 @@ void PrintDivider(char symbol, int numberOf);
 void CenterString(char string[], int lengthToCenterAcross);
 
 void OpenDataFile(FILE** pOutputLog, FILE** pDebugLog);
-void CloseFiles(FILE** pDebug, FILE** pLog);
+void CloseFile(FILE** pFile);
+void ClearFile(FILE* pOutput);
 
 void PrintColumnHeading(void);
 void PrintStats(dataType data, double secondsRemaining);
+void PrintRemainingCustomers(dataType data);
 
 int CreateNewCustomer(FILE* pDebug, nodeType** pOnePerson, dataType* pData);
 
@@ -136,6 +138,7 @@ void ProcessNewCustomer(FILE* pDebug, FILE* pLog, queueType * pLineA, queueType 
 void InitializeData(dataType* pData);
 void CreateNode(FILE* pDebug, nodeType** pTemp, int id);
 
+void InitializeQueue(queueType* queue);
 void Enqueue(FILE* pDebug, queueType * Line, nodeType* newPerson);
 void Dequeue(FILE* pDebug, FILE* pLog, int* pNumberInline, queueType * pLine, dataType* pData);
 int QueueIsEmpty(queueType line);

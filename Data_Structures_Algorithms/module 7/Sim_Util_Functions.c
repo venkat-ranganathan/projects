@@ -103,20 +103,25 @@ void CenterString(char string[], int lengthToCenterAcross)
 void OpenDataFile(FILE** pOutputLog, FILE** pDebugLog)
 {
 	// Open Output File 
-	*pOutputLog = fopen("SimulationOutput.txt", "w");
+	*pOutputLog = fopen("SimulationOutput.txt", "w+");
+
+#ifdef DEBUG
 	*pDebugLog = fopen("DebuggingData.txt", "w");
+#endif
 }
 
 
 //-----------------------------------------------------------------------------
 // Function Name: CloseFiles
 // Description:
-//    Close both files 
+//    Close data file
 //
 //-----------------------------------------------------------------------------
-void CloseFiles(FILE** pDebug, FILE** pLog)
+void CloseFile(FILE ** pFile)
 {
-	// Close both output files 
-	fclose(*pDebug);
-	fclose(*pLog);
+	if (pFile != NULL)
+	{
+		// Close file 
+		fclose(*pFile);
+	}
 }
