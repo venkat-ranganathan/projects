@@ -1,10 +1,10 @@
-New percentage created: 60
+New percentage created: 35
 
 New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 1
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 1 has been created
 Customer 1 just went straight to checkout.
@@ -13,7 +13,7 @@ Customer ID 1 has entered line 1
 
 NEW NODE DATA
 Person ID: 2
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 2 has been created
 Customer 2 just went straight to checkout.
@@ -25,7 +25,7 @@ Person ID: 3
 Time to process 1.100000
 
 Customer ID 3 has been created
-Customer 3 just went to the back of the line.
+Customer 3 just went straight to checkout.
 
 Customer ID 3 has entered line 1
 
@@ -36,16 +36,11 @@ Time to process 1.100000
 Customer ID 4 has been created
 Customer 4 just went to the back of the line.
 
-Customer ID 4 has entered line 2
-
-Customer ID 2 just checked out
-Start time to be processed: 1166916
-Time entered line:          0
-Time needed to process      0.100000
+Customer ID 4 has entered line 1
 
 NEW NODE DATA
 Person ID: 5
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 5 has been created
 Customer 5 just went to the back of the line.
@@ -61,6 +56,10 @@ Customer 6 just went to the back of the line.
 
 Customer ID 6 has entered line 1
 
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
 NEW NODE DATA
 Person ID: 7
 Time to process 1.100000
@@ -72,7 +71,7 @@ Customer ID 7 has entered line 2
 
 NEW NODE DATA
 Person ID: 8
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 8 has been created
 Customer 8 just went to the back of the line.
@@ -88,6 +87,11 @@ Customer 9 just went to the back of the line.
 
 Customer ID 9 has entered line 2
 
+Customer ID 2 just checked out
+Start time to be processed: 1087257
+Time entered line:          0
+Time needed to process      1.100000
+
 NEW NODE DATA
 Person ID: 10
 Time to process 0.100000
@@ -95,34 +99,48 @@ Time to process 0.100000
 Customer ID 10 has been created
 Customer 10 just went to the back of the line.
 
-Customer ID 10 has entered line 1
+Customer ID 10 has entered line 2
 
 NEW NODE DATA
 Person ID: 11
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 11 has been created
 Customer 11 just went to the back of the line.
 
-Customer ID 11 has entered line 2
+Customer ID 11 has entered line 1
 
 NEW NODE DATA
 Person ID: 12
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 12 has been created
 Customer 12 just went to the back of the line.
 
-Customer ID 12 has entered line 1
+Customer ID 12 has entered line 2
+
+Customer ID 3 just checked out
+Start time to be processed: 1447278
+Time entered line:          0
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 13
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 13 has been created
 Customer 13 just went to the back of the line.
 
-Customer ID 13 has entered line 2
+Customer ID 13 has entered line 1
+
+Customer ID 5 just checked out
+Start time to be processed: 2187260
+Time entered line:          1607297
+Time needed to process      1.100000
 
 NEW NODE DATA
 Person ID: 14
@@ -131,20 +149,16 @@ Time to process 1.100000
 Customer ID 14 has been created
 Customer 14 just went to the back of the line.
 
-Customer ID 14 has entered line 1
+Customer ID 14 has entered line 2
 
 NEW NODE DATA
 Person ID: 15
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 15 has been created
 Customer 15 just went to the back of the line.
 
-Customer ID 15 has entered line 2
-
-New percentage created: 60
-
-New count down to new possible customer: 0.040000
+Customer ID 15 has entered line 1
 
 NEW NODE DATA
 Person ID: 16
@@ -153,16 +167,16 @@ Time to process 0.100000
 Customer ID 16 has been created
 Customer 16 just went to the back of the line.
 
-Customer ID 16 has entered line 1
+Customer ID 16 has entered line 2
 
 NEW NODE DATA
 Person ID: 17
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 17 has been created
 Customer 17 just went to the back of the line.
 
-Customer ID 17 has entered line 2
+Customer ID 17 has entered line 1
 
 NEW NODE DATA
 Person ID: 18
@@ -171,21 +185,21 @@ Time to process 1.100000
 Customer ID 18 has been created
 Customer 18 just went to the back of the line.
 
-Customer ID 18 has entered line 1
+Customer ID 18 has entered line 2
+
+Customer ID 4 just checked out
+Start time to be processed: 2547284
+Time entered line:          1527284
+Time needed to process      1.100000
 
 NEW NODE DATA
 Person ID: 19
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 19 has been created
 Customer 19 just went to the back of the line.
 
-Customer ID 19 has entered line 2
-
-Customer ID 1 just checked out
-Start time to be processed: 1046908
-Time entered line:          0
-Time needed to process      1.100000
+Customer ID 19 has entered line 1
 
 NEW NODE DATA
 Person ID: 20
@@ -198,30 +212,29 @@ Customer ID 20 has entered line 1
 
 NEW NODE DATA
 Person ID: 21
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 21 has been created
 Customer 21 just went to the back of the line.
 
-Customer ID 21 has entered line 1
+Customer ID 21 has entered line 2
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 22
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 22 has been created
 Customer 22 just went to the back of the line.
 
-Customer ID 22 has entered line 2
-
-Customer ID 4 just checked out
-Start time to be processed: 1266935
-Time entered line:          1246925
-Time needed to process      1.100000
+Customer ID 22 has entered line 1
 
 NEW NODE DATA
 Person ID: 23
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 23 has been created
 Customer 23 just went to the back of the line.
@@ -230,17 +243,12 @@ Customer ID 23 has entered line 2
 
 NEW NODE DATA
 Person ID: 24
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 24 has been created
 Customer 24 just went to the back of the line.
 
 Customer ID 24 has entered line 1
-
-Customer ID 5 just checked out
-Start time to be processed: 2366942
-Time entered line:          1326930
-Time needed to process      0.100000
 
 NEW NODE DATA
 Person ID: 25
@@ -258,7 +266,12 @@ Time to process 1.100000
 Customer ID 26 has been created
 Customer 26 just went to the back of the line.
 
-Customer ID 26 has entered line 2
+Customer ID 26 has entered line 1
+
+Customer ID 7 just checked out
+Start time to be processed: 3287266
+Time entered line:          2087330
+Time needed to process      1.100000
 
 NEW NODE DATA
 Person ID: 27
@@ -267,25 +280,35 @@ Time to process 1.100000
 Customer ID 27 has been created
 Customer 27 just went to the back of the line.
 
-Customer ID 27 has entered line 1
+Customer ID 27 has entered line 2
 
 NEW NODE DATA
 Person ID: 28
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 28 has been created
 Customer 28 just went to the back of the line.
 
 Customer ID 28 has entered line 2
 
+Customer ID 6 just checked out
+Start time to be processed: 3647286
+Time entered line:          1727308
+Time needed to process      1.100000
+
 NEW NODE DATA
 Person ID: 29
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 29 has been created
 Customer 29 just went to the back of the line.
 
 Customer ID 29 has entered line 1
+
+Customer ID 8 just checked out
+Start time to be processed: 4747291
+Time entered line:          2127335
+Time needed to process      0.100000
 
 NEW NODE DATA
 Person ID: 30
@@ -294,16 +317,25 @@ Time to process 1.100000
 Customer ID 30 has been created
 Customer 30 just went to the back of the line.
 
-Customer ID 30 has entered line 2
+Customer ID 30 has entered line 1
+
+Customer ID 11 just checked out
+Start time to be processed: 4847295
+Time entered line:          2487353
+Time needed to process      0.100000
 
 NEW NODE DATA
 Person ID: 31
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 31 has been created
 Customer 31 just went to the back of the line.
 
 Customer ID 31 has entered line 1
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 32
@@ -312,7 +344,7 @@ Time to process 1.100000
 Customer ID 32 has been created
 Customer 32 just went to the back of the line.
 
-Customer ID 32 has entered line 2
+Customer ID 32 has entered line 1
 
 NEW NODE DATA
 Person ID: 33
@@ -321,25 +353,7 @@ Time to process 0.100000
 Customer ID 33 has been created
 Customer 33 just went to the back of the line.
 
-Customer ID 33 has entered line 1
-
-New percentage created: 60
-
-New count down to new possible customer: 1.040000
-
-Customer ID 3 just checked out
-Start time to be processed: 2146911
-Time entered line:          1206917
-Time needed to process      1.100000
-
-Customer ID 7 just checked out
-Start time to be processed: 2466947
-Time entered line:          1526939
-Time needed to process      1.100000
-
-New percentage created: 60
-
-New count down to new possible customer: 0.040000
+Customer ID 33 has entered line 2
 
 NEW NODE DATA
 Person ID: 34
@@ -348,16 +362,26 @@ Time to process 1.100000
 Customer ID 34 has been created
 Customer 34 just went to the back of the line.
 
-Customer ID 34 has entered line 2
+Customer ID 34 has entered line 1
+
+Customer ID 9 just checked out
+Start time to be processed: 4387271
+Time entered line:          2167336
+Time needed to process      1.100000
+
+Customer ID 10 just checked out
+Start time to be processed: 5487277
+Time entered line:          2367344
+Time needed to process      0.100000
 
 NEW NODE DATA
 Person ID: 35
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 35 has been created
 Customer 35 just went to the back of the line.
 
-Customer ID 35 has entered line 1
+Customer ID 35 has entered line 2
 
 NEW NODE DATA
 Person ID: 36
@@ -370,12 +394,12 @@ Customer ID 36 has entered line 2
 
 NEW NODE DATA
 Person ID: 37
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 37 has been created
 Customer 37 just went to the back of the line.
 
-Customer ID 37 has entered line 1
+Customer ID 37 has entered line 2
 
 NEW NODE DATA
 Person ID: 38
@@ -384,7 +408,11 @@ Time to process 1.100000
 Customer ID 38 has been created
 Customer 38 just went to the back of the line.
 
-Customer ID 38 has entered line 2
+Customer ID 38 has entered line 1
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 39
@@ -393,16 +421,16 @@ Time to process 0.100000
 Customer ID 39 has been created
 Customer 39 just went to the back of the line.
 
-Customer ID 39 has entered line 1
+Customer ID 39 has entered line 2
 
-Customer ID 6 just checked out
-Start time to be processed: 3246916
-Time entered line:          1446937
+Customer ID 13 just checked out
+Start time to be processed: 4947300
+Time entered line:          3207395
 Time needed to process      1.100000
 
 NEW NODE DATA
 Person ID: 40
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 40 has been created
 Customer 40 just went to the back of the line.
@@ -411,12 +439,12 @@ Customer ID 40 has entered line 1
 
 NEW NODE DATA
 Person ID: 41
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 41 has been created
 Customer 41 just went to the back of the line.
 
-Customer ID 41 has entered line 2
+Customer ID 41 has entered line 1
 
 NEW NODE DATA
 Person ID: 42
@@ -425,11 +453,16 @@ Time to process 0.100000
 Customer ID 42 has been created
 Customer 42 just went to the back of the line.
 
-Customer ID 42 has entered line 1
+Customer ID 42 has entered line 2
+
+Customer ID 12 just checked out
+Start time to be processed: 5587291
+Time entered line:          2527362
+Time needed to process      1.100000
 
 NEW NODE DATA
 Person ID: 43
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 43 has been created
 Customer 43 just went to the back of the line.
@@ -438,16 +471,20 @@ Customer ID 43 has entered line 2
 
 NEW NODE DATA
 Person ID: 44
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 44 has been created
 Customer 44 just went to the back of the line.
 
 Customer ID 44 has entered line 1
 
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
 NEW NODE DATA
 Person ID: 45
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 45 has been created
 Customer 45 just went to the back of the line.
@@ -456,16 +493,16 @@ Customer ID 45 has entered line 2
 
 NEW NODE DATA
 Person ID: 46
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 46 has been created
 Customer 46 just went to the back of the line.
 
 Customer ID 46 has entered line 1
 
-Customer ID 9 just checked out
-Start time to be processed: 3566953
-Time entered line:          1686948
+Customer ID 15 just checked out
+Start time to be processed: 6047306
+Time entered line:          3367413
 Time needed to process      1.100000
 
 NEW NODE DATA
@@ -475,36 +512,70 @@ Time to process 0.100000
 Customer ID 47 has been created
 Customer 47 just went to the back of the line.
 
-Customer ID 47 has entered line 2
+Customer ID 47 has entered line 1
+
+Customer ID 17 just checked out
+Start time to be processed: 7147310
+Time entered line:          3527425
+Time needed to process      0.100000
 
 NEW NODE DATA
 Person ID: 48
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 48 has been created
 Customer 48 just went to the back of the line.
 
-Customer ID 48 has entered line 2
+Customer ID 48 has entered line 1
+
+Customer ID 19 just checked out
+Start time to be processed: 7247313
+Time entered line:          3727436
+Time needed to process      0.100000
+
+Customer ID 20 just checked out
+Start time to be processed: 7347317
+Time entered line:          3807437
+Time needed to process      0.100000
 
 NEW NODE DATA
 Person ID: 49
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 49 has been created
-Customer ID 49 has left angry
+Customer 49 just went to the back of the line.
+
+Customer ID 49 has entered line 1
+
 NEW NODE DATA
 Person ID: 50
 Time to process 1.100000
 
 Customer ID 50 has been created
-Customer ID 50 has left angry
+Customer 50 just went to the back of the line.
+
+Customer ID 50 has entered line 1
+
+Customer ID 14 just checked out
+Start time to be processed: 6687297
+Time entered line:          3327407
+Time needed to process      1.100000
+
 NEW NODE DATA
 Person ID: 51
 Time to process 1.100000
 
 Customer ID 51 has been created
-Customer ID 51 has left angry
-New percentage created: 60
+Customer 51 just went to the back of the line.
+
+Customer ID 51 has entered line 2
+
+Customer ID 16 just checked out
+Start time to be processed: 7787303
+Time entered line:          3487421
+Time needed to process      0.100000
+
+New percentage created: 35
 
 New count down to new possible customer: 0.040000
 
@@ -513,40 +584,58 @@ Person ID: 52
 Time to process 0.100000
 
 Customer ID 52 has been created
-Customer ID 52 has left angry
+Customer 52 just went to the back of the line.
+
+Customer ID 52 has entered line 2
+
 NEW NODE DATA
 Person ID: 53
 Time to process 0.100000
 
 Customer ID 53 has been created
-Customer ID 53 has left angry
+Customer 53 just went to the back of the line.
+
+Customer ID 53 has entered line 2
+
 NEW NODE DATA
 Person ID: 54
-Time to process 1.100000
-
-Customer ID 54 has been created
-Customer ID 54 has left angry
-NEW NODE DATA
-Person ID: 55
 Time to process 0.100000
 
+Customer ID 54 has been created
+Customer 54 just went to the back of the line.
+
+Customer ID 54 has entered line 1
+
+NEW NODE DATA
+Person ID: 55
+Time to process 1.100000
+
 Customer ID 55 has been created
-Customer ID 55 has left angry
+Customer 55 just went to the back of the line.
+
+Customer ID 55 has entered line 2
+
 NEW NODE DATA
 Person ID: 56
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 56 has been created
-Customer ID 56 has left angry
+Customer 56 just went to the back of the line.
+
+Customer ID 56 has entered line 1
+
 NEW NODE DATA
 Person ID: 57
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 57 has been created
-Customer ID 57 has left angry
-Customer ID 8 just checked out
-Start time to be processed: 4346923
-Time entered line:          1566940
+Customer 57 just went to the back of the line.
+
+Customer ID 57 has entered line 2
+
+Customer ID 22 just checked out
+Start time to be processed: 7447322
+Time entered line:          4167455
 Time needed to process      1.100000
 
 NEW NODE DATA
@@ -558,95 +647,77 @@ Customer 58 just went to the back of the line.
 
 Customer ID 58 has entered line 1
 
+Customer ID 24 just checked out
+Start time to be processed: 8547328
+Time entered line:          4247465
+Time needed to process      0.100000
+
 NEW NODE DATA
 Person ID: 59
 Time to process 0.100000
 
 Customer ID 59 has been created
-Customer ID 59 has left angry
+Customer 59 just went to the back of the line.
+
+Customer ID 59 has entered line 1
+
 NEW NODE DATA
 Person ID: 60
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 60 has been created
-Customer ID 60 has left angry
-Customer ID 10 just checked out
-Start time to be processed: 5446940
-Time entered line:          1726956
-Time needed to process      0.100000
+Customer 60 just went to the back of the line.
 
-Customer ID 12 just checked out
-Start time to be processed: 5546955
-Time entered line:          1806966
-Time needed to process      0.100000
+Customer ID 60 has entered line 1
+
+Customer ID 18 just checked out
+Start time to be processed: 7887308
+Time entered line:          3607428
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 61
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 61 has been created
 Customer 61 just went to the back of the line.
 
-Customer ID 61 has entered line 1
+Customer ID 61 has entered line 2
 
 NEW NODE DATA
 Person ID: 62
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 62 has been created
 Customer 62 just went to the back of the line.
 
-Customer ID 62 has entered line 1
-
-Customer ID 11 just checked out
-Start time to be processed: 4666960
-Time entered line:          1766957
-Time needed to process      1.100000
+Customer ID 62 has entered line 2
 
 NEW NODE DATA
 Person ID: 63
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 63 has been created
-Customer 63 just went to the back of the line.
-
-Customer ID 63 has entered line 2
-
-Customer ID 13 just checked out
-Start time to be processed: 5766962
-Time entered line:          1846979
-Time needed to process      0.100000
-
-Customer ID 15 just checked out
-Start time to be processed: 5866964
-Time entered line:          1967005
-Time needed to process      0.100000
-
+Customer ID 63 has left angry
 NEW NODE DATA
 Person ID: 64
 Time to process 1.100000
 
 Customer ID 64 has been created
-Customer 64 just went to the back of the line.
-
-Customer ID 64 has entered line 2
-
-New percentage created: 60
-
-New count down to new possible customer: 0.040000
-
+Customer ID 64 has left angry
 NEW NODE DATA
 Person ID: 65
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 65 has been created
-Customer 65 just went to the back of the line.
-
-Customer ID 65 has entered line 2
-
+Customer ID 65 has left angry
 NEW NODE DATA
 Person ID: 66
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 66 has been created
 Customer ID 66 has left angry
@@ -658,31 +729,59 @@ Customer ID 67 has been created
 Customer ID 67 has left angry
 NEW NODE DATA
 Person ID: 68
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 68 has been created
 Customer ID 68 has left angry
+Customer ID 26 just checked out
+Start time to be processed: 8647330
+Time entered line:          4367480
+Time needed to process      1.100000
+
+Customer ID 29 just checked out
+Start time to be processed: 9747337
+Time entered line:          4767512
+Time needed to process      0.100000
+
 NEW NODE DATA
 Person ID: 69
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 69 has been created
-Customer ID 69 has left angry
+Customer 69 just went to the back of the line.
+
+Customer ID 69 has entered line 1
+
 NEW NODE DATA
 Person ID: 70
 Time to process 1.100000
 
 Customer ID 70 has been created
-Customer ID 70 has left angry
+Customer 70 just went to the back of the line.
+
+Customer ID 70 has entered line 1
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+Customer ID 21 just checked out
+Start time to be processed: 8987314
+Time entered line:          3887445
+Time needed to process      1.100000
+
 NEW NODE DATA
 Person ID: 71
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 71 has been created
-Customer ID 71 has left angry
+Customer 71 just went to the back of the line.
+
+Customer ID 71 has entered line 2
+
 NEW NODE DATA
 Person ID: 72
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 72 has been created
 Customer ID 72 has left angry
@@ -694,7 +793,7 @@ Customer ID 73 has been created
 Customer ID 73 has left angry
 NEW NODE DATA
 Person ID: 74
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 74 has been created
 Customer ID 74 has left angry
@@ -718,92 +817,128 @@ Customer ID 77 has been created
 Customer ID 77 has left angry
 NEW NODE DATA
 Person ID: 78
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 78 has been created
 Customer ID 78 has left angry
-Customer ID 14 just checked out
-Start time to be processed: 5646959
-Time entered line:          1926995
-Time needed to process      1.100000
-
 NEW NODE DATA
 Person ID: 79
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 79 has been created
-Customer 79 just went to the back of the line.
-
-Customer ID 79 has entered line 1
+Customer ID 79 has left angry
+Customer ID 30 just checked out
+Start time to be processed: 9847343
+Time entered line:          4847524
+Time needed to process      1.100000
 
 NEW NODE DATA
 Person ID: 80
 Time to process 1.100000
 
 Customer ID 80 has been created
-Customer ID 80 has left angry
-Customer ID 16 just checked out
-Start time to be processed: 6746965
-Time entered line:          2007005
+Customer 80 just went to the back of the line.
+
+Customer ID 80 has entered line 1
+
+New percentage created: 35
+
+New count down to new possible customer: 1.040000
+
+Customer ID 23 just checked out
+Start time to be processed: 10087319
+Time entered line:          4207458
+Time needed to process      1.100000
+
+Customer ID 25 just checked out
+Start time to be processed: 11187324
+Time entered line:          4327474
 Time needed to process      0.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
 
 NEW NODE DATA
 Person ID: 81
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 81 has been created
 Customer 81 just went to the back of the line.
 
-Customer ID 81 has entered line 1
-
-New percentage created: 60
-
-New count down to new possible customer: 0.040000
-
-Customer ID 17 just checked out
-Start time to be processed: 5966971
-Time entered line:          2047008
-Time needed to process      1.100000
+Customer ID 81 has entered line 2
 
 NEW NODE DATA
 Person ID: 82
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 82 has been created
 Customer 82 just went to the back of the line.
 
 Customer ID 82 has entered line 2
 
+Customer ID 31 just checked out
+Start time to be processed: 10947348
+Time entered line:          4967527
+Time needed to process      1.100000
+
 NEW NODE DATA
 Person ID: 83
 Time to process 1.100000
 
 Customer ID 83 has been created
-Customer ID 83 has left angry
+Customer 83 just went to the back of the line.
+
+Customer ID 83 has entered line 1
+
 NEW NODE DATA
 Person ID: 84
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 84 has been created
 Customer ID 84 has left angry
+Customer ID 27 just checked out
+Start time to be processed: 11287329
+Time entered line:          4527490
+Time needed to process      1.100000
+
 NEW NODE DATA
 Person ID: 85
 Time to process 0.100000
 
 Customer ID 85 has been created
-Customer ID 85 has left angry
+Customer 85 just went to the back of the line.
+
+Customer ID 85 has entered line 2
+
+Customer ID 28 just checked out
+Start time to be processed: 12387337
+Time entered line:          4687501
+Time needed to process      0.100000
+
+Customer ID 33 just checked out
+Start time to be processed: 12487344
+Time entered line:          5167554
+Time needed to process      0.100000
+
 NEW NODE DATA
 Person ID: 86
 Time to process 1.100000
 
 Customer ID 86 has been created
-Customer ID 86 has left angry
+Customer 86 just went to the back of the line.
+
+Customer ID 86 has entered line 2
+
 NEW NODE DATA
 Person ID: 87
 Time to process 0.100000
 
 Customer ID 87 has been created
-Customer ID 87 has left angry
+Customer 87 just went to the back of the line.
+
+Customer ID 87 has entered line 2
+
 NEW NODE DATA
 Person ID: 88
 Time to process 0.100000
@@ -812,15 +947,1001 @@ Customer ID 88 has been created
 Customer ID 88 has left angry
 NEW NODE DATA
 Person ID: 89
-Time to process 1.100000
+Time to process 0.100000
 
 Customer ID 89 has been created
 Customer ID 89 has left angry
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
 NEW NODE DATA
 Person ID: 90
-Time to process 0.100000
+Time to process 1.100000
 
 Customer ID 90 has been created
 Customer ID 90 has left angry
+Customer ID 32 just checked out
+Start time to be processed: 12047350
+Time entered line:          5127550
+Time needed to process      1.100000
+
 NEW NODE DATA
-Perso
+Person ID: 91
+Time to process 1.100000
+
+Customer ID 91 has been created
+Customer 91 just went to the back of the line.
+
+Customer ID 91 has entered line 1
+
+NEW NODE DATA
+Person ID: 92
+Time to process 1.100000
+
+Customer ID 92 has been created
+Customer ID 92 has left angry
+NEW NODE DATA
+Person ID: 93
+Time to process 0.100000
+
+Customer ID 93 has been created
+Customer ID 93 has left angry
+NEW NODE DATA
+Person ID: 94
+Time to process 0.100000
+
+Customer ID 94 has been created
+Customer ID 94 has left angry
+NEW NODE DATA
+Person ID: 95
+Time to process 0.100000
+
+Customer ID 95 has been created
+Customer ID 95 has left angry
+Customer ID 35 just checked out
+Start time to be processed: 12587351
+Time entered line:          5687593
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 96
+Time to process 1.100000
+
+Customer ID 96 has been created
+Customer 96 just went to the back of the line.
+
+Customer ID 96 has entered line 2
+
+NEW NODE DATA
+Person ID: 97
+Time to process 1.100000
+
+Customer ID 97 has been created
+Customer ID 97 has left angry
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 98
+Time to process 0.100000
+
+Customer ID 98 has been created
+Customer ID 98 has left angry
+Customer ID 34 just checked out
+Start time to be processed: 13147355
+Time entered line:          5367566
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 99
+Time to process 1.100000
+
+Customer ID 99 has been created
+Customer 99 just went to the back of the line.
+
+Customer ID 99 has entered line 1
+
+NEW NODE DATA
+Person ID: 100
+Time to process 1.100000
+
+Customer ID 100 has been created
+Customer ID 100 has left angry
+Customer ID 36 just checked out
+Start time to be processed: 13687353
+Time entered line:          5727599
+Time needed to process      1.100000
+
+Customer ID 37 just checked out
+Start time to be processed: 14787358
+Time entered line:          5767605
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 101
+Time to process 0.100000
+
+Customer ID 101 has been created
+Customer 101 just went to the back of the line.
+
+Customer ID 101 has entered line 2
+
+Customer ID 39 just checked out
+Start time to be processed: 14887362
+Time entered line:          6007626
+Time needed to process      0.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 102
+Time to process 0.100000
+
+Customer ID 102 has been created
+Customer 102 just went to the back of the line.
+
+Customer ID 102 has entered line 2
+
+Customer ID 42 just checked out
+Start time to be processed: 14987365
+Time entered line:          6487675
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 103
+Time to process 0.100000
+
+Customer ID 103 has been created
+Customer 103 just went to the back of the line.
+
+Customer ID 103 has entered line 2
+
+NEW NODE DATA
+Person ID: 104
+Time to process 0.100000
+
+Customer ID 104 has been created
+Customer 104 just went to the back of the line.
+
+Customer ID 104 has entered line 2
+
+Customer ID 38 just checked out
+Start time to be processed: 14247361
+Time entered line:          5927621
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 105
+Time to process 0.100000
+
+Customer ID 105 has been created
+Customer 105 just went to the back of the line.
+
+Customer ID 105 has entered line 1
+
+Customer ID 40 just checked out
+Start time to be processed: 15347368
+Time entered line:          6087637
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 106
+Time to process 1.100000
+
+Customer ID 106 has been created
+Customer 106 just went to the back of the line.
+
+Customer ID 106 has entered line 1
+
+Customer ID 41 just checked out
+Start time to be processed: 15447372
+Time entered line:          6327654
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 107
+Time to process 1.100000
+
+Customer ID 107 has been created
+Customer 107 just went to the back of the line.
+
+Customer ID 107 has entered line 1
+
+NEW NODE DATA
+Person ID: 108
+Time to process 1.100000
+
+Customer ID 108 has been created
+Customer ID 108 has left angry
+NEW NODE DATA
+Person ID: 109
+Time to process 0.100000
+
+Customer ID 109 has been created
+Customer ID 109 has left angry
+NEW NODE DATA
+Person ID: 110
+Time to process 0.100000
+
+Customer ID 110 has been created
+Customer ID 110 has left angry
+NEW NODE DATA
+Person ID: 111
+Time to process 0.100000
+
+Customer ID 111 has been created
+Customer ID 111 has left angry
+New percentage created: 35
+
+New count down to new possible customer: 1.040000
+
+Customer ID 43 just checked out
+Start time to be processed: 15087372
+Time entered line:          6847693
+Time needed to process      1.100000
+
+Customer ID 45 just checked out
+Start time to be processed: 16187378
+Time entered line:          7007703
+Time needed to process      0.100000
+
+Customer ID 44 just checked out
+Start time to be processed: 15547375
+Time entered line:          6887699
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 112
+Time to process 1.100000
+
+Customer ID 112 has been created
+Customer 112 just went to the back of the line.
+
+Customer ID 112 has entered line 2
+
+NEW NODE DATA
+Person ID: 113
+Time to process 0.100000
+
+Customer ID 113 has been created
+Customer 113 just went to the back of the line.
+
+Customer ID 113 has entered line 1
+
+NEW NODE DATA
+Person ID: 114
+Time to process 0.100000
+
+Customer ID 114 has been created
+Customer 114 just went to the back of the line.
+
+Customer ID 114 has entered line 2
+
+Customer ID 51 just checked out
+Start time to be processed: 16287385
+Time entered line:          7847768
+Time needed to process      1.100000
+
+Customer ID 52 just checked out
+Start time to be processed: 17387391
+Time entered line:          8127780
+Time needed to process      0.100000
+
+Customer ID 53 just checked out
+Start time to be processed: 17487395
+Time entered line:          8167783
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 115
+Time to process 0.100000
+
+Customer ID 115 has been created
+Customer 115 just went to the back of the line.
+
+Customer ID 115 has entered line 2
+
+NEW NODE DATA
+Person ID: 116
+Time to process 1.100000
+
+Customer ID 116 has been created
+Customer 116 just went to the back of the line.
+
+Customer ID 116 has entered line 2
+
+NEW NODE DATA
+Person ID: 117
+Time to process 0.100000
+
+Customer ID 117 has been created
+Customer 117 just went to the back of the line.
+
+Customer ID 117 has entered line 2
+
+Customer ID 46 just checked out
+Start time to be processed: 16647382
+Time entered line:          7047709
+Time needed to process      1.100000
+
+Customer ID 47 just checked out
+Start time to be processed: 17747385
+Time entered line:          7207727
+Time needed to process      0.100000
+
+Customer ID 48 just checked out
+Start time to be processed: 17847386
+Time entered line:          7247729
+Time needed to process      0.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 1.040000
+
+Customer ID 49 just checked out
+Start time to be processed: 17947404
+Time entered line:          7487738
+Time needed to process      0.100000
+
+Customer ID 55 just checked out
+Start time to be processed: 17587398
+Time entered line:          8367831
+Time needed to process      1.100000
+
+Customer ID 57 just checked out
+Start time to be processed: 18687403
+Time entered line:          8447841
+Time needed to process      0.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 118
+Time to process 0.100000
+
+Customer ID 118 has been created
+Customer 118 just went to the back of the line.
+
+Customer ID 118 has entered line 1
+
+NEW NODE DATA
+Person ID: 119
+Time to process 1.100000
+
+Customer ID 119 has been created
+Customer 119 just went to the back of the line.
+
+Customer ID 119 has entered line 1
+
+Customer ID 50 just checked out
+Start time to be processed: 18047410
+Time entered line:          7767754
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 120
+Time to process 0.100000
+
+Customer ID 120 has been created
+Customer 120 just went to the back of the line.
+
+Customer ID 120 has entered line 1
+
+Customer ID 54 just checked out
+Start time to be processed: 19147417
+Time entered line:          8247788
+Time needed to process      0.100000
+
+Customer ID 56 just checked out
+Start time to be processed: 19247419
+Time entered line:          8407839
+Time needed to process      0.100000
+
+Customer ID 58 just checked out
+Start time to be processed: 19347423
+Time entered line:          8567850
+Time needed to process      0.100000
+
+Customer ID 59 just checked out
+Start time to be processed: 19447427
+Time entered line:          8847861
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 121
+Time to process 0.100000
+
+Customer ID 121 has been created
+Customer 121 just went to the back of the line.
+
+Customer ID 121 has entered line 1
+
+Customer ID 61 just checked out
+Start time to be processed: 18787410
+Time entered line:          9007871
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 122
+Time to process 1.100000
+
+Customer ID 122 has been created
+Customer 122 just went to the back of the line.
+
+Customer ID 122 has entered line 1
+
+NEW NODE DATA
+Person ID: 123
+Time to process 1.100000
+
+Customer ID 123 has been created
+Customer 123 just went to the back of the line.
+
+Customer ID 123 has entered line 1
+
+NEW NODE DATA
+Person ID: 124
+Time to process 1.100000
+
+Customer ID 124 has been created
+Customer 124 just went to the back of the line.
+
+Customer ID 124 has entered line 1
+
+NEW NODE DATA
+Person ID: 125
+Time to process 1.100000
+
+Customer ID 125 has been created
+Customer 125 just went to the back of the line.
+
+Customer ID 125 has entered line 2
+
+NEW NODE DATA
+Person ID: 126
+Time to process 1.100000
+
+Customer ID 126 has been created
+Customer 126 just went to the back of the line.
+
+Customer ID 126 has entered line 1
+
+NEW NODE DATA
+Person ID: 127
+Time to process 0.100000
+
+Customer ID 127 has been created
+Customer 127 just went to the back of the line.
+
+Customer ID 127 has entered line 2
+
+Customer ID 60 just checked out
+Start time to be processed: 19547440
+Time entered line:          8967868
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 128
+Time to process 1.100000
+
+Customer ID 128 has been created
+Customer 128 just went to the back of the line.
+
+Customer ID 128 has entered line 1
+
+NEW NODE DATA
+Person ID: 129
+Time to process 0.100000
+
+Customer ID 129 has been created
+Customer 129 just went to the back of the line.
+
+Customer ID 129 has entered line 1
+
+Customer ID 62 just checked out
+Start time to be processed: 19887445
+Time entered line:          9087877
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 130
+Time to process 0.100000
+
+Customer ID 130 has been created
+Customer 130 just went to the back of the line.
+
+Customer ID 130 has entered line 2
+
+NEW NODE DATA
+Person ID: 131
+Time to process 1.100000
+
+Customer ID 131 has been created
+Customer 131 just went to the back of the line.
+
+Customer ID 131 has entered line 2
+
+NEW NODE DATA
+Person ID: 132
+Time to process 1.100000
+
+Customer ID 132 has been created
+Customer ID 132 has left angry
+NEW NODE DATA
+Person ID: 133
+Time to process 1.100000
+
+Customer ID 133 has been created
+Customer ID 133 has left angry
+NEW NODE DATA
+Person ID: 134
+Time to process 0.100000
+
+Customer ID 134 has been created
+Customer ID 134 has left angry
+Customer ID 69 just checked out
+Start time to be processed: 20647446
+Time entered line:          9847938
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+Customer ID 71 just checked out
+Start time to be processed: 20987451
+Time entered line:          10087965
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 135
+Time to process 1.100000
+
+Customer ID 135 has been created
+Customer 135 just went to the back of the line.
+
+Customer ID 135 has entered line 1
+
+NEW NODE DATA
+Person ID: 136
+Time to process 1.100000
+
+Customer ID 136 has been created
+Customer 136 just went to the back of the line.
+
+Customer ID 136 has entered line 2
+
+NEW NODE DATA
+Person ID: 137
+Time to process 0.100000
+
+Customer ID 137 has been created
+Customer ID 137 has left angry
+NEW NODE DATA
+Person ID: 138
+Time to process 1.100000
+
+Customer ID 138 has been created
+Customer ID 138 has left angry
+NEW NODE DATA
+Person ID: 139
+Time to process 0.100000
+
+Customer ID 139 has been created
+Customer ID 139 has left angry
+NEW NODE DATA
+Person ID: 140
+Time to process 1.100000
+
+Customer ID 140 has been created
+Customer ID 140 has left angry
+Customer ID 70 just checked out
+Start time to be processed: 21747453
+Time entered line:          9927949
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 141
+Time to process 0.100000
+
+Customer ID 141 has been created
+Customer 141 just went to the back of the line.
+
+Customer ID 141 has entered line 1
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 142
+Time to process 0.100000
+
+Customer ID 142 has been created
+Customer ID 142 has left angry
+Customer ID 81 just checked out
+Start time to be processed: 22087456
+Time entered line:          12007294
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 143
+Time to process 1.100000
+
+Customer ID 143 has been created
+Customer 143 just went to the back of the line.
+
+Customer ID 143 has entered line 2
+
+Customer ID 82 just checked out
+Start time to be processed: 23187462
+Time entered line:          12047308
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 144
+Time to process 0.100000
+
+Customer ID 144 has been created
+Customer 144 just went to the back of the line.
+
+Customer ID 144 has entered line 2
+
+NEW NODE DATA
+Person ID: 145
+Time to process 1.100000
+
+Customer ID 145 has been created
+Customer ID 145 has left angry
+Customer ID 85 just checked out
+Start time to be processed: 23287469
+Time entered line:          12447340
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 146
+Time to process 1.100000
+
+Customer ID 146 has been created
+Customer 146 just went to the back of the line.
+
+Customer ID 146 has entered line 2
+
+NEW NODE DATA
+Person ID: 147
+Time to process 1.100000
+
+Customer ID 147 has been created
+Customer ID 147 has left angry
+NEW NODE DATA
+Person ID: 148
+Time to process 0.100000
+
+Customer ID 148 has been created
+Customer ID 148 has left angry
+Customer ID 80 just checked out
+Start time to be processed: 22847459
+Time entered line:          10968030
+Time needed to process      1.100000
+
+New percentage created: 35
+
+New count down to new possible customer: 0.040000
+
+NEW NODE DATA
+Person ID: 149
+Time to process 0.100000
+
+Customer ID 149 has been created
+Customer 149 just went to the back of the line.
+
+Customer ID 149 has entered line 1
+
+NEW NODE DATA
+Person ID: 150
+Time to process 0.100000
+
+Customer ID 150 has been created
+Customer ID 150 has left angry
+NEW NODE DATA
+Person ID: 151
+Time to process 1.100000
+
+Customer ID 151 has been created
+Customer ID 151 has left angry
+NEW NODE DATA
+Person ID: 152
+Time to process 0.100000
+
+Customer ID 152 has been created
+Customer ID 152 has left angry
+NEW NODE DATA
+Person ID: 153
+Time to process 1.100000
+
+Customer ID 153 has been created
+Customer ID 153 has left angry
+NEW NODE DATA
+Person ID: 154
+Time to process 0.100000
+
+Customer ID 154 has been created
+Customer ID 154 has left angry
+NEW NODE DATA
+Person ID: 155
+Time to process 0.100000
+
+Customer ID 155 has been created
+Customer ID 155 has left angry
+Customer ID 86 just checked out
+Start time to be processed: 23387472
+Time entered line:          12687370
+Time needed to process      1.100000
+
+NEW NODE DATA
+Person ID: 156
+Time to process 0.100000
+
+Customer ID 156 has been created
+Customer 156 just went to the back of the line.
+
+Customer ID 156 has entered line 2
+
+NEW NODE DATA
+Person ID: 157
+Time to process 1.100000
+
+Customer ID 157 has been created
+Customer ID 157 has left angry
+Customer ID 87 just checked out
+Start time to be processed: 24487474
+Time entered line:          12727370
+Time needed to process      0.100000
+
+NEW NODE DATA
+Person ID: 158
+Time to process 0.100000
+
+Customer ID 158 has been created
+Customer 158 just went to the back of the line.
+
+Customer ID 158 has entered line 2
+
+NEW NODE DATA
+Person ID: 159
+Time to process 0.100000
+
+Customer ID 159 has been created
+Customer ID 159 has left angry
+NEW NODE DATA
+Person ID: 160
+Time to process 0.100000
+
+Customer ID 160 has been created
+Customer ID 160 has left angry
+NEW NODE DATA
+Person ID: 161
+Time to process 0.100000
+
+Customer ID 161 has been created
+Customer ID 161 has left angry
+NEW NODE DATA
+Person ID: 162
+Time to process 0.100000
+
+Customer ID 162 has been created
+Customer ID 162 has left angry
+Customer ID 83 just checked out
+Start time to be processed: 23947466
+Time entered line:          12087311
+Time needed to process      1.100000
+
+Customer ID 96 just checked out
+Start time to be processed: 24587480
+Time entered line:          13687456
+Time needed to process      1.100000
+
+Customer ID 101 just checked out
+Start time to be processed: 25687485
+Time entered line:          14927528
+Time needed to process      0.100000
+
+Customer ID 102 just checked out
+Start time to be processed: 25787490
+Time entered line:          15047532
+Time needed to process      0.100000
+
+Customer ID 103 just checked out
+Start time to be processed: 25887495
+Time entered line:          15127535
+Time needed to process      0.100000
+
+Customer ID 104 just checked out
+Start time to be processed: 25987500
+Time entered line:          15287544
+Time needed to process      0.100000
+
+Customer ID 91 just checked out
+Start time to be processed: 25047468
+Time entered line:          13207396
+Time needed to process      1.100000
+
+Customer ID 112 just checked out
+Start time to be processed: 26087502
+Time entered line:          17127309
+Time needed to process      1.100000
+
+Customer ID 99 just checked out
+Start time to be processed: 26147473
+Time entered line:          14447498
+Time needed to process      1.100000
+
+Customer ID 114 just checked out
+Start time to be processed: 27187522
+Time entered line:          17367328
+Time needed to process      0.100000
+
+Customer ID 105 just checked out
+Start time to be processed: 27247479
+Time entered line:          15407547
+Time needed to process      0.100000
+
+Customer ID 115 just checked out
+Start time to be processed: 27287528
+Time entered line:          17647352
+Time needed to process      0.100000
+
+Customer ID 106 just checked out
+Start time to be processed: 27347484
+Time entered line:          15527551
+Time needed to process      1.100000
+
+Customer ID 116 just checked out
+Start time to be processed: 27387533
+Time entered line:          17687354
+Time needed to process      1.100000
+
+Customer ID 117 just checked out
+Start time to be processed: 28487542
+Time entered line:          17727358
+Time needed to process      0.100000
+
+Customer ID 107 just checked out
+Start time to be processed: 28447506
+Time entered line:          15607556
+Time needed to process      1.100000
+
+Customer ID 113 just checked out
+Start time to be processed: 29547512
+Time entered line:          17207315
+Time needed to process      0.100000
+
+Customer ID 125 just checked out
+Start time to be processed: 28587547
+Time entered line:          20527383
+Time needed to process      1.100000
+
+Customer ID 118 just checked out
+Start time to be processed: 29647517
+Time entered line:          19007305
+Time needed to process      0.100000
+
+Customer ID 127 just checked out
+Start time to be processed: 29687558
+Time entered line:          20607392
+Time needed to process      0.100000
+
+Customer ID 130 just checked out
+Start time to be processed: 29787563
+Time entered line:          21167413
+Time needed to process      0.100000
+
+Customer ID 119 just checked out
+Start time to be processed: 29747522
+Time entered line:          19047309
+Time needed to process      1.100000
+
+Customer ID 120 just checked out
+Start time to be processed: 30847527
+Time entered line:          19207314
+Time needed to process      0.100000
+
+Customer ID 131 just checked out
+Start time to be processed: 29887570
+Time entered line:          21207415
+Time needed to process      1.100000
+
+Customer ID 121 just checked out
+Start time to be processed: 30947533
+Time entered line:          19887341
+Time needed to process      0.100000
+
+Customer ID 136 just checked out
+Start time to be processed: 30987576
+Time entered line:          22207485
+Time needed to process      1.100000
+
+Customer ID 122 just checked out
+Start time to be processed: 31047539
+Time entered line:          20007349
+Time needed to process      1.100000
+
+Customer ID 143 just checked out
+Start time to be processed: 32087582
+Time entered line:          23247565
+Time needed to process      1.100000
+
+Customer ID 123 just checked out
+Start time to be processed: 32147544
+Time entered line:          20207361
+Time needed to process      1.100000
+
+Customer ID 144 just checked out
+Start time to be processed: 33187587
+Time entered line:          23327580
+Time needed to process      0.100000
+
+Customer ID 124 just checked out
+Start time to be processed: 33247549
+Time entered line:          20247363
+Time needed to process      1.100000
+
+Customer ID 146 just checked out
+Start time to be processed: 33287592
+Time entered line:          23407584
+Time needed to process      1.100000
+
+Customer ID 156 just checked out
+Start time to be processed: 34387597
+Time entered line:          24487642
+Time needed to process      0.100000
+
+Customer ID 126 just checked out
+Start time to be processed: 34347554
+Time entered line:          20567388
+Time needed to process      1.100000
+
+Customer ID 128 just checked out
+Start time to be processed: 35447559
+Time entered line:          20687393
+Time needed to process      1.100000
+
+Customer ID 129 just checked out
+Start time to be processed: 36547573
+Time entered line:          20847400
+Time needed to process      0.100000
+
+Customer ID 135 just checked out
+Start time to be processed: 36647595
+Time entered line:          22127484
+Time needed to process      1.100000
+
+Customer ID 141 just checked out
+Start time to be processed: 37747612
+Time entered line:          22847552
+Time needed to process      0.100000
+
+END OF FRAME DATA:
+Number in line 1:           0
+Number in line 2:           0
+Number of angry customers:  51
+Number of customers served: 111
+

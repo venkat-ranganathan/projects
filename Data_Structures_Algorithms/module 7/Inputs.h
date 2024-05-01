@@ -5,7 +5,7 @@
 //-------------------------------------------------------------------------------------------------
 
 // Number of seconds that the simulation will run for 
-#define SECONDS_FOR_PROGRAM_TO_RUN 10.5f
+#define SECONDS_FOR_PROGRAM_TO_RUN 25.0f
 
 // Maximum number of customers in each line
 #define MAX_QUEUE_SIZE 20
@@ -75,7 +75,7 @@
 //
 
 // This is the minimum chance that a customer will be created
-#define MIN_PERCENTAGE_TO_CREATE_CUSTOMER 60
+#define MIN_PERCENTAGE_TO_CREATE_CUSTOMER 35
 
 // This value will be used to calculate the random percentage
 // This value needs to be a whole number
