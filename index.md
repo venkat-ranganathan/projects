@@ -32,6 +32,8 @@ Venkat Ranganathan
 I'll add more details once the semester ends, but here's a project experience video for now:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-anzSoZteY4?si=_LfH062httOYH4Ep" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+<p>&nbsp;</p>
+
 **11/17/23**, New video shows car operating on track & ML GUI at the same time
 
 <p>&nbsp;</p>
