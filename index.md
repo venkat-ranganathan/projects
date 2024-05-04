@@ -14,7 +14,7 @@ Venkat Ranganathan
 
 #### Table of Contents:
 
-- [AI/ML Autonomous RC car operated using NVIDIA Jetson Nano](#nano)
+- [AI/ML Autonomous RC car operated using NVIDIA Jetson Orin Nano](#nano)
 - [Texas Instruments Summer '23 intern, Industrial Networking EtherCAT Project: TI AM62x (microprocessor, RT-Linux), TI AM243x (microcontroller, RTOS)](#EtherCAT)
 - [Metal Detection System using Colpitts Oscillator & FPGA](#MetalDetector)
 - [Synthesizing a Guitar Signal w/ MATLAB - Signals & Systems](#Synthesizing)
