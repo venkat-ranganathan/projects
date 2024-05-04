@@ -25,7 +25,7 @@ Venkat Ranganathan
 
 <p>&nbsp;</p>
 
-## AI/ML Autonomous RC car operated using NVIDIA Jetson Nano {#nano}
+## AI/ML Autonomous RC car operated using NVIDIA Jetson Orin Nano {#nano}
 
 **05/04/25**, Project Complete
 
