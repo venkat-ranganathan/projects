@@ -38,7 +38,7 @@ Project experience video for now:
 
 <p>&nbsp;</p>
 
-Object detection using Jetson-inference with mobilenet-ssd model:
+Object detection using Jetson-inference with mobilenet-ssdv2 model:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Uvp3NqYuJg?si=L8dwYpDO8vhwOr6O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>&nbsp;</p>
