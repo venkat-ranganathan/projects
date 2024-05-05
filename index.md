@@ -31,8 +31,15 @@ Venkat Ranganathan
 
 ECD 407 completed our senior design project and accomplished our required and stretch goals of operating a modified RC car autonomously on a track with variable throttle, and the ability to detect and avoid objects.
 
-I'll add more details once the semester ends, but here's a project experience video for now:
+I'll add more details once the semester ends
+
+Project experience video for now:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-anzSoZteY4?si=_LfH062httOYH4Ep" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>&nbsp;</p>
+
+Object detection using Jetson-inference with mobilenet-ssd model:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-Uvp3NqYuJg?si=L8dwYpDO8vhwOr6O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>&nbsp;</p>
 
