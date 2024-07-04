@@ -168,6 +168,10 @@ System correctly detected 15/15 conductive objects in various combinations of po
 
 <img width="780" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/f73a167b-4d93-4c2b-a12b-a34e08259ab2">
 
+<img width="782" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/d3ef7f62-bca1-411a-9803-9216000314cd">
+
+<img width="782" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/a414be13-b7d2-4cbb-b815-a8e063639cf4">
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-WaQUf2m0IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NohT7cfAe3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
