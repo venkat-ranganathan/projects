@@ -162,6 +162,12 @@ of times metal was detected in each region.
 Team result:
 System correctly detected 15/15 conductive objects in various combinations of position and distance from magnetic coils during demonstration.
 
+<img width="831" alt="full_circuit" src="https://github.com/venkat-ranganathan/projects/assets/96662693/f62e131b-6265-4590-851f-3c9f9b82f0cf">
+
+<img width="778" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/8a678fa8-4948-496b-8a3c-ca73987847bf">
+
+<img width="780" alt="image" src="https://github.com/venkat-ranganathan/projects/assets/96662693/f73a167b-4d93-4c2b-a12b-a34e08259ab2">
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-WaQUf2m0IE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NohT7cfAe3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
