@@ -31,7 +31,18 @@ Venkat Ranganathan
 
 ECD 407 completed our senior design project and accomplished our required and stretch goals of operating a modified RC car autonomously on a track with variable throttle, and the ability to detect and avoid objects.
 
-I'll add more details once the semester ends
+I'll add more details once the semester ends:
+
+Summary of my contribution:
+
+•	Led team of four to implement object detection and object avoidance on autonomous RC car running Linux on NVIDIA Jetson Orin Nano.
+•	Debugged Python errors to get functional RC car. Trained road following and object detection models.
+•	Configured steering gain, steering bias, offset, min/max/cruise speed, turn/straight speed variability to maximize performance of car on track. Made local news.
+•	Set up PyTorch, Torch2trt, torchvision, JetCam, JetRacer, Jetson-inference. Installed inertial measurement unit driver.
+•	Configured Jupyter Lab Server to auto-launch on boot, assign itself IP address, and broadcast on local network.
+•	Upgraded stability and speed of model training by installing NVMe drive and setting up 4GB swap partition to expand total available memory to 12GB from 8GB.
+Evaluated power requirement to select battery pack to power NVIDIA device.
+
 
 Project experience video for now:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-anzSoZteY4?si=_LfH062httOYH4Ep" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
