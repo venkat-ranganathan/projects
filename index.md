@@ -39,7 +39,7 @@ Summary of my contribution:
 
 •	Configured steering gain, steering bias, offset, min/max/cruise speed, turn/straight speed variability to maximize performance of car on track. Made local news.
 
-•	Set up PyTorch, Torch2trt, torchvision, JetCam, JetRacer, Jetson-inference. Installed inertial measurement unit driver.
+•	Set up PyTorch, Torch2trt, torchvision, JetCam, JetRacer, Jetson-inference. Installed IMU (inertial measurement unit) driver.
 
 •	Configured Jupyter Lab Server to auto-launch on boot, assign itself IP address, and broadcast on local network.
 
