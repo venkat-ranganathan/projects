@@ -31,8 +31,6 @@ Venkat Ranganathan
 
 ECD 407 completed our senior design project and accomplished our required and stretch goals of operating a modified RC car autonomously on a track with variable throttle, and the ability to detect and avoid objects.
 
-I'll add more details once the semester ends:
-
 Summary of my contribution:
 
 •	Led team of four to implement object detection and object avoidance on autonomous RC car running Linux on NVIDIA Jetson Orin Nano.
