@@ -49,7 +49,7 @@ Summary of my contribution:
 
 •	Evaluated power requirement to select battery pack to power NVIDIA device.
 
-Project experience video for now:
+Project experience video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-anzSoZteY4?si=_LfH062httOYH4Ep" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <p>&nbsp;</p>
