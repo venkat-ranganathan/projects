@@ -1,4 +1,4 @@
-
+// methodes are functions inside of classes
 
 #include "oop.h"
 
