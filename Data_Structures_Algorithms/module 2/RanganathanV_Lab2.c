@@ -57,7 +57,7 @@ int main(void)
 	FillArrayWithRandomNumbers(arrayTwo);
 
 	// first array
-	fprintf(pFout, "\nArray One: numbers from input file\n");
+	fprintf(stdout, "\nArray One: numbers from input file\n");
 
 	PrintArray(pFout, arrayOne, arrayCounter);
 	

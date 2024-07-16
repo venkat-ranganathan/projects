@@ -8,10 +8,11 @@
 //   Open both the input and the output file
 //
 //-----------------------------------------------------------------------------
-void OpenFiles(FILE ** pFin, FILE ** pFout)
+void OpenFiles(FILE ** pFin1, FILE ** pFin2, FILE ** pFout)
 {
 	// Open files
-	*pFin = fopen("Numbers1.txt", "r");
+	*pFin1 = fopen("Numbers1.txt", "r");
+	*pFin2 = fopen("Numbers2.txt", "r");
 	*pFout = fopen("Output.txt", "w");
 }
 
@@ -22,15 +23,22 @@ void OpenFiles(FILE ** pFin, FILE ** pFout)
 //   Close both the input and the output file
 //
 //-----------------------------------------------------------------------------
-void CloseFiles(FILE ** pFin, FILE ** pFout)
+void CloseFiles(FILE ** pFin1, FILE ** pFin2, FILE ** pFout)
 {
 	// Check to see if the input file pointer is valid
-	if (*pFin != NULL)
+	if (*pFin1 != NULL)
 	{
 		// Close the input file
-		fclose(*pFin);
+		fclose(*pFin1);
 	}
 	
+	// Check to see if the input file pointer is valid
+	if (*pFin2 != NULL)
+	{
+		// Close the input file
+		fclose(*pFin2);
+	}
+
 	// Check to see if the output file pointer is valid
 	if (*pFout != NULL)
 	{
@@ -39,7 +47,7 @@ void CloseFiles(FILE ** pFin, FILE ** pFout)
 	}
 }
 
-/* //-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 // Function Name: PrintHeader
 // Description:
 //   This function will call the functions needed to print a header to the 
@@ -107,7 +115,7 @@ void PrintDivider(FILE* pOutput, char symbol, int numberOf)
 //    (lengthToCenterAcross + the string length) / 2
 //
 //-----------------------------------------------------------------------------
-void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross)
+void CenterString(FILE* pOutput, const char string[], int lengthToCenterAcross)
 {
 	// Capture how long the string is
 	// Cast to an integer because strlen technically returns size_t
@@ -143,9 +151,10 @@ void CenterString(FILE* pOutput, char string[], int lengthToCenterAcross)
 //   Integers will be read in and stored in the array
 //
 //-----------------------------------------------------------------------------
-void ReadDataFromFile(FILE * pFin, int array)
+void ReadDataFromFile(FILE * pFin, int *array)
 {
 	int value;
+	int arrayCounter = 0;
 	
 	// int datatype
 	// Check to see if we have a valid file pointer
@@ -154,7 +163,7 @@ void ReadDataFromFile(FILE * pFin, int array)
 		while (fscanf(pFin, "%d" , &value) == 1 && arrayCounter < ARRAY_SIZE)
 		{
 			// Assign value to the array
-			Array[arrayCounter] = value;
+			array[arrayCounter] = value;
 			
 			// Increase the counter of elements by 1
 			arrayCounter++;
@@ -165,29 +174,30 @@ void ReadDataFromFile(FILE * pFin, int array)
 //-----------------------------------------------------------------------------
 // Function Name: objectType::ReadDataFromFile
 // Description:
-//   Integers will be read in and stored in the array
+//   double will be read in and stored in the array
 //	 Overloaded function
 //-----------------------------------------------------------------------------
-void ReadDataFromFile(FILE * pFin, double array)
+void ReadDataFromFile(FILE * pFin, double *array)
 {
-	int value;
+	double value;
+	int arrayCounter = 0;
 	
-	// int datatype
+	// double datatype
 	// Check to see if we have a valid file pointer
 	if (pFin != NULL)
 	{
-		while (fscanf(pFin, "%d" , &value) == 1 && arrayCounter < ARRAY_SIZE)
+		while (fscanf(pFin, "%lf" , &value) == 1 && arrayCounter < ARRAY_SIZE)
 		{
 			// Assign value to the array
-			Array[arrayCounter] = value;
+			array[arrayCounter] = value;
 			
 			// Increase the counter of elements by 1
 			arrayCounter++;
 		}
 	}
-} END ReadDataFromFile */
+} // END ReadDataFromFile
 
-//-----------------------------------------------------------------------------
+/* //-----------------------------------------------------------------------------
 // Function Name: objectType::objectType
 // Description:
 //   Constructor - this will initialize the array counter to 0
@@ -197,39 +207,7 @@ objectType::objectType(void)
 {
 	// Initialize constructor to 0
 	arrayCounter = 0;
-}
-
-//-----------------------------------------------------------------------------
-// Function Name: objectType::objectType
-// Description:
-//   Constructor - this will copy integer array to integer array in class
-//
-//-----------------------------------------------------------------------------
-objectType::objectType(int *array)
-{
-	// copy integer array into integer array in class
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		intArray[i] = array[i];
-	}
-	
-}
-
-//-----------------------------------------------------------------------------
-// Function Name: objectType::objectType
-// Description:
-//   Constructor - this will copy double array to double array in class
-//
-//-----------------------------------------------------------------------------
-objectType::objectType(double *array)
-{
-	// copy integer array into integer array in class
-	for (int i = 0; i < ARRAY_SIZE; i++)
-	{
-		doubleArray[i] = array[i];
-	}
-}
-
+} */
 
 //-----------------------------------------------------------------------------
 // Function Name: objectType::~objectType
@@ -243,7 +221,7 @@ objectType::~objectType(void)
 	printf("\nYour object has been destroyed\n");
 }
 
-
+/*
 //-----------------------------------------------------------------------------
 // Function Name: objectType::PrintHeader
 // Description:
@@ -351,7 +329,7 @@ void objectType::ReadDataFromFile(FILE * pFin)
 	}
 }
 
-
+*/
 //-----------------------------------------------------------------------------
 // Function Name: objectType::PrintArray
 // Description:
@@ -395,7 +373,7 @@ void objectType::PrintData(FILE * pOutput)
 	for (int index = 0; index < arrayCounter; index++)
 	{
 		// Print element of the array to the output source
-		fprintf(pOutput, "%d\t", intArray[index]); // changed from intArray & from "%5d"
+		fprintf(pOutput, "%d\t", thirdArray[index]); // changed from intArray & from "%5d"
 		
 		// Check to see if we need an enter key
 		if ((index + 1) % NUMBER_PER_LINE == 0)
@@ -408,4 +386,3 @@ void objectType::PrintData(FILE * pOutput)
 	// Print the enter key
 	fprintf(pOutput, "\n");
 }
-

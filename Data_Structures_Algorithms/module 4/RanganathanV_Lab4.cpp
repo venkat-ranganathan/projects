@@ -31,26 +31,33 @@
 
 int main(void)
 {
-	FILE * pFin;
+	FILE * pFin1;
+	FILE * pFin2;
 	FILE * pFout;
 
-	//int intArray[ARRAY_SIZE];
-	//double doubleArray[ARRAY_SIZE];
+	// store data from input files into respective arrays
+	int iArray[ARRAY_SIZE];
+	double dArray[ARRAY_SIZE];
 	
-	OpenFiles(&pFin, &pFout);
-	
-	objectType object;
-	//objectType(intArray);
-	
-	object.PrintHeader(stdout);
-	object.PrintHeader(pFout);
+	OpenFiles(&pFin1, &pFin2, &pFout);
 
-	object.ReadDataFromFile(pFin);
+	ReadDataFromFile(pFin1, iArray);
+	ReadDataFromFile(pFin2, dArray);
+
+	objectType object1; // object instance to generate random numbers
+	objectType object2(iArray); // object instance to copy integer array read from file to integer array in method
+	objectType object3(dArray); // object instance to copy double array read from file to double array in method
+
+	//PrintHeader(stdout);
+	//PrintHeader(pFout);
+
+	//PrintDivider(stdout, '*', 20);
+	//PrintDivider(pFout, '*', 20);
+
+	//CenterString(stdout, "hello", 5);
+	//CenterString(pFout, "hello", 5);
 	
-	object.PrintArray(stdout);
-	object.PrintArray(pFout);
-	
-	CloseFiles(&pFin, &pFout);
+	CloseFiles(&pFin1, &pFin2, &pFout);
 	
 	return 0;
 }

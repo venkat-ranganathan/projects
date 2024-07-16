@@ -1,0 +1,23 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/ven/Documents/projects/Data_Structures_Algorithms/module 2/RanganathanV_Lab2.out'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002D54, symSize: 0x258 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002D54, symSize: 0x258 }
+  - { offsetInCU: 0x26, offset: 0x30D, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100002FAC, symSize: 0x100 }
+  - { offsetInCU: 0x57, offset: 0x33E, size: 0x8, addend: 0x0, symName: _PrintHeader, symObjAddr: 0x0, symBinAddr: 0x100002FAC, symSize: 0x100 }
+  - { offsetInCU: 0x7B, offset: 0x362, size: 0x8, addend: 0x0, symName: _PrintDivider, symObjAddr: 0x100, symBinAddr: 0x1000030AC, symSize: 0x84 }
+  - { offsetInCU: 0xC9, offset: 0x3B0, size: 0x8, addend: 0x0, symName: _CenterString, symObjAddr: 0x184, symBinAddr: 0x100003130, symSize: 0xB8 }
+  - { offsetInCU: 0x141, offset: 0x428, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x23C, symBinAddr: 0x1000031E8, symSize: 0x38 }
+  - { offsetInCU: 0x181, offset: 0x468, size: 0x8, addend: 0x0, symName: _CloseFiles, symObjAddr: 0x274, symBinAddr: 0x100003220, symSize: 0x70 }
+  - { offsetInCU: 0x1B3, offset: 0x49A, size: 0x8, addend: 0x0, symName: _CloseFile, symObjAddr: 0x2E4, symBinAddr: 0x100003290, symSize: 0x44 }
+  - { offsetInCU: 0x1D7, offset: 0x4BE, size: 0x8, addend: 0x0, symName: _ReadDataFromFile, symObjAddr: 0x328, symBinAddr: 0x1000032D4, symSize: 0x11C }
+  - { offsetInCU: 0x233, offset: 0x51A, size: 0x8, addend: 0x0, symName: _FillArrayWithRandomNumbers, symObjAddr: 0x444, symBinAddr: 0x1000033F0, symSize: 0x7C }
+  - { offsetInCU: 0x281, offset: 0x568, size: 0x8, addend: 0x0, symName: _PrintArray, symObjAddr: 0x4C0, symBinAddr: 0x10000346C, symSize: 0x1D8 }
+  - { offsetInCU: 0x308, offset: 0x5EF, size: 0x8, addend: 0x0, symName: _CountEvenOddNumbers, symObjAddr: 0x698, symBinAddr: 0x100003644, symSize: 0xB4 }
+  - { offsetInCU: 0x378, offset: 0x65F, size: 0x8, addend: 0x0, symName: _TotalArray, symObjAddr: 0x74C, symBinAddr: 0x1000036F8, symSize: 0x68 }
+  - { offsetInCU: 0x3DD, offset: 0x6C4, size: 0x8, addend: 0x0, symName: _CalculateAverage, symObjAddr: 0x7B4, symBinAddr: 0x100003760, symSize: 0x70 }
+  - { offsetInCU: 0x425, offset: 0x70C, size: 0x8, addend: 0x0, symName: _CountNumberAboveAverage, symObjAddr: 0x824, symBinAddr: 0x1000037D0, symSize: 0xA0 }
+  - { offsetInCU: 0x48A, offset: 0x771, size: 0x8, addend: 0x0, symName: _PrintResults, symObjAddr: 0x8C4, symBinAddr: 0x100003870, symSize: 0x100 }
+  - { offsetInCU: 0x4EC, offset: 0x7D3, size: 0x8, addend: 0x0, symName: _assignArray, symObjAddr: 0x9C4, symBinAddr: 0x100003970, symSize: 0x13C }
+...

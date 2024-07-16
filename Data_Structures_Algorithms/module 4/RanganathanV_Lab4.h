@@ -4,6 +4,8 @@
 // Include header files 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Macros
 #define SCREEN_WIDTH 80
@@ -21,40 +23,75 @@
 #define ARRAY_SIZE 50
 #define NUMBER_PER_LINE 5
 
-// Prototypes
-void OpenFiles(FILE ** pFin, FILE ** pFout);
-void CloseFiles(FILE ** pFin, FILE ** pFout);
+// Function Prototypes
+void OpenFiles(FILE ** pFin1, FILE ** pFIN2, FILE ** pFout);
+void CloseFiles(FILE ** pFin1, FILE **pFin2, FILE ** pFout);
 
-//void PrintHeader(FILE* pOutput);
-//void PrintDivider(FILE* pOutput, char symbol, int numberOf);
-//void CenterString(FILE* pOutput, const char string[], int lengthToCenterAcross);
+void PrintHeader(FILE* pOutput);
+void CenterString(FILE* pOutput, const char string[], int lengthToCenterAcross);
+void PrintDivider(FILE* pOutput, char symbol, int numberOf);
 
-//void ReadDataFromFile(FILE * pFin);
-//void ReadDataFromFile(FILE * pFin, int array);
-//void ReadDataFromFile(FILE * pFin, double array);
+void ReadDataFromFile(FILE * pFin, int * array);
+void ReadDataFromFile(FILE * pFin, double * array);
 class objectType
 {
 	
 	public:
 	
 	// Constructor prototype
-	objectType(void);
-	objectType(int *array);
-	objectType(double *array);
+	objectType(void)
+	{
+		// Initialize constructor to 0
+		arrayCounter = 0;
+
+		GenerateRandomNumbers();
+	};
+	// overloaded method for integer array
+	objectType(int *array)
+	{
+		// Initialize constructor to 0
+		arrayCounter = 0;
+
+		// copy integer array into integer array in class
+		for (int i = 0; i < ARRAY_SIZE; i++)
+		{
+			intArray[i] = array[i];
+		}
+	};
+	// overloaded method for double array
+	objectType(double *array)
+	{
+		// Initialize constructor to 0
+		arrayCounter = 0;
+
+		// copy integer array into integer array in class
+		for (int i = 0; i < ARRAY_SIZE; i++)
+		{
+			doubleArray[i] = array[i];
+		}
+	};
 	
 	// Destructor prototype
 	~objectType(void);
 	
 	// Public method prototypes
-	void PrintHeader(FILE* pOutput);
-	void ReadDataFromFile(FILE * pFin);
+	//void PrintHeader(FILE* pOutput);
 	void PrintArray(FILE * pOutput);
+	void GenerateRandomNumbers()
+	{
+		// default constructor populates third array with genereated random numbers
+		for (int index = 0; index < ARRAY_SIZE; index++)
+		{		
+			// Set each element of the array to a number between 0 and 200
+			thirdArray[index] = rand() % 200 + 1;
+		}
+	}
 	
 	private:
 	
 	// Private method prototypes
-	void PrintDivider(FILE* pOutput, char symbol, int numberOf);
-	void CenterString(FILE* pOutput, const char string[], int lengthToCenterAcross);
+	//void PrintDivider(FILE* pOutput, char symbol, int numberOf);
+	//void CenterString(FILE* pOutput, const char string[], int lengthToCenterAcross);
 	
 	void PrintArrayHeader(FILE * pOutput);
 	void PrintData(FILE * pOutput);
@@ -62,6 +99,7 @@ class objectType
 	// Private data
 	int intArray[ARRAY_SIZE];
     double doubleArray[ARRAY_SIZE];
+	int thirdArray[ARRAY_SIZE];
 	int arrayCounter;
 	
 };

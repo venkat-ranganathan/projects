@@ -11,8 +11,6 @@
                      Program written by: Venkat Ranganathan
                                      Lab 2
 ********************************************************************************
-
-Array One: numbers from input file
 ----------------------------------------------------
                    Array Contents
 ----------------------------------------------------
@@ -34,17 +32,17 @@ Array Two: numbers from rand() function
                    Array Contents
 ----------------------------------------------------
    C1   C2   C3   C4   C5   C6   C7   C8   C9   C10
-R1  343  220  110  455  127   31  318  443  400  237
-R2  491   69  181  484  494  485   94  431  234  214
-R3  163  485   74   43  310  453   78  487   45  182
-R4  459  364  473  188   68  482  389  377  320  500
-R5   38  203  121  474  465  194   62  330  239  158
+R1  118  274   11  369  390  213  405  194   57  389
+R2  383  284  125  470  445  399  161  244  192  391
+R3  246  344  290  164   69  368  356  157   75  290
+R4  237  227  225  226  301  213  281  194  392  206
+R5  454   10  268  313  143  465  336  450  436  135
 
 even numbers = 25
 odd numbers = 25
-total value of array = 14085
-average value in array = 281.000
-# elements > array average = 25
+total value of array = 13385
+average value in array = 267.000
+# elements > array average = 26
 
 Array Three (Extra Credit): numbers from algorithm
 ----------------------------------------------------

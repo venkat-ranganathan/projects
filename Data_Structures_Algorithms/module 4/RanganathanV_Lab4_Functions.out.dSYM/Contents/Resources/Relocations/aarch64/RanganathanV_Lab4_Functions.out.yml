@@ -1,0 +1,25 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/ven/Documents/projects/Data_Structures_Algorithms/module 4/RanganathanV_Lab4_Functions.out'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x33, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000030F8, symSize: 0x1A0 }
+  - { offsetInCU: 0x3C0, offset: 0x3C0, size: 0x8, addend: 0x0, symName: __ZN10objectTypeC1Ev, symObjAddr: 0x1A0, symBinAddr: 0x100003298, symSize: 0x2C }
+  - { offsetInCU: 0x3E8, offset: 0x3E8, size: 0x8, addend: 0x0, symName: __ZN10objectTypeC1EPi, symObjAddr: 0x1CC, symBinAddr: 0x1000032C4, symSize: 0x34 }
+  - { offsetInCU: 0x41E, offset: 0x41E, size: 0x8, addend: 0x0, symName: __ZN10objectTypeC1EPd, symObjAddr: 0x200, symBinAddr: 0x1000032F8, symSize: 0x34 }
+  - { offsetInCU: 0x454, offset: 0x454, size: 0x8, addend: 0x0, symName: __ZN10objectTypeC2Ev, symObjAddr: 0x240, symBinAddr: 0x100003338, symSize: 0x8C }
+  - { offsetInCU: 0x498, offset: 0x498, size: 0x8, addend: 0x0, symName: __ZN10objectTypeC2EPi, symObjAddr: 0x2CC, symBinAddr: 0x1000033C4, symSize: 0x74 }
+  - { offsetInCU: 0x4EA, offset: 0x4EA, size: 0x8, addend: 0x0, symName: __ZN10objectTypeC2EPd, symObjAddr: 0x340, symBinAddr: 0x100003438, symSize: 0x78 }
+  - { offsetInCU: 0x26, offset: 0x567, size: 0x8, addend: 0x0, symName: __Z9OpenFilesPP7__sFILES1_S1_, symObjAddr: 0x0, symBinAddr: 0x1000034B0, symSize: 0x78 }
+  - { offsetInCU: 0x4D, offset: 0x58E, size: 0x8, addend: 0x0, symName: __Z9OpenFilesPP7__sFILES1_S1_, symObjAddr: 0x0, symBinAddr: 0x1000034B0, symSize: 0x78 }
+  - { offsetInCU: 0x91, offset: 0x5D2, size: 0x8, addend: 0x0, symName: __Z10CloseFilesPP7__sFILES1_S1_, symObjAddr: 0x78, symBinAddr: 0x100003528, symSize: 0x9C }
+  - { offsetInCU: 0xD5, offset: 0x616, size: 0x8, addend: 0x0, symName: __Z11PrintHeaderP7__sFILE, symObjAddr: 0x114, symBinAddr: 0x1000035C4, symSize: 0x100 }
+  - { offsetInCU: 0xFD, offset: 0x63E, size: 0x8, addend: 0x0, symName: __Z12PrintDividerP7__sFILEci, symObjAddr: 0x214, symBinAddr: 0x1000036C4, symSize: 0x84 }
+  - { offsetInCU: 0x14F, offset: 0x690, size: 0x8, addend: 0x0, symName: __Z12CenterStringP7__sFILEPKci, symObjAddr: 0x298, symBinAddr: 0x100003748, symSize: 0xB8 }
+  - { offsetInCU: 0x1CB, offset: 0x70C, size: 0x8, addend: 0x0, symName: __Z16ReadDataFromFileP7__sFILEPi, symObjAddr: 0x350, symBinAddr: 0x100003800, symSize: 0xB4 }
+  - { offsetInCU: 0x21D, offset: 0x75E, size: 0x8, addend: 0x0, symName: __Z16ReadDataFromFileP7__sFILEPd, symObjAddr: 0x404, symBinAddr: 0x1000038B4, symSize: 0xB4 }
+  - { offsetInCU: 0x42F, offset: 0x970, size: 0x8, addend: 0x0, symName: __ZN10objectTypeD2Ev, symObjAddr: 0x4B8, symBinAddr: 0x100003968, symSize: 0x34 }
+  - { offsetInCU: 0x459, offset: 0x99A, size: 0x8, addend: 0x0, symName: __ZN10objectTypeD1Ev, symObjAddr: 0x4EC, symBinAddr: 0x10000399C, symSize: 0x2C }
+  - { offsetInCU: 0x483, offset: 0x9C4, size: 0x8, addend: 0x0, symName: __ZN10objectType10PrintArrayEP7__sFILE, symObjAddr: 0x518, symBinAddr: 0x1000039C8, symSize: 0x3C }
+  - { offsetInCU: 0x4B9, offset: 0x9FA, size: 0x8, addend: 0x0, symName: __ZN10objectType16PrintArrayHeaderEP7__sFILE, symObjAddr: 0x554, symBinAddr: 0x100003A04, symSize: 0x5C }
+  - { offsetInCU: 0x4EF, offset: 0xA30, size: 0x8, addend: 0x0, symName: __ZN10objectType9PrintDataEP7__sFILE, symObjAddr: 0x5B0, symBinAddr: 0x100003A60, symSize: 0xD8 }
+...
