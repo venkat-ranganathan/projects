@@ -56,6 +56,10 @@ int main(void)
 
 	//CenterString(stdout, "hello", 5);
 	//CenterString(pFout, "hello", 5);
+
+	object1.PrintArray(stdout);
+	object2.PrintArray(stdout);
+	object3.PrintArray(stdout);
 	
 	CloseFiles(&pFin1, &pFin2, &pFout);
 	

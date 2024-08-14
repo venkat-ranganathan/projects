@@ -86,6 +86,8 @@ class objectType
 			thirdArray[index] = rand() % 200 + 1;
 		}
 	}
+
+	void PrintIntegerTable();
 	
 	private:
 	
