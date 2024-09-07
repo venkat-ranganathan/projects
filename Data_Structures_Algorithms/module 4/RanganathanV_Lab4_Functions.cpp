@@ -171,7 +171,7 @@ void ReadDataFromFile(FILE * pFin, int *array)
 	}
 }
 
-// test
+
 //-----------------------------------------------------------------------------
 // Function Name: objectType::ReadDataFromFile
 // Description:
