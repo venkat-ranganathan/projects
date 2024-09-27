@@ -134,7 +134,7 @@ if __name__ == '__main__': # need for macOS
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
-    batch_size = 4
+    batch_size = 1024
 
     data_augmentation_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
@@ -150,21 +150,21 @@ if __name__ == '__main__': # need for macOS
     ])
 
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=data_augmentation_train)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=torch.cuda.is_available())
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=8, pin_memory=torch.cuda.is_available())
 
     testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=data_augmentation_test)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=torch.cuda.is_available())
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=8, pin_memory=torch.cuda.is_available())
 
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
     net = Net()
     net.to(device)  # Move model to device (GPU/CPU)
 
-    criterion = nn.CrossEntropyLoss(label_smoothing=0.05)
-    optimizer = optim.AdamW(net.parameters(), lr=0.0001, weight_decay=1e-4) #Adam optimizer works better than Stochastic Gradient Descent (SGD) in this homework
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200) # learning rate scheduler
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
+    optimizer = optim.AdamW(net.parameters(), lr=0.001, weight_decay=1e-3) #Adam optimizer works better than Stochastic Gradient Descent (SGD) in this homework
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=100) # learning rate scheduler
 
-    num_epochs = 20
+    num_epochs = 5
 
     # start
     print(f"Starting...")
@@ -213,7 +213,7 @@ if __name__ == '__main__': # need for macOS
         test_losses.append(test_loss / len(testloader))
         test_accuracies.append(correct / total)
 
-        print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {train_losses[-1]:.4f}, Train Acc: {train_accuracies[-1]:.4f}, Test Loss: {test_losses[-1]:.4f}, Test Acc: {test_accuracies[-1]:.4f}')
+        print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {train_losses[-1]:.4f}, Train Acc: {train_accuracies[-1]:.4f}, Test Loss: {test_losses[-1]:.4f}, Test Acc: {test_accuracies[-1]:.4f}, Elapsed Time: {time.time() - init_time:.4f} seconds')
 
     # Step 8: Plotting the results
     epochs = range(1, num_epochs + 1)
@@ -230,11 +230,12 @@ if __name__ == '__main__': # need for macOS
     plt.show()
 
     # Save the final model
-    torch.save(net.state_dict(), 'cifar_net.pth')
+    PATH = './cifar_net.pth'
+    torch.save(net.state_dict(), PATH)
 
     # Print training time
     train_time = time.time() - init_time
-    print(f"Training Time: {train_time} seconds")
+    print(f"Training Time: {train_time:.4f} seconds")
 
     # end
     print(f"Complete")
