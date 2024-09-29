@@ -82,7 +82,7 @@ class Net(nn.Module):
 
         self.fc = nn.Linear(512, 10, bias=True)  # Fully connected layer; added bias=True 09/24/24 @ 12:15 AM
 
-    # train deep forward network
+    # train feed forward network
     def forward(self, input):
         x = self.conv1(input)
         x = self.conv1_maxpool(x)
@@ -90,7 +90,7 @@ class Net(nn.Module):
 
         x1 = F.relu(self.conv2_bn(self.conv2(x)))
         x1 = F.relu(self.conv3_bn(self.conv3(x1)))
-        x = x + x1
+        x = x1 + x
         x1 = F.relu(self.conv4_bn(self.conv4(x)))
         x1 = F.relu(self.conv5_bn(self.conv5(x1)))
         x = x1 + x
@@ -121,6 +121,7 @@ class Net(nn.Module):
 
         x = torch.flatten(x, 1)  # flatten for fully connected layer
         x = self.fc(x)  # Use the defined fc layer
+
         return x
 
 # Function to calculate accuracy
@@ -134,12 +135,12 @@ if __name__ == '__main__': # need for macOS
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
-    batch_size = 1024
+    batch_size = 1024 # inverted U-shape relationship between batch size and accuracy; larger batch size = more memory used
 
     data_augmentation_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
         transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
+        transforms.ToTensor(), # converts numbers to 0,1
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         transforms.RandomErasing()
     ])
@@ -160,9 +161,9 @@ if __name__ == '__main__': # need for macOS
     net = Net()
     net.to(device)  # Move model to device (GPU/CPU)
 
-    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
-    optimizer = optim.AdamW(net.parameters(), lr=0.001, weight_decay=1e-3) #Adam optimizer works better than Stochastic Gradient Descent (SGD) in this homework
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=100) # learning rate scheduler
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.05)
+    optimizer = optim.AdamW(net.parameters(), lr=0.0001, weight_decay=1e-4) #Adam optimizer works better than Stochastic Gradient Descent (SGD) in this homework
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200) # learning rate scheduler
 
     num_epochs = 5
 
@@ -234,8 +235,8 @@ if __name__ == '__main__': # need for macOS
     torch.save(net.state_dict(), PATH)
 
     # Print training time
-    train_time = time.time() - init_time
-    print(f"Training Time: {train_time:.4f} seconds")
+    train_time = (time.time() - init_time)/60
+    print(f"Training Time: {train_time:.4f} minutes")
 
     # end
     print(f"Complete")
